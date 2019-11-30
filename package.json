@@ -1,0 +1,40 @@
+{
+  "name": "mft",
+  "version": "1.0.0",
+  "description": "mft public site back-end",
+  "main": "app.js",
+  "scripts": {
+    "test": "test-mft",
+    "dev-win-cmd": "set DEBUG=mft-back:* & set NODE_ENV=dev & node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClearEyesFullHearts/mft-back.git"
+  },
+  "keywords": [
+    "mft",
+    "swagger",
+    "invoice",
+    "blog"
+  ],
+  "author": "Mathieu Font",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ClearEyesFullHearts/mft-back/issues"
+  },
+  "homepage": "https://github.com/ClearEyesFullHearts/mft-back#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "config": "^3.2.4",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.1",
+    "swagger-tools": "^0.10.4"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}

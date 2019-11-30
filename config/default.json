@@ -1,0 +1,28 @@
+{
+    "auth":{
+        "secret": "supersecret"
+    },
+    "base":{
+        "instance":{
+            "host": "localhost",
+            "port": 3000
+        },
+        "security": "x-mft-roles",
+        "roles": [
+            "ROLE_USER",
+            "ROLE_ADMIN"
+        ]
+    },
+    "api":[
+        {
+            "name": "health",
+            "swagger": "swagger-health-1.0.0.json",
+            "controller": ""
+        },
+        {
+            "name": "user",
+            "swagger": "swagger-user-1.0.0.json",
+            "controller": ""
+        }
+    ]
+}
