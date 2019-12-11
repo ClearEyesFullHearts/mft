@@ -23,7 +23,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 87,
+      "duration": 86,
       "status": "passed"
     },
     "steps": [
@@ -35,7 +35,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 8000000
+          "duration": 9000000
         }
       },
       {
@@ -45,7 +45,8 @@
           "location": "support\\init.js:6"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -57,8 +58,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:37"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -71,7 +71,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 75000000
+          "duration": 73000000
         }
       },
       {
@@ -117,7 +117,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 26,
+      "duration": 23,
       "status": "passed"
     },
     "steps": [
@@ -128,8 +128,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -139,7 +138,8 @@
           "location": "support\\init.js:6"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -177,8 +177,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -191,7 +190,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 2000000
+          "duration": 1000000
         }
       },
       {
@@ -203,8 +202,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -236,7 +234,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 21,
+      "duration": 15,
       "status": "passed"
     },
     "steps": [
@@ -247,8 +245,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -271,7 +268,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 2000000
+          "duration": 1000000
         }
       },
       {
@@ -284,7 +281,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 17000000
+          "duration": 13000000
         }
       },
       {
@@ -296,7 +293,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -308,8 +306,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       }
     ]
@@ -340,7 +337,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -362,7 +360,8 @@
           "location": "step_definitions\\health-def.js:40"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -375,7 +374,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 12000000
+          "duration": 11000000
         }
       },
       {
@@ -399,8 +398,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       }
     ]
@@ -431,7 +429,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -466,7 +465,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 16000000
+          "duration": 15000000
         }
       },
       {
@@ -521,7 +520,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 47,
+      "duration": 86,
       "status": "failed",
       "exception": {}
     },
@@ -569,7 +568,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 15000000
+          "duration": 56000000
         }
       },
       {
@@ -582,8 +581,8 @@
         },
         "result": {
           "status": "failed",
-          "duration": 24000000,
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 201\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:12:15 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "duration": 22000000,
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 201\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:37:51 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
         }
       },
       {
@@ -651,7 +650,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 17,
+      "duration": 20,
       "status": "failed",
       "exception": {}
     },
@@ -663,7 +662,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -699,7 +699,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 15000000
+          "duration": 17000000
         }
       },
       {
@@ -713,7 +713,7 @@
         "result": {
           "status": "failed",
           "duration": 1000000,
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:12:15 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:37:51 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
         }
       },
       {
@@ -805,7 +805,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 17,
+      "duration": 21,
       "status": "failed",
       "exception": {}
     },
@@ -852,7 +852,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 16000000
+          "duration": 21000000
         }
       },
       {
@@ -865,8 +865,7 @@
         },
         "result": {
           "status": "failed",
-          "duration": 1000000,
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:12:15 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:37:51 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
         }
       },
       {
@@ -970,7 +969,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 12,
+      "duration": 13,
       "status": "failed",
       "exception": {}
     },
@@ -1031,7 +1030,8 @@
         },
         "result": {
           "status": "failed",
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:12:15 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "duration": 1000000,
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:37:51 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
         }
       }
     ]
@@ -1046,7 +1046,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 13,
+      "duration": 16,
       "status": "passed"
     },
     "steps": [
@@ -1092,7 +1092,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 13000000
+          "duration": 16000000
         }
       },
       {
@@ -1131,7 +1131,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 17,
+      "duration": 23,
       "status": "passed"
     },
     "steps": [
@@ -1142,7 +1142,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -1152,8 +1153,7 @@
           "location": "support\\init.js:6"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -1165,7 +1165,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -1178,7 +1179,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 15000000
+          "duration": 19000000
         }
       },
       {
@@ -1203,7 +1204,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       }
     ]
@@ -1218,7 +1220,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 11,
+      "duration": 16,
       "status": "passed"
     },
     "steps": [
@@ -1229,7 +1231,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -1264,7 +1267,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 11000000
+          "duration": 14000000
         }
       },
       {
@@ -1288,7 +1291,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       }
     ]
@@ -1303,7 +1307,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 9,
+      "duration": 15,
       "status": "passed"
     },
     "steps": [
@@ -1349,7 +1353,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 8000000
+          "duration": 14000000
         }
       },
       {
@@ -1389,7 +1393,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 15,
+      "duration": 23,
       "status": "passed"
     },
     "steps": [
@@ -1410,8 +1414,7 @@
           "location": "support\\init.js:6"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -1423,7 +1426,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -1436,7 +1440,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 14000000
+          "duration": 20000000
         }
       },
       {
@@ -1448,7 +1452,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -1460,7 +1465,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       }
     ]
@@ -1475,7 +1481,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 10,
+      "duration": 12,
       "status": "failed",
       "exception": {}
     },
@@ -1497,8 +1503,7 @@
           "location": "support\\init.js:6"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -1523,7 +1528,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 9000000
+          "duration": 11000000
         }
       },
       {
@@ -1536,7 +1541,8 @@
         },
         "result": {
           "status": "failed",
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 404\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:12:15 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "duration": 1000000,
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 404\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:37:52 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
         }
       }
     ]
@@ -1556,7 +1562,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 11,
+      "duration": 16,
       "status": "failed",
       "exception": {}
     },
@@ -1603,7 +1609,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 10000000
+          "duration": 16000000
         }
       },
       {
@@ -1616,8 +1622,7 @@
         },
         "result": {
           "status": "failed",
-          "duration": 1000000,
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 401\n  actual:   400\n  response: \n    statusCode: 400\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 361\n      etag:           W/\"169-0J+jPWXDFC/11Iv3O63UBTSb3AA\"\n      date:           Wed, 11 Dec 2019 09:12:15 GMT\n      connection:     close\n    body:       {\"message\":\"Request validation failed: Parameter (body) failed schema validation\",\"code\":\"SCHEMA_VALIDATION_FAILED\",\"failedValidation\":true,\"results\":{\"errors\":[{\"code\":\"OBJECT_MISSING_REQUIRED_PROPERTY\",\"message\":\"Missing required property: username\",\"path\":[]}],\"warnings\":[]},\"path\":[\"paths\",\"/users\",\"post\",\"parameters\",\"0\"],\"paramName\":\"body\",\"status\":400}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 401\n  actual:   400\n  response: \n    statusCode: 400\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 361\n      etag:           W/\"169-0J+jPWXDFC/11Iv3O63UBTSb3AA\"\n      date:           Wed, 11 Dec 2019 09:37:52 GMT\n      connection:     close\n    body:       {\"message\":\"Request validation failed: Parameter (body) failed schema validation\",\"code\":\"SCHEMA_VALIDATION_FAILED\",\"failedValidation\":true,\"results\":{\"errors\":[{\"code\":\"OBJECT_MISSING_REQUIRED_PROPERTY\",\"message\":\"Missing required property: username\",\"path\":[]}],\"warnings\":[]},\"path\":[\"paths\",\"/users\",\"post\",\"parameters\",\"0\"],\"paramName\":\"body\",\"status\":400}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
         }
       },
       {
@@ -1649,7 +1654,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 15,
+      "duration": 34,
       "status": "failed",
       "exception": {}
     },
@@ -1662,7 +1667,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 3000000
+          "duration": 5000000
         }
       },
       {
@@ -1684,8 +1689,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -1698,7 +1702,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 11000000
+          "duration": 27000000
         }
       },
       {
@@ -1711,7 +1715,8 @@
         },
         "result": {
           "status": "failed",
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 401\n  actual:   400\n  response: \n    statusCode: 400\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 361\n      etag:           W/\"169-0J+jPWXDFC/11Iv3O63UBTSb3AA\"\n      date:           Wed, 11 Dec 2019 09:12:15 GMT\n      connection:     close\n    body:       {\"message\":\"Request validation failed: Parameter (body) failed schema validation\",\"code\":\"SCHEMA_VALIDATION_FAILED\",\"failedValidation\":true,\"results\":{\"errors\":[{\"code\":\"OBJECT_MISSING_REQUIRED_PROPERTY\",\"message\":\"Missing required property: username\",\"path\":[]}],\"warnings\":[]},\"path\":[\"paths\",\"/users\",\"post\",\"parameters\",\"0\"],\"paramName\":\"body\",\"status\":400}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "duration": 2000000,
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 401\n  actual:   400\n  response: \n    statusCode: 400\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 361\n      etag:           W/\"169-0J+jPWXDFC/11Iv3O63UBTSb3AA\"\n      date:           Wed, 11 Dec 2019 09:37:52 GMT\n      connection:     close\n    body:       {\"message\":\"Request validation failed: Parameter (body) failed schema validation\",\"code\":\"SCHEMA_VALIDATION_FAILED\",\"failedValidation\":true,\"results\":{\"errors\":[{\"code\":\"OBJECT_MISSING_REQUIRED_PROPERTY\",\"message\":\"Missing required property: username\",\"path\":[]}],\"warnings\":[]},\"path\":[\"paths\",\"/users\",\"post\",\"parameters\",\"0\"],\"paramName\":\"body\",\"status\":400}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
         }
       },
       {
@@ -1753,7 +1758,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 18,
+      "duration": 32,
       "status": "failed",
       "exception": {}
     },
@@ -1788,7 +1793,7 @@
         },
         "result": {
           "status": "failed",
-          "duration": 18000000,
+          "duration": 32000000,
           "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
         }
       },
@@ -1864,7 +1869,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 12,
+      "duration": 26,
       "status": "failed",
       "exception": {}
     },
@@ -1899,7 +1904,7 @@
         },
         "result": {
           "status": "failed",
-          "duration": 12000000,
+          "duration": 26000000,
           "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
         }
       },
@@ -1951,7 +1956,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 9,
+      "duration": 17,
       "status": "failed",
       "exception": {}
     },
@@ -1963,8 +1968,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -1987,7 +1991,7 @@
         },
         "result": {
           "status": "failed",
-          "duration": 8000000,
+          "duration": 17000000,
           "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
         }
       },
@@ -2080,7 +2084,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 11,
+      "duration": 13,
       "status": "failed",
       "exception": {}
     },
@@ -2092,7 +2096,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -2102,8 +2107,7 @@
           "location": "support\\init.js:6"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -2116,7 +2120,7 @@
         },
         "result": {
           "status": "failed",
-          "duration": 10000000,
+          "duration": 12000000,
           "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
         }
       },
@@ -2228,7 +2232,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 10,
+      "duration": 11,
       "status": "failed",
       "exception": {}
     },
@@ -2250,8 +2254,7 @@
           "location": "support\\init.js:6"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -2264,7 +2267,7 @@
         },
         "result": {
           "status": "failed",
-          "duration": 9000000,
+          "duration": 11000000,
           "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
         }
       },
@@ -2352,7 +2355,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 16,
+      "duration": 12,
       "status": "failed",
       "exception": {}
     },
@@ -2387,7 +2390,7 @@
         },
         "result": {
           "status": "failed",
-          "duration": 16000000,
+          "duration": 12000000,
           "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
         }
       },
@@ -2451,7 +2454,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 12,
+      "duration": 26,
       "status": "failed",
       "exception": {}
     },
@@ -2464,7 +2467,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 3000000
+          "duration": 4000000
         }
       },
       {
@@ -2486,8 +2489,7 @@
           "location": "step_definitions\\health-def.js:5"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -2512,7 +2514,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 7000000
+          "duration": 21000000
         }
       },
       {
@@ -2526,7 +2528,7 @@
         "result": {
           "status": "failed",
           "duration": 1000000,
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 403\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:12:16 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 403\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:37:52 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
         }
       },
       {
@@ -2558,7 +2560,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 9,
+      "duration": 13,
       "status": "failed",
       "exception": {}
     },
@@ -2570,8 +2572,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -2594,7 +2595,7 @@
         },
         "result": {
           "status": "failed",
-          "duration": 8000000,
+          "duration": 13000000,
           "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
         }
       },
@@ -2670,7 +2671,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 8,
+      "duration": 14,
       "status": "failed",
       "exception": {}
     },
@@ -2705,7 +2706,7 @@
         },
         "result": {
           "status": "failed",
-          "duration": 8000000,
+          "duration": 14000000,
           "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
         }
       },
@@ -2762,7 +2763,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 10,
+      "duration": 13,
       "status": "failed",
       "exception": {}
     },
@@ -2774,7 +2775,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -2784,7 +2786,8 @@
           "location": "support\\init.js:6"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -2797,7 +2800,7 @@
         },
         "result": {
           "status": "failed",
-          "duration": 10000000,
+          "duration": 11000000,
           "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
         }
       },
@@ -2878,7 +2881,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 9,
+      "duration": 17,
       "status": "failed",
       "exception": {}
     },
@@ -2891,7 +2894,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 2000000
+          "duration": 1000000
         }
       },
       {
@@ -2901,7 +2904,8 @@
           "location": "support\\init.js:6"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -2913,7 +2917,8 @@
           "location": "step_definitions\\health-def.js:5"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -2926,7 +2931,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 7000000
+          "duration": 14000000
         }
       },
       {
@@ -2939,7 +2944,7 @@
         },
         "result": {
           "status": "failed",
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:12:16 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:37:52 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
         }
       },
       {
@@ -2990,7 +2995,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 14,
+      "duration": 19,
       "status": "failed",
       "exception": {}
     },
@@ -3002,7 +3007,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -3024,8 +3030,7 @@
           "location": "step_definitions\\health-def.js:5"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -3038,7 +3043,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 13000000
+          "duration": 17000000
         }
       },
       {
@@ -3051,7 +3056,8 @@
         },
         "result": {
           "status": "failed",
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 403\n  actual:   400\n  response: \n    statusCode: 400\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 221\n      etag:           W/\"dd-7s4siq75hlvbhAYllNDgRK/AqzM\"\n      date:           Wed, 11 Dec 2019 09:12:16 GMT\n      connection:     close\n    body:       {\"message\":\"Request validation failed: Parameter (id) is not a valid integer: undefined\",\"code\":\"INVALID_TYPE\",\"failedValidation\":true,\"path\":[\"paths\",\"/user/{id}\",\"delete\",\"parameters\",\"0\"],\"paramName\":\"id\",\"status\":400}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "duration": 1000000,
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 403\n  actual:   400\n  response: \n    statusCode: 400\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 221\n      etag:           W/\"dd-7s4siq75hlvbhAYllNDgRK/AqzM\"\n      date:           Wed, 11 Dec 2019 09:37:52 GMT\n      connection:     close\n    body:       {\"message\":\"Request validation failed: Parameter (id) is not a valid integer: undefined\",\"code\":\"INVALID_TYPE\",\"failedValidation\":true,\"path\":[\"paths\",\"/user/{id}\",\"delete\",\"parameters\",\"0\"],\"paramName\":\"id\",\"status\":400}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
         }
       },
       {
