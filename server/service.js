@@ -4,6 +4,7 @@ const config = require('config');
 const logger = require('debug');
 const SwaggerAsync = require('./swaggerAsync.js');
 const ErrorHelper = require('./error.js');
+const Data = require('../data/index.js');
 
 const debug = logger('mft-back:server');
 
@@ -19,6 +20,11 @@ class MultiSwaggerService {
     const port = config.get('base.instance.port');
 
     const swaggerApp = this.app;
+    const data = new Data();
+
+    await data.init();
+
+    swaggerApp.locals.db = data;
 
     const apis = config.get('api');
     const l = apis.length;
