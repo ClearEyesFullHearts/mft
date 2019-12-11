@@ -8,8 +8,8 @@ Test the server connection API
     Then response code should be 201
     And response body path $.auth should be true
     And response body path $.roles[0] should be ROLE_USER
-    And response body should contain $.token
-    And response body should contain $.user.id
+    And response body path $.token should be ^[a-zA-Z0-9\-_]+?\.[a-zA-Z0-9\-_]+?\.([a-zA-Z0-9\-_]+)?$
+    And response body path $.user.id should be ^[1-9]\d*$
 
   @Nominal
   Scenario: Known user can login
@@ -90,3 +90,8 @@ Test the server connection API
     When I POST to /users
     Then response code should be 401
     And response body path $.code should be UNKNOWN_USER
+
+  Scenario: Cannot register a user with a known email
+    Given ...
+    When ...
+    Then ...

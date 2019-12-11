@@ -16,6 +16,9 @@
         "got": "^9.2.2",
         "json-mock": "^0.1.0",
         "jsonwebtoken": "^8.5.1",
+        "mongodb-backup-4x": "^3.2.1",
+        "mongodb-restore": "^1.6.2",
+        "mongoose": "^5.8.0",
         "uuid": "^3.3.3"
     }
 }
