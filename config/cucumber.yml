@@ -1,0 +1,2 @@
+basic-all: '--format html --out reports'
+Nominal: '--format html --tags @Nominal --out reports --overwrite'

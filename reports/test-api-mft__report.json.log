@@ -1,0 +1,3071 @@
+{
+  "feature": {
+    "uri": "health.feature",
+    "description": "Test the server health API",
+    "keyword": "Feature",
+    "name": "Server health",
+    "line": 1,
+    "id": "server-health",
+    "tags": []
+  }
+}{
+  "scenario": {
+    "uri": "health.feature",
+    "id": "server-health;server-is-up",
+    "keyword": "Scenario",
+    "line": 5,
+    "name": "Server is up",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 4
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 87,
+      "status": "passed"
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 8000000
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 6,
+        "name": "I set Accept header to application/json",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:37"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 7,
+        "name": "I GET /health",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 75000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 8,
+        "name": "response code should be 200",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 9,
+        "name": "response body path $.status should be UP",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 2000000
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "health.feature",
+    "id": "server-health;admin-can-get-server-informations",
+    "keyword": "Scenario",
+    "line": 12,
+    "name": "Admin can get server informations",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 11
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 26,
+      "status": "passed"
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 13,
+        "name": "I set an admin bearer token",
+        "match": {
+          "location": "step_definitions\\health-def.js:5"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 3000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 14,
+        "name": "I GET /info",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 18000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 15,
+        "name": "response code should be 200",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 16,
+        "name": "response body path $.profile should be dev",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 2000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 17,
+        "name": "response body path $.user.roles[0] should be ROLE_USER",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 18,
+        "name": "response body path $.user.roles[1] should be ROLE_ADMIN",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "passed"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "health.feature",
+    "id": "server-health;user-cannot-get-server-informations",
+    "keyword": "Scenario",
+    "line": 21,
+    "name": "User cannot get server informations",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 20
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 21,
+      "status": "passed"
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 22,
+        "name": "I set an user bearer token",
+        "match": {
+          "location": "step_definitions\\health-def.js:23"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 2000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 23,
+        "name": "I GET /info",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 17000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 24,
+        "name": "response code should be 403",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 25,
+        "name": "response body path $.code should be BAD_ROLE",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "health.feature",
+    "id": "server-health;i-cannot-get-server-informations-with-bad-token",
+    "keyword": "Scenario",
+    "line": 28,
+    "name": "I cannot get server informations with bad token",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 27
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 13,
+      "status": "passed"
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 29,
+        "name": "I set a bad bearer token",
+        "match": {
+          "location": "step_definitions\\health-def.js:40"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 30,
+        "name": "I GET /info",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 12000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 31,
+        "name": "response code should be 403",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 32,
+        "name": "response body path $.code should be BAD_TOKEN",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "health.feature",
+    "id": "server-health;guest-cannot-get-server-informations",
+    "keyword": "Scenario",
+    "line": 35,
+    "name": "Guest cannot get server informations",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 34
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 17,
+      "status": "passed"
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 36,
+        "name": "I set Accept header to application/json",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:37"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 37,
+        "name": "I GET /info",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 16000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 38,
+        "name": "response code should be 401",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 39,
+        "name": "response body path $.code should be NO_AUTH_HEADER",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "passed"
+        }
+      }
+    ]
+  }
+}{
+  "feature": {
+    "uri": "login.feature",
+    "description": "Test the server connection API",
+    "keyword": "Feature",
+    "name": "User creation and login",
+    "line": 1,
+    "id": "user-creation-and-login",
+    "tags": []
+  }
+}{
+  "scenario": {
+    "uri": "login.feature",
+    "id": "user-creation-and-login;register-a-new-user",
+    "keyword": "Scenario",
+    "line": 5,
+    "name": "Register a new user",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 4
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 47,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 8000000
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 6,
+        "name": "I set body to {\"username\":\"mft-test\", \"email\":\"mft-test@mathieufont.com\", \"password\":\"testtest\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 7,
+        "name": "I POST to /users",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:101"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 15000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 8,
+        "name": "response code should be 201",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "failed",
+          "duration": 24000000,
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 201\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:12:15 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 9,
+        "name": "response body path $.auth should be true",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 10,
+        "name": "response body path $.roles[0] should be ROLE_USER",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 11,
+        "name": "response body should contain $.token",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:189"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 12,
+        "name": "response body should contain $.user.id",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:189"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "login.feature",
+    "id": "user-creation-and-login;known-user-can-login",
+    "keyword": "Scenario",
+    "line": 15,
+    "name": "Known user can login",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 14
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 17,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 16,
+        "name": "I set body to {\"email\":\"mft-user-test@mathieufont.com\", \"password\":\"testtest\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 17,
+        "name": "I PUT /user/login",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 15000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 18,
+        "name": "response code should be 200",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "failed",
+          "duration": 1000000,
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:12:15 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 19,
+        "name": "response body path $.auth should be true",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 20,
+        "name": "response body path $.roles[0] should be ROLE_USER",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 21,
+        "name": "response body should contain $.token",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:189"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 22,
+        "name": "response body path $.user.id should be 2",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 23,
+        "name": "response body path $.user.username should be mft-user",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 24,
+        "name": "response body path $.user.email should be mft-user-test@mathieufont.com",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "login.feature",
+    "id": "user-creation-and-login;known-admin-can-login",
+    "keyword": "Scenario",
+    "line": 27,
+    "name": "Known admin can login",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 26
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 17,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 28,
+        "name": "I set body to {\"email\":\"mft-admin-test@mathieufont.com\", \"password\":\"testadmin\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 29,
+        "name": "I PUT /user/login",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 16000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 30,
+        "name": "response code should be 200",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "failed",
+          "duration": 1000000,
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:12:15 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 31,
+        "name": "response body path $.auth should be true",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 32,
+        "name": "response body path $.roles[0] should be ROLE_USER",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 33,
+        "name": "response body path $.roles[1] should be ROLE_ADMIN",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 34,
+        "name": "response body should contain $.token",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:189"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 35,
+        "name": "response body path $.user.id should be 1",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 36,
+        "name": "response body path $.user.username should be admin",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 37,
+        "name": "response body path $.user.email should be mft-admin-test@mathieufont.com",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "login.feature",
+    "id": "user-creation-and-login;user-can-reset-its-password",
+    "keyword": "Scenario",
+    "line": 40,
+    "name": "User can reset its password",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 39
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 12,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 41,
+        "name": "I set body to {\"email\":\"mft-user-test@mathieufont.com\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 42,
+        "name": "I PUT /user/reset",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 11000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 43,
+        "name": "response code should be 200",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "failed",
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:12:15 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "login.feature",
+    "id": "user-creation-and-login;registering-a-new-user-needs-a-username",
+    "keyword": "Scenario",
+    "line": 45,
+    "name": "Registering a new user needs a username",
+    "tags": [],
+    "type": "scenario",
+    "result": {
+      "duration": 13,
+      "status": "passed"
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 46,
+        "name": "I set body to {\"email\":\"mft-test@mathieufont.com\", \"password\":\"testtest\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 47,
+        "name": "I POST to /users",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:101"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 13000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 48,
+        "name": "response code should be 400",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 49,
+        "name": "response body path $.code should be SCHEMA_VALIDATION_FAILED",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "passed"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "login.feature",
+    "id": "user-creation-and-login;registering-a-new-user-needs-an-email",
+    "keyword": "Scenario",
+    "line": 51,
+    "name": "Registering a new user needs an email",
+    "tags": [],
+    "type": "scenario",
+    "result": {
+      "duration": 17,
+      "status": "passed"
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 52,
+        "name": "I set body to {\"username\":\"mft-test\", \"password\":\"testtest\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 53,
+        "name": "I POST to /users",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:101"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 15000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 54,
+        "name": "response code should be 400",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 55,
+        "name": "response body path $.code should be SCHEMA_VALIDATION_FAILED",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "passed"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "login.feature",
+    "id": "user-creation-and-login;registering-a-new-user-needs-a-password",
+    "keyword": "Scenario",
+    "line": 57,
+    "name": "Registering a new user needs a password",
+    "tags": [],
+    "type": "scenario",
+    "result": {
+      "duration": 11,
+      "status": "passed"
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 58,
+        "name": "I set body to {\"username\":\"mft-test\", \"email\":\"mft-test@mathieufont.com\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 59,
+        "name": "I POST to /users",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:101"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 11000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 60,
+        "name": "response code should be 400",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 61,
+        "name": "response body path $.code should be SCHEMA_VALIDATION_FAILED",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "passed"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "login.feature",
+    "id": "user-creation-and-login;user-needs-a-password-to-login",
+    "keyword": "Scenario",
+    "line": 63,
+    "name": "User needs a password to login",
+    "tags": [],
+    "type": "scenario",
+    "result": {
+      "duration": 9,
+      "status": "passed"
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 64,
+        "name": "I set body to {\"email\":\"mft-user-test@mathieufont.com\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 65,
+        "name": "I PUT /user/login",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 8000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 66,
+        "name": "response code should be 400",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 67,
+        "name": "response body path $.code should be SCHEMA_VALIDATION_FAILED",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "passed"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "login.feature",
+    "id": "user-creation-and-login;user-needs-an-email-to-login",
+    "keyword": "Scenario",
+    "line": 69,
+    "name": "User needs an email to login",
+    "tags": [],
+    "type": "scenario",
+    "result": {
+      "duration": 15,
+      "status": "passed"
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 70,
+        "name": "I set body to {\"password\":\"testtest\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 71,
+        "name": "I PUT /user/login",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 14000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 72,
+        "name": "response code should be 400",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 73,
+        "name": "response body path $.code should be SCHEMA_VALIDATION_FAILED",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "passed"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "login.feature",
+    "id": "user-creation-and-login;guest-cannot-reset-its-password",
+    "keyword": "Scenario",
+    "line": 75,
+    "name": "Guest cannot reset its password",
+    "tags": [],
+    "type": "scenario",
+    "result": {
+      "duration": 10,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 76,
+        "name": "I set body to {\"email\":\"anon@mathieufont.com\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 77,
+        "name": "I PUT /user/reset",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 9000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 78,
+        "name": "response code should be 404",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "failed",
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 404\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:12:15 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "login.feature",
+    "id": "user-creation-and-login;unknown-user-should-not-be-able-to-log-in",
+    "keyword": "Scenario",
+    "line": 81,
+    "name": "Unknown user should not be able to log in",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 80
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 11,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 82,
+        "name": "I set body to {\"email\":\"unknownuser@mathieufont.com\", \"password\":\"testtest\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 83,
+        "name": "I POST to /users",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:101"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 10000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 84,
+        "name": "response code should be 401",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "failed",
+          "duration": 1000000,
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 401\n  actual:   400\n  response: \n    statusCode: 400\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 361\n      etag:           W/\"169-0J+jPWXDFC/11Iv3O63UBTSb3AA\"\n      date:           Wed, 11 Dec 2019 09:12:15 GMT\n      connection:     close\n    body:       {\"message\":\"Request validation failed: Parameter (body) failed schema validation\",\"code\":\"SCHEMA_VALIDATION_FAILED\",\"failedValidation\":true,\"results\":{\"errors\":[{\"code\":\"OBJECT_MISSING_REQUIRED_PROPERTY\",\"message\":\"Missing required property: username\",\"path\":[]}],\"warnings\":[]},\"path\":[\"paths\",\"/users\",\"post\",\"parameters\",\"0\"],\"paramName\":\"body\",\"status\":400}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 85,
+        "name": "response body path $.code should be UNKNOWN_USER",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "login.feature",
+    "id": "user-creation-and-login;user-with-bad-credentials-should-not-be-able-to-log-in",
+    "keyword": "Scenario",
+    "line": 88,
+    "name": "User with bad credentials should not be able to log in",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 87
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 15,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 3000000
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 89,
+        "name": "I set body to {\"email\":\"mft-user-test@mathieufont.com\", \"password\":\"wrongpassword\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 90,
+        "name": "I POST to /users",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:101"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 11000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 91,
+        "name": "response code should be 401",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "failed",
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 401\n  actual:   400\n  response: \n    statusCode: 400\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 361\n      etag:           W/\"169-0J+jPWXDFC/11Iv3O63UBTSb3AA\"\n      date:           Wed, 11 Dec 2019 09:12:15 GMT\n      connection:     close\n    body:       {\"message\":\"Request validation failed: Parameter (body) failed schema validation\",\"code\":\"SCHEMA_VALIDATION_FAILED\",\"failedValidation\":true,\"results\":{\"errors\":[{\"code\":\"OBJECT_MISSING_REQUIRED_PROPERTY\",\"message\":\"Missing required property: username\",\"path\":[]}],\"warnings\":[]},\"path\":[\"paths\",\"/users\",\"post\",\"parameters\",\"0\"],\"paramName\":\"body\",\"status\":400}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 92,
+        "name": "response body path $.code should be UNKNOWN_USER",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}{
+  "feature": {
+    "uri": "user.feature",
+    "description": "Test the user CRUD API",
+    "keyword": "Feature",
+    "name": "User management",
+    "line": 1,
+    "id": "user-management",
+    "tags": []
+  }
+}{
+  "scenario": {
+    "uri": "user.feature",
+    "id": "user-management;user-gets-its-own-informations",
+    "keyword": "Scenario",
+    "line": 5,
+    "name": "User gets its own informations",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 4
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 18,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 6,
+        "name": "I am a new user",
+        "match": {
+          "location": "step_definitions\\user-def.js:4"
+        },
+        "result": {
+          "status": "failed",
+          "duration": 18000000,
+          "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 7,
+        "name": "I GET /user/`newUserID`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 8,
+        "name": "response code should be 200",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 9,
+        "name": "response body path $.id should be `newUserID`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 10,
+        "name": "response body path $.username should be testUser",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 11,
+        "name": "response body path $.email should be `newUserEmail`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "user.feature",
+    "id": "user-management;user-cannot-get-information-for-another-user",
+    "keyword": "Scenario",
+    "line": 13,
+    "name": "User cannot get information for another user",
+    "tags": [],
+    "type": "scenario",
+    "result": {
+      "duration": 12,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 14,
+        "name": "I am a new user",
+        "match": {
+          "location": "step_definitions\\user-def.js:4"
+        },
+        "result": {
+          "status": "failed",
+          "duration": 12000000,
+          "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 15,
+        "name": "I GET /user/2",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 16,
+        "name": "response code should be 403",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 17,
+        "name": "response body path $.code should be UNAUTHORIZED",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "user.feature",
+    "id": "user-management;admin-can-get-another-user-informations",
+    "keyword": "Scenario",
+    "line": 19,
+    "name": "Admin can get another user informations",
+    "tags": [],
+    "type": "scenario",
+    "result": {
+      "duration": 9,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 20,
+        "name": "I am a new user",
+        "match": {
+          "location": "step_definitions\\user-def.js:4"
+        },
+        "result": {
+          "status": "failed",
+          "duration": 8000000,
+          "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 21,
+        "name": "I set an admin bearer token",
+        "match": {
+          "location": "step_definitions\\health-def.js:5"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 22,
+        "name": "I GET /user/`newUserID`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 23,
+        "name": "response code should be 200",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 24,
+        "name": "response body path $.id should be `newUserID`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 25,
+        "name": "response body path $.username should be testUser",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 26,
+        "name": "response body path $.email should be `newUserEmail`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "user.feature",
+    "id": "user-management;user-can-update-its-username-and-password",
+    "keyword": "Scenario",
+    "line": 29,
+    "name": "User can update its username and password",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 28
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 11,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 30,
+        "name": "I am a new user",
+        "match": {
+          "location": "step_definitions\\user-def.js:4"
+        },
+        "result": {
+          "status": "failed",
+          "duration": 10000000,
+          "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 31,
+        "name": "I set body to {\"username\":\"test-update\", \"password\":\"updatedpassword\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 32,
+        "name": "I PUT /user/`newUserID`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 33,
+        "name": "I log with {\"email\":\"`newUserEmail`\", \"password\":\"updatedpassword\"}",
+        "match": {
+          "location": "step_definitions\\user-def.js:32"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 34,
+        "name": "I GET /user/`newUserID`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 35,
+        "name": "response code should be 200",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 36,
+        "name": "response body path $.auth should be true",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 37,
+        "name": "response body path $.user.id should be `newUserID`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 38,
+        "name": "response body path $.user.username should be test-update",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "user.feature",
+    "id": "user-management;user-cannot-update-its-email",
+    "keyword": "Scenario",
+    "line": 40,
+    "name": "User cannot update its email",
+    "tags": [],
+    "type": "scenario",
+    "result": {
+      "duration": 10,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 41,
+        "name": "I am a new user",
+        "match": {
+          "location": "step_definitions\\user-def.js:4"
+        },
+        "result": {
+          "status": "failed",
+          "duration": 9000000,
+          "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 42,
+        "name": "I set body to {\"username\":\"test-update\", \"email\":\"noemailupdate@mathieufont.com\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 43,
+        "name": "I PUT /user/`newUserID`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 44,
+        "name": "I set body to {\"email\":\"mft-user-test@mathieufont.com\", \"password\":\"wrongpassword\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 45,
+        "name": "I POST to /users",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:101"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 46,
+        "name": "response code should be 401",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 47,
+        "name": "response body path $.code should be UNKNOWN_USER",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "user.feature",
+    "id": "user-management;user-cannot-update-another-user-information",
+    "keyword": "Scenario",
+    "line": 49,
+    "name": "User cannot update another user information",
+    "tags": [],
+    "type": "scenario",
+    "result": {
+      "duration": 16,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 50,
+        "name": "I am a new user",
+        "match": {
+          "location": "step_definitions\\user-def.js:4"
+        },
+        "result": {
+          "status": "failed",
+          "duration": 16000000,
+          "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 51,
+        "name": "I set body to {\"username\":\"test-update\", \"password\":\"updatedpassword\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 52,
+        "name": "I PUT /user/2",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 53,
+        "name": "response code should be 403",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 54,
+        "name": "response body path $.code should be UNAUTHORIZED",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "user.feature",
+    "id": "user-management;admin-cannot-update-another-user",
+    "keyword": "Scenario",
+    "line": 56,
+    "name": "Admin cannot update another user",
+    "tags": [],
+    "type": "scenario",
+    "result": {
+      "duration": 12,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 3000000
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 57,
+        "name": "I set an admin bearer token",
+        "match": {
+          "location": "step_definitions\\health-def.js:5"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 58,
+        "name": "I set body to {\"username\":\"test-update\", \"password\":\"updatedpassword\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 59,
+        "name": "I PUT /user/2",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 7000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 60,
+        "name": "response code should be 403",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "failed",
+          "duration": 1000000,
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 403\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:12:16 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 61,
+        "name": "response body path $.code should be UNAUTHORIZED",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "user.feature",
+    "id": "user-management;user-can-delete-its-profile",
+    "keyword": "Scenario",
+    "line": 64,
+    "name": "User can delete its profile",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 63
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 9,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 65,
+        "name": "I am a new user",
+        "match": {
+          "location": "step_definitions\\user-def.js:4"
+        },
+        "result": {
+          "status": "failed",
+          "duration": 8000000,
+          "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 66,
+        "name": "I DELETE /user/`newUserID`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:121"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 67,
+        "name": "response code should be 200",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 68,
+        "name": "I set an admin bearer token",
+        "match": {
+          "location": "step_definitions\\health-def.js:5"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 69,
+        "name": "I GET /user/`newUserID`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 70,
+        "name": "response code should be 404",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "user.feature",
+    "id": "user-management;user-cannot-delete-another-profile",
+    "keyword": "Scenario",
+    "line": 72,
+    "name": "User cannot delete another profile",
+    "tags": [],
+    "type": "scenario",
+    "result": {
+      "duration": 8,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 73,
+        "name": "I am a new user",
+        "match": {
+          "location": "step_definitions\\user-def.js:4"
+        },
+        "result": {
+          "status": "failed",
+          "duration": 8000000,
+          "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 74,
+        "name": "I DELETE /user/2",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:121"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 75,
+        "name": "response code should be 403",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 76,
+        "name": "response body path $.code should be UNAUTHORIZED",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "user.feature",
+    "id": "user-management;admin-can-delete-any-user-profile",
+    "keyword": "Scenario",
+    "line": 79,
+    "name": "Admin can delete any user profile",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 78
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 10,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 80,
+        "name": "I am a new user",
+        "match": {
+          "location": "step_definitions\\user-def.js:4"
+        },
+        "result": {
+          "status": "failed",
+          "duration": 10000000,
+          "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:19:15)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 81,
+        "name": "I set an admin bearer token",
+        "match": {
+          "location": "step_definitions\\health-def.js:5"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 82,
+        "name": "I DELETE /user/`newUserID`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:121"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 83,
+        "name": "response code should be 200",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 84,
+        "name": "I GET /user/`newUserID`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 85,
+        "name": "response code should be 404",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "user.feature",
+    "id": "user-management;admin-can-get-the-list-of-all-users",
+    "keyword": "Scenario",
+    "line": 88,
+    "name": "Admin can get the list of all users",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 87
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 9,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 2000000
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 89,
+        "name": "I set an admin bearer token",
+        "match": {
+          "location": "step_definitions\\health-def.js:5"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 90,
+        "name": "I GET /users",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 7000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 91,
+        "name": "response code should be 200",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "failed",
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Wed, 11 Dec 2019 09:12:16 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 92,
+        "name": "response body path $.json should be of type array",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:211"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 93,
+        "name": "response body path $.json.0.id should be 1",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 94,
+        "name": "response body path $.json.0.id should be 2",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "user.feature",
+    "id": "user-management;admin-cannot-delete-its-own-profile",
+    "keyword": "Scenario",
+    "line": 96,
+    "name": "Admin cannot delete its own profile",
+    "tags": [],
+    "type": "scenario",
+    "result": {
+      "duration": 14,
+      "status": "failed",
+      "exception": {}
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:6"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 97,
+        "name": "I set an admin bearer token",
+        "match": {
+          "location": "step_definitions\\health-def.js:5"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 98,
+        "name": "I DELETE /user/`newUserID`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:121"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 13000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 99,
+        "name": "response code should be 403",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "failed",
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 403\n  actual:   400\n  response: \n    statusCode: 400\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 221\n      etag:           W/\"dd-7s4siq75hlvbhAYllNDgRK/AqzM\"\n      date:           Wed, 11 Dec 2019 09:12:16 GMT\n      connection:     close\n    body:       {\"message\":\"Request validation failed: Parameter (id) is not a valid integer: undefined\",\"code\":\"INVALID_TYPE\",\"failedValidation\":true,\"path\":[\"paths\",\"/user/{id}\",\"delete\",\"parameters\",\"0\"],\"paramName\":\"id\",\"status\":400}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 100,
+        "name": "response body path $.code should be UNAUTHORIZED",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "skipped"
+        }
+      }
+    ]
+  }
+}
