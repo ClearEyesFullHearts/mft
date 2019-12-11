@@ -11,12 +11,11 @@
     "application/json"
   ],
   "paths": {
-    "/user": {
+    "/users": {
       "post": {
         "x-swagger-router-controller": "connection",
         "operationId": "createUser",
         "summary": "Register a new user",
-        "description": "Registering a new user to be able to connect to the application.",
         "produces": [
           "application/json"
         ],
@@ -30,35 +29,57 @@
           }
         }],
         "responses": {
-          "200": {
+          "201": {
             "description": "successful operation",
             "schema": {
               "$ref": "#/definitions/Auth"
             }
           }
         }
+      },
+      "get":{
+        "x-swagger-router-controller": "connection",
+        "operationId": "getAllUsers",
+        "x-mft-roles": [
+          "ROLE_ADMIN"
+        ],
+        "summary": "Get all users informations",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref" : "#/definitions/User"
+              }
+            }
+          },
+          "404": {
+            "description": "Unknown user ID"
+          }
+        }
       }
     },
     "/user/login": {
-      "get": {
+      "put": {
         "x-swagger-router-controller": "connection",
         "operationId": "loginUser",
         "summary": "Logs user into the system",
-        "description": "",
         "produces": [
           "application/json"
         ],
         "parameters": [{
-            "in": "body",
-            "name": "body",
-            "description": "Logging informations",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/LogInfo"
-            }
+          "in": "body",
+          "name": "body",
+          "description": "Logging informations",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/LogInfo"
           }
-
-        ],
+        }],
         "responses": {
           "200": {
             "description": "successful operation",
@@ -72,23 +93,128 @@
         }
       }
     },
-    "/user/logout": {
+    "/user/reset": {
       "put": {
         "x-swagger-router-controller": "connection",
-        "operationId": "logoutUser",
+        "operationId": "resetUserPassword",
+        "summary": "Send new password by e-mail",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+          "in": "body",
+          "name": "body",
+          "description": "email address",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/ResetInfo"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "404": {
+            "description": "Unknown email address"
+          }
+        }
+      }
+    },
+    "/user/{id}": {
+      "get": {
+        "x-swagger-router-controller": "connection",
+        "operationId": "getUser",
         "x-mft-roles": [
           "ROLE_USER",
           "ROLE_ADMIN"
         ],
-        "summary": "Logs out current logged in user session",
-        "description": "",
+        "summary": "Get one user informations",
         "produces": [
           "application/json"
         ],
-        "parameters": [],
+        "parameters": [{
+          "in": "path",
+          "name": "id",
+          "description": "ID of the user",
+          "required": true,
+          "type": "integer"
+        }],
         "responses": {
-          "default": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "404": {
+            "description": "Unknown user ID"
+          }
+        }
+      },
+      "put": {
+        "x-swagger-router-controller": "connection",
+        "operationId": "updateUser",
+        "x-mft-roles": [
+          "ROLE_USER",
+          "ROLE_ADMIN"
+        ],
+        "summary": "Update one user informations",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "path",
+            "name": "id",
+            "description": "ID of the user",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "404": {
+            "description": "Unknown user ID"
+          }
+        }
+      },
+      "delete": {
+        "x-swagger-router-controller": "connection",
+        "operationId": "removeUser",
+        "x-mft-roles": [
+          "ROLE_USER",
+          "ROLE_ADMIN"
+        ],
+        "summary": "Remove one user",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+          "in": "path",
+          "name": "id",
+          "description": "ID of the user",
+          "required": true,
+          "type": "integer"
+        }],
+        "responses": {
+          "200": {
             "description": "successful operation"
+          },
+          "404": {
+            "description": "Unknown user ID"
           }
         }
       }
@@ -123,6 +249,13 @@
         "token": {
           "type": "string"
         },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["ROLE_USER", "ROLE_ADMIN"]
+          }
+        },
         "user": {
           "$ref": "#/definitions/User"
         }
@@ -156,13 +289,18 @@
         },
         "email": {
           "type": "string"
-        },
-        "role": {
-          "type": "string",
-          "enum": [
-            "ROLE_USER",
-            "ROLE_ADMIN"
-          ]
+        }
+      }
+    },
+    "ResetInfo": {
+      "type": "object",
+      "required": [
+        "email"
+      ],
+      "properties": {
+        "email": {
+          "description": "The email for login",
+          "type": "string"
         }
       }
     }

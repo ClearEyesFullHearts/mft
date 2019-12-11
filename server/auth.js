@@ -32,7 +32,7 @@ class AuthMiddleware {
           debug('verify ok', payload);
           const roles = req.swagger.operation[ROLE_GUARD];
           for (let i = 0; i < roles.length; i += 1) {
-            if (payload.auth.indexOf(roles[i]) !== -1) {
+            if (payload.roles.indexOf(roles[i]) !== -1) {
               debug('role is accepted');
               req.auth = payload;
               return next();
