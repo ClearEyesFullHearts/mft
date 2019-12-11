@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const autoIncrement = require('mongoose-auto-increment');
+const { autoIncrement } = require('mongoose-plugin-autoinc'); // mongoose-auto-increment-reworked
 const config = require('config');
 
 class UserData {
@@ -13,16 +13,16 @@ class UserData {
       },
       password: String,
       roles: {
-        type: String,
+        type: [String],
         enum: config.get('base.roles'),
       },
     });
   }
 
   async init(conn) {
-    this.userSchema.plugin(autoIncrement.plugin, { model: 'User', field: 'id' });
-    this.doc = conn.model('User', this.userSchema);
-    await this.doc.init();
+    this.userSchema.plugin(autoIncrement, { model: 'User', field: 'id' });
+    this.Doc = conn.model('User', this.userSchema);
+    await this.Doc.init();
   }
 }
 

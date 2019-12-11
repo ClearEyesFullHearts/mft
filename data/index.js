@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const autoIncrement = require('mongoose-auto-increment');
+// const autoIncrement = require('mongoose-auto-increment');
 const config = require('config');
 const logger = require('debug');
 const UserData = require('./user.js');
@@ -28,10 +28,12 @@ class Data {
       debug('running connection error', err);
     });
 
-    autoIncrement.initialize(this.connection);
+    // autoIncrement.initialize(this.connection);
 
     debug('initialize users collection');
     await this.users.init(this.connection);
+
+    debug('finished initialization');
   }
 }
 
