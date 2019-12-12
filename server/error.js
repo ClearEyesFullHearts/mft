@@ -4,6 +4,18 @@ const logger = require('debug');
 const debug = logger('mft-back:server:error');
 
 class ErrorHelper {
+  static get CODE() {
+    return {
+      NOT_IMPLEMENTED: 'NOT_IMPLEMENTED',
+      SERVER_ERROR: 'SERVER_ERROR',
+      KNOWN_EMAIL: 'KNOWN_EMAIL',
+      BAD_ROLE: 'BAD_ROLE',
+      MIS_AUTH_HEADER: 'MIS_AUTH_HEADER',
+      BAD_TOKEN: 'BAD_TOKEN',
+      NO_AUTH_HEADER: 'NO_AUTH_HEADER',
+    };
+  }
+
   static catchMiddleware() {
     return function catchMiddleware(err, req, res, next) { // eslint-disable-line no-unused-vars
       debug('error received', err);

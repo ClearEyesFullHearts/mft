@@ -19,7 +19,7 @@ class AuthMiddleware {
       debug('Route is guarded');
       if (req.headers.authorization) {
         const heads = req.headers.authorization.split(' ');
-        if (heads.length < 2) return next(ErrorHelper.getCustomError(401, 'MIS_AUTH_HEADER', 'Misformed authorization header'));
+        if (heads.length < 2) return next(ErrorHelper.getCustomError(401, ErrorHelper.CODE.MIS_AUTH_HEADER, 'Misformed authorization header'));
 
         const token = heads[1];
         debug('verify token', token);
@@ -27,7 +27,7 @@ class AuthMiddleware {
         jwt.verify(token, secret, (err, payload) => {
           if (err) {
             debug('verify error', err);
-            return next(ErrorHelper.getCustomError(403, 'BAD_TOKEN', err.message));
+            return next(ErrorHelper.getCustomError(403, ErrorHelper.CODE.BAD_TOKEN, err.message));
           }
           debug('verify ok', payload);
           const roles = req.swagger.operation[ROLE_GUARD];
@@ -39,12 +39,12 @@ class AuthMiddleware {
             }
           }
           debug('User role is not authorized for this route');
-          return next(ErrorHelper.getCustomError(403, 'BAD_ROLE', 'User role is not authorized for this route'));
+          return next(ErrorHelper.getCustomError(403, ErrorHelper.CODE.BAD_ROLE, 'User role is not authorized for this route'));
         });
 
         return undefined;
       }
-      return next(ErrorHelper.getCustomError(401, 'NO_AUTH_HEADER', 'Missing authorization header'));
+      return next(ErrorHelper.getCustomError(401, ErrorHelper.CODE.NO_AUTH_HEADER, 'Missing authorization header'));
     };
   }
 }

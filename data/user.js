@@ -1,11 +1,14 @@
 const mongoose = require('mongoose');
-const { autoIncrement } = require('mongoose-plugin-autoinc'); // mongoose-auto-increment-reworked
+const { autoIncrement } = require('mongoose-plugin-autoinc');
 const config = require('config');
 
 class UserData {
   constructor() {
     this.userSchema = new mongoose.Schema({
-      id: Number,
+      id: {
+        type: Number,
+        unique: true,
+      },
       username: String,
       email: {
         type: String,
