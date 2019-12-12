@@ -16,8 +16,15 @@ module.exports.createUser = (req, res, next) => {
       next(err);
     });
 };
-module.exports.loginUser = (req, res) => {
-  throw ErrorHelper.getCustomError(501, ErrorHelper.CODE.NOT_IMPLEMENTED, 'Not Implemented');
+module.exports.loginUser = (req, res, next) => {
+  debug('loginUser body', req.swagger.params.body.value);
+  UserLogin.getAuth(req.app.locals.db, req.swagger.params.body.value)
+    .then((auth) => {
+      res.json(auth);
+    })
+    .catch((err) => {
+      next(err);
+    });
 };
 module.exports.resetUserPassword = (req, res) => {
   throw ErrorHelper.getCustomError(501, ErrorHelper.CODE.NOT_IMPLEMENTED, 'Not Implemented');
