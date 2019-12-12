@@ -30,7 +30,7 @@ Given("I am a new user", async function () {
 });
 
 Given(/^I log with (.*)$/, async function (bodyValue) {
-    const body = this.apickli.replaceVariables(bodyValue);
+    const body = JSON.parse(this.apickli.replaceVariables(bodyValue));
     try {
         response = await this.got.put(this.apickli.domain + '/user/login', {
             json: true, // this is required

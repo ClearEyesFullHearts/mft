@@ -23,7 +23,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 75,
+      "duration": 80,
       "status": "passed"
     },
     "steps": [
@@ -57,8 +57,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:37"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -71,7 +70,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 64000000
+          "duration": 69000000
         }
       },
       {
@@ -97,7 +96,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 2000000
+          "duration": 3000000
         }
       }
     ]
@@ -117,7 +116,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 26,
+      "duration": 18,
       "status": "passed"
     },
     "steps": [
@@ -128,7 +127,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -138,8 +138,7 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -152,7 +151,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 3000000
+          "duration": 1000000
         }
       },
       {
@@ -165,7 +164,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 21000000
+          "duration": 14000000
         }
       },
       {
@@ -177,8 +176,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -190,7 +188,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -202,7 +201,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -234,7 +234,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 12,
+      "duration": 11,
       "status": "passed"
     },
     "steps": [
@@ -245,8 +245,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -282,7 +281,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 10000000
+          "duration": 8000000
         }
       },
       {
@@ -294,7 +293,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -306,7 +306,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       }
     ]
@@ -326,7 +327,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 12,
+      "duration": 21,
       "status": "passed"
     },
     "steps": [
@@ -359,7 +360,8 @@
           "location": "step_definitions\\health-def.js:40"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -372,7 +374,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 12000000
+          "duration": 18000000
         }
       },
       {
@@ -384,7 +386,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -396,7 +399,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       }
     ]
@@ -416,7 +420,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 9,
+      "duration": 11,
       "status": "passed"
     },
     "steps": [
@@ -462,7 +466,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 8000000
+          "duration": 10000000
         }
       },
       {
@@ -517,7 +521,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 47,
+      "duration": 41,
       "status": "passed"
     },
     "steps": [
@@ -539,7 +543,8 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -564,7 +569,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 26000000
+          "duration": 19000000
         }
       },
       {
@@ -577,7 +582,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 14000000
+          "duration": 15000000
         }
       },
       {
@@ -590,7 +595,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 2000000
+          "duration": 1000000
         }
       },
       {
@@ -602,8 +607,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -628,7 +632,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       }
     ]
@@ -648,7 +653,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 20,
+      "duration": 14,
       "status": "passed"
     },
     "steps": [
@@ -659,7 +664,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -695,7 +701,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 15000000
+          "duration": 11000000
         }
       },
       {
@@ -720,8 +726,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -745,8 +750,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -782,8 +786,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       }
     ]
@@ -803,7 +806,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 24,
+      "duration": 28,
       "status": "passed"
     },
     "steps": [
@@ -824,7 +827,8 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -849,7 +853,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 14000000
+          "duration": 13000000
         }
       },
       {
@@ -861,7 +865,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -873,7 +878,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -898,7 +904,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 9000000
+          "duration": 10000000
         }
       },
       {
@@ -910,8 +916,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -935,7 +940,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -947,7 +953,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       }
     ]
@@ -1029,7 +1036,7 @@
         "result": {
           "status": "failed",
           "duration": 2000000,
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Thu, 12 Dec 2019 12:35:15 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Thu, 12 Dec 2019 14:19:18 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
         }
       }
     ]
@@ -1044,7 +1051,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 12,
+      "duration": 8,
       "status": "passed"
     },
     "steps": [
@@ -1065,8 +1072,7 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -1091,7 +1097,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 10000000
+          "duration": 7000000
         }
       },
       {
@@ -1103,8 +1109,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -1116,7 +1121,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       }
     ]
@@ -1131,7 +1137,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 16,
+      "duration": 28,
       "status": "passed"
     },
     "steps": [
@@ -1177,7 +1183,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 15000000
+          "duration": 28000000
         }
       },
       {
@@ -1189,8 +1195,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -1217,7 +1222,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 15,
+      "duration": 12,
       "status": "passed"
     },
     "steps": [
@@ -1238,7 +1243,8 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -1263,7 +1269,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 14000000
+          "duration": 11000000
         }
       },
       {
@@ -1287,8 +1293,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       }
     ]
@@ -1303,7 +1308,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 12,
+      "duration": 28,
       "status": "passed"
     },
     "steps": [
@@ -1336,8 +1341,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -1350,7 +1354,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 11000000
+          "duration": 27000000
         }
       },
       {
@@ -1362,7 +1366,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -1389,7 +1394,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 8,
+      "duration": 10,
       "status": "passed"
     },
     "steps": [
@@ -1435,7 +1440,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 8000000
+          "duration": 9000000
         }
       },
       {
@@ -1459,7 +1464,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       }
     ]
@@ -1474,7 +1480,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 13,
+      "duration": 26,
       "status": "failed",
       "exception": {}
     },
@@ -1522,7 +1528,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 11000000
+          "duration": 24000000
         }
       },
       {
@@ -1536,7 +1542,7 @@
         "result": {
           "status": "failed",
           "duration": 1000000,
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 404\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Thu, 12 Dec 2019 12:35:16 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 404\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Thu, 12 Dec 2019 14:19:18 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
         }
       }
     ]
@@ -1556,7 +1562,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 12,
+      "duration": 8,
       "status": "passed"
     },
     "steps": [
@@ -1577,8 +1583,7 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -1603,7 +1608,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 11000000
+          "duration": 8000000
         }
       },
       {
@@ -1647,7 +1652,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 17,
+      "duration": 12,
       "status": "passed"
     },
     "steps": [
@@ -1693,7 +1698,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 16000000
+          "duration": 12000000
         }
       },
       {
@@ -1717,8 +1722,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       }
     ]
@@ -1733,7 +1737,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 26,
+      "duration": 31,
       "status": "passed"
     },
     "steps": [
@@ -1744,7 +1748,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -1779,7 +1784,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 18000000
+          "duration": 20000000
         }
       },
       {
@@ -1791,7 +1796,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -1804,7 +1810,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 8000000
+          "duration": 9000000
         }
       }
     ]
@@ -1834,9 +1840,8 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 39,
-      "status": "failed",
-      "exception": {}
+      "duration": 53,
+      "status": "passed"
     },
     "steps": [
       {
@@ -1869,7 +1874,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 26000000
+          "duration": 44000000
         }
       },
       {
@@ -1882,7 +1887,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 12000000
+          "duration": 8000000
         }
       },
       {
@@ -1894,9 +1899,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "failed",
-          "duration": 1000000,
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Thu, 12 Dec 2019 12:35:16 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "status": "passed"
         }
       },
       {
@@ -1908,7 +1911,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed"
         }
       },
       {
@@ -1920,7 +1923,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed"
         }
       },
       {
@@ -1932,7 +1935,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed",
+          "duration": 1000000
         }
       }
     ]
@@ -1947,9 +1951,8 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 27,
-      "status": "failed",
-      "exception": {}
+      "duration": 31,
+      "status": "passed"
     },
     "steps": [
       {
@@ -1982,7 +1985,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 20000000
+          "duration": 24000000
         }
       },
       {
@@ -2007,8 +2010,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "failed",
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 403\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Thu, 12 Dec 2019 12:35:16 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "status": "passed"
         }
       },
       {
@@ -2020,7 +2022,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed"
         }
       }
     ]
@@ -2035,9 +2037,8 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 35,
-      "status": "failed",
-      "exception": {}
+      "duration": 25,
+      "status": "passed"
     },
     "steps": [
       {
@@ -2047,8 +2048,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -2058,7 +2058,8 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -2071,7 +2072,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 22000000
+          "duration": 14000000
         }
       },
       {
@@ -2083,7 +2084,8 @@
           "location": "step_definitions\\health-def.js:5"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -2096,7 +2098,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 12000000
+          "duration": 9000000
         }
       },
       {
@@ -2108,8 +2110,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "failed",
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Thu, 12 Dec 2019 12:35:16 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "status": "passed"
         }
       },
       {
@@ -2121,7 +2122,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed"
         }
       },
       {
@@ -2133,7 +2134,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed"
         }
       },
       {
@@ -2145,7 +2146,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed"
         }
       }
     ]
@@ -2165,9 +2166,8 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 48,
-      "status": "failed",
-      "exception": {}
+      "duration": 68,
+      "status": "passed"
     },
     "steps": [
       {
@@ -2177,8 +2177,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed",
-          "duration": 7000000
+          "status": "passed"
         }
       },
       {
@@ -2201,7 +2200,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 19000000
+          "duration": 25000000
         }
       },
       {
@@ -2226,7 +2225,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 21000000
+          "duration": 10000000
         }
       },
       {
@@ -2238,9 +2237,8 @@
           "location": "step_definitions\\user-def.js:32"
         },
         "result": {
-          "status": "failed",
-          "duration": 1000000,
-          "error_message": "Error: Server Error\n    at options.World.<anonymous> (D:\\work\\test-api-mft\\features\\step_definitions\\user-def.js:40:15)"
+          "status": "passed",
+          "duration": 22000000
         }
       },
       {
@@ -2252,7 +2250,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed",
+          "duration": 11000000
         }
       },
       {
@@ -2264,43 +2263,31 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed"
         }
       },
       {
         "arguments": [],
         "keyword": "And ",
         "line": 36,
-        "name": "response body path $.auth should be true",
+        "name": "response body path $.id should be `newUserID`",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed"
         }
       },
       {
         "arguments": [],
         "keyword": "And ",
         "line": 37,
-        "name": "response body path $.user.id should be `newUserID`",
+        "name": "response body path $.username should be test-update",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "skipped"
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "And ",
-        "line": 38,
-        "name": "response body path $.user.username should be test-update",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
-        },
-        "result": {
-          "status": "skipped"
+          "status": "passed"
         }
       }
     ]
@@ -2310,14 +2297,13 @@
     "uri": "user.feature",
     "id": "user-management;user-cannot-update-its-email",
     "keyword": "Scenario",
-    "line": 40,
+    "line": 39,
     "name": "User cannot update its email",
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 39,
-      "status": "failed",
-      "exception": {}
+      "duration": 60,
+      "status": "passed"
     },
     "steps": [
       {
@@ -2327,8 +2313,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -2344,21 +2329,47 @@
       {
         "arguments": [],
         "keyword": "Given ",
-        "line": 41,
+        "line": 40,
         "name": "I am a new user",
         "match": {
           "location": "step_definitions\\user-def.js:4"
         },
         "result": {
           "status": "passed",
-          "duration": 15000000
+          "duration": 35000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 41,
+        "name": "I set body to {\"username\":\"test-update\", \"password\":\"updatedpassword\", \"email\":\"noemailupdate@mathieufont.com\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
         "arguments": [],
         "keyword": "And ",
         "line": 42,
-        "name": "I set body to {\"username\":\"test-update\", \"email\":\"noemailupdate@mathieufont.com\"}",
+        "name": "I PUT /user/`newUserID`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 11000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 43,
+        "name": "I set body to {\"email\":\"noemailupdate@mathieufont.com\", \"password\":\"updatedpassword\"}",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
         },
@@ -2368,9 +2379,9 @@
       },
       {
         "arguments": [],
-        "keyword": "And ",
-        "line": 43,
-        "name": "I PUT /user/`newUserID`",
+        "keyword": "When ",
+        "line": 44,
+        "name": "I PUT /user/login",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
         },
@@ -2381,11 +2392,11 @@
       },
       {
         "arguments": [],
-        "keyword": "And ",
-        "line": 44,
-        "name": "I set body to {\"email\":\"mft-user-test@mathieufont.com\", \"password\":\"wrongpassword\"}",
+        "keyword": "Then ",
+        "line": 45,
+        "name": "response code should be 401",
         "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
           "status": "passed"
@@ -2393,41 +2404,14 @@
       },
       {
         "arguments": [],
-        "keyword": "When ",
-        "line": 45,
-        "name": "I POST to /users",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:101"
-        },
-        "result": {
-          "status": "passed",
-          "duration": 9000000
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "Then ",
-        "line": 46,
-        "name": "response code should be 401",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
-        },
-        "result": {
-          "status": "failed",
-          "duration": 1000000,
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 401\n  actual:   400\n  response: \n    statusCode: 400\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 361\n      etag:           W/\"169-0J+jPWXDFC/11Iv3O63UBTSb3AA\"\n      date:           Thu, 12 Dec 2019 12:35:16 GMT\n      connection:     close\n    body:       {\"message\":\"Request validation failed: Parameter (body) failed schema validation\",\"code\":\"SCHEMA_VALIDATION_FAILED\",\"failedValidation\":true,\"results\":{\"errors\":[{\"code\":\"OBJECT_MISSING_REQUIRED_PROPERTY\",\"message\":\"Missing required property: username\",\"path\":[]}],\"warnings\":[]},\"path\":[\"paths\",\"/users\",\"post\",\"parameters\",\"0\"],\"paramName\":\"body\",\"status\":400}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
-        }
-      },
-      {
-        "arguments": [],
         "keyword": "And ",
-        "line": 47,
+        "line": 46,
         "name": "response body path $.code should be UNKNOWN_USER",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed"
         }
       }
     ]
@@ -2437,14 +2421,13 @@
     "uri": "user.feature",
     "id": "user-management;user-cannot-update-another-user-information",
     "keyword": "Scenario",
-    "line": 49,
+    "line": 48,
     "name": "User cannot update another user information",
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 32,
-      "status": "failed",
-      "exception": {}
+      "duration": 27,
+      "status": "passed"
     },
     "steps": [
       {
@@ -2454,8 +2437,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -2471,131 +2453,32 @@
       {
         "arguments": [],
         "keyword": "Given ",
-        "line": 50,
+        "line": 49,
         "name": "I am a new user",
         "match": {
           "location": "step_definitions\\user-def.js:4"
         },
         "result": {
           "status": "passed",
-          "duration": 14000000
+          "duration": 16000000
         }
       },
       {
         "arguments": [],
         "keyword": "And ",
+        "line": 50,
+        "name": "I set body to {\"username\":\"test-update\", \"password\":\"updatedpassword\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
         "line": 51,
-        "name": "I set body to {\"username\":\"test-update\", \"password\":\"updatedpassword\"}",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
-        },
-        "result": {
-          "status": "passed"
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "When ",
-        "line": 52,
-        "name": "I PUT /user/2",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
-        },
-        "result": {
-          "status": "passed",
-          "duration": 17000000
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "Then ",
-        "line": 53,
-        "name": "response code should be 403",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
-        },
-        "result": {
-          "status": "failed",
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 403\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Thu, 12 Dec 2019 12:35:16 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "And ",
-        "line": 54,
-        "name": "response body path $.code should be UNAUTHORIZED",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
-        },
-        "result": {
-          "status": "skipped"
-        }
-      }
-    ]
-  }
-}{
-  "scenario": {
-    "uri": "user.feature",
-    "id": "user-management;admin-cannot-update-another-user",
-    "keyword": "Scenario",
-    "line": 56,
-    "name": "Admin cannot update another user",
-    "tags": [],
-    "type": "scenario",
-    "result": {
-      "duration": 11,
-      "status": "failed",
-      "exception": {}
-    },
-    "steps": [
-      {
-        "keyword": "Before",
-        "hidden": true,
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
-        },
-        "result": {
-          "status": "passed"
-        }
-      },
-      {
-        "keyword": "Before",
-        "hidden": true,
-        "match": {
-          "location": "support\\init.js:22"
-        },
-        "result": {
-          "status": "passed"
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "Given ",
-        "line": 57,
-        "name": "I set an admin bearer token",
-        "match": {
-          "location": "step_definitions\\health-def.js:5"
-        },
-        "result": {
-          "status": "passed"
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "And ",
-        "line": 58,
-        "name": "I set body to {\"username\":\"test-update\", \"password\":\"updatedpassword\"}",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
-        },
-        "result": {
-          "status": "passed"
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "When ",
-        "line": 59,
         "name": "I PUT /user/2",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
@@ -2608,27 +2491,26 @@
       {
         "arguments": [],
         "keyword": "Then ",
-        "line": 60,
+        "line": 52,
         "name": "response code should be 403",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "failed",
-          "duration": 1000000,
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 403\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Thu, 12 Dec 2019 12:35:16 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
         "arguments": [],
         "keyword": "And ",
-        "line": 61,
+        "line": 53,
         "name": "response body path $.code should be UNAUTHORIZED",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed"
         }
       }
     ]
@@ -2636,21 +2518,15 @@
 }{
   "scenario": {
     "uri": "user.feature",
-    "id": "user-management;user-can-delete-its-profile",
+    "id": "user-management;admin-cannot-update-another-user",
     "keyword": "Scenario",
-    "line": 64,
-    "name": "User can delete its profile",
-    "tags": [
-      {
-        "name": "@Nominal",
-        "line": 63
-      }
-    ],
+    "line": 55,
+    "name": "Admin cannot update another user",
+    "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 34,
-      "status": "failed",
-      "exception": {}
+      "duration": 9,
+      "status": "passed"
     },
     "steps": [
       {
@@ -2676,23 +2552,34 @@
       {
         "arguments": [],
         "keyword": "Given ",
-        "line": 65,
-        "name": "I am a new user",
+        "line": 56,
+        "name": "I set an admin bearer token",
         "match": {
-          "location": "step_definitions\\user-def.js:4"
+          "location": "step_definitions\\health-def.js:5"
         },
         "result": {
-          "status": "passed",
-          "duration": 26000000
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 57,
+        "name": "I set body to {\"username\":\"test-update\", \"password\":\"updatedpassword\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed"
         }
       },
       {
         "arguments": [],
         "keyword": "When ",
-        "line": 66,
-        "name": "I DELETE /user/`newUserID`",
+        "line": 58,
+        "name": "I PUT /user/2",
         "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:121"
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
         },
         "result": {
           "status": "passed",
@@ -2702,50 +2589,143 @@
       {
         "arguments": [],
         "keyword": "Then ",
-        "line": 67,
+        "line": 59,
+        "name": "response code should be 403",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 60,
+        "name": "response body path $.code should be UNAUTHORIZED",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "passed"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "user.feature",
+    "id": "user-management;user-can-delete-its-profile",
+    "keyword": "Scenario",
+    "line": 63,
+    "name": "User can delete its profile",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 62
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 47,
+      "status": "passed"
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:22"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 64,
+        "name": "I am a new user",
+        "match": {
+          "location": "step_definitions\\user-def.js:4"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 31000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 65,
+        "name": "I DELETE /user/`newUserID`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:121"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 9000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 66,
         "name": "response code should be 200",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "failed",
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Thu, 12 Dec 2019 12:35:16 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 67,
+        "name": "I set an admin bearer token",
+        "match": {
+          "location": "step_definitions\\health-def.js:5"
+        },
+        "result": {
+          "status": "passed"
         }
       },
       {
         "arguments": [],
         "keyword": "And ",
         "line": 68,
-        "name": "I set an admin bearer token",
+        "name": "I GET /user/`newUserID`",
         "match": {
-          "location": "step_definitions\\health-def.js:5"
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed",
+          "duration": 6000000
         }
       },
       {
         "arguments": [],
         "keyword": "And ",
         "line": 69,
-        "name": "I GET /user/`newUserID`",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
-        },
-        "result": {
-          "status": "skipped"
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "And ",
-        "line": 70,
         "name": "response code should be 404",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed"
         }
       }
     ]
@@ -2755,14 +2735,13 @@
     "uri": "user.feature",
     "id": "user-management;user-cannot-delete-another-profile",
     "keyword": "Scenario",
-    "line": 72,
+    "line": 71,
     "name": "User cannot delete another profile",
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 33,
-      "status": "failed",
-      "exception": {}
+      "duration": 54,
+      "status": "passed"
     },
     "steps": [
       {
@@ -2773,7 +2752,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 2000000
+          "duration": 1000000
         }
       },
       {
@@ -2789,10 +2768,23 @@
       {
         "arguments": [],
         "keyword": "Given ",
-        "line": 73,
+        "line": 72,
         "name": "I am a new user",
         "match": {
           "location": "step_definitions\\user-def.js:4"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 29000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 73,
+        "name": "I DELETE /user/2",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:121"
         },
         "result": {
           "status": "passed",
@@ -2801,40 +2793,26 @@
       },
       {
         "arguments": [],
-        "keyword": "When ",
-        "line": 74,
-        "name": "I DELETE /user/2",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:121"
-        },
-        "result": {
-          "status": "passed",
-          "duration": 7000000
-        }
-      },
-      {
-        "arguments": [],
         "keyword": "Then ",
-        "line": 75,
+        "line": 74,
         "name": "response code should be 403",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "failed",
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 403\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Thu, 12 Dec 2019 12:35:16 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "status": "passed"
         }
       },
       {
         "arguments": [],
         "keyword": "And ",
-        "line": 76,
+        "line": 75,
         "name": "response body path $.code should be UNAUTHORIZED",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed"
         }
       }
     ]
@@ -2844,19 +2822,18 @@
     "uri": "user.feature",
     "id": "user-management;admin-can-delete-any-user-profile",
     "keyword": "Scenario",
-    "line": 79,
+    "line": 78,
     "name": "Admin can delete any user profile",
     "tags": [
       {
         "name": "@Nominal",
-        "line": 78
+        "line": 77
       }
     ],
     "type": "scenario",
     "result": {
-      "duration": 55,
-      "status": "failed",
-      "exception": {}
+      "duration": 57,
+      "status": "passed"
     },
     "steps": [
       {
@@ -2867,7 +2844,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 18000000
+          "duration": 10000000
         }
       },
       {
@@ -2883,20 +2860,20 @@
       {
         "arguments": [],
         "keyword": "Given ",
-        "line": 80,
+        "line": 79,
         "name": "I am a new user",
         "match": {
           "location": "step_definitions\\user-def.js:4"
         },
         "result": {
           "status": "passed",
-          "duration": 15000000
+          "duration": 29000000
         }
       },
       {
         "arguments": [],
         "keyword": "And ",
-        "line": 81,
+        "line": 80,
         "name": "I set an admin bearer token",
         "match": {
           "location": "step_definitions\\health-def.js:5"
@@ -2908,52 +2885,53 @@
       {
         "arguments": [],
         "keyword": "When ",
-        "line": 82,
+        "line": 81,
         "name": "I DELETE /user/`newUserID`",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:121"
         },
         "result": {
           "status": "passed",
-          "duration": 21000000
+          "duration": 9000000
         }
       },
       {
         "arguments": [],
         "keyword": "Then ",
-        "line": 83,
+        "line": 82,
         "name": "response code should be 200",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "failed",
-          "duration": 1000000,
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Thu, 12 Dec 2019 12:35:16 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 83,
+        "name": "I GET /user/`newUserID`",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 7000000
         }
       },
       {
         "arguments": [],
         "keyword": "And ",
         "line": 84,
-        "name": "I GET /user/`newUserID`",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
-        },
-        "result": {
-          "status": "skipped"
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "And ",
-        "line": 85,
         "name": "response code should be 404",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed",
+          "duration": 1000000
         }
       }
     ]
@@ -2963,19 +2941,18 @@
     "uri": "user.feature",
     "id": "user-management;admin-can-get-the-list-of-all-users",
     "keyword": "Scenario",
-    "line": 88,
+    "line": 87,
     "name": "Admin can get the list of all users",
     "tags": [
       {
         "name": "@Nominal",
-        "line": 87
+        "line": 86
       }
     ],
     "type": "scenario",
     "result": {
-      "duration": 8,
-      "status": "failed",
-      "exception": {}
+      "duration": 10,
+      "status": "passed"
     },
     "steps": [
       {
@@ -2995,13 +2972,14 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
         "arguments": [],
         "keyword": "Given ",
-        "line": 89,
+        "line": 88,
         "name": "I set an admin bearer token",
         "match": {
           "location": "step_definitions\\health-def.js:5"
@@ -3013,7 +2991,7 @@
       {
         "arguments": [],
         "keyword": "When ",
-        "line": 90,
+        "line": 89,
         "name": "I GET /users",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:91"
@@ -3026,50 +3004,50 @@
       {
         "arguments": [],
         "keyword": "Then ",
-        "line": 91,
+        "line": 90,
         "name": "response code should be 200",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "failed",
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Thu, 12 Dec 2019 12:35:16 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 91,
+        "name": "response body path $ should be of type array",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:211"
+        },
+        "result": {
+          "status": "passed"
         }
       },
       {
         "arguments": [],
         "keyword": "And ",
         "line": 92,
-        "name": "response body path $.json should be of type array",
+        "name": "response body path $.0.id should be 1",
         "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:211"
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
         "arguments": [],
         "keyword": "And ",
         "line": 93,
-        "name": "response body path $.json.0.id should be 1",
+        "name": "response body path $.1.id should be 2",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "skipped"
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "And ",
-        "line": 94,
-        "name": "response body path $.json.0.id should be 2",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
-        },
-        "result": {
-          "status": "skipped"
+          "status": "passed"
         }
       }
     ]
@@ -3079,14 +3057,13 @@
     "uri": "user.feature",
     "id": "user-management;admin-cannot-delete-its-own-profile",
     "keyword": "Scenario",
-    "line": 96,
+    "line": 95,
     "name": "Admin cannot delete its own profile",
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 8,
-      "status": "failed",
-      "exception": {}
+      "duration": 11,
+      "status": "passed"
     },
     "steps": [
       {
@@ -3096,7 +3073,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -3112,52 +3090,50 @@
       {
         "arguments": [],
         "keyword": "Given ",
-        "line": 97,
+        "line": 96,
         "name": "I set an admin bearer token",
         "match": {
           "location": "step_definitions\\health-def.js:5"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
         "arguments": [],
         "keyword": "When ",
-        "line": 98,
-        "name": "I DELETE /user/`newUserID`",
+        "line": 97,
+        "name": "I DELETE /user/1",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:121"
         },
         "result": {
           "status": "passed",
-          "duration": 7000000
+          "duration": 10000000
         }
       },
       {
         "arguments": [],
         "keyword": "Then ",
-        "line": 99,
+        "line": 98,
         "name": "response code should be 403",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "failed",
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 403\n  actual:   400\n  response: \n    statusCode: 400\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 221\n      etag:           W/\"dd-7s4siq75hlvbhAYllNDgRK/AqzM\"\n      date:           Thu, 12 Dec 2019 12:35:16 GMT\n      connection:     close\n    body:       {\"message\":\"Request validation failed: Parameter (id) is not a valid integer: undefined\",\"code\":\"INVALID_TYPE\",\"failedValidation\":true,\"path\":[\"paths\",\"/user/{id}\",\"delete\",\"parameters\",\"0\"],\"paramName\":\"id\",\"status\":400}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "status": "passed"
         }
       },
       {
         "arguments": [],
         "keyword": "And ",
-        "line": 100,
+        "line": 99,
         "name": "response body path $.code should be UNAUTHORIZED",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "skipped"
+          "status": "passed"
         }
       }
     ]
