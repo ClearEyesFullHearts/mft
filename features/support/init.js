@@ -2,7 +2,7 @@ const apickli = require('apickli');
 const { Before, BeforeAll, AfterAll } = require('cucumber');
 const config = require('config');
 const got = require('got');
-// const backup = require('mongodb-backup-4x');
+const backup = require('mongodb-backup-4x');
 const restore = require('mongodb-restore');
 const mongoose = require('mongoose');
 

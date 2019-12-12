@@ -302,8 +302,8 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
           <a class="navbar-brand">CukeTest Report</a>
           <div class="project-name">test-api-mft</div>
           <div class="label-container">
-            <span class="label label-success" title=scenarios>Passed: 16</span>
-            <span class="label label-danger" title=scenarios>Failed: 14</span>
+            <span class="label label-success" title=scenarios>Passed: 6</span>
+            <span class="label label-danger" title=scenarios>Failed: 10</span>
           </div>
         </div>
       </div>
@@ -311,7 +311,7 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
 
     <div class="container">
 
-      <div class="generated-on">Thu Dec 12 2019 13:35:17 GMT+0100 (heure normale d’Europe centrale)</div>
+      <div class="generated-on">Thu Dec 12 2019 10:19:25 GMT+0100 (heure normale d’Europe centrale)</div>
 
       <div class="row">
         <div class="chart col-lg-6 col-md-6 col-xs-6" id="piechart_features"></div>
@@ -351,7 +351,7 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
               
               <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
                   <div class=pull-right-lg>
-                    <strong> Generate On: </strong>12/12/2019 à 13:35:17
+                    <strong> Generate On: </strong>12/12/2019 à 10:19:25
                   </div>
               </div>
               
@@ -391,6 +391,14 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
               
               <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
                   <div class=pull-left>
+                    <strong> Tags: </strong>@Nominal
+                  </div>
+              </div>
+              
+              
+              
+              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class=pull-right-lg>
                     <strong> CukeTest: </strong>1.5.1.0 (Cucumber 5.x)
                   </div>
               </div>
@@ -851,10 +859,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">Given </span>
                         I set an user bearer token
@@ -1099,6 +1103,10 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.code should be BAD_TOKEN
@@ -1223,10 +1231,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">Then </span>
                         response code should be 401
@@ -1300,8 +1304,8 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
              
           </div>
           <span class="label-container">
-              <span class="label label-success" title="Passed">11</span>
-              <span class="label label-danger" title="Failed">2</span>
+              <span class="label label-success" title="Passed">1</span>
+              <span class="label label-danger" title="Failed">5</span>
               
               
               
@@ -1478,10 +1482,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.roles[0] should be ROLE_USER
@@ -1511,10 +1511,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.token should be ^[a-zA-Z0-9\-_]+?\.[a-zA-Z0-9\-_]+?\.([a-zA-Z0-9\-_]+)?$
@@ -1544,6 +1540,10 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.user.id should be ^[1-9]\d*$
@@ -1581,11 +1581,11 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                   
                   </div>
                   <span class="label-container">
-                      <span class="label label-success" title="Passed">9</span>
+                      <span class="label label-success" title="Passed">2</span>
                       
                       
-                      
-                      
+                      <span class="label label-warning" title="Skipped">6</span>
+                      <span class="label label-danger" title="Failed">1</span>
                       
                   </span>
                 </h4>
@@ -1606,10 +1606,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">Given </span>
                         I set body to {"email":"mft-user-test@mathieufont.com", "password":"testtest"}
@@ -1668,7 +1664,7 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
                       
                     
                     
@@ -1688,6 +1684,26 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
 
                       
+                        <a href="#error1_14" data-toggle="collapse">+ Show Error</a>
+                        <div id="error1_14" class="collapse">
+                          <pre class=info>Error: stepContext: 
+testOutput: 
+  success:  false
+  expected: 200
+  actual:   501
+  response: 
+    statusCode: 501
+    headers: 
+      x-powered-by:   Express
+      content-type:   application/json; charset=utf-8
+      content-length: 92
+      etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
+      date:           Thu, 12 Dec 2019 09:19:23 GMT
+      connection:     close
+    body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
+    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
+                        </div>
+                      
 
                       
 
@@ -1701,14 +1717,10 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.auth should be true
@@ -1734,7 +1746,7 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
                       
                     
                     
@@ -1763,17 +1775,13 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
-                        response body path $.token should be ^[a-zA-Z0-9\-_]+?\.[a-zA-Z0-9\-_]+?\.([a-zA-Z0-9\-_]+)?$
+                        response body should contain $.token
                           
                          
                             
@@ -1796,7 +1804,7 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
                       
                     
                     
@@ -1825,13 +1833,13 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
                       
                     
                     
                       <span class="text">
                         <span class="keyword highlight">And </span>
-                        response body path $.user.username should be mft-user-test
+                        response body path $.user.username should be mft-user
                           
                          
                             
@@ -1854,14 +1862,10 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.user.email should be mft-user-test@mathieufont.com
@@ -1899,11 +1903,11 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                   
                   </div>
                   <span class="label-container">
-                      <span class="label label-success" title="Passed">10</span>
+                      <span class="label label-success" title="Passed">2</span>
                       
                       
-                      
-                      
+                      <span class="label label-warning" title="Skipped">7</span>
+                      <span class="label label-danger" title="Failed">1</span>
                       
                   </span>
                 </h4>
@@ -1982,10 +1986,14 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">Then </span>
                         response code should be 200
@@ -1997,6 +2005,26 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     
                       
 
+                      
+                        <a href="#error1_24" data-toggle="collapse">+ Show Error</a>
+                        <div id="error1_24" class="collapse">
+                          <pre class=info>Error: stepContext: 
+testOutput: 
+  success:  false
+  expected: 200
+  actual:   501
+  response: 
+    statusCode: 501
+    headers: 
+      x-powered-by:   Express
+      content-type:   application/json; charset=utf-8
+      content-length: 92
+      etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
+      date:           Thu, 12 Dec 2019 09:19:23 GMT
+      connection:     close
+    body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
+    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
+                        </div>
                       
 
                       
@@ -2011,7 +2039,7 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
                       
                     
                     
@@ -2040,7 +2068,7 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
                       
                     
                     
@@ -2069,14 +2097,10 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.roles[1] should be ROLE_ADMIN
@@ -2102,17 +2126,13 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
-                        response body path $.token should be ^[a-zA-Z0-9\-_]+?\.[a-zA-Z0-9\-_]+?\.([a-zA-Z0-9\-_]+)?$
+                        response body should contain $.token
                           
                          
                             
@@ -2135,7 +2155,7 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
                       
                     
                     
@@ -2164,13 +2184,13 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
                       
                     
                     
                       <span class="text">
                         <span class="keyword highlight">And </span>
-                        response body path $.user.username should be mft-admin-test
+                        response body path $.user.username should be admin
                           
                          
                             
@@ -2193,7 +2213,7 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
                       
                     
                     
@@ -2321,10 +2341,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">Then </span>
                         response code should be 200
@@ -2351,936 +2367,7 @@ testOutput:
       content-type:   application/json; charset=utf-8
       content-length: 92
       etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
-      date:           Thu, 12 Dec 2019 12:35:15 GMT
-      connection:     close
-    body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
-    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
-                        </div>
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                
-                    <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_4" class="collapsed">
-                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
-                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>Registering a new user needs a username
-                  
-                  </div>
-                  <span class="label-container">
-                      <span class="label label-success" title="Passed">4</span>
-                      
-                      
-                      
-                      
-                      
-                  </span>
-                </h4>
-              </div>
-              <div id="collapseScenario1_4" class="panel-collapse collapse">
-                <div class="panel-body">
-                  
-                  
-                    
-                  
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Given </span>
-                        I set body to {"email":"mft-test@mathieufont.com", "password":"testtest"}
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">When </span>
-                        I POST to /users
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">Then </span>
-                        response code should be 400
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response body path $.code should be SCHEMA_VALIDATION_FAILED
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                
-                    <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_5" class="collapsed">
-                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
-                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>Registering a new user needs an email
-                  
-                  </div>
-                  <span class="label-container">
-                      <span class="label label-success" title="Passed">4</span>
-                      
-                      
-                      
-                      
-                      
-                  </span>
-                </h4>
-              </div>
-              <div id="collapseScenario1_5" class="panel-collapse collapse">
-                <div class="panel-body">
-                  
-                  
-                    
-                  
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Given </span>
-                        I set body to {"username":"mft-test", "password":"testtest"}
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">When </span>
-                        I POST to /users
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">Then </span>
-                        response code should be 400
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response body path $.code should be SCHEMA_VALIDATION_FAILED
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                
-                    <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_6" class="collapsed">
-                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
-                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>Registering a new user needs a password
-                  
-                  </div>
-                  <span class="label-container">
-                      <span class="label label-success" title="Passed">4</span>
-                      
-                      
-                      
-                      
-                      
-                  </span>
-                </h4>
-              </div>
-              <div id="collapseScenario1_6" class="panel-collapse collapse">
-                <div class="panel-body">
-                  
-                  
-                    
-                  
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Given </span>
-                        I set body to {"username":"mft-test", "email":"mft-test@mathieufont.com"}
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">When </span>
-                        I POST to /users
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Then </span>
-                        response code should be 400
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response body path $.code should be SCHEMA_VALIDATION_FAILED
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                
-                    <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_7" class="collapsed">
-                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
-                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>User needs a password to login
-                  
-                  </div>
-                  <span class="label-container">
-                      <span class="label label-success" title="Passed">4</span>
-                      
-                      
-                      
-                      
-                      
-                  </span>
-                </h4>
-              </div>
-              <div id="collapseScenario1_7" class="panel-collapse collapse">
-                <div class="panel-body">
-                  
-                  
-                    
-                  
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">Given </span>
-                        I set body to {"email":"mft-user-test@mathieufont.com"}
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">When </span>
-                        I PUT /user/login
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Then </span>
-                        response code should be 400
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response body path $.code should be SCHEMA_VALIDATION_FAILED
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                
-                    <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_8" class="collapsed">
-                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
-                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>User needs an email to login
-                  
-                  </div>
-                  <span class="label-container">
-                      <span class="label label-success" title="Passed">4</span>
-                      
-                      
-                      
-                      
-                      
-                  </span>
-                </h4>
-              </div>
-              <div id="collapseScenario1_8" class="panel-collapse collapse">
-                <div class="panel-body">
-                  
-                  
-                    
-                  
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Given </span>
-                        I set body to {"password":"testtest"}
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">When </span>
-                        I PUT /user/login
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Then </span>
-                        response code should be 400
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response body path $.code should be SCHEMA_VALIDATION_FAILED
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                
-                    <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_9" class="collapsed">
-                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
-                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>Guest cannot reset its password
-                  
-                  </div>
-                  <span class="label-container">
-                      <span class="label label-success" title="Passed">2</span>
-                      
-                      
-                      
-                      <span class="label label-danger" title="Failed">1</span>
-                      
-                  </span>
-                </h4>
-              </div>
-              <div id="collapseScenario1_9" class="panel-collapse collapse">
-                <div class="panel-body">
-                  
-                  
-                    
-                  
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Given </span>
-                        I set body to {"email":"anon@mathieufont.com"}
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">When </span>
-                        I PUT /user/reset
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">Then </span>
-                        response code should be 404
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-                        <a href="#error1_94" data-toggle="collapse">+ Show Error</a>
-                        <div id="error1_94" class="collapse">
-                          <pre class=info>Error: stepContext: 
-testOutput: 
-  success:  false
-  expected: 404
-  actual:   501
-  response: 
-    statusCode: 501
-    headers: 
-      x-powered-by:   Express
-      content-type:   application/json; charset=utf-8
-      content-length: 92
-      etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
-      date:           Thu, 12 Dec 2019 12:35:16 GMT
+      date:           Thu, 12 Dec 2019 09:19:23 GMT
       connection:     close
     body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
     at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
@@ -3304,23 +2391,23 @@ testOutput:
                 <h4 class="panel-title">
                 
                     <div class="tags"> <span class="tag"> @Nominal</span>  </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_10" class="collapsed">
+                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_4" class="collapsed">
                     <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
                     <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
                     <b>Scenario:</b>Unknown user should not be able to log in
                   
                   </div>
                   <span class="label-container">
-                      <span class="label label-success" title="Passed">4</span>
+                      <span class="label label-success" title="Passed">2</span>
                       
                       
-                      
-                      
+                      <span class="label label-warning" title="Skipped">1</span>
+                      <span class="label label-danger" title="Failed">1</span>
                       
                   </span>
                 </h4>
               </div>
-              <div id="collapseScenario1_10" class="panel-collapse collapse">
+              <div id="collapseScenario1_4" class="panel-collapse collapse">
                 <div class="panel-body">
                   
                   
@@ -3336,6 +2423,10 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">Given </span>
                         I set body to {"email":"unknownuser@mathieufont.com", "password":"testtest"}
@@ -3371,7 +2462,7 @@ testOutput:
                             
                       <span class="text">
                         <span class="keyword highlight">When </span>
-                        I PUT /user/login
+                        I POST to /users
                           
                          
                             
@@ -3394,10 +2485,14 @@ testOutput:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">Then </span>
                         response code should be 401
@@ -3410,6 +2505,26 @@ testOutput:
                       
 
                       
+                        <a href="#error1_44" data-toggle="collapse">+ Show Error</a>
+                        <div id="error1_44" class="collapse">
+                          <pre class=info>Error: stepContext: 
+testOutput: 
+  success:  false
+  expected: 401
+  actual:   400
+  response: 
+    statusCode: 400
+    headers: 
+      x-powered-by:   Express
+      content-type:   application/json; charset=utf-8
+      content-length: 361
+      etag:           W/"169-0J+jPWXDFC/11Iv3O63UBTSb3AA"
+      date:           Thu, 12 Dec 2019 09:19:23 GMT
+      connection:     close
+    body:       {"message":"Request validation failed: Parameter (body) failed schema validation","code":"SCHEMA_VALIDATION_FAILED","failedValidation":true,"results":{"errors":[{"code":"OBJECT_MISSING_REQUIRED_PROPERTY","message":"Missing required property: username","path":[]}],"warnings":[]},"path":["paths","/users","post","parameters","0"],"paramName":"body","status":400}
+    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
+                        </div>
+                      
 
                       
 
@@ -3423,7 +2538,7 @@ testOutput:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
                       
                     
                     
@@ -3457,23 +2572,23 @@ testOutput:
                 <h4 class="panel-title">
                 
                     <div class="tags"> <span class="tag"> @Nominal</span>  </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_11" class="collapsed">
+                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_5" class="collapsed">
                     <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
                     <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
                     <b>Scenario:</b>User with bad credentials should not be able to log in
                   
                   </div>
                   <span class="label-container">
-                      <span class="label label-success" title="Passed">4</span>
+                      <span class="label label-success" title="Passed">2</span>
                       
                       
-                      
-                      
+                      <span class="label label-warning" title="Skipped">1</span>
+                      <span class="label label-danger" title="Failed">1</span>
                       
                   </span>
                 </h4>
               </div>
-              <div id="collapseScenario1_11" class="panel-collapse collapse">
+              <div id="collapseScenario1_5" class="panel-collapse collapse">
                 <div class="panel-body">
                   
                   
@@ -3489,166 +2604,13 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">Given </span>
                         I set body to {"email":"mft-user-test@mathieufont.com", "password":"wrongpassword"}
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">When </span>
-                        I PUT /user/login
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Then </span>
-                        response code should be 401
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response body path $.code should be UNKNOWN_USER
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                
-                    <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_12" class="collapsed">
-                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
-                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>Cannot register a user with a known email
-                  
-                  </div>
-                  <span class="label-container">
-                      <span class="label label-success" title="Passed">4</span>
-                      
-                      
-                      
-                      
-                      
-                  </span>
-                </h4>
-              </div>
-              <div id="collapseScenario1_12" class="panel-collapse collapse">
-                <div class="panel-body">
-                  
-                  
-                    
-                  
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Given </span>
-                        I set body to {"username":"mft-test-2", "email":"mft-user-test@mathieufont.com", "password":"doubleuserpass"}
                           
                          
                             
@@ -3704,13 +2666,17 @@ testOutput:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">Then </span>
-                        response code should be 403
+                        response code should be 401
                           
                          
                             
@@ -3719,6 +2685,26 @@ testOutput:
                     
                       
 
+                      
+                        <a href="#error1_54" data-toggle="collapse">+ Show Error</a>
+                        <div id="error1_54" class="collapse">
+                          <pre class=info>Error: stepContext: 
+testOutput: 
+  success:  false
+  expected: 401
+  actual:   400
+  response: 
+    statusCode: 400
+    headers: 
+      x-powered-by:   Express
+      content-type:   application/json; charset=utf-8
+      content-length: 361
+      etag:           W/"169-0J+jPWXDFC/11Iv3O63UBTSb3AA"
+      date:           Thu, 12 Dec 2019 09:19:24 GMT
+      connection:     close
+    body:       {"message":"Request validation failed: Parameter (body) failed schema validation","code":"SCHEMA_VALIDATION_FAILED","failedValidation":true,"results":{"errors":[{"code":"OBJECT_MISSING_REQUIRED_PROPERTY","message":"Missing required property: username","path":[]}],"warnings":[]},"path":["paths","/users","post","parameters","0"],"paramName":"body","status":400}
+    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
+                        </div>
                       
 
                       
@@ -3733,17 +2719,13 @@ testOutput:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
-                        response body path $.code should be USER_EXISTS
+                        response body path $.code should be UNKNOWN_USER
                           
                          
                             
@@ -3790,7 +2772,7 @@ testOutput:
           </div>
           <span class="label-container">
               
-              <span class="label label-danger" title="Failed">12</span>
+              <span class="label label-danger" title="Failed">5</span>
               
               
               
@@ -3935,448 +2917,7 @@ testOutput:
       content-type:   application/json; charset=utf-8
       content-length: 92
       etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
-      date:           Thu, 12 Dec 2019 12:35:16 GMT
-      connection:     close
-    body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
-    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
-                        </div>
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response body path $.id should be `newUserID`
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response body path $.username should be testUser
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response body path $.email should be `newUserEmail`
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                
-                    <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario2_1" class="collapsed">
-                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
-                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>User cannot get information for another user
-                  
-                  </div>
-                  <span class="label-container">
-                      <span class="label label-success" title="Passed">2</span>
-                      
-                      
-                      <span class="label label-warning" title="Skipped">1</span>
-                      <span class="label label-danger" title="Failed">1</span>
-                      
-                  </span>
-                </h4>
-              </div>
-              <div id="collapseScenario2_1" class="panel-collapse collapse">
-                <div class="panel-body">
-                  
-                  
-                    
-                  
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">Given </span>
-                        I am a new user
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">When </span>
-                        I GET /user/2
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Then </span>
-                        response code should be 403
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-                        <a href="#error2_14" data-toggle="collapse">+ Show Error</a>
-                        <div id="error2_14" class="collapse">
-                          <pre class=info>Error: stepContext: 
-testOutput: 
-  success:  false
-  expected: 403
-  actual:   501
-  response: 
-    statusCode: 501
-    headers: 
-      x-powered-by:   Express
-      content-type:   application/json; charset=utf-8
-      content-length: 92
-      etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
-      date:           Thu, 12 Dec 2019 12:35:16 GMT
-      connection:     close
-    body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
-    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
-                        </div>
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response body path $.code should be UNAUTHORIZED
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                
-                    <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario2_2" class="collapsed">
-                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
-                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>Admin can get another user informations
-                  
-                  </div>
-                  <span class="label-container">
-                      <span class="label label-success" title="Passed">3</span>
-                      
-                      
-                      <span class="label label-warning" title="Skipped">3</span>
-                      <span class="label label-danger" title="Failed">1</span>
-                      
-                  </span>
-                </h4>
-              </div>
-              <div id="collapseScenario2_2" class="panel-collapse collapse">
-                <div class="panel-body">
-                  
-                  
-                    
-                  
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">Given </span>
-                        I am a new user
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        I set an admin bearer token
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">When </span>
-                        I GET /user/`newUserID`
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Then </span>
-                        response code should be 200
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-                        <a href="#error2_25" data-toggle="collapse">+ Show Error</a>
-                        <div id="error2_25" class="collapse">
-                          <pre class=info>Error: stepContext: 
-testOutput: 
-  success:  false
-  expected: 200
-  actual:   501
-  response: 
-    statusCode: 501
-    headers: 
-      x-powered-by:   Express
-      content-type:   application/json; charset=utf-8
-      content-length: 92
-      etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
-      date:           Thu, 12 Dec 2019 12:35:16 GMT
+      date:           Thu, 12 Dec 2019 09:19:24 GMT
       connection:     close
     body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
     at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
@@ -4487,7 +3028,7 @@ testOutput:
                 <h4 class="panel-title">
                 
                     <div class="tags"> <span class="tag"> @Nominal</span>  </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario2_3" class="collapsed">
+                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario2_1" class="collapsed">
                     <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
                     <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
                     <b>Scenario:</b>User can update its username and password
@@ -4503,7 +3044,7 @@ testOutput:
                   </span>
                 </h4>
               </div>
-              <div id="collapseScenario2_3" class="panel-collapse collapse">
+              <div id="collapseScenario2_1" class="panel-collapse collapse">
                 <div class="panel-body">
                   
                   
@@ -4552,6 +3093,10 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         I set body to {"username":"test-update", "password":"updatedpassword"}
@@ -4630,8 +3175,8 @@ testOutput:
                       
 
                       
-                        <a href="#error2_35" data-toggle="collapse">+ Show Error</a>
-                        <div id="error2_35" class="collapse">
+                        <a href="#error2_15" data-toggle="collapse">+ Show Error</a>
+                        <div id="error2_15" class="collapse">
                           <pre class=info>Error: Server Error
     at options.World.(anonymous) (D:\work\test-api-mft\features\step_definitions\user-def.js:40:15)</pre>
                         </div>
@@ -4798,18 +3343,496 @@ testOutput:
               <div class="panel-heading">
                 <h4 class="panel-title">
                 
-                    <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario2_4" class="collapsed">
+                    <div class="tags"> <span class="tag"> @Nominal</span>  </div>
+                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario2_2" class="collapsed">
                     <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
                     <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>User cannot update its email
+                    <b>Scenario:</b>User can delete its profile
                   
                   </div>
                   <span class="label-container">
-                      <span class="label label-success" title="Passed">5</span>
+                      <span class="label label-success" title="Passed">2</span>
                       
                       
-                      <span class="label label-warning" title="Skipped">1</span>
+                      <span class="label label-warning" title="Skipped">3</span>
+                      <span class="label label-danger" title="Failed">1</span>
+                      
+                  </span>
+                </h4>
+              </div>
+              <div id="collapseScenario2_2" class="panel-collapse collapse">
+                <div class="panel-body">
+                  
+                  
+                    
+                  
+                    
+                  
+                    
+                    <p class="scenario-container">
+                    
+                      
+                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                      
+                    
+                    
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
+                      <span class="text">
+                        <span class="keyword highlight">Given </span>
+                        I am a new user
+                          
+                         
+                            
+                          
+                      </span>
+                    
+                      
+
+                      
+
+                      
+
+                       
+
+                    
+                    </p>
+                    
+                  
+                    
+                    <p class="scenario-container">
+                    
+                      
+                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                      
+                    
+                    
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
+                      <span class="text">
+                        <span class="keyword highlight">When </span>
+                        I DELETE /user/`newUserID`
+                          
+                         
+                            
+                          
+                      </span>
+                    
+                      
+
+                      
+
+                      
+
+                       
+
+                    
+                    </p>
+                    
+                  
+                    
+                    <p class="scenario-container">
+                    
+                      
+                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
+                      
+                    
+                    
+                      <span class="text">
+                        <span class="keyword highlight">Then </span>
+                        response code should be 200
+                          
+                         
+                            
+                          
+                      </span>
+                    
+                      
+
+                      
+                        <a href="#error2_24" data-toggle="collapse">+ Show Error</a>
+                        <div id="error2_24" class="collapse">
+                          <pre class=info>Error: stepContext: 
+testOutput: 
+  success:  false
+  expected: 200
+  actual:   501
+  response: 
+    statusCode: 501
+    headers: 
+      x-powered-by:   Express
+      content-type:   application/json; charset=utf-8
+      content-length: 92
+      etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
+      date:           Thu, 12 Dec 2019 09:19:24 GMT
+      connection:     close
+    body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
+    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
+                        </div>
+                      
+
+                      
+
+                       
+
+                    
+                    </p>
+                    
+                  
+                    
+                    <p class="scenario-container">
+                    
+                      
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
+                      
+                    
+                    
+                      <span class="text">
+                        <span class="keyword highlight">And </span>
+                        I set an admin bearer token
+                          
+                         
+                            
+                          
+                      </span>
+                    
+                      
+
+                      
+
+                      
+
+                       
+
+                    
+                    </p>
+                    
+                  
+                    
+                    <p class="scenario-container">
+                    
+                      
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
+                      
+                    
+                    
+                      <span class="text">
+                        <span class="keyword highlight">And </span>
+                        I GET /user/`newUserID`
+                          
+                         
+                            
+                          
+                      </span>
+                    
+                      
+
+                      
+
+                      
+
+                       
+
+                    
+                    </p>
+                    
+                  
+                    
+                    <p class="scenario-container">
+                    
+                      
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
+                      
+                    
+                    
+                      <span class="text">
+                        <span class="keyword highlight">And </span>
+                        response code should be 404
+                          
+                         
+                            
+                          
+                      </span>
+                    
+                      
+
+                      
+
+                      
+
+                       
+
+                    
+                    </p>
+                    
+                  
+                </div>
+              </div>
+            </div>
+          
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                
+                    <div class="tags"> <span class="tag"> @Nominal</span>  </div>
+                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario2_3" class="collapsed">
+                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
+                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
+                    <b>Scenario:</b>Admin can delete any user profile
+                  
+                  </div>
+                  <span class="label-container">
+                      <span class="label label-success" title="Passed">3</span>
+                      
+                      
+                      <span class="label label-warning" title="Skipped">2</span>
+                      <span class="label label-danger" title="Failed">1</span>
+                      
+                  </span>
+                </h4>
+              </div>
+              <div id="collapseScenario2_3" class="panel-collapse collapse">
+                <div class="panel-body">
+                  
+                  
+                    
+                  
+                    
+                  
+                    
+                    <p class="scenario-container">
+                    
+                      
+                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                      
+                    
+                    
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
+                      <span class="text">
+                        <span class="keyword highlight">Given </span>
+                        I am a new user
+                          
+                         
+                            
+                          
+                      </span>
+                    
+                      
+
+                      
+
+                      
+
+                       
+
+                    
+                    </p>
+                    
+                  
+                    
+                    <p class="scenario-container">
+                    
+                      
+                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                      
+                    
+                    
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
+                      <span class="text">
+                        <span class="keyword highlight">And </span>
+                        I set an admin bearer token
+                          
+                         
+                            
+                          
+                      </span>
+                    
+                      
+
+                      
+
+                      
+
+                       
+
+                    
+                    </p>
+                    
+                  
+                    
+                    <p class="scenario-container">
+                    
+                      
+                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                      
+                    
+                    
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
+                      <span class="text">
+                        <span class="keyword highlight">When </span>
+                        I DELETE /user/`newUserID`
+                          
+                         
+                            
+                          
+                      </span>
+                    
+                      
+
+                      
+
+                      
+
+                       
+
+                    
+                    </p>
+                    
+                  
+                    
+                    <p class="scenario-container">
+                    
+                      
+                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
+                      
+                    
+                    
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
+                      <span class="text">
+                        <span class="keyword highlight">Then </span>
+                        response code should be 200
+                          
+                         
+                            
+                          
+                      </span>
+                    
+                      
+
+                      
+                        <a href="#error2_35" data-toggle="collapse">+ Show Error</a>
+                        <div id="error2_35" class="collapse">
+                          <pre class=info>Error: stepContext: 
+testOutput: 
+  success:  false
+  expected: 200
+  actual:   501
+  response: 
+    statusCode: 501
+    headers: 
+      x-powered-by:   Express
+      content-type:   application/json; charset=utf-8
+      content-length: 92
+      etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
+      date:           Thu, 12 Dec 2019 09:19:24 GMT
+      connection:     close
+    body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
+    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
+                        </div>
+                      
+
+                      
+
+                       
+
+                    
+                    </p>
+                    
+                  
+                    
+                    <p class="scenario-container">
+                    
+                      
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
+                      
+                    
+                    
+                      <span class="text">
+                        <span class="keyword highlight">And </span>
+                        I GET /user/`newUserID`
+                          
+                         
+                            
+                          
+                      </span>
+                    
+                      
+
+                      
+
+                      
+
+                       
+
+                    
+                    </p>
+                    
+                  
+                    
+                    <p class="scenario-container">
+                    
+                      
+                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
+                      
+                    
+                    
+                      <span class="text">
+                        <span class="keyword highlight">And </span>
+                        response code should be 404
+                          
+                         
+                            
+                          
+                      </span>
+                    
+                      
+
+                      
+
+                      
+
+                       
+
+                    
+                    </p>
+                    
+                  
+                </div>
+              </div>
+            </div>
+          
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                
+                    <div class="tags"> <span class="tag"> @Nominal</span>  </div>
+                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario2_4" class="collapsed">
+                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
+                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
+                    <b>Scenario:</b>Admin can get the list of all users
+                  
+                  </div>
+                  <span class="label-container">
+                      <span class="label label-success" title="Passed">2</span>
+                      
+                      
+                      <span class="label label-warning" title="Skipped">3</span>
                       <span class="label label-danger" title="Failed">1</span>
                       
                   </span>
@@ -4835,1337 +3858,6 @@ testOutput:
                                0s
                               </span>
                             
-                      <span class="text">
-                        <span class="keyword highlight">Given </span>
-                        I am a new user
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        I set body to {"username":"test-update", "email":"noemailupdate@mathieufont.com"}
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        I PUT /user/`newUserID`
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        I set body to {"email":"mft-user-test@mathieufont.com", "password":"wrongpassword"}
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">When </span>
-                        I POST to /users
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">Then </span>
-                        response code should be 401
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-                        <a href="#error2_47" data-toggle="collapse">+ Show Error</a>
-                        <div id="error2_47" class="collapse">
-                          <pre class=info>Error: stepContext: 
-testOutput: 
-  success:  false
-  expected: 401
-  actual:   400
-  response: 
-    statusCode: 400
-    headers: 
-      x-powered-by:   Express
-      content-type:   application/json; charset=utf-8
-      content-length: 361
-      etag:           W/"169-0J+jPWXDFC/11Iv3O63UBTSb3AA"
-      date:           Thu, 12 Dec 2019 12:35:16 GMT
-      connection:     close
-    body:       {"message":"Request validation failed: Parameter (body) failed schema validation","code":"SCHEMA_VALIDATION_FAILED","failedValidation":true,"results":{"errors":[{"code":"OBJECT_MISSING_REQUIRED_PROPERTY","message":"Missing required property: username","path":[]}],"warnings":[]},"path":["paths","/users","post","parameters","0"],"paramName":"body","status":400}
-    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
-                        </div>
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response body path $.code should be UNKNOWN_USER
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                
-                    <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario2_5" class="collapsed">
-                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
-                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>User cannot update another user information
-                  
-                  </div>
-                  <span class="label-container">
-                      <span class="label label-success" title="Passed">3</span>
-                      
-                      
-                      <span class="label label-warning" title="Skipped">1</span>
-                      <span class="label label-danger" title="Failed">1</span>
-                      
-                  </span>
-                </h4>
-              </div>
-              <div id="collapseScenario2_5" class="panel-collapse collapse">
-                <div class="panel-body">
-                  
-                  
-                    
-                  
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">Given </span>
-                        I am a new user
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        I set body to {"username":"test-update", "password":"updatedpassword"}
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">When </span>
-                        I PUT /user/2
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Then </span>
-                        response code should be 403
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-                        <a href="#error2_55" data-toggle="collapse">+ Show Error</a>
-                        <div id="error2_55" class="collapse">
-                          <pre class=info>Error: stepContext: 
-testOutput: 
-  success:  false
-  expected: 403
-  actual:   501
-  response: 
-    statusCode: 501
-    headers: 
-      x-powered-by:   Express
-      content-type:   application/json; charset=utf-8
-      content-length: 92
-      etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
-      date:           Thu, 12 Dec 2019 12:35:16 GMT
-      connection:     close
-    body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
-    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
-                        </div>
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response body path $.code should be UNAUTHORIZED
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                
-                    <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario2_6" class="collapsed">
-                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
-                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>Admin cannot update another user
-                  
-                  </div>
-                  <span class="label-container">
-                      <span class="label label-success" title="Passed">3</span>
-                      
-                      
-                      <span class="label label-warning" title="Skipped">1</span>
-                      <span class="label label-danger" title="Failed">1</span>
-                      
-                  </span>
-                </h4>
-              </div>
-              <div id="collapseScenario2_6" class="panel-collapse collapse">
-                <div class="panel-body">
-                  
-                  
-                    
-                  
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Given </span>
-                        I set an admin bearer token
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        I set body to {"username":"test-update", "password":"updatedpassword"}
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">When </span>
-                        I PUT /user/2
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">Then </span>
-                        response code should be 403
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-                        <a href="#error2_65" data-toggle="collapse">+ Show Error</a>
-                        <div id="error2_65" class="collapse">
-                          <pre class=info>Error: stepContext: 
-testOutput: 
-  success:  false
-  expected: 403
-  actual:   501
-  response: 
-    statusCode: 501
-    headers: 
-      x-powered-by:   Express
-      content-type:   application/json; charset=utf-8
-      content-length: 92
-      etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
-      date:           Thu, 12 Dec 2019 12:35:16 GMT
-      connection:     close
-    body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
-    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
-                        </div>
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response body path $.code should be UNAUTHORIZED
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                
-                    <div class="tags"> <span class="tag"> @Nominal</span>  </div>
-                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario2_7" class="collapsed">
-                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
-                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>User can delete its profile
-                  
-                  </div>
-                  <span class="label-container">
-                      <span class="label label-success" title="Passed">2</span>
-                      
-                      
-                      <span class="label label-warning" title="Skipped">3</span>
-                      <span class="label label-danger" title="Failed">1</span>
-                      
-                  </span>
-                </h4>
-              </div>
-              <div id="collapseScenario2_7" class="panel-collapse collapse">
-                <div class="panel-body">
-                  
-                  
-                    
-                  
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">Given </span>
-                        I am a new user
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">When </span>
-                        I DELETE /user/`newUserID`
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Then </span>
-                        response code should be 200
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-                        <a href="#error2_74" data-toggle="collapse">+ Show Error</a>
-                        <div id="error2_74" class="collapse">
-                          <pre class=info>Error: stepContext: 
-testOutput: 
-  success:  false
-  expected: 200
-  actual:   501
-  response: 
-    statusCode: 501
-    headers: 
-      x-powered-by:   Express
-      content-type:   application/json; charset=utf-8
-      content-length: 92
-      etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
-      date:           Thu, 12 Dec 2019 12:35:16 GMT
-      connection:     close
-    body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
-    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
-                        </div>
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        I set an admin bearer token
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        I GET /user/`newUserID`
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response code should be 404
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                
-                    <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario2_8" class="collapsed">
-                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
-                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>User cannot delete another profile
-                  
-                  </div>
-                  <span class="label-container">
-                      <span class="label label-success" title="Passed">2</span>
-                      
-                      
-                      <span class="label label-warning" title="Skipped">1</span>
-                      <span class="label label-danger" title="Failed">1</span>
-                      
-                  </span>
-                </h4>
-              </div>
-              <div id="collapseScenario2_8" class="panel-collapse collapse">
-                <div class="panel-body">
-                  
-                  
-                    
-                  
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">Given </span>
-                        I am a new user
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">When </span>
-                        I DELETE /user/2
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Then </span>
-                        response code should be 403
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-                        <a href="#error2_84" data-toggle="collapse">+ Show Error</a>
-                        <div id="error2_84" class="collapse">
-                          <pre class=info>Error: stepContext: 
-testOutput: 
-  success:  false
-  expected: 403
-  actual:   501
-  response: 
-    statusCode: 501
-    headers: 
-      x-powered-by:   Express
-      content-type:   application/json; charset=utf-8
-      content-length: 92
-      etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
-      date:           Thu, 12 Dec 2019 12:35:16 GMT
-      connection:     close
-    body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
-    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
-                        </div>
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response body path $.code should be UNAUTHORIZED
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                
-                    <div class="tags"> <span class="tag"> @Nominal</span>  </div>
-                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario2_9" class="collapsed">
-                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
-                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>Admin can delete any user profile
-                  
-                  </div>
-                  <span class="label-container">
-                      <span class="label label-success" title="Passed">3</span>
-                      
-                      
-                      <span class="label label-warning" title="Skipped">2</span>
-                      <span class="label label-danger" title="Failed">1</span>
-                      
-                  </span>
-                </h4>
-              </div>
-              <div id="collapseScenario2_9" class="panel-collapse collapse">
-                <div class="panel-body">
-                  
-                  
-                    
-                  
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">Given </span>
-                        I am a new user
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        I set an admin bearer token
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">When </span>
-                        I DELETE /user/`newUserID`
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">Then </span>
-                        response code should be 200
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-                        <a href="#error2_95" data-toggle="collapse">+ Show Error</a>
-                        <div id="error2_95" class="collapse">
-                          <pre class=info>Error: stepContext: 
-testOutput: 
-  success:  false
-  expected: 200
-  actual:   501
-  response: 
-    statusCode: 501
-    headers: 
-      x-powered-by:   Express
-      content-type:   application/json; charset=utf-8
-      content-length: 92
-      etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
-      date:           Thu, 12 Dec 2019 12:35:16 GMT
-      connection:     close
-    body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
-    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
-                        </div>
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        I GET /user/`newUserID`
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response code should be 404
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                
-                    <div class="tags"> <span class="tag"> @Nominal</span>  </div>
-                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario2_10" class="collapsed">
-                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
-                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>Admin can get the list of all users
-                  
-                  </div>
-                  <span class="label-container">
-                      <span class="label label-success" title="Passed">2</span>
-                      
-                      
-                      <span class="label label-warning" title="Skipped">3</span>
-                      <span class="label label-danger" title="Failed">1</span>
-                      
-                  </span>
-                </h4>
-              </div>
-              <div id="collapseScenario2_10" class="panel-collapse collapse">
-                <div class="panel-body">
-                  
-                  
-                    
-                  
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
                       <span class="text">
                         <span class="keyword highlight">Given </span>
                         I set an admin bearer token
@@ -6228,6 +3920,10 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">Then </span>
                         response code should be 200
@@ -6240,8 +3936,8 @@ testOutput:
                       
 
                       
-                        <a href="#error2_104" data-toggle="collapse">+ Show Error</a>
-                        <div id="error2_104" class="collapse">
+                        <a href="#error2_44" data-toggle="collapse">+ Show Error</a>
+                        <div id="error2_44" class="collapse">
                           <pre class=info>Error: stepContext: 
 testOutput: 
   success:  false
@@ -6254,7 +3950,7 @@ testOutput:
       content-type:   application/json; charset=utf-8
       content-length: 92
       etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
-      date:           Thu, 12 Dec 2019 12:35:16 GMT
+      date:           Thu, 12 Dec 2019 09:19:24 GMT
       connection:     close
     body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
     at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
@@ -6338,183 +4034,6 @@ testOutput:
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.json.0.id should be 2
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                
-                    <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario2_11" class="collapsed">
-                    <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
-                    <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
-                    <b>Scenario:</b>Admin cannot delete its own profile
-                  
-                  </div>
-                  <span class="label-container">
-                      <span class="label label-success" title="Passed">2</span>
-                      
-                      
-                      <span class="label label-warning" title="Skipped">1</span>
-                      <span class="label label-danger" title="Failed">1</span>
-                      
-                  </span>
-                </h4>
-              </div>
-              <div id="collapseScenario2_11" class="panel-collapse collapse">
-                <div class="panel-body">
-                  
-                  
-                    
-                  
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">Given </span>
-                        I set an admin bearer token
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
-                      <span class="text">
-                        <span class="keyword highlight">When </span>
-                        I DELETE /user/`newUserID`
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">Then </span>
-                        response code should be 403
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-                        <a href="#error2_114" data-toggle="collapse">+ Show Error</a>
-                        <div id="error2_114" class="collapse">
-                          <pre class=info>Error: stepContext: 
-testOutput: 
-  success:  false
-  expected: 403
-  actual:   400
-  response: 
-    statusCode: 400
-    headers: 
-      x-powered-by:   Express
-      content-type:   application/json; charset=utf-8
-      content-length: 221
-      etag:           W/"dd-7s4siq75hlvbhAYllNDgRK/AqzM"
-      date:           Thu, 12 Dec 2019 12:35:16 GMT
-      connection:     close
-    body:       {"message":"Request validation failed: Parameter (id) is not a valid integer: undefined","code":"INVALID_TYPE","failedValidation":true,"path":["paths","/user/{id}","delete","parameters","0"],"paramName":"id","status":400}
-    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
-                        </div>
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus icon-minus"></i></span>
-                      
-                    
-                    
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response body path $.code should be UNAUTHORIZED
                           
                          
                             
@@ -6669,8 +4188,8 @@ function drawPieChart(chartData,ctx){
         }
 
         var scenariosData={
-          "failed" : 14,
-          "passed" : 16,
+          "failed" : 10,
+          "passed" : 6,
           "undefined" : 0,
           "pending" : 0,
           "skipped" : 0,
