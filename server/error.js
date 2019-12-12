@@ -6,14 +6,16 @@ const debug = logger('mft-back:server:error');
 class ErrorHelper {
   static get CODE() {
     return {
+      BAD_ROLE: 'BAD_ROLE',
+      BAD_TOKEN: 'BAD_TOKEN',
+      MIS_AUTH_HEADER: 'MIS_AUTH_HEADER',
+      NO_AUTH_HEADER: 'NO_AUTH_HEADER',
+      NOT_FOUND: 'NOT_FOUND',
       NOT_IMPLEMENTED: 'NOT_IMPLEMENTED',
       SERVER_ERROR: 'SERVER_ERROR',
-      USER_EXISTS: 'USER_EXISTS',
+      UNAUTHORIZED: 'UNAUTHORIZED',
       UNKNOWN_USER: 'UNKNOWN_USER',
-      BAD_ROLE: 'BAD_ROLE',
-      MIS_AUTH_HEADER: 'MIS_AUTH_HEADER',
-      BAD_TOKEN: 'BAD_TOKEN',
-      NO_AUTH_HEADER: 'NO_AUTH_HEADER',
+      USER_EXISTS: 'USER_EXISTS',
     };
   }
 

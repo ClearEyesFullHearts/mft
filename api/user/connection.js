@@ -2,6 +2,7 @@
 const logger = require('debug');
 const ErrorHelper = require('../../server/error.js');
 const UserLogin = require('./implem/login.js');
+const UserMngt = require('./implem/user.js');
 
 const debug = logger('mft-back:user:connection');
 
@@ -26,20 +27,50 @@ module.exports.loginUser = (req, res, next) => {
       next(err);
     });
 };
-module.exports.resetUserPassword = (req, res) => {
+module.exports.resetUserPassword = (req, res, next) => {
   throw ErrorHelper.getCustomError(501, ErrorHelper.CODE.NOT_IMPLEMENTED, 'Not Implemented');
 };
 
-module.exports.getAllUsers = (req, res) => {
-  throw ErrorHelper.getCustomError(501, ErrorHelper.CODE.NOT_IMPLEMENTED, 'Not Implemented');
+module.exports.getAllUsers = (req, res, next) => {
+  debug('getAllUsers');
+  UserMngt.getAll(req.app.locals.db, req.auth)
+    .then((allUsers) => {
+      res.json(allUsers);
+    })
+    .catch((err) => {
+      next(err);
+    });
 };
 
-module.exports.getUser = (req, res) => {
-  throw ErrorHelper.getCustomError(501, ErrorHelper.CODE.NOT_IMPLEMENTED, 'Not Implemented');
+module.exports.getUser = (req, res, next) => {
+  debug('getUser');
+  UserMngt.getOne(req.app.locals.db, req.auth, req.swagger.params.id.value)
+    .then((user) => {
+      res.json(user);
+    })
+    .catch((err) => {
+      next(err);
+    });
 };
-module.exports.updateUser = (req, res) => {
-  throw ErrorHelper.getCustomError(501, ErrorHelper.CODE.NOT_IMPLEMENTED, 'Not Implemented');
+module.exports.updateUser = (req, res, next) => {
+  debug('updateUser');
+  const ID = req.swagger.params.id.value;
+  const body = req.swagger.params.body.value;
+  UserMngt.changeOne(req.app.locals.db, req.auth, ID, body)
+    .then((user) => {
+      res.json(user);
+    })
+    .catch((err) => {
+      next(err);
+    });
 };
-module.exports.removeUser = (req, res) => {
-  throw ErrorHelper.getCustomError(501, ErrorHelper.CODE.NOT_IMPLEMENTED, 'Not Implemented');
+module.exports.removeUser = (req, res, next) => {
+  debug('removeUser');
+  UserMngt.removeOne(req.app.locals.db, req.auth, req.swagger.params.id.value)
+    .then((result) => {
+      res.json();
+    })
+    .catch((err) => {
+      next(err);
+    });
 };
