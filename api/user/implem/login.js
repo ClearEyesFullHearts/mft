@@ -2,7 +2,9 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const logger = require('debug');
+const uuidv4 = require('uuid/v4');
 
+const mailing = require('../../../misc/mailing.js');
 const ErrorHelper = require('../../../server/error.js');
 
 const debug = logger('mft-back:user:login');
@@ -25,6 +27,24 @@ class UserLogin {
     debug('createNewUser newUser', newUser);
 
     return this.changeUserToAuth(newUser);
+  }
+
+  static async saveAndSendNewPassword(db, { email }) {
+    const knownUser = await db.users.Doc.findOne({ email });
+    if (knownUser) {
+      const newPass = `${uuidv4().substr(0, 4)}-${uuidv4().substr(0, 4)}`;
+      knownUser.password = await bcrypt.hash(newPass, config.get('base.hashSaltRound'));
+      await knownUser.save();
+
+      const mailValues = {
+        publicURL: config.get('public.url'),
+        newPassword: newPass,
+        publicName: config.get('public.name'),
+      };
+      await mailing.send(knownUser.email, 'RESET_PASSWORD', mailValues);
+      return true;
+    }
+    throw ErrorHelper.getCustomError(404, ErrorHelper.CODE.NOT_FOUND, 'User not found');
   }
 
   static async getAuth(db, { email, password }) {

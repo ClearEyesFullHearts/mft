@@ -28,7 +28,14 @@ module.exports.loginUser = (req, res, next) => {
     });
 };
 module.exports.resetUserPassword = (req, res, next) => {
-  throw ErrorHelper.getCustomError(501, ErrorHelper.CODE.NOT_IMPLEMENTED, 'Not Implemented');
+  debug('resetUserPassword body', req.swagger.params.body.value);
+  UserLogin.saveAndSendNewPassword(req.app.locals.db, req.swagger.params.body.value)
+    .then(() => {
+      res.json();
+    })
+    .catch((err) => {
+      next(err);
+    });
 };
 
 module.exports.getAllUsers = (req, res, next) => {

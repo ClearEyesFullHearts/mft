@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "test-mft",
-    "dev-win-cmd": "set DEBUG=mft-back:* & set NODE_ENV=dev & node app.js"
+    "mail-win-cmd": "node .\\node_modules\\fake-smtp-server\\index.js",
+    "rest-win-cmd": "set DEBUG=mft-back:* && set NODE_ENV=dev && node app.js",
+    "dev-win-cmd": "start npm run rest-win-cmd & start npm run mail-win-cmd"
   },
   "repository": {
     "type": "git",
@@ -29,14 +31,18 @@
     "debug": "^4.1.1",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
+    "lodash.template": "^4.5.0",
     "mongoose": "^5.8.0",
     "mongoose-plugin-autoinc": "^1.1.9",
     "morgan": "^1.9.1",
-    "swagger-tools": "^0.10.4"
+    "nodemailer": "^6.4.2",
+    "swagger-tools": "^0.10.4",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "eslint": "^6.7.1",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2"
+    "eslint-plugin-import": "^2.18.2",
+    "fake-smtp-server": "^0.8.0"
   }
 }
