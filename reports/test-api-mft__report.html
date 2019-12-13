@@ -300,10 +300,10 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand">CukeTest Report</a>
-          <div class="project-name">test-api-mft</div>
+          <div class="project-name"></div>
           <div class="label-container">
-            <span class="label label-success" title=scenarios>Passed: 28</span>
-            <span class="label label-danger" title=scenarios>Failed: 2</span>
+            <span class="label label-success" title=scenarios>Passed: 30</span>
+            <span class="label label-danger" title=scenarios>Failed: 0</span>
           </div>
         </div>
       </div>
@@ -311,7 +311,7 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
 
     <div class="container">
 
-      <div class="generated-on">Thu Dec 12 2019 15:19:20 GMT+0100 (heure normale d’Europe centrale)</div>
+      <div class="generated-on">Fri Dec 13 2019 15:53:08 GMT+0100 (heure normale d’Europe centrale)</div>
 
       <div class="row">
         <div class="chart col-lg-6 col-md-6 col-xs-6" id="piechart_features"></div>
@@ -351,7 +351,7 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
               
               <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
                   <div class=pull-right-lg>
-                    <strong> Generate On: </strong>12/12/2019 à 15:19:20
+                    <strong> Generate On: </strong>13/12/2019 à 15:53:08
                   </div>
               </div>
               
@@ -756,10 +756,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.user.roles[0] should be ROLE_USER
@@ -851,10 +847,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">Given </span>
                         I set an user bearer token
@@ -917,10 +909,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">Then </span>
                         response code should be 403
@@ -1016,10 +1004,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">Given </span>
                         I set a bad bearer token
@@ -1115,10 +1099,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.code should be BAD_TOKEN
@@ -1276,6 +1256,10 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.code should be NO_AUTH_HEADER
@@ -1320,8 +1304,8 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
              
           </div>
           <span class="label-container">
-              <span class="label label-success" title="Passed">11</span>
-              <span class="label label-danger" title="Failed">2</span>
+              <span class="label label-success" title="Passed">13</span>
+              
               
               
               
@@ -1370,6 +1354,10 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">Given </span>
                         I set body to {"username":"mft-test", "email":"mft-test@mathieufont.com", "password":"testtest"}
@@ -1527,10 +1515,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.token should be ^[a-zA-Z0-9\-_]+?\.[a-zA-Z0-9\-_]+?\.([a-zA-Z0-9\-_]+)?$
@@ -1560,10 +1544,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.user.id should be ^[1-9]\d*$
@@ -1725,6 +1705,10 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.auth should be true
@@ -1812,6 +1796,10 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.user.id should be 2
@@ -1932,6 +1920,10 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">Given </span>
                         I set body to {"email":"mft-admin-test@mathieufont.com", "password":"testadmin"}
@@ -1994,10 +1986,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">Then </span>
                         response code should be 200
@@ -2027,10 +2015,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.auth should be true
@@ -2089,10 +2073,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.roles[1] should be ROLE_ADMIN
@@ -2122,6 +2102,10 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.token should be ^[a-zA-Z0-9\-_]+?\.[a-zA-Z0-9\-_]+?\.([a-zA-Z0-9\-_]+)?$
@@ -2180,10 +2164,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.user.username should be mft-admin-test
@@ -2213,10 +2193,6 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.user.email should be mft-admin-test@mathieufont.com
@@ -2254,11 +2230,11 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                   
                   </div>
                   <span class="label-container">
-                      <span class="label label-success" title="Passed">2</span>
+                      <span class="label label-success" title="Passed">5</span>
                       
                       
                       
-                      <span class="label label-danger" title="Failed">1</span>
+                      
                       
                   </span>
                 </h4>
@@ -2279,9 +2255,42 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">Given </span>
-                        I set body to {"email":"mft-user-test@mathieufont.com"}
+                        I am a new user
+                          
+                         
+                            
+                          
+                      </span>
+                    
+                      
+
+                      
+
+                      
+
+                       
+
+                    
+                    </p>
+                    
+                  
+                    
+                    <p class="scenario-container">
+                    
+                      
+                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                      
+                    
+                    
+                      <span class="text">
+                        <span class="keyword highlight">And </span>
+                        I set body to {"email":"`newUserEmail`"}
                           
                          
                             
@@ -2337,14 +2346,10 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
+                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">Then </span>
                         response code should be 200
@@ -2357,25 +2362,38 @@ i.glyphicon-chevron-down:before,i.glyphicon-chevron-right:before,i.glyphicon-ok:
                       
 
                       
-                        <a href="#error1_34" data-toggle="collapse">+ Show Error</a>
-                        <div id="error1_34" class="collapse">
-                          <pre class=info>Error: stepContext: 
-testOutput: 
-  success:  false
-  expected: 200
-  actual:   501
-  response: 
-    statusCode: 501
-    headers: 
-      x-powered-by:   Express
-      content-type:   application/json; charset=utf-8
-      content-length: 92
-      etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
-      date:           Thu, 12 Dec 2019 14:19:18 GMT
-      connection:     close
-    body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
-    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
-                        </div>
+
+                      
+
+                       
+
+                    
+                    </p>
+                    
+                  
+                    
+                    <p class="scenario-container">
+                    
+                      
+                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                      
+                    
+                    
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
+                      <span class="text">
+                        <span class="keyword highlight">And </span>
+                        an e-mail was sent to `newUserEmail`
+                          
+                         
+                            
+                          
+                      </span>
+                    
+                      
+
                       
 
                       
@@ -2427,6 +2445,10 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">Given </span>
                         I set body to {"email":"mft-test@mathieufont.com", "password":"testtest"}
@@ -2518,10 +2540,6 @@ testOutput:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.code should be SCHEMA_VALIDATION_FAILED
@@ -2705,7 +2723,7 @@ testOutput:
                 <h4 class="panel-title">
                 
                     <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_6" class="collapsed">
+                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario1_6" class="collapsed">
                     <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
                     <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
                     <b>Scenario:</b>Registering a new user needs a password
@@ -2799,6 +2817,10 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">Then </span>
                         response code should be 400
@@ -2858,7 +2880,7 @@ testOutput:
                 <h4 class="panel-title">
                 
                     <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_7" class="collapsed">
+                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario1_7" class="collapsed">
                     <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
                     <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
                     <b>Scenario:</b>User needs a password to login
@@ -2952,10 +2974,6 @@ testOutput:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">Then </span>
                         response code should be 400
@@ -3015,7 +3033,7 @@ testOutput:
                 <h4 class="panel-title">
                 
                     <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_8" class="collapsed">
+                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario1_8" class="collapsed">
                     <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
                     <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
                     <b>Scenario:</b>User needs an email to login
@@ -3138,10 +3156,6 @@ testOutput:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.code should be SCHEMA_VALIDATION_FAILED
@@ -3172,18 +3186,18 @@ testOutput:
                 <h4 class="panel-title">
                 
                     <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_9" class="collapsed">
+                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario1_9" class="collapsed">
                     <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
                     <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
                     <b>Scenario:</b>Guest cannot reset its password
                   
                   </div>
                   <span class="label-container">
-                      <span class="label label-success" title="Passed">2</span>
+                      <span class="label label-success" title="Passed">3</span>
                       
                       
                       
-                      <span class="label label-danger" title="Failed">1</span>
+                      
                       
                   </span>
                 </h4>
@@ -3262,14 +3276,10 @@ testOutput:
                     <p class="scenario-container">
                     
                       
-                        <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove icon-remove"></i></span>
+                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">Then </span>
                         response code should be 404
@@ -3281,26 +3291,6 @@ testOutput:
                     
                       
 
-                      
-                        <a href="#error1_94" data-toggle="collapse">+ Show Error</a>
-                        <div id="error1_94" class="collapse">
-                          <pre class=info>Error: stepContext: 
-testOutput: 
-  success:  false
-  expected: 404
-  actual:   501
-  response: 
-    statusCode: 501
-    headers: 
-      x-powered-by:   Express
-      content-type:   application/json; charset=utf-8
-      content-length: 92
-      etag:           W/"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc"
-      date:           Thu, 12 Dec 2019 14:19:18 GMT
-      connection:     close
-    body:       {"message":"Not Implemented","status":501,"failedValidation":false,"code":"NOT_IMPLEMENTED"}
-    at Function.run (C:\Program Files (x86)\LeanPro\CukeTest\resources\app.asar\out\cucumber.js:12:39705)</pre>
-                        </div>
                       
 
                       
@@ -3320,7 +3310,7 @@ testOutput:
                 <h4 class="panel-title">
                 
                     <div class="tags"> <span class="tag"> @Nominal</span>  </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_10" class="collapsed">
+                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario1_10" class="collapsed">
                     <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
                     <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
                     <b>Scenario:</b>Unknown user should not be able to log in
@@ -3414,6 +3404,10 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">Then </span>
                         response code should be 401
@@ -3473,7 +3467,7 @@ testOutput:
                 <h4 class="panel-title">
                 
                     <div class="tags"> <span class="tag"> @Nominal</span>  </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_11" class="collapsed">
+                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario1_11" class="collapsed">
                     <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
                     <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
                     <b>Scenario:</b>User with bad credentials should not be able to log in
@@ -3626,7 +3620,7 @@ testOutput:
                 <h4 class="panel-title">
                 
                     <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario1_12" class="collapsed">
+                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario1_12" class="collapsed">
                     <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
                     <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
                     <b>Scenario:</b>Cannot register a user with a known email
@@ -3658,6 +3652,10 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">Given </span>
                         I set body to {"username":"mft-test-2", "email":"mft-user-test@mathieufont.com", "password":"doubleuserpass"}
@@ -3753,10 +3751,6 @@ testOutput:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.code should be USER_EXISTS
@@ -3823,7 +3817,7 @@ testOutput:
                 <h4 class="panel-title">
                 
                     <div class="tags"> <span class="tag"> @Nominal</span>  </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario2_0" class="collapsed">
+                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario2_0" class="collapsed">
                     <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
                     <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
                     <b>Scenario:</b>User gets its own informations
@@ -3950,6 +3944,10 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.id should be `newUserID`
@@ -4042,7 +4040,7 @@ testOutput:
                 <h4 class="panel-title">
                 
                     <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario2_1" class="collapsed">
+                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario2_1" class="collapsed">
                     <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
                     <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
                     <b>Scenario:</b>User cannot get information for another user
@@ -4140,6 +4138,10 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">Then </span>
                         response code should be 403
@@ -4199,7 +4201,7 @@ testOutput:
                 <h4 class="panel-title">
                 
                     <div class="tags"> </div>
-                  <div class="scenariohead collapsed" title="Start Time: 0s" data-toggle="collapse" href="#collapseScenario2_2" class="collapsed">
+                  <div class="scenariohead collapsed" title="Start Time: 1s" data-toggle="collapse" href="#collapseScenario2_2" class="collapsed">
                     <i class="glyphicon glyphicon-chevron-right arrow-right"></i>
                     <i class="glyphicon glyphicon-chevron-down arrow-down"></i>
                     <b>Scenario:</b>Admin can get another user informations
@@ -4264,10 +4266,6 @@ testOutput:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         I set an admin bearer token
@@ -4512,6 +4510,10 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         I set body to {"username":"test-update", "password":"updatedpassword"}
@@ -4669,6 +4671,10 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.id should be `newUserID`
@@ -5045,6 +5051,10 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         I set body to {"username":"test-update", "password":"updatedpassword"}
@@ -5140,6 +5150,10 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.code should be UNAUTHORIZED
@@ -5293,10 +5307,6 @@ testOutput:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">Then </span>
                         response code should be 403
@@ -5797,6 +5807,10 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         I set an admin bearer token
@@ -5925,10 +5939,6 @@ testOutput:
                       
                     
                     
-                              <span class="step-duration">
-                               0s
-                              </span>
-                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response code should be 404
@@ -6082,9 +6092,42 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $ should be of type array
+                          
+                         
+                            
+                          
+                      </span>
+                    
+                      
+
+                      
+
+                      
+
+                       
+
+                    
+                    </p>
+                    
+                  
+                    
+                    <p class="scenario-container">
+                    
+                      
+                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
+                      
+                    
+                    
+                      <span class="text">
+                        <span class="keyword highlight">And </span>
+                        response body path $.0.id should be 1
                           
                          
                             
@@ -6115,35 +6158,6 @@ testOutput:
                                0s
                               </span>
                             
-                      <span class="text">
-                        <span class="keyword highlight">And </span>
-                        response body path $.0.id should be 1
-                          
-                         
-                            
-                          
-                      </span>
-                    
-                      
-
-                      
-
-                      
-
-                       
-
-                    
-                    </p>
-                    
-                  
-                    
-                    <p class="scenario-container">
-                    
-                      
-                        <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok icon-ok"></i></span>
-                      
-                    
-                    
                       <span class="text">
                         <span class="keyword highlight">And </span>
                         response body path $.1.id should be 2
@@ -6206,6 +6220,10 @@ testOutput:
                       
                     
                     
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
                       <span class="text">
                         <span class="keyword highlight">Given </span>
                         I set an admin bearer token
@@ -6448,14 +6466,14 @@ function drawPieChart(chartData,ctx){
     </script>
     <script>
     var featuresData={
-          "failed" : 1,
-          "passed" : 2,
+          "failed" : 0,
+          "passed" : 3,
           "ambiguous" : 0
         }
 
         var scenariosData={
-          "failed" : 2,
-          "passed" : 28,
+          "failed" : 0,
+          "passed" : 30,
           "undefined" : 0,
           "pending" : 0,
           "skipped" : 0,

@@ -38,9 +38,11 @@ Test the server connection API
 
   @Nominal
   Scenario: User can reset its password
-    Given I set body to {"email":"mft-user-test@mathieufont.com"}
+    Given I am a new user
+    And I set body to {"email":"`newUserEmail`"}
     When I PUT /user/reset
     Then response code should be 200
+    And an e-mail was sent to `newUserEmail`
 
   Scenario: Registering a new user needs a username
     Given I set body to {"email":"mft-test@mathieufont.com", "password":"testtest"}

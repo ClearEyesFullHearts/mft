@@ -1,4 +1,5 @@
 const { Given, When, Then } = require('cucumber');
+const config = require('config');
 const uuidv4 = require('uuid/v4');
 
 Given("I am a new user", async function () {
@@ -45,5 +46,19 @@ Given(/^I log with (.*)$/, async function (bodyValue) {
         this.apickli.setBearerToken();
     } else {
         throw new Error('User not created');
+    }
+});
+
+Then(/^an e-mail was sent to (.*)$/, async function (destination) {
+    const to = this.apickli.replaceVariables(destination);
+    try {
+        response = await this.got.get(config.get('base.mail.serverURL') + '/api/emails?to=' + to, {
+            json: true
+        });
+        if(response.body.length !== 1){
+            new Error('There should be one and only one email to this user')
+        }
+    } catch (err) {
+        throw new Error('Server Error');
     }
 });

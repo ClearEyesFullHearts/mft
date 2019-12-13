@@ -23,7 +23,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 80,
+      "duration": 83,
       "status": "passed"
     },
     "steps": [
@@ -35,7 +35,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 7000000
+          "duration": 9000000
         }
       },
       {
@@ -45,7 +45,8 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -70,7 +71,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 69000000
+          "duration": 70000000
         }
       },
       {
@@ -96,7 +97,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 3000000
+          "duration": 2000000
         }
       }
     ]
@@ -116,7 +117,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 18,
+      "duration": 31,
       "status": "passed"
     },
     "steps": [
@@ -151,7 +152,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 1000000
+          "duration": 2000000
         }
       },
       {
@@ -164,7 +165,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 14000000
+          "duration": 27000000
         }
       },
       {
@@ -201,8 +202,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -234,7 +234,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 11,
+      "duration": 19,
       "status": "passed"
     },
     "steps": [
@@ -255,7 +255,8 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -267,8 +268,7 @@
           "location": "step_definitions\\health-def.js:23"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -281,7 +281,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 8000000
+          "duration": 17000000
         }
       },
       {
@@ -293,8 +293,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -327,7 +326,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 21,
+      "duration": 23,
       "status": "passed"
     },
     "steps": [
@@ -360,8 +359,7 @@
           "location": "step_definitions\\health-def.js:40"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -374,7 +372,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 18000000
+          "duration": 19000000
         }
       },
       {
@@ -387,7 +385,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 1000000
+          "duration": 4000000
         }
       },
       {
@@ -399,8 +397,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       }
     ]
@@ -420,7 +417,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 11,
+      "duration": 17,
       "status": "passed"
     },
     "steps": [
@@ -431,7 +428,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -466,7 +464,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 10000000
+          "duration": 14000000
         }
       },
       {
@@ -491,7 +489,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       }
     ]
@@ -521,7 +520,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 41,
+      "duration": 46,
       "status": "passed"
     },
     "steps": [
@@ -543,8 +542,7 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -556,7 +554,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -569,7 +568,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 19000000
+          "duration": 40000000
         }
       },
       {
@@ -582,7 +581,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 15000000
+          "duration": 1000000
         }
       },
       {
@@ -619,8 +618,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -632,8 +630,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       }
     ]
@@ -653,7 +650,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 14,
+      "duration": 28,
       "status": "passed"
     },
     "steps": [
@@ -664,8 +661,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -675,7 +671,8 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -701,7 +698,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 11000000
+          "duration": 23000000
         }
       },
       {
@@ -726,7 +723,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -762,7 +760,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -806,7 +805,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 28,
+      "duration": 35,
       "status": "passed"
     },
     "steps": [
@@ -817,7 +816,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -827,8 +827,7 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -840,7 +839,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 11000000
         }
       },
       {
@@ -853,7 +853,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 13000000
+          "duration": 22000000
         }
       },
       {
@@ -865,8 +865,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -878,8 +877,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -903,8 +901,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 10000000
+          "status": "passed"
         }
       },
       {
@@ -916,7 +913,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -940,8 +938,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -953,8 +950,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       }
     ]
@@ -974,9 +970,8 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 14,
-      "status": "failed",
-      "exception": {}
+      "duration": 190,
+      "status": "passed"
     },
     "steps": [
       {
@@ -986,8 +981,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -1004,7 +998,20 @@
         "arguments": [],
         "keyword": "Given ",
         "line": 41,
-        "name": "I set body to {\"email\":\"mft-user-test@mathieufont.com\"}",
+        "name": "I am a new user",
+        "match": {
+          "location": "step_definitions\\user-def.js:5"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 36000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 42,
+        "name": "I set body to {\"email\":\"`newUserEmail`\"}",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
         },
@@ -1015,28 +1022,39 @@
       {
         "arguments": [],
         "keyword": "When ",
-        "line": 42,
+        "line": 43,
         "name": "I PUT /user/reset",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
         },
         "result": {
           "status": "passed",
-          "duration": 11000000
+          "duration": 148000000
         }
       },
       {
         "arguments": [],
         "keyword": "Then ",
-        "line": 43,
+        "line": 44,
         "name": "response code should be 200",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "failed",
-          "duration": 2000000,
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 200\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Thu, 12 Dec 2019 14:19:18 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 45,
+        "name": "an e-mail was sent to `newUserEmail`",
+        "match": {
+          "location": "step_definitions\\user-def.js:52"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 6000000
         }
       }
     ]
@@ -1046,12 +1064,12 @@
     "uri": "login.feature",
     "id": "user-creation-and-login;registering-a-new-user-needs-a-username",
     "keyword": "Scenario",
-    "line": 45,
+    "line": 47,
     "name": "Registering a new user needs a username",
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 8,
+      "duration": 24,
       "status": "passed"
     },
     "steps": [
@@ -1062,7 +1080,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -1078,32 +1097,33 @@
       {
         "arguments": [],
         "keyword": "Given ",
-        "line": 46,
+        "line": 48,
         "name": "I set body to {\"email\":\"mft-test@mathieufont.com\", \"password\":\"testtest\"}",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
         "arguments": [],
         "keyword": "When ",
-        "line": 47,
+        "line": 49,
         "name": "I POST to /users",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:101"
         },
         "result": {
           "status": "passed",
-          "duration": 7000000
+          "duration": 22000000
         }
       },
       {
         "arguments": [],
         "keyword": "Then ",
-        "line": 48,
+        "line": 50,
         "name": "response code should be 400",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
@@ -1115,14 +1135,13 @@
       {
         "arguments": [],
         "keyword": "And ",
-        "line": 49,
+        "line": 51,
         "name": "response body path $.code should be SCHEMA_VALIDATION_FAILED",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       }
     ]
@@ -1132,12 +1151,12 @@
     "uri": "login.feature",
     "id": "user-creation-and-login;registering-a-new-user-needs-an-email",
     "keyword": "Scenario",
-    "line": 51,
+    "line": 53,
     "name": "Registering a new user needs an email",
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 28,
+      "duration": 15,
       "status": "passed"
     },
     "steps": [
@@ -1164,7 +1183,7 @@
       {
         "arguments": [],
         "keyword": "Given ",
-        "line": 52,
+        "line": 54,
         "name": "I set body to {\"username\":\"mft-test\", \"password\":\"testtest\"}",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
@@ -1176,20 +1195,20 @@
       {
         "arguments": [],
         "keyword": "When ",
-        "line": 53,
+        "line": 55,
         "name": "I POST to /users",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:101"
         },
         "result": {
           "status": "passed",
-          "duration": 28000000
+          "duration": 15000000
         }
       },
       {
         "arguments": [],
         "keyword": "Then ",
-        "line": 54,
+        "line": 56,
         "name": "response code should be 400",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
@@ -1201,7 +1220,7 @@
       {
         "arguments": [],
         "keyword": "And ",
-        "line": 55,
+        "line": 57,
         "name": "response body path $.code should be SCHEMA_VALIDATION_FAILED",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
@@ -1217,12 +1236,12 @@
     "uri": "login.feature",
     "id": "user-creation-and-login;registering-a-new-user-needs-a-password",
     "keyword": "Scenario",
-    "line": 57,
+    "line": 59,
     "name": "Registering a new user needs a password",
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 12,
+      "duration": 13,
       "status": "passed"
     },
     "steps": [
@@ -1243,14 +1262,13 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
         "arguments": [],
         "keyword": "Given ",
-        "line": 58,
+        "line": 60,
         "name": "I set body to {\"username\":\"mft-test\", \"email\":\"mft-test@mathieufont.com\"}",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
@@ -1262,32 +1280,33 @@
       {
         "arguments": [],
         "keyword": "When ",
-        "line": 59,
+        "line": 61,
         "name": "I POST to /users",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:101"
         },
         "result": {
           "status": "passed",
-          "duration": 11000000
+          "duration": 12000000
         }
       },
       {
         "arguments": [],
         "keyword": "Then ",
-        "line": 60,
+        "line": 62,
         "name": "response code should be 400",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
         "arguments": [],
         "keyword": "And ",
-        "line": 61,
+        "line": 63,
         "name": "response body path $.code should be SCHEMA_VALIDATION_FAILED",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
@@ -1303,12 +1322,12 @@
     "uri": "login.feature",
     "id": "user-creation-and-login;user-needs-a-password-to-login",
     "keyword": "Scenario",
-    "line": 63,
+    "line": 65,
     "name": "User needs a password to login",
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 28,
+      "duration": 11,
       "status": "passed"
     },
     "steps": [
@@ -1335,7 +1354,7 @@
       {
         "arguments": [],
         "keyword": "Given ",
-        "line": 64,
+        "line": 66,
         "name": "I set body to {\"email\":\"mft-user-test@mathieufont.com\"}",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
@@ -1347,33 +1366,32 @@
       {
         "arguments": [],
         "keyword": "When ",
-        "line": 65,
+        "line": 67,
         "name": "I PUT /user/login",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
         },
         "result": {
           "status": "passed",
-          "duration": 27000000
+          "duration": 11000000
         }
       },
       {
         "arguments": [],
         "keyword": "Then ",
-        "line": 66,
+        "line": 68,
         "name": "response code should be 400",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
         "arguments": [],
         "keyword": "And ",
-        "line": 67,
+        "line": 69,
         "name": "response body path $.code should be SCHEMA_VALIDATION_FAILED",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
@@ -1389,12 +1407,12 @@
     "uri": "login.feature",
     "id": "user-creation-and-login;user-needs-an-email-to-login",
     "keyword": "Scenario",
-    "line": 69,
+    "line": 71,
     "name": "User needs an email to login",
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 10,
+      "duration": 14,
       "status": "passed"
     },
     "steps": [
@@ -1405,7 +1423,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 6000000
         }
       },
       {
@@ -1421,7 +1440,7 @@
       {
         "arguments": [],
         "keyword": "Given ",
-        "line": 70,
+        "line": 72,
         "name": "I set body to {\"password\":\"testtest\"}",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
@@ -1433,175 +1452,7 @@
       {
         "arguments": [],
         "keyword": "When ",
-        "line": 71,
-        "name": "I PUT /user/login",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
-        },
-        "result": {
-          "status": "passed",
-          "duration": 9000000
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "Then ",
-        "line": 72,
-        "name": "response code should be 400",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
-        },
-        "result": {
-          "status": "passed"
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "And ",
         "line": 73,
-        "name": "response body path $.code should be SCHEMA_VALIDATION_FAILED",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
-        },
-        "result": {
-          "status": "passed",
-          "duration": 1000000
-        }
-      }
-    ]
-  }
-}{
-  "scenario": {
-    "uri": "login.feature",
-    "id": "user-creation-and-login;guest-cannot-reset-its-password",
-    "keyword": "Scenario",
-    "line": 75,
-    "name": "Guest cannot reset its password",
-    "tags": [],
-    "type": "scenario",
-    "result": {
-      "duration": 26,
-      "status": "failed",
-      "exception": {}
-    },
-    "steps": [
-      {
-        "keyword": "Before",
-        "hidden": true,
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
-        },
-        "result": {
-          "status": "passed",
-          "duration": 1000000
-        }
-      },
-      {
-        "keyword": "Before",
-        "hidden": true,
-        "match": {
-          "location": "support\\init.js:22"
-        },
-        "result": {
-          "status": "passed"
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "Given ",
-        "line": 76,
-        "name": "I set body to {\"email\":\"anon@mathieufont.com\"}",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
-        },
-        "result": {
-          "status": "passed"
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "When ",
-        "line": 77,
-        "name": "I PUT /user/reset",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
-        },
-        "result": {
-          "status": "passed",
-          "duration": 24000000
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "Then ",
-        "line": 78,
-        "name": "response code should be 404",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
-        },
-        "result": {
-          "status": "failed",
-          "duration": 1000000,
-          "error_message": "Error: stepContext: \ntestOutput: \n  success:  false\n  expected: 404\n  actual:   501\n  response: \n    statusCode: 501\n    headers: \n      x-powered-by:   Express\n      content-type:   application/json; charset=utf-8\n      content-length: 92\n      etag:           W/\"5c-UPgcDImA8RZYLKA3dJDTMpWYwUc\"\n      date:           Thu, 12 Dec 2019 14:19:18 GMT\n      connection:     close\n    body:       {\"message\":\"Not Implemented\",\"status\":501,\"failedValidation\":false,\"code\":\"NOT_IMPLEMENTED\"}\n    at Function.run (C:\\Program Files (x86)\\LeanPro\\CukeTest\\resources\\app.asar\\out\\cucumber.js:12:39705)"
-        }
-      }
-    ]
-  }
-}{
-  "scenario": {
-    "uri": "login.feature",
-    "id": "user-creation-and-login;unknown-user-should-not-be-able-to-log-in",
-    "keyword": "Scenario",
-    "line": 81,
-    "name": "Unknown user should not be able to log in",
-    "tags": [
-      {
-        "name": "@Nominal",
-        "line": 80
-      }
-    ],
-    "type": "scenario",
-    "result": {
-      "duration": 8,
-      "status": "passed"
-    },
-    "steps": [
-      {
-        "keyword": "Before",
-        "hidden": true,
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
-        },
-        "result": {
-          "status": "passed"
-        }
-      },
-      {
-        "keyword": "Before",
-        "hidden": true,
-        "match": {
-          "location": "support\\init.js:22"
-        },
-        "result": {
-          "status": "passed"
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "Given ",
-        "line": 82,
-        "name": "I set body to {\"email\":\"unknownuser@mathieufont.com\", \"password\":\"testtest\"}",
-        "match": {
-          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
-        },
-        "result": {
-          "status": "passed"
-        }
-      },
-      {
-        "arguments": [],
-        "keyword": "When ",
-        "line": 83,
         "name": "I PUT /user/login",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
@@ -1614,8 +1465,8 @@
       {
         "arguments": [],
         "keyword": "Then ",
-        "line": 84,
-        "name": "response code should be 401",
+        "line": 74,
+        "name": "response code should be 400",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
@@ -1626,7 +1477,173 @@
       {
         "arguments": [],
         "keyword": "And ",
+        "line": 75,
+        "name": "response body path $.code should be SCHEMA_VALIDATION_FAILED",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
+        },
+        "result": {
+          "status": "passed"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "login.feature",
+    "id": "user-creation-and-login;guest-cannot-reset-its-password",
+    "keyword": "Scenario",
+    "line": 77,
+    "name": "Guest cannot reset its password",
+    "tags": [],
+    "type": "scenario",
+    "result": {
+      "duration": 11,
+      "status": "passed"
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:22"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 78,
+        "name": "I set body to {\"email\":\"anon@mathieufont.com\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
+        "line": 79,
+        "name": "I PUT /user/reset",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 10000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 80,
+        "name": "response code should be 404",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "passed"
+        }
+      }
+    ]
+  }
+}{
+  "scenario": {
+    "uri": "login.feature",
+    "id": "user-creation-and-login;unknown-user-should-not-be-able-to-log-in",
+    "keyword": "Scenario",
+    "line": 83,
+    "name": "Unknown user should not be able to log in",
+    "tags": [
+      {
+        "name": "@Nominal",
+        "line": 82
+      }
+    ],
+    "type": "scenario",
+    "result": {
+      "duration": 17,
+      "status": "passed"
+    },
+    "steps": [
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 2000000
+        }
+      },
+      {
+        "keyword": "Before",
+        "hidden": true,
+        "match": {
+          "location": "support\\init.js:22"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Given ",
+        "line": 84,
+        "name": "I set body to {\"email\":\"unknownuser@mathieufont.com\", \"password\":\"testtest\"}",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
+        },
+        "result": {
+          "status": "passed"
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "When ",
         "line": 85,
+        "name": "I PUT /user/login",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 14000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "Then ",
+        "line": 86,
+        "name": "response code should be 401",
+        "match": {
+          "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
+        },
+        "result": {
+          "status": "passed",
+          "duration": 1000000
+        }
+      },
+      {
+        "arguments": [],
+        "keyword": "And ",
+        "line": 87,
         "name": "response body path $.code should be UNKNOWN_USER",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
@@ -1642,17 +1659,17 @@
     "uri": "login.feature",
     "id": "user-creation-and-login;user-with-bad-credentials-should-not-be-able-to-log-in",
     "keyword": "Scenario",
-    "line": 88,
+    "line": 90,
     "name": "User with bad credentials should not be able to log in",
     "tags": [
       {
         "name": "@Nominal",
-        "line": 87
+        "line": 89
       }
     ],
     "type": "scenario",
     "result": {
-      "duration": 12,
+      "duration": 17,
       "status": "passed"
     },
     "steps": [
@@ -1663,7 +1680,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -1679,7 +1697,7 @@
       {
         "arguments": [],
         "keyword": "Given ",
-        "line": 89,
+        "line": 91,
         "name": "I set body to {\"email\":\"mft-user-test@mathieufont.com\", \"password\":\"wrongpassword\"}",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
@@ -1691,20 +1709,20 @@
       {
         "arguments": [],
         "keyword": "When ",
-        "line": 90,
+        "line": 92,
         "name": "I PUT /user/login",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:111"
         },
         "result": {
           "status": "passed",
-          "duration": 12000000
+          "duration": 16000000
         }
       },
       {
         "arguments": [],
         "keyword": "Then ",
-        "line": 91,
+        "line": 93,
         "name": "response code should be 401",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
@@ -1716,7 +1734,7 @@
       {
         "arguments": [],
         "keyword": "And ",
-        "line": 92,
+        "line": 94,
         "name": "response body path $.code should be UNKNOWN_USER",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
@@ -1732,12 +1750,12 @@
     "uri": "login.feature",
     "id": "user-creation-and-login;cannot-register-a-user-with-a-known-email",
     "keyword": "Scenario",
-    "line": 94,
+    "line": 96,
     "name": "Cannot register a user with a known email",
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 31,
+      "duration": 14,
       "status": "passed"
     },
     "steps": [
@@ -1748,8 +1766,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -1765,32 +1782,33 @@
       {
         "arguments": [],
         "keyword": "Given ",
-        "line": 95,
+        "line": 97,
         "name": "I set body to {\"username\":\"mft-test-2\", \"email\":\"mft-user-test@mathieufont.com\", \"password\":\"doubleuserpass\"}",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
         "arguments": [],
         "keyword": "When ",
-        "line": 96,
+        "line": 98,
         "name": "I POST to /users",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:101"
         },
         "result": {
           "status": "passed",
-          "duration": 20000000
+          "duration": 12000000
         }
       },
       {
         "arguments": [],
         "keyword": "Then ",
-        "line": 97,
+        "line": 99,
         "name": "response code should be 403",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
@@ -1803,14 +1821,13 @@
       {
         "arguments": [],
         "keyword": "And ",
-        "line": 98,
+        "line": 100,
         "name": "response body path $.code should be USER_EXISTS",
         "match": {
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 9000000
+          "status": "passed"
         }
       }
     ]
@@ -1840,7 +1857,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 53,
+      "duration": 38,
       "status": "passed"
     },
     "steps": [
@@ -1861,7 +1878,8 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -1870,11 +1888,11 @@
         "line": 6,
         "name": "I am a new user",
         "match": {
-          "location": "step_definitions\\user-def.js:4"
+          "location": "step_definitions\\user-def.js:5"
         },
         "result": {
           "status": "passed",
-          "duration": 44000000
+          "duration": 23000000
         }
       },
       {
@@ -1887,7 +1905,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 8000000
+          "duration": 12000000
         }
       },
       {
@@ -1911,7 +1929,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -1951,7 +1970,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 31,
+      "duration": 27,
       "status": "passed"
     },
     "steps": [
@@ -1981,11 +2000,11 @@
         "line": 14,
         "name": "I am a new user",
         "match": {
-          "location": "step_definitions\\user-def.js:4"
+          "location": "step_definitions\\user-def.js:5"
         },
         "result": {
           "status": "passed",
-          "duration": 24000000
+          "duration": 16000000
         }
       },
       {
@@ -1998,7 +2017,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 7000000
+          "duration": 10000000
         }
       },
       {
@@ -2010,7 +2029,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -2037,7 +2057,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 25,
+      "duration": 31,
       "status": "passed"
     },
     "steps": [
@@ -2068,11 +2088,11 @@
         "line": 20,
         "name": "I am a new user",
         "match": {
-          "location": "step_definitions\\user-def.js:4"
+          "location": "step_definitions\\user-def.js:5"
         },
         "result": {
           "status": "passed",
-          "duration": 14000000
+          "duration": 19000000
         }
       },
       {
@@ -2084,8 +2104,7 @@
           "location": "step_definitions\\health-def.js:5"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -2098,7 +2117,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 9000000
+          "duration": 11000000
         }
       },
       {
@@ -2166,7 +2185,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 68,
+      "duration": 75,
       "status": "passed"
     },
     "steps": [
@@ -2196,11 +2215,11 @@
         "line": 30,
         "name": "I am a new user",
         "match": {
-          "location": "step_definitions\\user-def.js:4"
+          "location": "step_definitions\\user-def.js:5"
         },
         "result": {
           "status": "passed",
-          "duration": 25000000
+          "duration": 32000000
         }
       },
       {
@@ -2212,7 +2231,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -2225,7 +2245,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 10000000
+          "duration": 15000000
         }
       },
       {
@@ -2234,11 +2254,11 @@
         "line": 33,
         "name": "I log with {\"email\":\"`newUserEmail`\", \"password\":\"updatedpassword\"}",
         "match": {
-          "location": "step_definitions\\user-def.js:32"
+          "location": "step_definitions\\user-def.js:33"
         },
         "result": {
           "status": "passed",
-          "duration": 22000000
+          "duration": 15000000
         }
       },
       {
@@ -2275,7 +2295,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -2302,7 +2323,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 60,
+      "duration": 49,
       "status": "passed"
     },
     "steps": [
@@ -2313,7 +2334,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 2000000
         }
       },
       {
@@ -2332,11 +2354,11 @@
         "line": 40,
         "name": "I am a new user",
         "match": {
-          "location": "step_definitions\\user-def.js:4"
+          "location": "step_definitions\\user-def.js:5"
         },
         "result": {
           "status": "passed",
-          "duration": 35000000
+          "duration": 21000000
         }
       },
       {
@@ -2362,7 +2384,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 11000000
+          "duration": 13000000
         }
       },
       {
@@ -2387,7 +2409,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 13000000
+          "duration": 12000000
         }
       },
       {
@@ -2426,7 +2448,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 27,
+      "duration": 44,
       "status": "passed"
     },
     "steps": [
@@ -2456,11 +2478,11 @@
         "line": 49,
         "name": "I am a new user",
         "match": {
-          "location": "step_definitions\\user-def.js:4"
+          "location": "step_definitions\\user-def.js:5"
         },
         "result": {
           "status": "passed",
-          "duration": 16000000
+          "duration": 26000000
         }
       },
       {
@@ -2472,7 +2494,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:52"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -2485,7 +2508,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 10000000
+          "duration": 15000000
         }
       },
       {
@@ -2510,7 +2533,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       }
     ]
@@ -2525,7 +2549,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 9,
+      "duration": 26,
       "status": "passed"
     },
     "steps": [
@@ -2583,7 +2607,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 8000000
+          "duration": 26000000
         }
       },
       {
@@ -2595,8 +2619,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -2628,7 +2651,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 47,
+      "duration": 71,
       "status": "passed"
     },
     "steps": [
@@ -2639,8 +2662,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -2659,11 +2681,11 @@
         "line": 64,
         "name": "I am a new user",
         "match": {
-          "location": "step_definitions\\user-def.js:4"
+          "location": "step_definitions\\user-def.js:5"
         },
         "result": {
           "status": "passed",
-          "duration": 31000000
+          "duration": 34000000
         }
       },
       {
@@ -2676,7 +2698,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 9000000
+          "duration": 12000000
         }
       },
       {
@@ -2713,7 +2735,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 6000000
+          "duration": 25000000
         }
       },
       {
@@ -2740,7 +2762,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 54,
+      "duration": 32,
       "status": "passed"
     },
     "steps": [
@@ -2751,8 +2773,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -2762,7 +2783,8 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -2771,11 +2793,11 @@
         "line": 72,
         "name": "I am a new user",
         "match": {
-          "location": "step_definitions\\user-def.js:4"
+          "location": "step_definitions\\user-def.js:5"
         },
         "result": {
           "status": "passed",
-          "duration": 29000000
+          "duration": 18000000
         }
       },
       {
@@ -2788,7 +2810,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 24000000
+          "duration": 13000000
         }
       },
       {
@@ -2832,7 +2854,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 57,
+      "duration": 70,
       "status": "passed"
     },
     "steps": [
@@ -2843,8 +2865,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed",
-          "duration": 10000000
+          "status": "passed"
         }
       },
       {
@@ -2863,11 +2884,11 @@
         "line": 79,
         "name": "I am a new user",
         "match": {
-          "location": "step_definitions\\user-def.js:4"
+          "location": "step_definitions\\user-def.js:5"
         },
         "result": {
           "status": "passed",
-          "duration": 29000000
+          "duration": 31000000
         }
       },
       {
@@ -2879,7 +2900,8 @@
           "location": "step_definitions\\health-def.js:5"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -2892,7 +2914,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 9000000
+          "duration": 11000000
         }
       },
       {
@@ -2905,7 +2927,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 1000000
+          "duration": 12000000
         }
       },
       {
@@ -2918,7 +2940,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 7000000
+          "duration": 15000000
         }
       },
       {
@@ -2930,8 +2952,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:167"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       }
     ]
@@ -2951,7 +2972,7 @@
     ],
     "type": "scenario",
     "result": {
-      "duration": 10,
+      "duration": 22,
       "status": "passed"
     },
     "steps": [
@@ -2962,7 +2983,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -2972,8 +2994,7 @@
           "location": "support\\init.js:22"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -2998,7 +3019,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 8000000
+          "duration": 19000000
         }
       },
       {
@@ -3022,7 +3043,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:211"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -3034,8 +3056,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -3047,7 +3068,8 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:200"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       }
     ]
@@ -3062,7 +3084,7 @@
     "tags": [],
     "type": "scenario",
     "result": {
-      "duration": 11,
+      "duration": 15,
       "status": "passed"
     },
     "steps": [
@@ -3073,8 +3095,7 @@
           "location": "..\\node_modules\\apickli\\apickli-gherkin.js:29"
         },
         "result": {
-          "status": "passed",
-          "duration": 1000000
+          "status": "passed"
         }
       },
       {
@@ -3096,7 +3117,8 @@
           "location": "step_definitions\\health-def.js:5"
         },
         "result": {
-          "status": "passed"
+          "status": "passed",
+          "duration": 1000000
         }
       },
       {
@@ -3109,7 +3131,7 @@
         },
         "result": {
           "status": "passed",
-          "duration": 10000000
+          "duration": 14000000
         }
       },
       {
