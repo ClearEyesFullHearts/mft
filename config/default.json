@@ -1,0 +1,59 @@
+{
+    "auth": {
+        "secret": "supersecret"
+    },
+    "public":{
+        "name": "mft",
+        "url": "http://localhost:8080"
+    },
+    "base": {
+        "instance": {
+            "host": "localhost",
+            "port": 3000
+        },
+        "mongodb": {
+            "url": "mongodb://localhost/mft-dev"
+        },
+        "security": "x-mft-roles",
+        "roles": [
+            "ROLE_USER",
+            "ROLE_ADMIN"
+        ],
+        "hashSaltRound": 2,
+        "mail": {
+            "sender": "server@mathieufont.com",
+            "transport":{
+                "host": "localhost",
+                "port": 1025,
+                "secure": false,
+                "auth": {
+                    "user": "username",
+                    "pass": "pass"
+                },
+                "tls":{
+                    "rejectUnauthorized": false
+                }
+            },
+            "templates": "./templates/mail"
+        }
+    },
+    "api": [{
+            "name": "health",
+            "swagger": "swagger-health-1.0.0.json",
+            "controller": ""
+        },
+        {
+            "name": "user",
+            "swagger": "swagger-user-1.0.0.json",
+            "controller": ""
+        }
+    ],
+    "templates":{
+        "mail":{
+            "RESET_PASSWORD":{
+                "subject": "Your new password is here",
+                "txt": "simple_reset_password.txt"
+            }
+        }
+    }
+}
