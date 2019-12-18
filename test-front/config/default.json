@@ -9,6 +9,9 @@
     "base": {
         "mongodb": {
             "url": "mongodb://localhost/mft-dev"
+        },
+        "server":{
+            "url": "http://localhost:3000"
         }
     }
 }

@@ -8,6 +8,9 @@ class Inputs {
     static async click(input) {
         await driver.findElement(input).click();
     }
+    static async focus(input) {
+        await driver.findElement(input).sendKeys('');
+    }
 }
 
 module.exports = Inputs;

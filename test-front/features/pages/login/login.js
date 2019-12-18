@@ -1,4 +1,3 @@
-var { Given, When, Then } = require('cucumber')
 const { By } = require('selenium-webdriver');
 
 class LoginComponent {

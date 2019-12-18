@@ -13,6 +13,8 @@
         "chromedriver": "^78.0.1",
         "config": "^3.2.4",
         "geckodriver": "^1.19.1",
-        "selenium-webdriver": "^4.0.0-alpha.5"
+        "got": "^10.0.4",
+        "selenium-webdriver": "^4.0.0-alpha.5",
+        "uuid": "^3.3.3"
     }
 }
