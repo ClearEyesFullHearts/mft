@@ -24,6 +24,8 @@
 
 <script>
 
+import data from '@/data';
+
 export default {
   name: 'Login',
   data() {
@@ -37,8 +39,17 @@ export default {
     };
   },
   methods: {
-    login() {
-      console.log('trying to log!');
+    async login() {
+      this.loading = 'Trying to connect...';
+      console.log(data);
+      try {
+        await data.auth.makeLogin(this.model);
+        this.$router.push('landing');
+      } catch (err) {
+        // do something with th error
+        console.log('ERROR trying to log!', err);
+      }
+      this.loading = '';
     },
   },
 };

@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import data from '@/data';
 
 export default {
   name: 'Reset',
@@ -31,8 +32,16 @@ export default {
     };
   },
   methods: {
-    send() {
-      console.log('trying to send a new password!');
+    async send() {
+      this.loading = 'sending mail...';
+      try {
+        await data.auth.resetPassword(this.model);
+      } catch (err) {
+        // do something with the error
+        console.log('ERROR trying to log!', err);
+      }
+      this.loading = 'mail sent';
+      this.status = 'Check your email box to get your new password.';
     },
   },
 };

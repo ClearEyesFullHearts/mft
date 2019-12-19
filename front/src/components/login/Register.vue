@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import data from '@/data';
 
 export default {
   name: 'Register',
@@ -49,11 +50,19 @@ export default {
     };
   },
   methods: {
-    register() {
-      console.log('trying to register!');
-    },
-    cancel() {
-      console.log('trying to cancel!');
+    async register() {
+      if (this.model.password === this.model.c_password) {
+        this.loading = 'Trying to connect...';
+        console.log(data);
+        try {
+          await data.user.createNewUser(this.model);
+          this.$router.push('landing');
+        } catch (err) {
+        // do something with th error
+          console.log('ERROR trying to log!', err);
+        }
+        this.loading = '';
+      }
     },
   },
 };

@@ -1,10 +1,21 @@
-const { After, Before, AfterAll, setDefaultTimeout } = require('cucumber');
+const { After, Before, BeforeAll, AfterAll, setDefaultTimeout } = require('cucumber');
 const got = require('got');
+const config = require('config')
+const restore = require('mongodb-restore');
+const mongoose = require('mongoose');
 const { driver } = require('./web_driver');
 const Context = require('./context');
 
 //set default step timeout
 setDefaultTimeout(60 * 1000);
+
+BeforeAll(function (cb) {
+    restore({
+        uri: config.get('base.mongodb.url'),
+        root: __dirname + '/mft-dev',
+        callback: cb
+    });
+});
 
 Before(function () {
     //Before Scenario Hook
@@ -22,8 +33,12 @@ After(async function () {
     await driver.manage().deleteAllCookies();
 });
 
-AfterAll(function () {
+AfterAll(function (cb) {
     //perform some shared teardown
-    return driver.quit();
+    driver.quit();
+    mongoose.connect(config.get('base.mongodb.url'), { useNewUrlParser: true, useUnifiedTopology: true }).then(
+        () => { mongoose.connection.db.dropDatabase(); cb(); },
+        err => { cb(err); }
+    );
 })
 
