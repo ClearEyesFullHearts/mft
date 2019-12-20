@@ -6,7 +6,7 @@ export default class AuthService extends BaseService {
       this.request().put('user/login', { email, password })
         .then((response) => {
           try {
-            this.store.commit('auth/authorize', response.data);
+            this.store.commit('authorize', response.data);
           } catch (err) {
             reject(err);
           }
@@ -25,7 +25,7 @@ export default class AuthService extends BaseService {
   makeLogout() {
     return new Promise((resolve, reject) => {
       try {
-        this.store.commit('auth/clearAuthorization');
+        this.store.commit('clearAuthorization');
       } catch (err) {
         reject(err);
       }

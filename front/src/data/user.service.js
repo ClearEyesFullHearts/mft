@@ -6,7 +6,7 @@ export default class UserService extends BaseService {
       this.request().post('users', { username, email, password })
         .then((response) => {
           try {
-            this.store.commit('auth/authorize', response.data);
+            this.store.commit('authorize', response.data);
           } catch (err) {
             reject(err);
           }

@@ -1,7 +1,13 @@
 const assert = require('assert');
-const { driver } = require('../support/web_driver');
+const { driver, until } = require('../support/web_driver');
+const { getByName } = require('../pages');
 
 class Observe {
+    static async waitingForPageChange(pageName) {
+        const page = getByName(pageName);
+        await driver.wait(until.urlContains(page.url), 3000);
+        return page;
+    }
     static async iSeeIsEnabled(input) {
         const elmt = await driver.findElement(input);
         const visible = await elmt.isDisplayed();

@@ -1,5 +1,6 @@
 <template>
     <div class="row">
+    <vue-headful title="mft" />
         <div class="col-md-12">
             <form @submit.prevent="login">
                 <div class="form-group">
@@ -13,7 +14,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button id="login-log-btn" class="btn btn-success btn-light btn-large" >Login</button>
+                    <button id="login-log-btn" class="btn btn-success btn-light btn-large" :disabled="isDisabled" >Login</button>
                     {{ loading }}
                     {{ status }}
                 </div>
@@ -38,10 +39,15 @@ export default {
       status: '',
     };
   },
+  computed: {
+    isDisabled() {
+    // evaluate whatever you need to determine disabled here...
+      return this.model.email.length <= 0 || this.model.password.length <= 0;
+    },
+  },
   methods: {
     async login() {
       this.loading = 'Trying to connect...';
-      console.log(data);
       try {
         await data.auth.makeLogin(this.model);
         this.$router.push('landing');

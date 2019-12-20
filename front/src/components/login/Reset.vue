@@ -8,7 +8,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button id="forgot-send-btn" class="btn btn-success btn-light btn-large" >Send me my password</button>
+                    <button id="forgot-send-btn" class="btn btn-success btn-light btn-large" :disabled="isDisabled" >Send me my password</button>
                     {{ loading }}
                     {{ status }}
                 </div>
@@ -30,6 +30,12 @@ export default {
       loading: '',
       status: '',
     };
+  },
+  computed: {
+    isDisabled() {
+    // evaluate whatever you need to determine disabled here...
+      return this.model.email.length <= 0;
+    },
   },
   methods: {
     async send() {

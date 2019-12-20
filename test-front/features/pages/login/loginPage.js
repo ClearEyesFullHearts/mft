@@ -6,8 +6,8 @@ const ResetComp = require('./reset');
 
 class LoginPage extends BasePage {
     constructor() {
-        super(config.get('public.name'), config.get('public.url'));
-        this.name = 'Login';
+        super(config.get('public.name'), `${config.get('public.url')}/`);
+        this.name = 'login';
         this.loginComponent = new LoginComp();
         this.registerComponent = new RegisterComp();
         this.resetComponent = new ResetComp();
@@ -26,10 +26,10 @@ class LoginPage extends BasePage {
         return this.registerComponent.emailInput;
     }
     get newPassword() {
-        return this.registerComponent.emailInput;
+        return this.registerComponent.passwordInput;
     }
     get confirmPassword() {
-        return this.registerComponent.emailInput;
+        return this.registerComponent.c_passwordInput;
     }
     get knownEmail() {
         return this.resetComponent.emailInput;
@@ -45,7 +45,7 @@ class LoginPage extends BasePage {
         return this.loginComponent.forgotButton;
     }
     get create() {
-        return this.registerComponent.newButton;
+        return this.registerComponent.createButton;
     }
     get send() {
         return this.resetComponent.sendButton;

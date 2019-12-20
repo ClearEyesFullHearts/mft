@@ -12,3 +12,4 @@ function createDriver() {
 }
 
 exports.driver = createDriver();
+exports.until = webDriver.until;

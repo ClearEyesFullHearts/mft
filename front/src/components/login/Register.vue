@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button id="register-ok-btn" class="btn btn-success btn-light btn-large" >Register</button>
+                    <button id="register-ok-btn" class="btn btn-success btn-light btn-large" :disabled="isDisabled">Register</button>
                     {{ loading }}
                     {{ status }}
                 </div>
@@ -48,6 +48,15 @@ export default {
       loading: '',
       status: '',
     };
+  },
+  computed: {
+    isDisabled() {
+    // evaluate whatever you need to determine disabled here...
+      return this.model.email.length <= 0
+              || this.model.username.length <= 0
+              || this.model.password.length <= 0
+              || this.model.c_password.length <= 0;
+    },
   },
   methods: {
     async register() {

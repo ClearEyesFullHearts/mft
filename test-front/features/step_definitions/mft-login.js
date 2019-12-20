@@ -15,17 +15,18 @@ Given(/^I am a new connected user$/, async function () {
     this.context.currentpassword = 'testtesttest';
     const body = {
         username: 'testUser',
-        email: this.context.currentuser,
+        email: this.context.currentemail,
         password: this.context.currentpassword
     };
     await this.got.post(config.get('base.server.url') + '/users', {
         json: true, // this is required
         body
     });
-    await Navigate.toPage('login');
-    await Inputs.writes(this.context.currentpage.email, this.context.currentuser);
+    this.context.currentpage = await Navigate.toPage('login');
+    await Inputs.writes(this.context.currentpage.email, this.context.currentemail);
     await Inputs.writes(this.context.currentpage.password, this.context.currentpassword);
     await Inputs.click(this.context.currentpage.connect);
+    this.context.currentpage = await Observe.waitingForPageChange('landing');
 });
 
 When(/^I fill (.*) input as "([^"]*)"$/, async function (inputName, text) {
@@ -34,8 +35,8 @@ When(/^I fill (.*) input as "([^"]*)"$/, async function (inputName, text) {
 });
 
 Then(/^I am on (.*) page$/, async function (pageName) {
-    // assert.equal(this.context.currentpage.name, pageName);
-    await this.context.currentpage.amThere();
+    this.context.currentpage = await Observe.waitingForPageChange(pageName);
+    assert.equal(this.context.currentpage.name, pageName);
 });
 
 When(/^I click on (.*)$/, async function (inputName) {
@@ -44,7 +45,7 @@ When(/^I click on (.*)$/, async function (inputName) {
 
 Then(/^I see (.*) is disabled$/, async function (inputName) {
     const isEnabled = await Observe.iSeeIsEnabled(this.context.currentpage[inputName]);
-    assert.equal(!isEnabled);
+    assert.equal(isEnabled, false);
 });
 
 Then(/^an e-mail was sent to "([^"]*)"$/, async function (to) {
