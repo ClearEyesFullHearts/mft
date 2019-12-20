@@ -4,6 +4,7 @@ const config = require('config');
 const logger = require('debug');
 const SwaggerAsync = require('./swaggerAsync.js');
 const ErrorHelper = require('./error.js');
+const CORS = require('./cors.js');
 const Data = require('../data/index.js');
 
 const debug = logger('mft-back:server');
@@ -12,6 +13,8 @@ class MultiSwaggerService {
   constructor() {
     this.app = express();
     this.app.use(morgan('dev')); // log every request to the console
+    this.app.use(CORS.options());
+    this.app.options('/*', (req, res) => res.sendStatus(200));
   }
 
   async start() {
