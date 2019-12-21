@@ -32,7 +32,6 @@ export default {
       return this.$store.state.auth.user.username;
     },
     isConnected() {
-      console.log('**************', this.$store.state.auth.authorized);
       return this.$store.state.auth.authorized;
     },
   },

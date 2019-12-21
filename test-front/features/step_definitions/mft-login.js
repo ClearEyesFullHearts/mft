@@ -49,7 +49,10 @@ Then(/^I see (.*) is disabled$/, async function (inputName) {
 });
 
 Then(/^an e-mail was sent to "([^"]*)"$/, async function (to) {
-    const response = await this.got.get(config.get('base.mail.serverURL') + '/api/emails?to=' + to, {
+    await Navigate.waitPlease(1500);
+
+    const dest = this.context.replaceVariables(to);
+    const response = await this.got.get(config.get('base.mail.serverURL') + '/api/emails?to=' + dest, {
         json: true
     });
     assert.equal(response.body.length, 1, 'There should be one and only one email to this user');

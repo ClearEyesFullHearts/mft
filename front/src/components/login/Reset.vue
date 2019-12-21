@@ -42,6 +42,7 @@ export default {
       this.loading = 'sending mail...';
       try {
         await data.auth.resetPassword(this.model);
+        this.$parent.view = 'login';
       } catch (err) {
         // do something with the error
         console.log('ERROR trying to log!', err);

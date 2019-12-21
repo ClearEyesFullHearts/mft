@@ -9,6 +9,9 @@ class Navigate {
         await driver.get(page.url);
         return page;
     }
+    static async waitPlease(ms){
+        await driver.sleep(ms);
+    }
 }
 
 module.exports = Navigate;

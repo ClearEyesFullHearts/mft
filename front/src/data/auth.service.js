@@ -1,25 +1,23 @@
 import BaseService from './base.service';
 
 export default class AuthService extends BaseService {
-  makeLogin({ email, password }) {
-    return new Promise((resolve, reject) => {
-      this.request().put('user/login', { email, password })
-        .then((response) => {
-          try {
-            this.store.commit('authorize', response.data);
-          } catch (err) {
-            reject(err);
-          }
-          return resolve(this.responseWrapper(response, response.data));
-        }).catch(error => reject(this.errorWrapper(error)));
-    });
+  async makeLogin({ email, password }) {
+    try {
+      const resp = await this.request().put('user/login', { email, password });
+      this.store.commit('authorize', resp.data);
+      return this.responseWrapper(resp, resp.data);
+    } catch (error) {
+      throw this.errorWrapper(error);
+    }
   }
 
-  resetPassword({ email }) {
-    return new Promise((resolve, reject) => {
-      this.request().put('user/reset', { email })
-        .then(() => this.makeLogout()).catch(error => reject(this.errorWrapper(error)));
-    });
+  async resetPassword({ email }) {
+    try {
+      await this.request().put('user/reset', { email });
+      await this.makeLogout();
+    } catch (error) {
+      throw this.errorWrapper(error);
+    }
   }
 
   makeLogout() {
