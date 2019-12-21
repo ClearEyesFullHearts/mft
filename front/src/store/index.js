@@ -7,12 +7,12 @@ const authorization = {
   state: {
     authorized: localStorage.getItem('token') !== undefined || false,
     token: localStorage.getItem('token') || '',
-    roles: JSON.parse(localStorage.getItem('roles')) || [],
     user: JSON.parse(localStorage.getItem('user')) || {
       id: 0,
       username: '',
       email: '',
     },
+    roles: JSON.parse(localStorage.getItem('roles')) || [],
   },
   mutations: {
     authorize(state, auth) {
@@ -21,11 +21,11 @@ const authorization = {
         state.token = auth.token;
         localStorage.setItem('token', auth.token);
         state.roles = auth.roles;
-        localStorage.setItem('roles', auth.roles);
+        localStorage.setItem('roles', JSON.stringify(auth.roles));
         state.user.id = auth.user.id;
         state.user.username = auth.user.username;
         state.user.email = auth.user.email;
-        localStorage.setItem('user', auth.user);
+        localStorage.setItem('user', JSON.stringify(auth.user));
       }
     },
     clearAuthorization(state) {

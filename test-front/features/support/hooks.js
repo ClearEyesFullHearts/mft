@@ -31,6 +31,7 @@ After(async function () {
     this.attach(screenshot, 'image/png');
     //clean up cookies
     await driver.manage().deleteAllCookies();
+    await driver.executeScript('localStorage.clear();');
 });
 
 AfterAll(function (cb) {
