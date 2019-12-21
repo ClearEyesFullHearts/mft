@@ -50,7 +50,11 @@ export default {
       this.loading = 'Trying to connect...';
       try {
         await data.auth.makeLogin(this.model);
-        this.$router.push('landing');
+        if (this.$store.getters.isAdmin) {
+          this.$router.push('info');
+        } else {
+          this.$router.push('landing');
+        }
       } catch (err) {
         // do something with th error
         console.log('ERROR trying to log!', err);
