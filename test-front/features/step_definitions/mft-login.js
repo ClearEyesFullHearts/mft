@@ -64,7 +64,10 @@ Then(/^I see "([^"]*)" as an error message$/, async function (msg) {
 });
 
 Then(/^No emails has been sent to "([^"]*)"$/, async function (to) {
-    const response = await this.got.get(config.get('base.mail.serverURL') + '/api/emails?to=' + to, {
+    await Navigate.waitPlease(1500);
+
+    const dest = this.context.replaceVariables(to);
+    const response = await this.got.get(config.get('base.mail.serverURL') + '/api/emails?to=' + dest, {
         json: true
     });
     assert.equal(response.body.length, 0);

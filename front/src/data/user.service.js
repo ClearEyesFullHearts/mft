@@ -1,17 +1,13 @@
 import BaseService from './base.service';
 
 export default class UserService extends BaseService {
-  createNewUser({ username, email, password }) {
-    return new Promise((resolve, reject) => {
-      this.request().post('users', { username, email, password })
-        .then((response) => {
-          try {
-            this.store.commit('authorize', response.data);
-          } catch (err) {
-            reject(err);
-          }
-          return resolve(this.responseWrapper(response, response.data));
-        }).catch(error => reject(this.errorWrapper(error)));
-    });
+  async createNewUser({ username, email, password }) {
+    try {
+      const resp = await this.request().post('users', { username, email, password });
+      this.store.commit('authorize', resp.data);
+      return this.responseWrapper(resp, resp.data);
+    } catch (error) {
+      throw this.errorWrapper(error);
+    }
   }
 }
