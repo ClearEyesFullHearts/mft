@@ -68,8 +68,9 @@ export default {
           await data.user.createNewUser(this.model);
           this.$router.push('landing');
         } catch (err) {
-        // do something with th error
-          console.log('ERROR trying to log!', err);
+          if (err.status && err.status === 403) {
+            this.$store.commit('showAlert', 'This email address is already used');
+          }
         }
         this.loading = '';
       }

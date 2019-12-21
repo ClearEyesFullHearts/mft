@@ -56,8 +56,9 @@ export default {
           this.$router.push('landing');
         }
       } catch (err) {
-        // do something with th error
-        console.log('ERROR trying to log!', err);
+        if (err.status && err.status === 401) {
+          this.$store.commit('showAlert', 'Identification failed');
+        }
       }
       this.loading = '';
     },

@@ -15,10 +15,16 @@ class Observe {
         return await elmt.isEnabled();
     }
     static async iSeeText(input) {
-        const errMsg = await driver.findElement(input);
-        const visible = await errMsg.isDisplayed();
+        const txt = await driver.findElement(input);
+        const visible = await txt.isDisplayed();
         assert(visible);
-        return await errMsg.getText();
+        return await txt.getText();
+    }
+    static async iSeeErrorMsg(input, msg) {
+        await driver.wait(until.elementLocated(input), 1000);
+        const errMsg = await driver.findElement(input);
+        const txt = await errMsg.getText();
+        assert.equal(txt, msg);
     }
 }
 

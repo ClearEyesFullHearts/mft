@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <Header />
+    <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+      <span id="global-err-msg">{{alertMsg}}</span>
+    </b-alert>
     <router-view class="mt-3" />
   </div>
 </template>
@@ -11,6 +14,21 @@ import Header from '@/components/shared/Header.vue';
 export default {
   components: {
     Header,
+  },
+  computed: {
+    showDismissibleAlert: {
+      get() {
+        return this.$store.state.showAlert;
+      },
+      set(val) {
+        if (!val) {
+          this.$store.commit('hideAlert');
+        }
+      },
+    },
+    alertMsg() {
+      return this.$store.state.alertMessage;
+    },
   },
 };
 

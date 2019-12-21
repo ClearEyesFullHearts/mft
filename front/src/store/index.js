@@ -53,8 +53,18 @@ const authorization = {
 
 export default new Vuex.Store({
   state: {
+    showAlert: false,
+    alertMessage: '',
   },
   mutations: {
+    showAlert(state, msg) {
+      state.showAlert = true;
+      state.alertMessage = msg;
+    },
+    hideAlert(state) {
+      state.showAlert = false;
+      state.alertMessage = '';
+    },
   },
   actions: {
   },

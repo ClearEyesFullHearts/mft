@@ -59,8 +59,7 @@ Then(/^an e-mail was sent to "([^"]*)"$/, async function (to) {
 });
 
 Then(/^I see "([^"]*)" as an error message$/, async function (msg) {
-    const txt = await Observe.iSeeText(this.context.currentpage.error);
-    assert.equal(txt, msg);
+    await Observe.iSeeErrorMsg(this.context.currentpage.error, msg);
 });
 
 Then(/^No emails has been sent to "([^"]*)"$/, async function (to) {
