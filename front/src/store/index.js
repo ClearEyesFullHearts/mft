@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 const authorization = {
   state: {
-    authorized: localStorage.getItem('token') !== undefined || false,
+    authorized: Boolean(localStorage.getItem('auth')) || false,
     token: localStorage.getItem('token') || '',
     user: JSON.parse(localStorage.getItem('user')) || {
       id: 0,
@@ -18,6 +18,7 @@ const authorization = {
     authorize(state, auth) {
       if (auth.auth) {
         state.authorized = auth.auth;
+        localStorage.setItem('auth', auth.auth);
         state.token = auth.token;
         localStorage.setItem('token', auth.token);
         state.roles = auth.roles;
@@ -30,6 +31,7 @@ const authorization = {
     },
     clearAuthorization(state) {
       state.authorized = false;
+      localStorage.removeItem('auth');
       state.token = '';
       localStorage.removeItem('token');
       state.roles = [];

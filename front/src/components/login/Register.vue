@@ -52,10 +52,11 @@ export default {
   computed: {
     isDisabled() {
     // evaluate whatever you need to determine disabled here...
-      return this.model.email.length <= 0
+      return (this.model.email.length <= 0
               || this.model.username.length <= 0
               || this.model.password.length <= 0
-              || this.model.c_password.length <= 0;
+              || this.model.c_password.length <= 0)
+              || this.model.password !== this.model.c_password;
     },
   },
   methods: {
