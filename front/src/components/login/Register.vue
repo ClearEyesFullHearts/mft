@@ -63,7 +63,7 @@ export default {
     async register() {
       if (this.model.password === this.model.c_password) {
         this.loading = 'Trying to connect...';
-        console.log(data);
+        // console.log(data);
         try {
           await data.user.createNewUser(this.model);
           this.$router.push('landing');

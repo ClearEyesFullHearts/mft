@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  client:
+    build: ../front
+    ports:
+      - 8080:80
+
+  server:
+    build: ../rest
+    ports:
+      - 3000:3000
+    depends_on: 
+      - server-database
+      - server-fake-smtp
+    environment:
+      - DEBUG=mft-back:*
+      - NODE_ENV=dev
+    
+  server-database:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db:/data/db
+    
+  server-fake-smtp:
+    image: reachfive/fake-smtp-server
+    ports:
+      - 1025:1025
+      - 1080:1080
+
+    

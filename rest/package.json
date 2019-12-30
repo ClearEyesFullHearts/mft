@@ -10,7 +10,8 @@
     "dev-win-cmd": "start npm run rest-win-cmd & start npm run mail-win-cmd",
     "mail-lnx": "node ./node_modules/fake-smtp-server/index.js",
     "rest-lnx": "DEBUG=mft-back:* NODE_ENV=dev node app.js",
-    "dev-lnx": "npm run rest-lnx & npm run mail-lnx"
+    "dev-lnx": "npm run rest-lnx & npm run mail-lnx",
+    "start": "NODE_ENV=production node app.js"
   },
   "repository": {
     "type": "git",

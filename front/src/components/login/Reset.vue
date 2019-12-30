@@ -45,7 +45,7 @@ export default {
         this.$parent.view = 'login';
       } catch (err) {
         // do something with the error
-        console.log('ERROR trying to log!', err);
+        // console.log('ERROR trying to log!', err);
       }
       this.loading = 'mail sent';
       this.status = 'Check your email box to get your new password.';

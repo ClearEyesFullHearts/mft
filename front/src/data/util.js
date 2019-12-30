@@ -60,7 +60,7 @@ export class ResponseWrapper {
 export class ErrorWrapper extends Error {
   constructor(error, message) {
     super();
-    console.log('ERROR!', error);
+    // console.log('ERROR!', error);
     this.name = 'ErrorWrapper';
     this.stack = new Error().stack;
     this.success = error.response ? error.response.data.success : false;

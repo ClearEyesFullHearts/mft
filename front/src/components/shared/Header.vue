@@ -42,7 +42,7 @@ export default {
         this.$router.push('/');
       } catch (err) {
         // do something with th error
-        console.log('ERROR trying to log!', err);
+        // console.log('ERROR trying to log!', err);
       }
     },
   },

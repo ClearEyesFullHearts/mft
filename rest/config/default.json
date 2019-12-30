@@ -17,7 +17,7 @@
             "port": 3000
         },
         "mongodb": {
-            "url": "mongodb://localhost/mft-dev"
+            "url": "mongodb://server-database:27017/mft-dev"
         },
         "security": "x-mft-roles",
         "roles": [
