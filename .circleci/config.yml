@@ -8,7 +8,6 @@ jobs:
 
     steps:
       - checkout
-
       - run:
         name: Install node@v12.14.0
         command: |
