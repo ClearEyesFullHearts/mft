@@ -1,7 +1,9 @@
 version: 2 # CircleCI version
 jobs:
   build:
-    machine: ubuntu-1604:201903-01
+    machine:
+      image: ubuntu-1604:201903-01
+      
     working_directory: ~/repo # Default working directory, where your project will be cloned
 
     steps:
