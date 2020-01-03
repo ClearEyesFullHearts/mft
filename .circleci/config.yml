@@ -8,16 +8,17 @@ jobs:
 
     steps:
       - checkout
+
       - run:
-        name: Install node@v12.14.0
-        command: |
-          export NVM_DIR="/opt/circleci/.nvm"
-          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-          nvm install v12.14.0
-          nvm alias default v12.14.0
-          # Each step uses the same `$BASH_ENV`, so need to modify it
-          echo 'export NVM_DIR="/opt/circleci/.nvm"' >> $BASH_ENV
-          echo "[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"" >> $BASH_ENV
+          name: Install node@v12.14.0
+          command: |
+            export NVM_DIR="/opt/circleci/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            nvm install v12.14.0
+            nvm alias default v12.14.0
+            # Each step uses the same `$BASH_ENV`, so need to modify it
+            echo 'export NVM_DIR="/opt/circleci/.nvm"' >> $BASH_ENV
+            echo "[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"" >> $BASH_ENV
 
       - run: cd ./docker/ci && docker-compose up -d
 
@@ -25,10 +26,10 @@ jobs:
       - run: ./test-api/node_modules/.bin/cucumber-js --format json > ./test-api/reports/test-api-report.json --exit
       - run: node ./test-api/reporting.js
       - store_artifacts:
-            path: ~/repo/test-api/reports
+          path: ~/repo/test-api/reports
 
       - run: cd ./test-front && npm install
       - run: ./test-front/node_modules/.bin/cucumber-js --format json > ./test-front/reports/test-front-report.json --exit
       - run: node ./test-front/reporting.js
       - store_artifacts:
-            path: ~/repo/test-front/reports
+          path: ~/repo/test-front/reports
