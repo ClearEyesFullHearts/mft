@@ -5,11 +5,12 @@
     "main": "",
     "scripts": {
         "mail-win-cmd": "node ..\\rest\\node_modules\\fake-smtp-server\\index.js",
-        "rest-win-cmd": "set DEBUG=mft-back:* && set NODE_ENV=dev && cd ..\\rest && node app.js",
+        "rest-win-cmd": "set DEBUG=mft-back:*&& set NODE_ENV=dev&& cd ..\\rest && node app.js",
         "front-win-cmd": "cd ..\\front && npm run serve",
-        "test-win-cmd": ".\\node_modules\\.bin\\cucumber-js --exit",
-        "test": "start npm run front-win-cmd && start npm run rest-win-cmd && start npm run mail-win-cmd && start npm run test-win-cmd",
-        "dock-dev": "BROWSER=firefox ./node_modules/.bin/cucumber-js --exit"
+        "test-ff-cmd": "set BROWSER=firefox&& .\\node_modules\\.bin\\cucumber-js --exit",
+        "test-win-cmd": ".\\node_modules\\.bin\\cucumber-js --format json > .\\reports\\test-front-report.json --exit",
+        "test": "start npm run front-win-cmd &&start npm run rest-win-cmd &&start npm run mail-win-cmd &&start npm run test-win-cmd",
+        "dock-dev": "BROWSER=firefox ./node_modules/.bin/cucumber-js --format json > ./reports/test-front-report.json --exit"
     },
     "author": "",
     "license": "ISC",
@@ -18,6 +19,7 @@
         "chromedriver": "^78.0.1",
         "config": "^3.2.4",
         "cucumber": "^6.0.5",
+        "cucumber-html-reporter": "^5.1.0",
         "geckodriver": "^1.19.1",
         "got": "^9.2.2",
         "mongodb-restore": "^1.6.2",

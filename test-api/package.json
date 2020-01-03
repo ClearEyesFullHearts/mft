@@ -6,7 +6,7 @@
     "scripts": {
         "mail-win-cmd": "node ..\\rest\\node_modules\\fake-smtp-server\\index.js",
         "rest-win-cmd": "set DEBUG=mft-back:* && set NODE_ENV=dev && cd ..\\rest && node app.js",
-        "test-win-cmd": ".\\node_modules\\.bin\\cucumber-js --exit",
+        "test-win-cmd": ".\\node_modules\\.bin\\cucumber-js --format json > .\\reports\\test-api-report.json --exit",
         "test": "start npm run rest-win-cmd && start npm run mail-win-cmd && start npm run test-win-cmd",
         "dock-dev": "./node_modules/.bin/cucumber-js --exit"
     },
@@ -17,6 +17,7 @@
         "apickli": "^2.3.3",
         "config": "^3.2.4",
         "cucumber": "^6.0.5",
+        "cucumber-html-reporter": "^5.1.0",
         "got": "^9.2.2",
         "json-mock": "^0.1.0",
         "jsonwebtoken": "^8.5.1",

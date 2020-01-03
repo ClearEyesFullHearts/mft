@@ -1,0 +1,22 @@
+version: 2 # CircleCI version
+jobs:
+  build:
+    machine: ubuntu-1604:201903-01
+    working_directory: ~/repo # Default working directory, where your project will be cloned
+
+    steps:
+      - checkout
+
+      - run: cd ./docker/ci && docker-compose up -d
+
+      - run: cd ./test-api && npm install
+      - run: ./test-api/node_modules/.bin/cucumber-js --format json > ./reports/test-api-report.json --exit
+      - run: node ./reporting.js
+      - store_artifacts:
+            path: ~/repo/test-api/reports
+
+      - run: cd ./test-front && npm install
+      - run: ./test-front/node_modules/.bin/cucumber-js --format json > ./reports/test-front-report.json --exit
+      - run: node ./reporting.js
+      - store_artifacts:
+            path: ~/repo/test-front/reports
