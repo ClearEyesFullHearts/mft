@@ -10,7 +10,7 @@
         "test-ff-cmd": "set BROWSER=firefox&& .\\node_modules\\.bin\\cucumber-js --exit",
         "test-win-cmd": ".\\node_modules\\.bin\\cucumber-js --format json > .\\reports\\test-front-report.json --exit",
         "test": "start npm run front-win-cmd &&start npm run rest-win-cmd &&start npm run mail-win-cmd &&start npm run test-win-cmd",
-        "dock-dev": "BROWSER=firefox ./node_modules/.bin/cucumber-js --format json > ./reports/test-front-report.json --exit"
+        "dock-dev": "./node_modules/.bin/cucumber-js --format json > ./reports/test-front-report.json --exit"
     },
     "author": "",
     "license": "ISC",
