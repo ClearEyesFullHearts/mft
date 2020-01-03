@@ -24,12 +24,12 @@ jobs:
 
       - run: cd ./test-api && npm install
       - run: cd ./test-api && npm run dock-dev
-      - run: node ./test-api/reporting.js
+      - run: cd ./test-api && node reporting.js
       - store_artifacts:
           path: ~/repo/test-api/reports
 
       - run: cd ./test-front && npm install
       - run: cd ./test-front && npm run dock-dev
-      - run: node ./test-front/reporting.js
+      - run: cd ./test-front && node reporting.js
       - store_artifacts:
           path: ~/repo/test-front/reports
