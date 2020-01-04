@@ -1,6 +1,7 @@
 version: 2.1 # CircleCI version
 orbs:
   browser-tools: circleci/browser-tools@0.1.4
+  node: circleci/node@1.1.6
 jobs:
   build:
     machine:
@@ -11,19 +12,13 @@ jobs:
     steps:
       - checkout
 
+      - browser-tools/install-firefox
+
       - browser-tools/install-chrome:
           replace-existing: true
 
-      - run:
-          name: Install node@v12.14.0
-          command: |
-            export NVM_DIR="/opt/circleci/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            nvm install v12.14.0
-            nvm alias default v12.14.0
-            # Each step uses the same `$BASH_ENV`, so need to modify it
-            echo 'export NVM_DIR="/opt/circleci/.nvm"' >> $BASH_ENV
-            echo "[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"" >> $BASH_ENV
+      - node/install-node:
+          version: "12.14.0"
 
       - run: cd ./docker/ci && docker-compose up -d
 
