@@ -23,13 +23,15 @@ jobs:
       - run: cd ./docker/ci && docker-compose up -d
 
       - run: cd ./test-api && npm install
-      - run: cd ./test-api && npm run dock-dev
-      - run: cd ./test-api && node reporting.js
+      - run: cd ./test-api && npm run ci-test-api
+      - run: cd ./test-api && npm run ci-report-api
       - store_artifacts:
           path: ~/repo/test-api/reports
 
       - run: cd ./test-front && npm install
-      - run: cd ./test-front && npm run dock-dev
-      - run: cd ./test-front && node reporting.js
+      - run: cd ./test-front && npm run ci-test-chrome
+      - run: cd ./test-front && npm run ci-report-chrome
+      - run: cd ./test-front && npm run ci-test-firefox
+      - run: cd ./test-front && npm run ci-report-firefox
       - store_artifacts:
           path: ~/repo/test-front/reports

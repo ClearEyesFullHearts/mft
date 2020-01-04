@@ -8,7 +8,9 @@
         "rest-win-cmd": "set DEBUG=mft-back:* && set NODE_ENV=dev && cd ..\\rest && node app.js",
         "test-win-cmd": ".\\node_modules\\.bin\\cucumber-js --format json > .\\reports\\test-api-report.json --exit",
         "test": "start npm run rest-win-cmd && start npm run mail-win-cmd && start npm run test-win-cmd",
-        "dock-dev": "./node_modules/.bin/cucumber-js --format json > ./reports/test-api-report.json --exit"
+        "dock-dev": "./node_modules/.bin/cucumber-js --format json > ./reports/test-api-report.json --exit",
+        "ci-test-api": "./node_modules/.bin/cucumber-js --format json > ./reports/test-api-report.json --exit",
+        "ci-report-api": "node reporting.js"
     },
     "author": "",
     "license": "ISC",

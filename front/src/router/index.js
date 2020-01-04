@@ -57,13 +57,13 @@ router.beforeEach((to, from, next) => {
     } else if (store.getters.isUser) {
       next('/landing');
     } else {
-      next('/login');
+      next('/');
     }
   } else if (to.matched.some(record => record.meta.requiresUser)) {
     if (store.getters.isAdmin || store.getters.isUser) {
       next();
     } else {
-      next('/login');
+      next('/');
     }
   } else {
     next();
