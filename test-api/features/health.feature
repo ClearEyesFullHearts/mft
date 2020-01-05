@@ -13,7 +13,6 @@ Test the server health API
     Given I set an admin bearer token
     When I GET /info
     Then response code should be 200
-    And response body path $.profile should be dev
     And response body path $.user.roles[0] should be ROLE_USER
     And response body path $.user.roles[1] should be ROLE_ADMIN
 
