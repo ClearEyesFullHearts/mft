@@ -1,6 +1,13 @@
 {
-    "auth": {
-        "secret": "supersecret"
+    "secret": {
+        "auth": "supersecret",
+        "mongo":{
+            "url": "mongodb://localhost:27017/mft-dev"
+        },
+        "mail":{
+            "user": "username",
+            "pass": "pass"
+        }
     },
     "public":{
         "name": "mft",
@@ -15,9 +22,6 @@
         "instance": {
             "port": 3000
         },
-        "mongodb": {
-            "url": "mongodb://localhost:27017/mft-dev"
-        },
         "security": "x-mft-roles",
         "roles": [
             "ROLE_USER",
@@ -29,11 +33,8 @@
             "transport":{
                 "host": "localhost",
                 "port": 1025,
+                "auth":{},
                 "secure": false,
-                "auth": {
-                    "user": "username",
-                    "pass": "pass"
-                },
                 "tls":{
                     "rejectUnauthorized": false
                 }

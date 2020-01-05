@@ -8,12 +8,12 @@ const mongoose = require('mongoose');
 
 BeforeAll(function (cb) {
     // backup({
-    //     uri: config.get('base.mongodb.url'),
+    //     uri: config.get('secret.mongo.url'),
     //     root: __dirname,
     //     callback: cb
     // });
     restore({
-        uri: config.get('base.mongodb.url'),
+        uri: config.get('secret.mongo.url'),
         root: __dirname + '/mft-dev',
         callback: cb
     });
@@ -32,7 +32,7 @@ Before(function () {
 });
 
 AfterAll(function (cb) {
-    mongoose.connect(config.get('base.mongodb.url'), { useNewUrlParser: true, useUnifiedTopology: true }).then(
+    mongoose.connect(config.get('secret.mongo.url'), { useNewUrlParser: true, useUnifiedTopology: true }).then(
         () => { mongoose.connection.db.dropDatabase(); cb(); },
         err => { cb(err); }
     );

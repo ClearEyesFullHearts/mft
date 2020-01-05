@@ -1,15 +1,15 @@
 {
-    "auth": {
-        "secret": "supersecret"
+    "secret": {
+        "auth": "supersecret",
+        "mongo":{
+            "url": "mongodb://localhost:27017/mft-dev"
+        }
     },
     "base": {
         "instance": {
             "protocol": "http",
             "host": "localhost",
             "port": 3000
-        },
-        "mongodb": {
-            "url": "mongodb://localhost/mft-dev"
         },
         "mail":{
             "serverURL": "http://localhost:1080"

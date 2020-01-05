@@ -16,7 +16,8 @@ services:
       - server-fake-smtp
     environment:
       - DEBUG=mft-back:*
-      - NODE_ENV=dock-dev
+      - NODE_ENV=dock-ci
+      - KEY_AUTH_SIGN
     
   server-database:
     image: mongo

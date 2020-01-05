@@ -18,7 +18,7 @@ class SwaggerAsync {
           swagApp.use(middleware.swaggerMetadata());
 
           // Provide the security handlers
-          swagApp.use(AuthMiddleware.verify(config.get('auth.secret')));
+          swagApp.use(AuthMiddleware.verify(config.get('secret.auth')));
 
           // Validate Swagger requests
           swagApp.use(middleware.swaggerValidator());

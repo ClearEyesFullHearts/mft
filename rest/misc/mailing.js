@@ -7,10 +7,14 @@ const loTemplate = require('lodash.template');
 const debug = logger('mft-back:misc:mailing');
 
 class Mailing {
-  constructor(sender, options, templates) {
-    this.senderAddress = sender;
+  constructor() {
+    this.senderAddress = config.get('base.mail.sender');
+
+    const options = config.get('base.mail.transport');
+    Object.assign(options.auth, config.get('secret.mail'));
     this.transporter = nodemailer.createTransport(options);
-    this.templatesFolder = templates;
+
+    this.templatesFolder = config.get('base.mail.templates');
   }
 
   async send(to, template, values) {

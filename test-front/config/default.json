@@ -1,15 +1,15 @@
 {
-    "auth": {
-        "secret": "supersecret"
+    "secret": {
+        "auth": "supersecret",
+        "mongo":{
+            "url": "mongodb://localhost:27017/mft-dev"
+        }
     },
     "public":{
         "name": "mft",
         "url": "http://localhost:8080"
     },
     "base": {
-        "mongodb": {
-            "url": "mongodb://localhost/mft-dev"
-        },
         "server":{
             "url": "http://localhost:3000"
         },

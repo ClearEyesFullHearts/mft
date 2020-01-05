@@ -73,7 +73,7 @@ class UserLogin {
       },
     };
     debug('changeUserToAuth payload', payload);
-    payload.token = jwt.sign(payload, config.get('auth.secret'));
+    payload.token = jwt.sign(payload, config.get('secret.auth'));
     return payload;
   }
 }

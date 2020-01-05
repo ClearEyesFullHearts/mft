@@ -15,7 +15,7 @@ Given("I set an admin bearer token", async function () {
             email: 'mft-admin-test@mathieufont.com'
         }
     };
-    const tokenAdmin = jwt.sign(payload, config.get('auth.secret'));
+    const tokenAdmin = jwt.sign(payload, config.get('secret.auth'));
     this.apickli.setAccessToken(tokenAdmin);
     this.apickli.setBearerToken();
 });
@@ -32,7 +32,7 @@ Given("I set an user bearer token", async function () {
             email: 'mft-user-test@mathieufont.com'
         }
     };
-    const tokenAdmin = jwt.sign(payload, config.get('auth.secret'));
+    const tokenAdmin = jwt.sign(payload, config.get('secret.auth'));
     this.apickli.setAccessToken(tokenAdmin);
     this.apickli.setBearerToken();
 });

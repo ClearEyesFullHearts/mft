@@ -14,7 +14,7 @@ class Data {
   async init() {
     try {
       debug('initialize mongodb connection');
-      this.connection = await mongoose.createConnection(config.get('base.mongodb.url'), {
+      this.connection = await mongoose.createConnection(config.get('secret.mongo.url'), {
         autoIndex: false,
         useNewUrlParser: true,
         useUnifiedTopology: true,
