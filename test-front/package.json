@@ -12,9 +12,9 @@
         "test": "start npm run front-win-cmd &&start npm run rest-win-cmd &&start npm run mail-win-cmd &&start npm run test-win-cmd",
         "dock-dev": "BROWSER=firefox ./node_modules/.bin/cucumber-js --format json > ./reports/test-front-report.json --exit",
         "dock-report": "REPORT_NAME=test-front-report node reporting.js",
-        "ci-test-firefox": "BROWSER=firefox ./node_modules/.bin/cucumber-js --format json > ./reports/test-firefox-report.json --exit",
+        "ci-test-firefox": "BROWSER=firefox ./node_modules/.bin/cucumber-js --format json > ~/cucumber/test-firefox.cucumber --exit",
         "ci-report-firefox": "REPORT_NAME=test-firefox-report node reporting.js",
-        "ci-test-chrome": "./node_modules/.bin/cucumber-js --format json > ./reports/test-chrome-report.json --exit",
+        "ci-test-chrome": "./node_modules/.bin/cucumber-js --format json > ~/cucumber/test-chrome.cucumber --exit",
         "ci-report-chrome": "REPORT_NAME=test-chrome-report node reporting.js"
     },
     "author": "",

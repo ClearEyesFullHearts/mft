@@ -21,14 +21,16 @@ jobs:
           version: "12.14.0"
 
       - run: cd ./docker/ci && KEY_AUTH_SIGN=${MFT_AUTH_KEY} docker-compose up -d
+      
+      - run: mkdir -p ~/cucumber
 
       - run: cd ./test-api && npm install
-      - run: cd ./test-api && KEY_AUTH_SIGN=${MFT_AUTH_KEY} npm run ci-test-api && npm run ci-report-api
-      - store_artifacts:
-          path: ~/repo/test-api/reports
+      - run: cd ./test-api && KEY_AUTH_SIGN=${MFT_AUTH_KEY} npm run ci-test-api
 
       - run: cd ./test-front && npm install
-      - run: cd ./test-front && KEY_AUTH_SIGN=${MFT_AUTH_KEY} npm run ci-test-chrome && npm run ci-report-chrome
-      - run: cd ./test-front && KEY_AUTH_SIGN=${MFT_AUTH_KEY} npm run ci-test-firefox && npm run ci-report-firefox
+      - run: cd ./test-front && KEY_AUTH_SIGN=${MFT_AUTH_KEY} npm run ci-test-chrome
+      - run: cd ./test-front && KEY_AUTH_SIGN=${MFT_AUTH_KEY} npm run ci-test-firefox
+      - store_test_results:
+          path: ~/cucumber
       - store_artifacts:
-          path: ~/repo/test-front/reports
+          path: ~/cucumber
