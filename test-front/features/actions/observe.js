@@ -26,6 +26,21 @@ class Observe {
         const txt = await errMsg.getText();
         assert.equal(txt, msg);
     }
+    static async isVisible(input) {
+        await driver.wait(until.elementLocated(input), 1000);
+        const elmt = await driver.findElement(input);
+        const visible = await elmt.isDisplayed();
+        assert(visible);
+    }
+    static async isNotVisible(input) {
+        const elmts = await driver.findElements(input);
+        if(elmts.length > 0){
+            const visible = await elmts[0].isDisplayed();
+            assert.equal(visible, false);
+        }else{
+            return true;
+        }
+    }
 }
 
 module.exports = Observe;

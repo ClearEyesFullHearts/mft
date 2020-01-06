@@ -1,10 +1,12 @@
 const LoginPage = require('./login/loginPage');
 const LandingPage = require('./landing/landingPage');
 const InfoPage = require('./infos/infoPage');
+const ProfilePage = require('./profile/profilePage');
 
 const loginPage = new LoginPage();
 const landingPage = new LandingPage();
 const infoPage = new InfoPage();
+const profilePage = new ProfilePage();
 
 const pages = [
     {
@@ -21,6 +23,11 @@ const pages = [
         url: infoPage.url,
         name: infoPage.name,
         page: infoPage,
+    },
+    {
+        url: profilePage.url,
+        name: profilePage.name,
+        page: profilePage,
     }
 ]
 

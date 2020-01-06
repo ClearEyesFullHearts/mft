@@ -21,6 +21,9 @@ class BasePage {
     get logOut() {
         return this.navbar.logOffButton;
     }
+    get profileNav() {
+        return this.navbar.profileButton;
+    }
 
     async amThere(){
         const elmt = await driver.findElement(this.pageTitle);

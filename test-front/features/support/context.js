@@ -1,27 +1,41 @@
 
 class Context {
-    constructor(){
+    constructor() {
+        this._currentID = null;
         this._currentpage = null;
         this._currentemail = null;
+        this._currentusername = null;
         this._currentpassword = null;
+    }
+    get currentID() {
+        return this._currentID;
+    }
+    set currentID(ID) {
+        this._currentID = ID;
     }
     get currentpage() {
         return this._currentpage;
     }
     set currentpage(page) {
-        this._currentpage = page;   // validation could be checked here such as only allowing non numerical values
+        this._currentpage = page;
     }
     get currentemail() {
         return this._currentemail;
     }
     set currentemail(email) {
-        this._currentemail = email;   // validation could be checked here such as only allowing non numerical values
+        this._currentemail = email;
+    }
+    get currentusername() {
+        return this._currentusername;
+    }
+    set currentusername(username) {
+        this._currentusername = username;
     }
     get currentpassword() {
         return this._currentpassword;
     }
     set currentpassword(password) {
-        this._currentpassword = password;   // validation could be checked here such as only allowing non numerical values
+        this._currentpassword = password;
     }
 
     replaceVariables(resource, offset){
