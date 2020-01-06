@@ -6,7 +6,7 @@
         }
     },
     "public":{
-        "name": "mft",
+        "name": "MFT",
         "url": "http://localhost:8080"
     },
     "base": {

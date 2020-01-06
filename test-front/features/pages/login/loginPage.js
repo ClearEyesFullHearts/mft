@@ -1,4 +1,6 @@
 const config = require('config');
+const assert = require('assert');
+const { driver } = require('../../support/web_driver');
 const BasePage = require('../base');
 const LoginComp = require('./login');
 const RegisterComp = require('./register');
@@ -11,6 +13,13 @@ class LoginPage extends BasePage {
         this.loginComponent = new LoginComp();
         this.registerComponent = new RegisterComp();
         this.resetComponent = new ResetComp();
+    }
+
+    async amThere() {
+        const title = await driver.getTitle();
+        assert.equal(title, this.title);
+        const url = await driver.getCurrentUrl();
+        assert.equal(url, this.url);
     }
 
     get email(){

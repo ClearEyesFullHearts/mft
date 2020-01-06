@@ -36,7 +36,8 @@ When(/^I fill (.*) input as "([^"]*)"$/, async function (inputName, text) {
 
 Then(/^I am on (.*) page$/, async function (pageName) {
     this.context.currentpage = await Observe.waitingForPageChange(pageName);
-    assert.equal(this.context.currentpage.name, pageName);
+    // assert.equal(this.context.currentpage.name, pageName);
+    await this.context.currentpage.amThere();
 });
 
 When(/^I click on (.*)$/, async function (inputName) {
