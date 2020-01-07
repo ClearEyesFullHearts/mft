@@ -1,6 +1,7 @@
 var { Given, When, Then } = require('cucumber');
 const assert = require('assert');
 const uuidv4 = require('uuid/v4');
+const config = require('config');
 const Navigate = require('../actions/navigate');
 const Inputs = require('../actions/inputs');
 const Observe = require('../actions/observe');
@@ -45,7 +46,7 @@ Given(/^I am a user on (.*) page$/, async function (pageName) {
     this.context.currentpage = await Navigate.toPage(pageName);
 });
 
-Given(/^I do not see (.*) input$/, async function () {
+Given(/^I do not see (.*) input$/, async function (inputName) {
     await Observe.isNotVisible(this.context.currentpage[inputName]);
 });
 

@@ -8,12 +8,12 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
           <b-nav-item to="landing">Home</b-nav-item>
-          <b-nav-item to="info">Server info</b-nav-item>
+          <b-nav-item v-if="isAdmin" to="info">Server info</b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-          <b-nav-item to="profile">{{ profileName }}</b-nav-item>
+          <b-nav-item id="nav-profile-btn" to="profile">{{ profileName }}</b-nav-item>
           <b-nav-item id="nav-logoff-btn" @click="logOff">Sign Out</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
@@ -33,6 +33,9 @@ export default {
     },
     isConnected() {
       return this.$store.state.auth.authorized;
+    },
+    isAdmin() {
+      return this.$store.getters.isAdmin;
     },
   },
   methods: {

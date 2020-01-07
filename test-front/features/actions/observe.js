@@ -1,11 +1,12 @@
 const assert = require('assert');
 const { driver, until } = require('../support/web_driver');
 const { getByName } = require('../pages');
+const UpTxtComp = require('../pages/shared/updatableText');
 
 class Observe {
     static async waitingForPageChange(pageName) {
         const page = getByName(pageName);
-        await driver.wait(until.urlContains(page.url), 3000);
+        await driver.wait(until.urlIs(page.url), 3000);
         return page;
     }
     static async iSeeIsEnabled(input) {
@@ -15,6 +16,9 @@ class Observe {
         return await elmt.isEnabled();
     }
     static async iSeeText(input) {
+        if (input instanceof UpTxtComp){
+            input = input.label;
+        }
         const txt = await driver.findElement(input);
         const visible = await txt.isDisplayed();
         assert(visible);

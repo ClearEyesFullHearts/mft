@@ -5,8 +5,8 @@
     <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
       <span id="global-err-msg">{{alertMsg}}</span>
     </b-alert>
-    <h1 id="global-title" v-if="showTitle">{{ title }}</h1>
-    <router-view class="mt-3" />
+    <h1 id="global-title" class="ml-4" v-if="showTitle">{{ title }}</h1>
+    <router-view class="my-3 mx-5" />
   </div>
 </template>
 
@@ -57,8 +57,11 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+}
+
+.home{
+  text-align: center;
 }
 
 #nav {

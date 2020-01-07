@@ -47,6 +47,15 @@ const routes = [
       requiresAdmin: true,
     },
   },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: () => import(/* webpackChunkName: "profile" */ '../views/Profile.vue'),
+    meta: {
+      title: 'My Profile',
+      requiresUser: true,
+    },
+  },
 ];
 
 const router = new VueRouter({
