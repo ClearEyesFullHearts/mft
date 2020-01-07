@@ -77,3 +77,10 @@ When(/^I delete user "([^"]*)"$/, async function (userID) {
 Then(/^There is no delete button for me$/, async function () {
     await Observe.isNotVisible(this.context.currentpage.deleteUser(this.context.currentID));
 });
+
+When(/^I confirm my choice$/, async function () {
+    await Inputs.confirmAlert();
+});
+When(/^I cancel my choice$/, async function () {
+    await Inputs.confirmAlert();
+});

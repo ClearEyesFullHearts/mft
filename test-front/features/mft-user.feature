@@ -35,9 +35,17 @@ Test the user profile page for user and administrator
     And I click on connect
     Then I am on landing page
 
+  Scenario: Mismatched password is  not accepted
+    Given I am a user on profile page
+    When I click on update
+    And I fill password input as "secret"
+    And I fill confirmPassword input as "wrong"
+    Then I see update is disabled
+
   Scenario: A user can delete its profile
     Given I am a user on profile page
     When I click on remove
+    And I confirm my choice
     And I am on login page
     And I fill email input as "`currentemail`"
     And I fill password input as "`currentpassword`"

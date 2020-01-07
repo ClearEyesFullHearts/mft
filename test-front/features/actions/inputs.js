@@ -11,6 +11,12 @@ class Inputs {
     static async focus(input) {
         await driver.findElement(input).sendKeys('');
     }
+    static async confirmAlert(){
+        await driver.switchTo().alert().accept();
+    }
+    static async cancelAlert() {
+        await driver.switchTo().alert().dismiss();
+    }
     static async writesAndUpdate(updatableText, text) {
         await driver.findElement(updatableText.label).click();
         await driver.wait(until.elementIsVisible(updatableText.text), 1000);
