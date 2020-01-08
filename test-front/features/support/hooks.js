@@ -10,11 +10,18 @@ const Context = require('./context');
 setDefaultTimeout(60 * 1000);
 
 BeforeAll(function (cb) {
-    restore({
-        uri: config.get('secret.mongo.url'),
-        root: __dirname + '/mft-dev',
-        callback: cb
-    });
+    mongoose.connect(config.get('secret.mongo.url'), { useNewUrlParser: true, useUnifiedTopology: true }).then(
+        () => { 
+            mongoose.connection.db.dropDatabase();
+            restore({
+                uri: config.get('secret.mongo.url'),
+                root: __dirname + '/mft-dev',
+                callback: cb
+            });
+        },
+        err => { cb(err); }
+    );
+    
 });
 
 Before(function () {
@@ -37,9 +44,6 @@ After(async function () {
 AfterAll(function (cb) {
     //perform some shared teardown
     driver.quit();
-    mongoose.connect(config.get('secret.mongo.url'), { useNewUrlParser: true, useUnifiedTopology: true }).then(
-        () => { mongoose.connection.db.dropDatabase(); cb(); },
-        err => { cb(err); }
-    );
+    cb();
 })
 

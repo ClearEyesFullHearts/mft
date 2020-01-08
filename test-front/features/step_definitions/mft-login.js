@@ -13,15 +13,18 @@ Given(/^I browse to (.*) page$/, async function(pageName) {
 Given(/^I am a new connected user$/, async function () {
     this.context.currentemail = `${uuidv4()}@mathieufont.com`;
     this.context.currentpassword = 'testtesttest';
+    this.context.currentusername = 'testUser';
     const body = {
-        username: 'testUser',
+        username: this.context.currentusername,
         email: this.context.currentemail,
         password: this.context.currentpassword
     };
-    await this.got.post(config.get('base.server.url') + '/users', {
+    const resp = await this.got.post(config.get('base.server.url') + '/users', {
         json: true, // this is required
         body
     });
+    this.context.currentID = resp.body.user.id;
+    
     this.context.currentpage = await Navigate.toPage('login');
     await Inputs.writes(this.context.currentpage.email, this.context.currentemail);
     await Inputs.writes(this.context.currentpage.password, this.context.currentpassword);
@@ -36,7 +39,8 @@ When(/^I fill (.*) input as "([^"]*)"$/, async function (inputName, text) {
 
 Then(/^I am on (.*) page$/, async function (pageName) {
     this.context.currentpage = await Observe.waitingForPageChange(pageName);
-    assert.equal(this.context.currentpage.name, pageName);
+    // assert.equal(this.context.currentpage.name, pageName);
+    await this.context.currentpage.amThere();
 });
 
 When(/^I click on (.*)$/, async function (inputName) {

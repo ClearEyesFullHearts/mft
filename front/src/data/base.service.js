@@ -21,8 +21,8 @@ export default class BaseService {
    */
 
   request() {
-    if (this.store.auth && this.store.auth.authorized) {
-      this.http.defaults.headers.Authorization = `Bearer ${this.store.auth.token}`;
+    if (this.store.state.auth && this.store.state.auth.authorized) {
+      this.http.defaults.headers.Authorization = `Bearer ${this.store.state.auth.token}`;
     } else {
       delete this.http.defaults.headers.Authorization;
     }

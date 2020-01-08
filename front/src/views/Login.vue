@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <vue-headful title="MFT" />
     <div class="container">
       <transition>
         <div v-if="view !== 'register' && view !== 'reset'">

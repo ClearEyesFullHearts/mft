@@ -1,6 +1,5 @@
 <template>
     <div class="row">
-    <vue-headful title="mft" />
         <div class="col-md-12">
             <form @submit.prevent="login">
                 <div class="form-group">

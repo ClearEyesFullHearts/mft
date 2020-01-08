@@ -1,10 +1,12 @@
 <template>
   <div id="app">
+    <vue-headful title="MFT" />
     <Header />
     <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
       <span id="global-err-msg">{{alertMsg}}</span>
     </b-alert>
-    <router-view class="mt-3" />
+    <h1 id="global-title" class="ml-4" v-if="showTitle">{{ title }}</h1>
+    <router-view class="my-3 mx-5" />
   </div>
 </template>
 
@@ -14,6 +16,12 @@ import Header from '@/components/shared/Header.vue';
 export default {
   components: {
     Header,
+  },
+  data() {
+    return {
+      title: '',
+      showTitle: false,
+    };
   },
   computed: {
     showDismissibleAlert: {
@@ -30,6 +38,16 @@ export default {
       return this.$store.state.alertMessage;
     },
   },
+  watch: {
+    $route(to) {
+      if (to.meta.title) {
+        this.showTitle = true;
+        this.title = to.meta.title;
+      } else {
+        this.showTitle = false;
+      }
+    },
+  },
 };
 
 </script>
@@ -39,8 +57,11 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+}
+
+.home{
+  text-align: center;
 }
 
 #nav {

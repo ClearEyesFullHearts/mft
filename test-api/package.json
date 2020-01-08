@@ -5,10 +5,14 @@
     "main": "",
     "scripts": {
         "mail-win-cmd": "node ..\\rest\\node_modules\\fake-smtp-server\\index.js",
-        "rest-win-cmd": "set DEBUG=mft-back:* && set NODE_ENV=dev && cd ..\\rest && node app.js",
-        "test-win-cmd": ".\\node_modules\\.bin\\cucumber-js --format junit > .\\reports\\test-api-report.xml --exit",
-        "test": "start npm run rest-win-cmd && start npm run mail-win-cmd && start npm run test-win-cmd",
+        "rest-win-cmd": "cd ..\\rest&& npm run rest-win-cmd",
+        "rest-win-cmd:cover": "cd ..\\rest&& npm run rest-win-cmd:cover",
+        "dev-win-cmd": "start npm run rest-win-cmd&& start npm run mail-win-cmd",
+        "dev-win-cmd:cover": "start npm run rest-win-cmd:cover&& start npm run mail-win-cmd",
+        "dev-test-api": ".\\node_modules\\.bin\\cucumber-js --format json > ./reports/test-api-report.json --exit",
+        "dev-reporting": "node reporting.js",
         "dock-dev": "./node_modules/.bin/cucumber-js --format json > ./reports/test-api-report.json --exit",
+        "dock-reporting": "node reporting.js",
         "ci-test-api": "./node_modules/.bin/cucumber-js --format json > ~/cucumber/test-api.cucumber --exit",
         "ci-report-api": "node reporting.js"
     },

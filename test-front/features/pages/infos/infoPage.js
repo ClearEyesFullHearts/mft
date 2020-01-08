@@ -3,7 +3,7 @@ const BasePage = require('../base');
 
 class InfoPage extends BasePage {
     constructor() {
-        super('Information', `${config.get('public.url')}/info`);
+        super('Informations', `${config.get('public.url')}/info`);
         this.name = 'information';
     }
 }

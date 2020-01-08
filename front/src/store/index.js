@@ -41,6 +41,10 @@ const authorization = {
       state.user.email = '';
       localStorage.removeItem('user');
     },
+    changeUser(state, { username }) {
+      state.user.username = username;
+      localStorage.setItem('user', JSON.stringify(state.user));
+    },
   },
   actions: {
 
