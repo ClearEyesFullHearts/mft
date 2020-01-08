@@ -4,14 +4,14 @@
   "description": "mft public site back-end",
   "main": "app.js",
   "scripts": {
-    "test": "test-mft",
     "mail-win-cmd": "node .\\node_modules\\fake-smtp-server\\index.js",
-    "rest-win-cmd": "set DEBUG=mft-back:* && set NODE_ENV=dev && node app.js",
-    "dev-win-cmd": "start npm run rest-win-cmd & start npm run mail-win-cmd",
+    "rest-win-cmd": "set DEBUG=mft-back:*&& set NODE_ENV=dev&& node app.js",
+    "rest-win-cmd:cover": ".\\node_modules\\.bin\\nyc --reporter=html npm run rest-win-cmd",
+    "dev-win-cmd": "start npm run mail-win-cmd && start npm run rest-win-cmd",
+    "dev-win-cmd:cover": "start npm run mail-win-cmd && npm run rest-win-cmd:cover",
     "mail-lnx": "node ./node_modules/fake-smtp-server/index.js",
     "rest-lnx": "DEBUG=mft-back:* NODE_ENV=dev node app.js",
-    "dev-lnx": "npm run rest-lnx & npm run mail-lnx",
-    "start": "NODE_ENV=production node app.js"
+    "dev-lnx": "npm run rest-lnx & npm run mail-lnx"
   },
   "repository": {
     "type": "git",
@@ -47,6 +47,7 @@
     "eslint": "^6.7.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
-    "fake-smtp-server": "^0.8.0"
+    "fake-smtp-server": "^0.8.0",
+    "nyc": "^15.0.0"
   }
 }
