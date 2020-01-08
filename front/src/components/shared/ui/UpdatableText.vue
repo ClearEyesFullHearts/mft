@@ -7,11 +7,11 @@
       </b-form-input>
       <button v-bind:id="validateID" type="button" class="btn btn-default mr-1"
         @click.prevent="validate" aria-label="Validate">
-        <v-icon name="check" />
+        <font-awesome-icon icon="check"></font-awesome-icon>
       </button>
       <button v-bind:id="cancelID" type="button" class="btn btn-default"
         @click.prevent="active = !active; updatableText = value;" aria-label="Cancel">
-        <v-icon name="times" />
+        <font-awesome-icon icon="times"></font-awesome-icon>
       </button>
     </div>
   </div>

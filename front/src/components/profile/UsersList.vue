@@ -57,7 +57,6 @@ export default {
     // load data if admin
     const resp = await data.user.getAll();
     this.users = resp.data;
-    console.log('users', this.users);
   },
 };
 </script>
