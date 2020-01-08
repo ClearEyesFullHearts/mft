@@ -3,7 +3,7 @@ const { By } = require('selenium-webdriver');
 class UsersListComponent {
 
     userLine(id){
-        return By.id(`user-${id}`);
+        return By.id(`user__row_${id}`);
     }
     nameInput(id) {
         return By.id(`user-name-${id}`);

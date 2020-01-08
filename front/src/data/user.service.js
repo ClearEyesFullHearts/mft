@@ -1,6 +1,15 @@
 import BaseService from './base.service';
 
 export default class UserService extends BaseService {
+  async getAll() {
+    try {
+      const resp = await this.request().get('users');
+      return this.responseWrapper(resp, resp.data);
+    } catch (error) {
+      throw this.errorWrapper(error);
+    }
+  }
+
   async createNewUser({ username, email, password }) {
     try {
       const resp = await this.request().post('users', { username, email, password });

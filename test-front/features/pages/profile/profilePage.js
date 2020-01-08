@@ -30,7 +30,7 @@ class ProfilePage extends BasePage {
         return this.user.deleteButton;
     }
 
-    user(id) {
+    userLine(id) {
         return this.usersList.userLine(id);
     }
     name(id) {
@@ -40,7 +40,7 @@ class ProfilePage extends BasePage {
         return this.usersList.emailInput(id);
     }
     deleteUser(id) {
-        return this.usersList.deleteUser(id);
+        return this.usersList.deleteButton(id);
     }
 }
 

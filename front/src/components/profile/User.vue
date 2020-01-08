@@ -28,7 +28,7 @@
         </b-button>
         <b-button v-if="form.showPassword" id="user-cancel-btn" @click.prevent="form.showPassword = false; form.password = ''; form.c_password = '';" variant="secondary">Cancel
         </b-button>
-        <b-button id="user-delete-btn" @click="remove" class="float-right" variant="danger">
+        <b-button :disabled="isAdmin" id="user-delete-btn" @click.prevent="remove" class="float-right" variant="danger">
           Delete me!</b-button>
       </b-form>
     </b-card>
@@ -60,6 +60,9 @@ export default {
       return this.form.showPassword && (this.form.password.length <= 0
                                             || this.form.c_password.length <= 0
                                             || this.form.password !== this.form.c_password);
+    },
+    isAdmin() {
+      return this.$store.getters.isAdmin;
     },
   },
   methods: {

@@ -67,7 +67,7 @@ When(/^I see (.*) input$/, async function (inputName) {
 
 Then(/^I see user for ID "([^"]*)"$/, async function (userID) {
     userID = this.context.replaceVariables(userID);
-    await Observe.isVisible(this.context.currentpage.user(userID));
+    await Observe.isVisible(this.context.currentpage.userLine(userID));
 });
 
 When(/^I delete user "([^"]*)"$/, async function (userID) {

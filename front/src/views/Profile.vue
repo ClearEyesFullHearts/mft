@@ -1,7 +1,7 @@
 <template>
   <div class="profile">
     <User></User>
-    <UsersList></UsersList>
+    <UsersList v-if="isAdmin"></UsersList>
   </div>
 </template>
 
@@ -14,6 +14,11 @@ export default {
   components: {
     User,
     UsersList,
+  },
+  computed: {
+    isAdmin() {
+      return this.$store.getters.isAdmin;
+    },
   },
 };
 

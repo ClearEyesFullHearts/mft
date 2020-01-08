@@ -57,18 +57,23 @@ Test the user profile page for user and administrator
     When I fill email input as "mft-admin-test@mathieufont.com"
     And I fill password input as "testadmin"
     And I click on connect
+    And I am on information page
     And I click on profileNav
-    Then I see user for ID "1"
+    Then I am on profile page
+    And I see user for ID "1"
     And I see user for ID "2"
     And I see user for ID "3"
 
   Scenario: An admin can delete a user
     Given I am a new connected user
     And I click on logOut
+    And I am on login page
     When I fill email input as "mft-admin-test@mathieufont.com"
     And I fill password input as "testadmin"
     And I click on connect
+    And I am on information page
     And I click on profileNav
+    And I am on profile page
     And I delete user "`currentID`"
     And I click on logOut
     And I am on login page
