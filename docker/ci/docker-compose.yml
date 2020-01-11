@@ -3,9 +3,14 @@ version: "3"
 services:
 
   client:
-    build: ../../front
+    build:
+      context: ../../front
+      args:
+        - DOCKER_ENV=ci
     ports:
       - ${FRONT_PUBLIC_PORT}:80
+    depends_on: 
+      - server
 
   server:
     build: ../../rest

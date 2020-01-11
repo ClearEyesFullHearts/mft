@@ -21,12 +21,11 @@ class MultiSwaggerService {
     debug('STARTED');
     const port = config.get('base.instance.port');
 
-    const swaggerApp = this.app;
     const data = new Data();
-
     await data.init();
+    this.app.locals.db = data;
 
-    swaggerApp.locals.db = data;
+    const swaggerApp = express.Router();
 
     const apis = config.get('api');
     const l = apis.length;
@@ -45,8 +44,9 @@ class MultiSwaggerService {
 
     swaggerApp.use(ErrorHelper.catchMiddleware());
 
+    this.app.use('/api', swaggerApp);
     return new Promise(((resolve) => {
-      swaggerApp.listen(port, () => {
+      this.app.listen(port, () => {
         debug('Your server is listening on port %d', port);
         resolve();
       });
