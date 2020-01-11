@@ -1,0 +1,10 @@
+{
+    
+    "base": {
+        "instance": {
+            "protocol": "http",
+            "host": "localhost",
+            "port": 8080
+        }
+    }
+}

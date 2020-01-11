@@ -12,11 +12,17 @@ BeforeAll(function (cb) {
     //     root: __dirname,
     //     callback: cb
     // });
-    restore({
-        uri: config.get('secret.mongo.url'),
-        root: __dirname + '/mft-dev',
-        callback: cb
-    });
+    mongoose.connect(config.get('secret.mongo.url'), { useNewUrlParser: true, useUnifiedTopology: true }).then(
+        () => { 
+            mongoose.connection.db.dropDatabase();
+            restore({
+                uri: config.get('secret.mongo.url'),
+                root: __dirname + '/mft-dev',
+                callback: cb
+            });
+        },
+        err => { cb(err); }
+    );
 });
 
 Before(function () {
@@ -24,7 +30,7 @@ Before(function () {
     const port = config.get('base.instance.port');
     const protocol = config.get('base.instance.protocol');
 
-    this.apickli = new apickli.Apickli(protocol, `${host}:${port}`);
+    this.apickli = new apickli.Apickli(protocol, `${host}:${port}/api`);
     this.apickli.addRequestHeader('Cache-Control', 'no-cache');
     this.apickli.addRequestHeader('Content-Type', 'application/json');
 
@@ -32,8 +38,5 @@ Before(function () {
 });
 
 AfterAll(function (cb) {
-    mongoose.connect(config.get('secret.mongo.url'), { useNewUrlParser: true, useUnifiedTopology: true }).then(
-        () => { mongoose.connection.db.dropDatabase(); cb(); },
-        err => { cb(err); }
-    );
+    cb();
 });

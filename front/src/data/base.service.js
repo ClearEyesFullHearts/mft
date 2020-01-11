@@ -1,13 +1,11 @@
 import axios from 'axios';
 import { ResponseWrapper, ErrorWrapper } from './util';
 import $store from '../store';
-// eslint-disable-next-line import/extensions
-import { API_URL } from '../.env';
 
 export default class BaseService {
   constructor() {
     this.http = axios.create({
-      baseURL: API_URL,
+      baseURL: process.env.VUE_APP_API_URL,
     });
     this.ResponseWrapper = ResponseWrapper;
     this.ErrorWrapper = ErrorWrapper;

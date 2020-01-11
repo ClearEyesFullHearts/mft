@@ -1,10 +1,11 @@
 # étape de build
 FROM node:lts-alpine as build-stage
 WORKDIR /usr/src/app
+ARG DOCKER_ENV
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run build
+RUN npm run build:$DOCKER_ENV
 
 # étape de production
 FROM nginx:stable-alpine as production-stage
