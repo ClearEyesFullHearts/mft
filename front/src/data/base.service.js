@@ -7,7 +7,6 @@ export default class BaseService {
     this.http = axios.create({
       baseURL: process.env.VUE_APP_API_URL,
     });
-    console.log('process.env', process.env);
     this.ResponseWrapper = ResponseWrapper;
     this.ErrorWrapper = ErrorWrapper;
     this.store = $store;
