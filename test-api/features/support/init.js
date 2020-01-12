@@ -30,7 +30,7 @@ Before(function () {
     const port = config.get('base.instance.port');
     const protocol = config.get('base.instance.protocol');
 
-    this.apickli = new apickli.Apickli(protocol, `${host}:${port}/api`);
+    this.apickli = new apickli.Apickli(protocol, `${host}:${port}`);
     this.apickli.addRequestHeader('Cache-Control', 'no-cache');
     this.apickli.addRequestHeader('Content-Type', 'application/json');
 

@@ -11,7 +11,7 @@
     },
     "base": {
         "server":{
-            "url": "http://localhost:3000/api"
+            "url": "http://localhost:3000"
         },
         "mail": {
             "serverURL": "http://localhost:1080"

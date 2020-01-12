@@ -25,8 +25,6 @@ class MultiSwaggerService {
     await data.init();
     this.app.locals.db = data;
 
-    const swaggerApp = express.Router();
-
     const apis = config.get('api');
     const l = apis.length;
     for (let i = 0; i < l; i += 1) {
@@ -39,12 +37,11 @@ class MultiSwaggerService {
       };
       const doc = require(`../api/${apis[i].name}/${apis[i].swagger}`);// eslint-disable-line
 
-      await SwaggerAsync.init(swaggerApp, name, doc, options);// eslint-disable-line
+      await SwaggerAsync.init(this.app, name, doc, options);// eslint-disable-line
     }
 
-    swaggerApp.use(ErrorHelper.catchMiddleware());
+    this.app.use(ErrorHelper.catchMiddleware());
 
-    this.app.use('/api', swaggerApp);
     return new Promise(((resolve) => {
       this.app.listen(port, () => {
         debug('Your server is listening on port %d', port);

@@ -11,7 +11,7 @@
         "dev-win-cmd:cover": "start npm run rest-win-cmd:cover&& start npm run mail-win-cmd",
         "dev-test-api": ".\\node_modules\\.bin\\cucumber-js --format json > ./reports/test-api-report.json --exit",
         "dev-reporting": "node reporting.js",
-        "dock-dev": "./node_modules/.bin/cucumber-js --format json > ./reports/test-api-report.json --exit",
+        "dock-dev": "NODE_ENV=dock-dev ./node_modules/.bin/cucumber-js --format json > ./reports/test-api-report.json --exit",
         "dock-reporting": "node reporting.js",
         "ci-test-api": "NODE_ENV=dock-ci ./node_modules/.bin/cucumber-js --format json > ~/cucumber/test-api.cucumber --exit",
         "ci-report-api": "node reporting.js"
