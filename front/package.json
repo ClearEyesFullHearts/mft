@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint",
     "build:dock-dev": "vue-cli-service build --mode dev",
     "build:dock-ci": "vue-cli-service build --mode ci",
+    "build:staging": "vue-cli-service build --mode staging",
     "mail-win-cmd": "node ..\\rest\\node_modules\\fake-smtp-server\\index.js",
     "rest-win-cmd": "set DEBUG=mft-back:*&& set NODE_ENV=dev&& cd ..\\rest && node app.js",
     "dev-win-cmd": "start npm run rest-win-cmd & start npm run serve & start npm run mail-win-cmd"

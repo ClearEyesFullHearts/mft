@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mft-invc-staging-server
+spec:
+  type: ClusterIP
+  selector:
+    app: mft-invc-staging-server
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mft-invc-staging-server
+  name: mft-invc-staging-server
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: mft-invc-staging-server
+  template:
+    metadata:
+      labels:
+        app: mft-invc-staging-server
+    spec:
+      containers:
+      - env:
+        - name: DEBUG
+          value: mft-back:*
+        - name: NODE_ENV
+          value: staging
+        image: gcr.io/mft-invc/mft-server:0.0.0
+        name: mft-invc-staging-server
+        ports:
+        - containerPort: 3000
