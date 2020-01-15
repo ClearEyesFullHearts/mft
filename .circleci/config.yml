@@ -122,8 +122,8 @@ workflows:
             branches:
               only: master
       - staging:
-        requires:
-          - push
-        filters:
-          branches:
-            only: master
+          requires:
+            - push
+          filters:
+            branches:
+              only: master
