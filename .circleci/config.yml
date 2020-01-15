@@ -71,12 +71,12 @@ jobs:
               echo "Not master branch; skipping image push.."
             fi
       - persist_to_workspace:
-        root: .
-        paths:
-          - front_image_name
-          - server_image_name
+          root: .
+          paths:
+            - front_image_name
+            - server_image_name
 
-  deploy-staging:
+  staging:
     docker:
       - image: google/cloud-sdk
     steps:
@@ -121,7 +121,7 @@ workflows:
           filters:
             branches:
               only: master
-      - deploy-staging:
+      - staging:
         requires:
           - push
         filters:
