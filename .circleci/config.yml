@@ -62,7 +62,7 @@ jobs:
             then
               FRONT_DOCKER_IMAGE_NAME=$(cat front_image_name)
               SERVER_DOCKER_IMAGE_NAME=$(cat server_image_name)
-              echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > gcloud-service-key.json
+              echo $GCLOUD_SERVICE_KEY > gcloud-service-key.json
               gcloud auth activate-service-account --key-file gcloud-service-key.json
               gcloud --quiet auth configure-docker
               docker push $FRONT_DOCKER_IMAGE_NAME
