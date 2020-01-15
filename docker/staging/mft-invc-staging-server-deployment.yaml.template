@@ -53,7 +53,7 @@ spec:
             secretKeyRef:
               name: mft-invc-staging-secret
               key: pass-mail
-        image: gcr.io/mft-invc/mft-server:0.0.0
+        image: DOCKER_IMAGE_NAME
         volumeMounts:
           # name must match the volume name below
           - name: secret-volume

@@ -28,7 +28,7 @@ spec:
         app: mft-invc-staging-client
     spec:
       containers:
-      - image: gcr.io/mft-invc/mft-client:0.0.0
+      - image: DOCKER_IMAGE_NAME
         name: mft-invc-staging-client
         ports:
         - containerPort: 80
