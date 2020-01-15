@@ -34,3 +34,51 @@ jobs:
           path: ~/cucumber
       - store_artifacts:
           path: ~/cucumber
+
+  push:
+    docker:
+      - image: google/cloud-sdk
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Generate full image name for new docker image
+          command: |
+            set -x
+            DOCKER_IMAGE_TAG=v${CIRCLE_BUILD_NUM}
+            echo "gcr.io/$GOOGLE_PROJECT_ID/mft-invc-staging-front:$DOCKER_IMAGE_TAG" > front_image_name
+            echo "gcr.io/$GOOGLE_PROJECT_ID/mft-invc-staging-server:$DOCKER_IMAGE_TAG" > server_image_name
+      - run:
+          name: Build image
+          command: |
+            FRONT_DOCKER_IMAGE_NAME=$(cat front_image_name)
+            SERVER_DOCKER_IMAGE_NAME=$(cat server_image_name)
+            docker build -t $FRONT_DOCKER_IMAGE_NAME --build-arg DOCKER_ENV=staging -f front/Dockerfile front/
+            docker build -t $SERVER_DOCKER_IMAGE_NAME -f rest/Dockerfile rest/
+      - run:
+          name: Push image
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]
+            then
+              FRONT_DOCKER_IMAGE_NAME=$(cat front_image_name)
+              SERVER_DOCKER_IMAGE_NAME=$(cat server_image_name)
+              echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > gcloud-service-key.json
+              gcloud auth activate-service-account --key-file gcloud-service-key.json
+              gcloud --quiet auth configure-docker
+              docker push $FRONT_DOCKER_IMAGE_NAME
+              docker push $SERVER_DOCKER_IMAGE_NAME
+            else
+              echo "Not master branch; skipping image push.."
+            fi
+
+workflows:
+  version: 2
+  build-push-deploy:
+    jobs:
+      - build
+      - push:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

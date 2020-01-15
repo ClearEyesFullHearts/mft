@@ -33,7 +33,36 @@ spec:
           value: mft-back:*
         - name: NODE_ENV
           value: staging
+        - name: KEY_AUTH_SIGN
+          valueFrom:
+            secretKeyRef:
+              name: mft-invc-staging-secret
+              key: auth-signature
+        - name: KEY_MONGO_URL
+          valueFrom:
+            secretKeyRef:
+              name: mft-invc-staging-secret
+              key: url-mongo
+        - name: KEY_MAIL_USER
+          valueFrom:
+            secretKeyRef:
+              name: mft-invc-staging-secret
+              key: user-mail
+        - name: KEY_MAIL_PASS
+          valueFrom:
+            secretKeyRef:
+              name: mft-invc-staging-secret
+              key: pass-mail
         image: gcr.io/mft-invc/mft-server:0.0.0
+        volumeMounts:
+          # name must match the volume name below
+          - name: secret-volume
+            mountPath: /etc/secret-volume
         name: mft-invc-staging-server
         ports:
         - containerPort: 3000
+        # The secret data is exposed to Containers in the Pod through a Volume.
+      volumes:
+        - name: secret-volume
+          secret:
+            secretName: mft-invc-staging-secret
