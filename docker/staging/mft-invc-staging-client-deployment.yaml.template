@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: mft-invc-staging-client
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: mft-invc-staging-client
   ports:
