@@ -1,6 +1,7 @@
 {
   "name": "front",
-  "version": "0.1.0",
+  "version": "0.0",
+  "description": "mft public site front-end",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

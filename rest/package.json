@@ -1,6 +1,6 @@
 {
   "name": "mft",
-  "version": "1.0.0",
+  "version": "0.0",
   "description": "mft public site back-end",
   "main": "app.js",
   "scripts": {
