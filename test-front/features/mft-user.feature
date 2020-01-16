@@ -1,6 +1,7 @@
 Feature: Profile page
 Test the user profile page for user and administrator
 
+  @StagingOK
   Scenario: A user can access profile page
     Given I browse to login page
     When I fill email input as "mft-user-test@mathieufont.com"
@@ -13,11 +14,13 @@ Test the user profile page for user and administrator
     And I see email is disabled
     And I see username text is "mft-user-test"
 
+  @StagingOK
   Scenario: A user can modify its username
     Given I am a user on profile page
     When I update username with "Hello World"
     Then I see profileNav text is "Hello World"
 
+  @StagingOK
   Scenario: A user can modify its password
     Given I am a user on profile page
     And I do not see password input
@@ -35,6 +38,7 @@ Test the user profile page for user and administrator
     And I click on connect
     Then I am on landing page
 
+  @StagingOK
   Scenario: Mismatched password is  not accepted
     Given I am a user on profile page
     When I click on update
@@ -42,6 +46,7 @@ Test the user profile page for user and administrator
     And I fill confirmPassword input as "wrong"
     Then I see update is disabled
 
+  @StagingOK
   Scenario: A user can delete its profile
     Given I am a user on profile page
     When I click on remove

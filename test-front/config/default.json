@@ -1,6 +1,5 @@
 {
     "secret": {
-        "auth": "supersecret",
         "mongo":{
             "url": "mongodb://localhost:27017/mft-dev"
         }

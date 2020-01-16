@@ -75,3 +75,8 @@ Then(/^No emails has been sent to "([^"]*)"$/, async function (to) {
     });
     assert.equal(response.body.length, 0);
 });
+
+Given(/^I set a new email$/, function () {
+    this.context.currentemail = `${uuidv4()}@mathieufont.com`;
+    assert(true);
+});

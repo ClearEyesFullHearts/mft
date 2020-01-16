@@ -7,7 +7,7 @@ if(process.env.REPORT_NAME){
  
 const options = {
         theme: 'bootstrap',
-        jsonFile: './reports/' + fileName + '.json',
+        jsonFile: './reports/' + fileName + '.cucumber',
         output: './reports/' + fileName + '.html',
         reportSuiteAsScenarios: true,
         scenarioTimestamp: true

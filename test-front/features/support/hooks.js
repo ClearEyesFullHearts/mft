@@ -10,18 +10,38 @@ const Context = require('./context');
 setDefaultTimeout(60 * 1000);
 
 BeforeAll(function (cb) {
-    mongoose.connect(config.get('secret.mongo.url'), { useNewUrlParser: true, useUnifiedTopology: true }).then(
-        () => { 
-            mongoose.connection.db.dropDatabase();
-            restore({
-                uri: config.get('secret.mongo.url'),
-                root: __dirname + '/mft-dev',
-                callback: cb
-            });
-        },
-        err => { cb(err); }
-    );
-    
+    if (process.env.NODE_ENV !== 'staging') {
+        mongoose.connect(config.get('secret.mongo.url'), { useNewUrlParser: true, useUnifiedTopology: true }).then(
+            () => {
+                mongoose.connection.db.dropDatabase();
+                restore({
+                    uri: config.get('secret.mongo.url'),
+                    root: __dirname + '/mft-dev',
+                    callback: cb
+                });
+            },
+            err => { cb(err); }
+        );
+    }else{
+        const body = {
+            username: 'mft-user-test',
+            email: 'mft-user-test@mathieufont.com',
+            password: 'testtest'
+        };
+        got.post(config.get('base.server.url') + '/users', {
+            json: true, // this is required
+            body
+        }).then((resp) => {
+            cb()
+        }).catch((err) => {
+            if (err.body && err.body.code && err.body.code === 'USER_EXISTS') {
+                cb();
+            } else {
+                cb(err);
+
+            }
+        });
+    }
 });
 
 Before(function () {
