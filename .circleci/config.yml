@@ -126,6 +126,7 @@ jobs:
     steps:
       - attach_workspace:
           at: workspace
+      - run: mkdir -p ~/cucumber
       - run: cd workspace/test-front && npm run staging-test-chrome
       - run: cd workspace/test-front && npm run staging-report-chrome
       - store_test_results:
