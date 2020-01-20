@@ -1,10 +1,10 @@
 {
     "public": {
-        "url": "https://staging.mathieufont.fr"
+        "url": "https://test.mathieufont.fr"
     },
     "base": {
         "server": {
-            "url": "https://staging.mathieufont.fr/api"
+            "url": "https://test.mathieufont.fr/api"
         }
     }
 }
