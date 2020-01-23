@@ -73,7 +73,8 @@ Test the invoice creation API
     And I set body to {"date":"`today+2`"}
     And I PUT /user/`newUserID`/invoice/`newInvoiceID-0`/collected
     When I PUT /user/`newUserID`/invoice/`newInvoiceID-0`
-    Then response code should be 404
+    Then response code should be 400
+    And response body path $.code should be INVOICE_IS_SET
 
   Scenario: User can set the date for vatPaid status
     Given I am a new user with 3 invoices

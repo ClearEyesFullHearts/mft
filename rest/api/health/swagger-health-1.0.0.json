@@ -1,49 +1,49 @@
 {
-    "swagger": "2.0",
-    "info": {
-        "title": "base health info",
-        "version": "1.0"
-    },
-    "consumes": [
-        "application/json"
-    ],
-    "produces": [
-        "application/json"
-    ],
-    "paths": {
-        "/info": {
-            "get": {
-                "operationId": "info",
-                "x-mft-roles": ["ROLE_ADMIN"],
-                "x-swagger-router-controller": "management",
-                "summary": "get basic information from the server",
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "config and platform infos"
-                    },
-                    "401": {
-                        "description": "Unauthorized: Not an admin"
-                    }
-                }
-            }
-        },
-        "/health": {
-            "get": {
-                "operationId": "health",
-                "x-swagger-router-controller": "management",
-                "summary": "get ping info",
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "200 response"
-                    }
-                }
-            }
+  "swagger": "2.0",
+  "info": {
+    "title": "base health info",
+    "version": "1.0"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/info": {
+      "get": {
+        "operationId": "info",
+        "x-mft-roles": ["ROLE_ADMIN"],
+        "x-swagger-router-controller": "management",
+        "summary": "get basic information from the server",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "config and platform infos"
+          },
+          "401": {
+            "description": "Unauthorized: Not an admin"
+          }
         }
+      }
+    },
+    "/health": {
+      "get": {
+        "operationId": "health",
+        "x-swagger-router-controller": "management",
+        "summary": "get ping info",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response"
+          }
+        }
+      }
     }
+  }
 }

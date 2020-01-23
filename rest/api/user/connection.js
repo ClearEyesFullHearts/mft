@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
 const logger = require('debug');
-const ErrorHelper = require('../../server/error.js');
 const UserLogin = require('./implem/login.js');
 const UserMngt = require('./implem/user.js');
 
@@ -74,7 +72,7 @@ module.exports.updateUser = (req, res, next) => {
 module.exports.removeUser = (req, res, next) => {
   debug('removeUser');
   UserMngt.removeOne(req.app.locals.db, req.auth, req.swagger.params.id.value)
-    .then((result) => {
+    .then(() => {
       res.json();
     })
     .catch((err) => {
