@@ -1,14 +1,9 @@
 const { Given, When, Then } = require('cucumber');
 const config = require('config');
-const uuidv4 = require('uuid/v4');
+const Util = require('../support/util');
 
 Given("I am a new user", async function () {
-    const uniqueMail = `${uuidv4()}@mathieufont.com`;
-    const body = {
-        username: 'testUser',
-        email: uniqueMail,
-        password: 'testtesttest'
-    };
+    const body = Util.createRandomUser();
     let response;
     try{
         response = await this.got.post(this.apickli.domain + '/users', {
