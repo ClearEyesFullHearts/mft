@@ -13,7 +13,7 @@
   "paths": {
     "/invoices": {
       "get": {
-        "x-swagger-router-controller": "invoicing",
+        "x-swagger-router-controller": "connection",
         "operationId": "getAllInvoices",
         "x-mft-roles": [
           "ROLE_ADMIN"
@@ -37,7 +37,7 @@
     },
     "/user/{userid}/invoices": {
       "post": {
-        "x-swagger-router-controller": "invoicing",
+        "x-swagger-router-controller": "connection",
         "operationId": "createInvoice",
         "x-mft-roles": [
           "ROLE_ADMIN",
@@ -71,7 +71,7 @@
     },
     "/user/{userid}/invoice/{id}": {
       "get": {
-        "x-swagger-router-controller": "invoicing",
+        "x-swagger-router-controller": "connection",
         "operationId": "getInvoice",
         "x-mft-roles": [
           "ROLE_ADMIN",
@@ -109,7 +109,7 @@
         }
       },
       "put": {
-        "x-swagger-router-controller": "invoicing",
+        "x-swagger-router-controller": "connection",
         "operationId": "changeInvoice",
         "x-mft-roles": [
           "ROLE_ADMIN",
@@ -159,7 +159,7 @@
         }
       },
       "delete": {
-        "x-swagger-router-controller": "invoicing",
+        "x-swagger-router-controller": "connection",
         "operationId": "removeInvoice",
         "x-mft-roles": [
           "ROLE_ADMIN",
@@ -196,7 +196,7 @@
     },
     "/user/{userid}/invoice/{id}/{status}": {
       "put": {
-        "x-swagger-router-controller": "invoicing",
+        "x-swagger-router-controller": "connection",
         "operationId": "updateInvoiceStatus",
         "x-mft-roles": [
           "ROLE_ADMIN",
@@ -266,9 +266,6 @@
       "required": [
         "companyAddress",
         "clientAddress",
-        "price",
-        "toPay",
-        "vat",
         "products"
       ],
       "properties": {
@@ -278,33 +275,10 @@
         "clientAddress": {
           "type": "string"
         },
-        "price": {
-          "type": "number"
-        },
-        "toPay": {
-          "type": "number"
-        },
-        "vat": {
-          "type": "object",
-          "properties": {
-            "0": {
-              "type": "number"
-            },
-            "5.5": {
-              "type": "number"
-            },
-            "10": {
-              "type": "number"
-            },
-            "20": {
-              "type": "number"
-            }
-          }
-        },
         "products": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Product"
+            "$ref": "#/definitions/NewProduct"
           }
         },
         "clientRef": {
@@ -315,6 +289,33 @@
         },
         "idPrefix": {
           "type": "string"
+        }
+      }
+    },
+    "NewProduct": {
+      "type": "object",
+      "required": [
+        "title",
+        "number",
+        "unitPrice",
+        "vatPercent"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "number": {
+          "type": "number"
+        },
+        "unitPrice": {
+          "type": "number"
+        },
+        "vatPercent": {
+          "type": "number",
+          "enum": [0, 5.5, 10, 20]
         }
       }
     },

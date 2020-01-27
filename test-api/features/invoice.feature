@@ -8,9 +8,12 @@ Test the invoice creation API
     Then response code should be 201
     And response body path $.status.creation should be `today`
     And response body path $.user should be `newUserID`
-    And response body path $.id should be ^[1-9]\d*$
-    And response body path $.toPay should be 1869.5
+    And response body path $.id should be ^[0-9]\d*$
+    And response body path $.toPay should be 1870.25
     And response body path $.products.1.title should be Cooking
+    And response body path $.price should be 1652.5
+    And response body path $.vat.10 should be 112.75
+    And response body path $.vat.20 should be 105
 
   Scenario: User can delete its own invoice
     Given I am a new user with 1 invoices
