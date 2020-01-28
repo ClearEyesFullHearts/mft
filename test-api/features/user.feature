@@ -7,7 +7,7 @@ Test the user CRUD API
     When I GET /user/`newUserID`
     Then response code should be 200
     And response body path $.id should be `newUserID`
-    And response body path $.username should be testUser
+    And response body path $.username should be `newUserName`
     And response body path $.email should be `newUserEmail`
 
   Scenario: User cannot get information for another user
@@ -22,7 +22,7 @@ Test the user CRUD API
     When I GET /user/`newUserID`
     Then response code should be 200
     And response body path $.id should be `newUserID`
-    And response body path $.username should be testUser
+    And response body path $.username should be `newUserName`
     And response body path $.email should be `newUserEmail`
 
   @Nominal

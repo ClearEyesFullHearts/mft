@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const { autoIncrement } = require('mongoose-plugin-autoinc');
-const moment = require('moment');
 
 class InvoiceData {
   constructor() {
@@ -29,11 +28,10 @@ class InvoiceData {
         type: Number,
         required: true,
       },
-      vat: {
-        0: Number,
-        5.5: Number,
-        10: Number,
-        20: Number,
+      vat: { // match product's vatPercent enum
+        rate_5_5: Number,
+        rate_10: Number,
+        rate_20: Number,
       },
       clientRef: String,
       paymentDueDate: String,
@@ -45,27 +43,12 @@ class InvoiceData {
         },
         collected: {
           type: Date,
-          validate: {
-            validator(c) {
-              return this.creation && moment(this.creation).isSameOrBefore(c, 'day');
-            },
-          },
         },
         vatPaid: {
           type: Date,
-          validate: {
-            validator(vp) {
-              return this.collected && moment(this.collected).isSameOrBefore(vp, 'day');
-            },
-          },
         },
         socPaid: {
           type: Date,
-          validate: {
-            validator(sp) {
-              return this.vatPaid && moment(this.vatPaid).isSameOrBefore(sp, 'day');
-            },
-          },
         },
       },
       products: [

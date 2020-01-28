@@ -67,6 +67,37 @@
             }
           }
         }
+      },
+      "get": {
+        "x-swagger-router-controller": "connection",
+        "operationId": "getMyInvoices",
+        "x-mft-roles": [
+          "ROLE_ADMIN",
+          "ROLE_USER"
+        ],
+        "summary": "Get all invoices for one user",
+        "parameters": [{
+          "in": "path",
+          "name": "userid",
+          "description": "ID of the user",
+          "required": true,
+          "type": "integer"
+        }
+      ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Invoice"
+              }
+            }
+          },
+          "401": {
+            "description": "Unknown user ID"
+          }
+        }
       }
     },
     "/user/{userid}/invoice/{id}": {

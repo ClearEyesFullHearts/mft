@@ -63,11 +63,11 @@ class UserManagement {
   }
 
 
-  static toTransportUser(u) {
+  static toTransportUser({ id, username, email }) {
     return {
-      id: u.id,
-      username: u.username,
-      email: u.email,
+      id,
+      username,
+      email,
     };
   }
 }

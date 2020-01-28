@@ -28,8 +28,11 @@ Given(/^I am a new user with (\d+) invoices$/, async function (nbInvoices) {
     const path = `${this.apickli.domain}/user/${response.body.user.id}/invoices`;
     for(let i = 0; i < nbInvoices; ++i){
         invcPromises.push(this.got.post(path, {
-            json: true, // this is required
-            body: Util.createRandomInvoice()
+            json: true, // this is required,
+            headers:{
+                Authorization: 'Bearer ' + response.body.token,
+            },
+            body: Util.createRandomInvoice(),
         }));
     }
     

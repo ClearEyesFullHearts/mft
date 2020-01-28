@@ -17,6 +17,7 @@ Given("I am a new user", async function () {
 
     if (response.body.auth && response.body.token && response.body.user.id) {
         this.apickli.storeValueInScenarioScope('newUserID', response.body.user.id);
+        this.apickli.storeValueInScenarioScope('newUserName', response.body.user.username);
         this.apickli.storeValueInScenarioScope('newUserEmail', response.body.user.email);
         this.apickli.setAccessToken(response.body.token);
         this.apickli.setBearerToken();

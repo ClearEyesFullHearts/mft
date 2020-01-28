@@ -18,6 +18,8 @@ class ErrorHelper {
       USER_EXISTS: 'USER_EXISTS',
       PRODUCT_PRICE_MISMATCH: 'PRODUCT_PRICE_MISMATCH',
       PRODUCT_VAT_MISMATCH: 'PRODUCT_VAT_MISMATCH',
+      INVOICE_IS_SET: 'INVOICE_IS_SET',
+      STATUS_DATE_INVALID: 'STATUS_DATE_INVALID',
     };
   }
 
@@ -42,7 +44,7 @@ class ErrorHelper {
         error.status = res.statusCode;
       }
 
-      res.statusCode = error.status;
+      res.statusCode = (error.status) ? error.status : 500;
       res.json(error);
     };
   }
