@@ -52,8 +52,10 @@ class UserManagement {
     const itsMe = auth.user.id === id;
     const iamAdmin = auth.roles.indexOf('ROLE_ADMIN') >= 0;
     if ((itsMe && !iamAdmin) || (iamAdmin && !itsMe)) {
-      const knownUser = await db.users.Doc.findOneAndRemove({ id });
+      const knownUser = await db.users.Doc.deleteOne({ id });
       if (knownUser) {
+        // remove user invoices too
+        await db.invoices.Doc.deleteMany({ user: id });
         return true;
       }
       throw ErrorHelper.getCustomError(404, ErrorHelper.CODE.NOT_FOUND, 'User not found');

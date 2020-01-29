@@ -12,6 +12,7 @@ class InvoiceData {
         type: Number,
         required: true,
       },
+      ref: Number,
       companyAddress: {
         type: String,
         required: true,

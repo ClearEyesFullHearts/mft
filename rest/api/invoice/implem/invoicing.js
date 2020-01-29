@@ -49,7 +49,14 @@ class Invoicing {
     const itsMe = auth.user.id === userID;
     if (itsMe) {
       debug('create new invoice for user', userID);
+      const creator = await db.users.Doc.findOneAndUpdate({ id: userID }, { $inc: { lastRef: 1 } });
+      if (!creator) {
+        throw ErrorHelper.getCustomError(401, ErrorHelper.CODE.UNKNOWN_USER, 'User is not authorized for this action');
+      }
+
+      debug('user exists');
       let newInvoice = new db.invoices.Doc();
+      newInvoice.ref = creator.lastRef;
       newInvoice.user = userID;
       newInvoice.companyAddress = companyAddress;
       newInvoice.clientAddress = clientAddress;
@@ -210,12 +217,13 @@ class Invoicing {
   }
 
   static toTransportInvoice({
-    id, user, companyAddress, clientAddress, price, toPay, vat,
+    id, user, ref, companyAddress, clientAddress, price, toPay, vat,
     clientRef, paymentDueDate, idPrefix, status, products,
   }) {
     return {
       id,
       user,
+      ref,
       companyAddress,
       clientAddress,
       price,
