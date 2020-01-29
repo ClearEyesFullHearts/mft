@@ -132,10 +132,9 @@ class Invoicing {
 
   static async setStatusDate(db, auth, userID, invoiceID, status, { date }) {
     debug('set status', status);
-    debug('to date', date);
     const itsMe = auth.user.id === userID;
     if (itsMe) {
-      const invoice = await db.invoices.Doc.findOne({ user: userID, id: invoiceID }, { runValidators: true, context: 'query' });
+      const invoice = await db.invoices.Doc.findOne({ user: userID, id: invoiceID });
 
       if (!invoice) {
         throw ErrorHelper.getCustomError(404, ErrorHelper.CODE.NOT_FOUND, 'Invoice not found');
@@ -154,10 +153,11 @@ class Invoicing {
           previousDate = invoice.status.vatPaid;
           break;
       }
+      debug('previousDate', previousDate);
 
       const statusDate = new Date(date);
-      if (moment(previousDate).isSameOrBefore(statusDate, 'day')) {
-        invoice.status[status] = new Date(date);
+      if (previousDate && moment(previousDate).isSameOrBefore(statusDate, 'day')) {
+        invoice.status[status] = statusDate;
       } else {
         throw ErrorHelper.getCustomError(400, ErrorHelper.CODE.STATUS_DATE_INVALID, 'Status date should be following each other');
       }
