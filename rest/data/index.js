@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
-// const autoIncrement = require('mongoose-auto-increment');
 const config = require('config');
 const logger = require('debug');
 const UserData = require('./user.js');
+const InvoiceData = require('./invoice.js');
 
 const debug = logger('mft-back:data');
 
 class Data {
   constructor() {
     this.users = new UserData();
+    this.invoices = new InvoiceData();
   }
 
   async init() {
@@ -28,10 +29,10 @@ class Data {
       debug('running connection error', err);
     });
 
-    // autoIncrement.initialize(this.connection);
-
     debug('initialize users collection');
     await this.users.init(this.connection);
+    debug('initialize invoices collection');
+    await this.invoices.init(this.connection);
 
     debug('finished initialization');
   }

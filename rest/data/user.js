@@ -19,6 +19,10 @@ class UserData {
         type: [String],
         enum: config.get('base.roles'),
       },
+      lastRef: {
+        type: Number,
+        default: 1,
+      },
     });
   }
 

@@ -1,0 +1,14 @@
+{
+    "clientRef": "Your ref: 0000",
+    "paymentDueDate": "Soon",
+    "toPay": 25.87,
+    "products": [
+        {
+            "title": "Taking orders from a corporate overlord",
+            "description": "Work is the curse of the drinking class",
+            "number": 3.5,
+            "unitPrice": 150,
+            "vatPercent": 20
+        }
+    ]
+}

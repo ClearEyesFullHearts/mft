@@ -51,6 +51,11 @@
             "name": "user",
             "swagger": "swagger-user-1.0.0.json",
             "controller": ""
+        },
+        {
+            "name": "invoice",
+            "swagger": "swagger-invoice-1.0.0.json",
+            "controller": ""
         }
     ],
     "templates":{

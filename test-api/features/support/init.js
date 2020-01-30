@@ -5,6 +5,7 @@ const got = require('got');
 const backup = require('mongodb-backup-4x');
 const restore = require('mongodb-restore');
 const mongoose = require('mongoose');
+const moment = require('moment');
 
 BeforeAll(function (cb) {
     // backup({
@@ -30,9 +31,19 @@ Before(function () {
     const port = config.get('base.instance.port');
     const protocol = config.get('base.instance.protocol');
 
-    this.apickli = new apickli.Apickli(protocol, `${host}:${port}`);
+    this.apickli = new apickli.Apickli(protocol, `${host}:${port}`, 'data');
     this.apickli.addRequestHeader('Cache-Control', 'no-cache');
     this.apickli.addRequestHeader('Content-Type', 'application/json');
+
+    const todayPlus = moment();
+    const todayMinus = moment();
+    this.apickli.storeValueInScenarioScope(`today`, todayPlus.format('YYYY-MM-DD'));
+    for(let i = 1; i < 5; ++i){
+        todayPlus.add(i, 'days');
+        todayMinus.add(-i, 'days');
+        this.apickli.storeValueInScenarioScope(`today+${i}`, todayPlus.format('YYYY-MM-DD'));
+        this.apickli.storeValueInScenarioScope(`today-${i}`, todayMinus.format('YYYY-MM-DD'));
+    }
 
     this.got = got;
 });

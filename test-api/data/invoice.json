@@ -1,0 +1,22 @@
+{
+    "companyAddress": "Hello there\\nTest address for you\\nWith a city and ZIP Code\\nAnd whatever country",
+    "clientAddress": "Client name\\nTest address for them\\nWith a city and ZIP Code\\nAnd whatever country",
+    "clientRef": "Devis N° 00004",
+    "paymentDueDate": "End of month",
+    "idPrefix": "MFT",
+    "products": [
+        {
+            "title": "Taking orders from a corporate overlord",
+            "description": "Work is the curse of the drinking class",
+            "number": 3.5,
+            "unitPrice": 150,
+            "vatPercent": 20
+        },
+        {
+            "title": "Cooking",
+            "number": 5,
+            "unitPrice": 225.5,
+            "vatPercent": 10
+        }
+    ]
+}

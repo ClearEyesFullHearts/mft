@@ -1,0 +1,513 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "invoice management",
+    "version": "1.0.0"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/invoices": {
+      "get": {
+        "x-swagger-router-controller": "connection",
+        "operationId": "getAllInvoices",
+        "x-mft-roles": [
+          "ROLE_ADMIN"
+        ],
+        "summary": "Get all invoices for all users",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Invoice"
+              }
+            }
+          },
+          "401": {
+            "description": "Unknown user ID"
+          }
+        }
+      }
+    },
+    "/user/{userid}/invoices": {
+      "post": {
+        "x-swagger-router-controller": "connection",
+        "operationId": "createInvoice",
+        "x-mft-roles": [
+          "ROLE_ADMIN",
+          "ROLE_USER"
+        ],
+        "summary": "Create a new updatable invoice",
+        "parameters": [{
+          "in": "path",
+          "name": "userid",
+          "description": "ID of the user",
+          "required": true,
+          "type": "integer"
+        }, {
+          "in": "body",
+          "name": "body",
+          "description": "Created invoice object",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/NewInvoice"
+          }
+        }],
+        "responses": {
+          "201": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Invoice"
+            }
+          }
+        }
+      },
+      "get": {
+        "x-swagger-router-controller": "connection",
+        "operationId": "getMyInvoices",
+        "x-mft-roles": [
+          "ROLE_ADMIN",
+          "ROLE_USER"
+        ],
+        "summary": "Get all invoices for one user",
+        "parameters": [{
+          "in": "path",
+          "name": "userid",
+          "description": "ID of the user",
+          "required": true,
+          "type": "integer"
+        }
+      ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Invoice"
+              }
+            }
+          },
+          "401": {
+            "description": "Unknown user ID"
+          }
+        }
+      }
+    },
+    "/user/{userid}/invoice/{id}": {
+      "get": {
+        "x-swagger-router-controller": "connection",
+        "operationId": "getInvoice",
+        "x-mft-roles": [
+          "ROLE_ADMIN",
+          "ROLE_USER"
+        ],
+        "summary": "Fetch one invoice details from one user",
+        "parameters": [{
+            "in": "path",
+            "name": "userid",
+            "description": "ID of the user",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of the invoice",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Invoice"
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Unknown user ID or invoice"
+          }
+        }
+      },
+      "put": {
+        "x-swagger-router-controller": "connection",
+        "operationId": "changeInvoice",
+        "x-mft-roles": [
+          "ROLE_ADMIN",
+          "ROLE_USER"
+        ],
+        "summary": "Update one temporary invoice",
+        "parameters": [{
+            "in": "path",
+            "name": "userid",
+            "description": "ID of the user",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of the invoice",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated invoice object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateInvoice"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Invoice"
+            }
+          },
+          "400": {
+            "description": "Update impossible for set invoice"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Unknown user ID or invoice"
+          }
+        }
+      },
+      "delete": {
+        "x-swagger-router-controller": "connection",
+        "operationId": "removeInvoice",
+        "x-mft-roles": [
+          "ROLE_ADMIN",
+          "ROLE_USER"
+        ],
+        "summary": "Delete one invoice from one user",
+        "parameters": [{
+            "in": "path",
+            "name": "userid",
+            "description": "ID of the user",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of the invoice",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Unknown user ID or invoice"
+          }
+        }
+      }
+    },
+    "/user/{userid}/invoice/{id}/{status}": {
+      "put": {
+        "x-swagger-router-controller": "connection",
+        "operationId": "updateInvoiceStatus",
+        "x-mft-roles": [
+          "ROLE_ADMIN",
+          "ROLE_USER"
+        ],
+        "summary": "Set date on invoice status and makes invoice unmutable",
+        "parameters": [{
+            "in": "path",
+            "name": "userid",
+            "description": "ID of the user",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of the invoice",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "status",
+            "description": "Invoice status to set",
+            "required": true,
+            "type": "string",
+            "enum": ["collected", "vatPaid", "socPaid"]
+          }, {
+            "in": "body",
+            "name": "body",
+            "description": "Date of status update",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["date"],
+              "properties": {
+                "date": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Invoice"
+            }
+          },
+          "400": {
+            "description": "Invalid date for status"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Unknown user ID or invoice"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "NewInvoice": {
+      "type": "object",
+      "required": [
+        "companyAddress",
+        "clientAddress",
+        "products"
+      ],
+      "properties": {
+        "companyAddress": {
+          "type": "string"
+        },
+        "clientAddress": {
+          "type": "string"
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NewProduct"
+          }
+        },
+        "clientRef": {
+          "type": "string"
+        },
+        "paymentDueDate": {
+          "type": "string"
+        },
+        "idPrefix": {
+          "type": "string"
+        }
+      }
+    },
+    "NewProduct": {
+      "type": "object",
+      "required": [
+        "title",
+        "number",
+        "unitPrice",
+        "vatPercent"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "number": {
+          "type": "number"
+        },
+        "unitPrice": {
+          "type": "number"
+        },
+        "vatPercent": {
+          "type": "number",
+          "enum": [0, 5.5, 10, 20]
+        }
+      }
+    },
+    "Invoice": {
+      "type": "object",
+      "required": [
+        "id",
+        "user",
+        "companyAddress",
+        "clientAddress",
+        "price",
+        "toPay",
+        "vat",
+        "products"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "user": {
+          "type": "integer"
+        },
+        "status": {
+          "$ref": "#/definitions/Status"
+        },
+        "companyAddress": {
+          "type": "string"
+        },
+        "clientAddress": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "toPay": {
+          "type": "number"
+        },
+        "vat": {
+          "type": "object",
+          "properties": {
+            "0": {
+              "type": "number"
+            },
+            "5.5": {
+              "type": "number"
+            },
+            "10": {
+              "type": "number"
+            },
+            "20": {
+              "type": "number"
+            }
+          }
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Product"
+          }
+        },
+        "clientRef": {
+          "type": "string"
+        },
+        "paymentDueDate": {
+          "type": "string"
+        },
+        "idPrefix": {
+          "type": "string"
+        }
+      }
+    },
+    "Product": {
+      "type": "object",
+      "required": [
+        "title",
+        "number",
+        "unitPrice",
+        "vatPercent"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "number": {
+          "type": "number"
+        },
+        "unitPrice": {
+          "type": "number"
+        },
+        "totalPrice": {
+          "type": "number"
+        },
+        "vatPercent": {
+          "type": "number",
+          "enum": [0, 5.5, 10, 20]
+        },
+        "vatTotal": {
+          "type": "number"
+        }
+      }
+    },
+    "Status": {
+      "type": "object",
+      "required": ["creation"],
+      "properties": {
+        "creation": {
+          "type": "string"
+        },
+        "collected": {
+          "type": "string"
+        },
+        "vatPaid": {
+          "type": "string"
+        },
+        "socPaid": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateInvoice": {
+      "type": "object",
+      "properties": {
+        "companyAddress": {
+          "type": "string"
+        },
+        "clientAddress": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "toPay": {
+          "type": "number"
+        },
+        "vat": {
+          "type": "object",
+          "properties": {
+            "0": {
+              "type": "number"
+            },
+            "5.5": {
+              "type": "number"
+            },
+            "10": {
+              "type": "number"
+            },
+            "20": {
+              "type": "number"
+            }
+          }
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Product"
+          }
+        }
+      }
+    }
+  }
+}
