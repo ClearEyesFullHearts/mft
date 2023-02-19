@@ -11,8 +11,12 @@ class Mailing {
     this.senderAddress = config.get('base.mail.sender');
 
     const options = config.get('base.mail.transport');
-    Object.assign(options.auth, config.get('secret.mail'));
-    this.transporter = nodemailer.createTransport(options);
+    const auth = config.get('secret.mail');
+    
+    this.transporter = nodemailer.createTransport({
+      ...options,
+      auth
+    });
 
     this.templatesFolder = config.get('base.mail.templates');
   }
