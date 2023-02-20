@@ -15,12 +15,18 @@ BeforeAll(function (cb) {
     // });
     mongoose.connect(config.get('secret.mongo.url'), { useNewUrlParser: true, useUnifiedTopology: true }).then(
         () => { 
-            mongoose.connection.db.dropDatabase();
-            restore({
-                uri: config.get('secret.mongo.url'),
-                root: __dirname + '/mft-dev',
-                callback: cb
-            });
+            // mongoose.connection.db.dropDatabase();
+            mongoose.connection.dropDatabase().then(
+              () => {
+                restore({
+                  uri: config.get('secret.mongo.url'),
+                  root: __dirname + '/mft-dev',
+                  callback: cb
+                });
+              },
+              err => { cb(err); }
+            )
+            
         },
         err => { cb(err); }
     );
