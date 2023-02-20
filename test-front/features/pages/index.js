@@ -2,13 +2,13 @@ const LoginPage = require('./login/loginPage');
 const LandingPage = require('./landing/landingPage');
 const InfoPage = require('./infos/infoPage');
 const ProfilePage = require('./profile/profilePage');
-const InvoicePage = require('./profile/invoicePage');
+// const InvoicePage = require('./profile/invoicePage');
 
 const loginPage = new LoginPage();
 const landingPage = new LandingPage();
 const infoPage = new InfoPage();
 const profilePage = new ProfilePage();
-const invoicePage = new InvoicePage();
+// const invoicePage = new InvoicePage();
 
 const pages = [
     {
@@ -30,12 +30,12 @@ const pages = [
         url: profilePage.url,
         name: profilePage.name,
         page: profilePage,
-    },
-    {
-        url: invoicePage.url,
-        name: invoicePage.name,
-        page: invoicePage,
     }
+    // {
+    //     url: invoicePage.url,
+    //     name: invoicePage.name,
+    //     page: invoicePage,
+    // }
 ]
 
 module.exports = {

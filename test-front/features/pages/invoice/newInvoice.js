@@ -1,7 +1,7 @@
 const { By } = require('selenium-webdriver');
 const DDPTxtComp = require('../shared/dropdownText');
-const NewProduct = require('./newProduct');
-const ProductList = require('./listProduct');
+const NewProduct = require('./product/newProduct');
+const ProductList = require('./product/listProduct');
 
 class NewInvoiceComponent {
 

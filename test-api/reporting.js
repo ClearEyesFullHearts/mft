@@ -1,6 +1,6 @@
 var reporter = require('cucumber-html-reporter');
 
-let fileName = 'test-api-report';
+let fileName = './reports/test-api-report';
 if(process.env.REPORT_NAME){
     fileName = process.env.REPORT_NAME;
 }
