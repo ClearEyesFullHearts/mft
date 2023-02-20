@@ -15,7 +15,7 @@ class Data {
   async init() {
     try {
       debug('initialize mongodb connection');
-      this.connection = await mongoose.createConnection(config.get('secret.mongo.url'), {
+      this.connection = await mongoose.connect(config.get('secret.mongo.url'), {
         autoIndex: false,
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -24,10 +24,6 @@ class Data {
       debug('initialization connection error', err);
       throw err;
     }
-
-    this.connection.on('error', (err) => {
-      debug('running connection error', err);
-    });
 
     debug('initialize users collection');
     await this.users.init(this.connection);

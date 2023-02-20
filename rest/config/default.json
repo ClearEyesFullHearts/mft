@@ -2,7 +2,7 @@
     "secret": {
         "auth": "supersecret",
         "mongo":{
-            "url": "mongodb://localhost:27017/mft-dev"
+            "url": "mongodb://127.0.0.1:27017/mft-dev"
         },
         "mail":{
             "user": "username",

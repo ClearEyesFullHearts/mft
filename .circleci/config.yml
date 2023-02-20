@@ -18,7 +18,7 @@ jobs:
           replace-existing: true
 
       - node/install:
-          node-version: "12.14.0"
+          node-version: "18.14.1"
 
       - run: cd ./docker/ci && KEY_AUTH_SIGN=${MFT_AUTH_KEY} docker-compose up -d
       
