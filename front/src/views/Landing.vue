@@ -3,11 +3,3 @@
     <h3>This is a landing page</h3>
   </div>
 </template>
-
-<script>
-
-export default {
-  name: 'LandingPage',
-};
-
-</script>

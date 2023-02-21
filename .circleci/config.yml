@@ -73,7 +73,7 @@ jobs:
       - run:
           name: Push image
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]
+            if [ "${CIRCLE_BRANCH}" == "when-cloud-hosting-is-free" ]
             then
               FRONT_DOCKER_IMAGE_NAME=$(cat front_image_name)
               SERVER_DOCKER_IMAGE_NAME=$(cat server_image_name)
@@ -83,7 +83,7 @@ jobs:
               docker push $FRONT_DOCKER_IMAGE_NAME
               docker push $SERVER_DOCKER_IMAGE_NAME
             else
-              echo "Not master branch; skipping image push.."
+              echo "Not when-cloud-hosting-is-free branch; skipping image push.."
             fi
       - persist_to_workspace:
           root: .
@@ -144,16 +144,16 @@ workflows:
             - build
           filters:
             branches:
-              only: master
+              only: when-cloud-hosting-is-free
       - staging:
           requires:
             - push
           filters:
             branches:
-              only: master
+              only: when-cloud-hosting-is-free
       - confirm:
           requires:
             - staging
           filters:
             branches:
-              only: master
+              only: when-cloud-hosting-is-free

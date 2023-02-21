@@ -21,7 +21,7 @@
 import data from '@/data';
 
 export default {
-  name: 'ResetComp',
+  name: 'Reset',
   data() {
     return {
       model: {

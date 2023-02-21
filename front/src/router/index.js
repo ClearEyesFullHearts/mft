@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import LoginComp from '../views/Login.vue';
+import Login from '../views/Login.vue';
 import store from '../store/index';
 
 Vue.use(VueRouter);
@@ -9,7 +9,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: LoginComp,
+    component: Login,
     beforeEnter: (to, from, next) => {
       if (store.getters.isUser || store.getters.isAdmin) {
         next('/landing');

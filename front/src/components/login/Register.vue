@@ -36,7 +36,7 @@
 import data from '@/data';
 
 export default {
-  name: 'RegisterComp',
+  name: 'Register',
   data() {
     return {
       model: {
