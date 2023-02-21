@@ -25,7 +25,7 @@ services:
       - KEY_AUTH_SIGN
     
   server-database:
-    image: mongo
+    image: mongo:4.2.24-rc2-bionic
     ports:
       - 27017:27017
     
