@@ -25,16 +25,16 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@types/selenium-webdriver": "^4.0.5",
-        "chromedriver": "^78.0.1",
+        "@types/selenium-webdriver": "4.1.11",
+        "chromedriver": "110.0.0",
         "config": "^3.2.4",
         "cucumber": "^6.0.5",
         "cucumber-html-reporter": "^5.1.0",
-        "geckodriver": "^1.19.1",
+        "geckodriver": "3.2.0",
         "got": "^9.2.2",
         "mongodb-restore": "1.6.2",
         "mongoose": "6.9.2",
-        "selenium-webdriver": "^4.0.0-alpha.5",
+        "selenium-webdriver": "4.8.1",
         "uuid": "^3.3.3"
     }
 }
