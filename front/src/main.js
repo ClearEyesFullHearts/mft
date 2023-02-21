@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import vueHeadful from 'vue-headful';
+// import vueHeadful from 'vue-headful';
 import BootstrapVue from 'bootstrap-vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes, faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -13,7 +13,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 
 Vue.config.productionTip = false;
-Vue.component('vue-headful', vueHeadful);
+// Vue.component('vue-headful', vueHeadful);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.use(BootstrapVue);

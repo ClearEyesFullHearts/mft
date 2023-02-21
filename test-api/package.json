@@ -10,6 +10,7 @@
         "dev-win-cmd": "start npm run rest-win-cmd&& start npm run mail-win-cmd",
         "dev-win-cmd:cover": "start npm run rest-win-cmd:cover&& start npm run mail-win-cmd",
         "dev-test-api": ".\\node_modules\\.bin\\cucumber-js --format json > ./reports/test-api-report.cucumber --exit",
+        "dev-test-temp": ".\\node_modules\\.bin\\cucumber-js --name \"User can reset its password\"",
         "dev-reporting": "node reporting.js",
         "dock-dev": "NODE_ENV=dock-dev ./node_modules/.bin/cucumber-js --format json > ./reports/test-api-report.cucumber --exit",
         "dock-reporting": "REPORT_NAME=./reports/test-api-report node reporting.js",

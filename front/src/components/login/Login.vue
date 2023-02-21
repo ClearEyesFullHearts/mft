@@ -27,7 +27,7 @@
 import data from '@/data';
 
 export default {
-  name: 'Login',
+  name: 'LoginComp',
   data() {
     return {
       model: {

@@ -26,7 +26,7 @@
 import data from '@/data';
 
 export default {
-  name: 'Header',
+  name: 'SharedHeader',
   computed: {
     profileName() {
       return this.$store.state.auth.user.username;

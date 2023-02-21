@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <vue-headful title="MFT" />
-    <Header />
+    <!-- <vue-headful title="MFT" /> -->
+    <SharedHeader />
     <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
       <span id="global-err-msg">{{alertMsg}}</span>
     </b-alert>
@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import Header from '@/components/shared/Header.vue';
+import SharedHeader from '@/components/shared/Header.vue';
 
 export default {
   components: {
-    Header,
+    SharedHeader,
   },
   data() {
     return {

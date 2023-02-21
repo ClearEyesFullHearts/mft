@@ -39,6 +39,7 @@ import data from '@/data';
 import UpdatableText from '@/components/shared/ui/UpdatableText.vue';
 
 export default {
+  name: 'UserComp',
   components: {
     UpdatableText,
   },
