@@ -3,7 +3,7 @@ FROM node:lts-alpine as build-stage
 WORKDIR /usr/src/app
 ARG DOCKER_ENV
 COPY package*.json ./
-RUN npm install
+RUN npm install --force
 COPY . .
 RUN npm run build:$DOCKER_ENV
 

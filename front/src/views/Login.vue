@@ -3,7 +3,7 @@
     <div class="container">
       <transition>
         <div v-if="view !== 'register' && view !== 'reset'">
-          <LoginComp />
+          <Login />
           <ul class="list-inline">
             <li><a id="login-new-btn" class="list-inline-item" href="#"
                 @click.prevent="view ='register'">Sign up!</a></li>
@@ -12,14 +12,14 @@
           </ul>
         </div>
         <div v-else-if="view === 'register'">
-          <RegisterComp />
+          <Register />
           <ul class="list-inline">
             <li><a id="register-cancel-btn" class="list-inline-item" href="#"
                 @click.prevent="view ='login'">Cancel</a></li>
           </ul>
         </div>
         <div v-else-if="view === 'reset'">
-          <ResetComp />
+          <Reset />
           <ul class="list-inline">
             <li><a id="reset-cancel-btn" class="list-inline-item" href="#"
                 @click.prevent="view ='login'">Cancel</a></li>
@@ -32,21 +32,21 @@
 
 <script>
 // @ is an alias to /src
-import LoginComp from '@/components/login/Login.vue';
-import RegisterComp from '@/components/login/Register.vue';
-import ResetComp from '@/components/login/Reset.vue';
+import Login from '@/components/login/Login.vue';
+import Register from '@/components/login/Register.vue';
+import Reset from '@/components/login/Reset.vue';
 
 export default {
-  name: 'HomePage',
+  name: 'home',
   data() {
     return {
       view: 'login',
     };
   },
   components: {
-    LoginComp,
-    RegisterComp,
-    ResetComp,
+    Login,
+    Register,
+    Reset,
   },
 };
 

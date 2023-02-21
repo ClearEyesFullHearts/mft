@@ -11,17 +11,34 @@ setDefaultTimeout(60 * 1000);
 
 BeforeAll(function (cb) {
     if (process.env.NODE_ENV !== 'staging') {
+        // mongoose.connect(config.get('secret.mongo.url'), { useNewUrlParser: true, useUnifiedTopology: true }).then(
+        //     () => {
+        //         mongoose.connection.db.dropDatabase();
+        //         restore({
+        //             uri: config.get('secret.mongo.url'),
+        //             root: __dirname + '/mft-dev',
+        //             callback: cb
+        //         });
+        //     },
+        //     err => { cb(err); }
+        // );
         mongoose.connect(config.get('secret.mongo.url'), { useNewUrlParser: true, useUnifiedTopology: true }).then(
-            () => {
-                mongoose.connection.db.dropDatabase();
-                restore({
+          () => { 
+              // mongoose.connection.db.dropDatabase();
+              mongoose.connection.dropDatabase().then(
+                () => {
+                  restore({
                     uri: config.get('secret.mongo.url'),
                     root: __dirname + '/mft-dev',
                     callback: cb
-                });
-            },
-            err => { cb(err); }
-        );
+                  });
+                },
+                err => { cb(err); }
+              )
+              
+          },
+          err => { cb(err); }
+      );
     }else{
         const body = {
             username: 'mft-user-test',

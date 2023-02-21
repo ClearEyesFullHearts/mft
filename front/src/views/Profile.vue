@@ -1,18 +1,18 @@
 <template>
   <div class="profile">
-    <UserComp></UserComp>
+    <User></User>
     <UsersList v-if="isAdmin"></UsersList>
   </div>
 </template>
 
 <script>
-import UserComp from '@/components/profile/User.vue';
+import User from '@/components/profile/User.vue';
 import UsersList from '@/components/profile/UsersList.vue';
 
 export default {
-  name: 'ProfilePage',
+  name: 'profile',
   components: {
-    UserComp,
+    User,
     UsersList,
   },
   computed: {
