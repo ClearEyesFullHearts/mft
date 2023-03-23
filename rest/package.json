@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "mail-win-cmd": "node .\\node_modules\\fake-smtp-server\\index.js",
-    "rest-win-cmd": "set DEBUG=mft-back:*&& set NODE_ENV=dev&& node app.js",
+    "rest-win-cmd": "set DEBUG=asyncapi-pub-middleware:*&& set NODE_ENV=dev&& node app.js",
     "rest-win-cmd:cover": ".\\node_modules\\.bin\\nyc --reporter=html npm run rest-win-cmd",
     "dev-win-cmd": "start npm run mail-win-cmd && start npm run rest-win-cmd",
     "dev-win-cmd:cover": "start npm run mail-win-cmd && npm run rest-win-cmd:cover",
@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/ClearEyesFullHearts/mft-back#readme",
   "dependencies": {
+    "asyncapi-pub-middleware": "^0.0.3",
     "bcrypt": "5.1.0",
     "config": "^3.3.9",
     "debug": "^4.1.1",

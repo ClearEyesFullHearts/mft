@@ -1,0 +1,257 @@
+asyncapi: 2.6.0
+info:
+  title: MFT Monitoring Service
+  version: 1.0.0
+  description: This service is in charge of managing the monitoring of the MFT services
+servers:
+  rabbit:
+    url: amqp:localhost
+    protocol: amqp
+    protocolVersion: 0.9.1
+  garbage:
+    url: brokerlist
+    protocol: kafka
+channels:
+  event.{app}.{severity}:
+    description: Channel for logs management
+    servers:
+      - rabbit
+    parameters:
+      app:
+        schema:
+          $ref: '#/components/schemas/app'
+      severity:
+        schema:
+          $ref: '#/components/schemas/severity'
+    subscribe:
+      description: A service logs all its events
+      tags:
+        - name: rest-api
+        - name: orchestrator
+        - name: worker
+      operationId: logEvents
+      message:
+        $ref: '#/components/messages/Event'
+    publish:
+      description: A service treat all logs
+      operationId: logsReceived
+      tags:
+        - name: log-manager
+      message:
+        $ref: '#/components/messages/Event'
+    bindings:
+      $ref: '#/components/channelBindings/logs'
+  event.{app}.warning:
+    description: Channel for warning logs management
+    servers:
+      - rabbit
+    parameters:
+      app:
+        schema:
+          $ref: '#/components/schemas/app'
+    publish:
+      description: A service treat all info logs
+      operationId: warningLogsReceived
+      tags:
+        - name: log-manager
+      message:
+        $ref: '#/components/messages/Event'
+    bindings:
+      $ref: '#/components/channelBindings/logs'
+  event.{app}.failure:
+    description: Channel for failure logs management
+    servers:
+      - rabbit
+    parameters:
+      app:
+        schema:
+          $ref: '#/components/schemas/app'
+    publish:
+      description: A service treat all info logs
+      operationId: failureLogsReceived
+      tags:
+        - name: log-manager
+      message:
+        $ref: '#/components/messages/Event'
+    bindings:
+      $ref: '#/components/channelBindings/logs'
+  event.{app}.error:
+    description: Channel for error logs management
+    servers:
+      - rabbit
+    parameters:
+      app:
+        schema:
+          $ref: '#/components/schemas/app'
+    publish:
+      description: A service treat all info logs
+      operationId: errorLogsReceived
+      tags:
+        - name: log-manager
+      message:
+        $ref: '#/components/messages/Event'
+    bindings:
+      $ref: '#/components/channelBindings/logs'
+  garbage.out:
+    description: Channel for keeping messages that are wrongly routed to a service
+    servers:
+      - garbage
+    subscribe:
+      description: A service sends all messages that it can't treat
+      tags:
+        - name: rest-api
+        - name: orchestrator
+        - name: worker
+        - name: log-manager
+      operationId: outGarbage
+      message:
+        $ref: '#/components/messages/Trash'
+  process.invoice.{month}.{year}:
+    description: Trigger the processing of one month of invoice
+    servers:
+      - rabbit
+    parameters:
+      month:
+        schema:
+          $ref: '#/components/schemas/month'
+      year:
+        schema:
+          $ref: '#/components/schemas/year'
+    subscribe:
+      description: Order the processing of some invoices
+      operationId: orderInvoicesProcessing
+      tags:
+        - name: rest-api
+    publish:
+      description: Receive the order to calculate all invoices that are to be processed
+      operationId: processMonthInvoices
+      tags:
+        - name: orchestrator
+    bindings:
+      $ref: '#/components/channelBindings/orchestrator'
+  process.invoice.{invoiceId}:
+    description: Trigger the processing of one month of invoice
+    servers:
+      - rabbit
+    parameters:
+      invoiceId:
+        schema:
+          $ref: '#/components/schemas/invoiceId'
+    subscribe:
+      description: Order the processing of one invoice
+      operationId: orderProcessInvoice
+      tags:
+        - name: orchestrator
+    publish:
+      description: Process one invoice
+      operationId: processInvoice
+      tags:
+        - name: worker
+    bindings:
+      $ref: '#/components/channelBindings/invoice-worker'
+components:
+  channelBindings:
+    logs:
+      amqp:
+        is: routingKey
+        exchange:
+          name: logs
+          type: topic
+          durable: true
+          autoDelete: false
+    orchestrator:
+      amqp:
+        is: routingKey
+        exchange:
+          name: orchestrate
+          type: topic
+          durable: true
+          autoDelete: false
+    invoice-worker:
+      amqp:
+        is: routingKey
+        exchange:
+          name: worker
+          type: topic
+          durable: true
+          autoDelete: false
+        queue:
+          name: invoice
+          durable: true
+          autoDelete: false
+  messages:
+    Event:
+      payload:
+        type: object
+        required:
+          - sessionId
+          - eventId
+          - type
+          - duration
+          - result
+        properties:
+          sessionId:
+            type: string
+            description: unique identifier (UUID) of the session
+          eventId:
+            type: string
+            description: unique identifier (UUID) of the event
+          type:
+            type: string
+            description: the operationId that match this event
+          duration:
+            type: integer
+            description: duration of the event in ms
+          result:
+            type: string
+            enum:
+              - OK
+              - KO
+            description: result of the event
+          input:
+            type: object
+            description: input that triggered the event
+          output:
+            type: object
+            description: event's output
+    Trash:
+      payload:
+        type: object
+        required:
+          - receiver
+          - routing
+        properties:
+          receiver:
+            type: string
+            description: The app that received the trash
+          originator:
+            type: string
+            description: Informations about the origin of the trash if known
+          routing:
+            type: string
+            description: The topic or path requested
+          body:
+            type: string
+            description: The stringified payload of the trash
+  schemas:
+    app:
+      type: string
+      enum:
+        - rest-api
+        - orchestrator
+        - worker
+    severity:
+      type: string
+      enum:
+        - info
+        - warning
+        - failure
+        - error
+    month:
+      type: string
+      pattern: ^(0?[1-9]|1[012])$
+    year:
+      type: string
+      pattern: ^(19|20)\d{2}$
+    invoiceId:
+      type: string

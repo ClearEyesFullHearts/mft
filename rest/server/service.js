@@ -6,6 +6,7 @@ const SwaggerAsync = require('./swaggerAsync.js');
 const ErrorHelper = require('./error.js');
 const CORS = require('./cors.js');
 const Data = require('../data/index.js');
+const asyncPublishiers = require('../async/mountPublisher');
 
 const debug = logger('mft-back:server');
 
@@ -25,6 +26,8 @@ class MultiSwaggerService {
     await data.init();
     this.app.locals.db = data;
 
+    asyncPublishiers(this.app);
+    
     const apis = config.get('api');
     const l = apis.length;
     for (let i = 0; i < l; i += 1) {
