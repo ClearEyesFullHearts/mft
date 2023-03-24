@@ -6,9 +6,12 @@ const SwaggerAsync = require('./swaggerAsync.js');
 const ErrorHelper = require('./error.js');
 const CORS = require('./cors.js');
 const Data = require('../data/index.js');
-const asyncPublishiers = require('../async/mountPublisher');
+const asyncPublishers = require('../async/mountPublisher');
+const log = require('./middleware/logging');
 
 const debug = logger('mft-back:server');
+
+const APP_ID = 'rest-api';
 
 class MultiSwaggerService {
   constructor() {
@@ -25,8 +28,11 @@ class MultiSwaggerService {
     const data = new Data();
     await data.init();
     this.app.locals.db = data;
+    this.app.locals.appId = APP_ID;
 
-    asyncPublishiers(this.app);
+    await asyncPublishers(this.app);
+
+    this.app.use(log)
     
     const apis = config.get('api');
     const l = apis.length;

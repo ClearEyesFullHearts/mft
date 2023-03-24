@@ -15,11 +15,11 @@ module.exports = async (app) => {
           assertExchange: () => Promise.resolve(true),
           assertQueue: () => Promise.resolve(true),
           sendToQueue: (q, buffer, opts) => {
-            console.log('logger message');
+            console.log('rabbit send message to queue');
             console.log(q, buffer.toString(), opts);
           },
           publish: (exc, topic, buffer, opts) => {
-            console.log('logger message');
+            console.log('rabbit publish message');
             console.log(exc, topic, buffer.toString(), opts);
           },
         }),
@@ -27,7 +27,7 @@ module.exports = async (app) => {
       garbage: {
         send: (obj) => {
           const { topic, messages } = obj;
-          console.log('garbage message');
+          console.log('garbage send message');
           console.log(topic, messages);
         }
       }
