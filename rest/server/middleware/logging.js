@@ -1,5 +1,7 @@
 
 const uuidv4 = require('uuid/v4');
+const logger = require('debug');
+const debug = logger('mft-back:server:middleware:logging');
 
 const SEVERITY = {
   INFO: 'info',
@@ -14,9 +16,9 @@ module.exports = (req, res, next) => {
     path, 
     params, 
     body, 
+    method,
     headers: {
       'x-session-id': originalSessionId,
-      ...reqHeaders
     },
     api: {
       publisher
@@ -36,10 +38,10 @@ module.exports = (req, res, next) => {
       path,
       params,
       body,
-      headers: reqHeaders,
+      method,
     },
-    type: 'mandatory operation id',
   }
+  debug('Monitoring object created for new request');
   res.once('finish', () => {
     let result = 'OK'
     let severity = SEVERITY.INFO;
@@ -61,6 +63,7 @@ module.exports = (req, res, next) => {
       duration,
     }
 
+    debug('Publish monitoring event');
     pub.publish(`event.${app}.${severity}`, msg)
   });
   next();

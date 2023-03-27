@@ -17,6 +17,16 @@ class SwaggerAsync {
           // - must be first in swagger-tools middleware chain
           swagApp.use(middleware.swaggerMetadata());
 
+          // Set the monitoring type
+          swagApp.use((req, res, next) => {
+            if (req.swagger && req.swagger.operation && req.swagger.operation.operationId) {
+              req.monitor.type = req.swagger.operation.operationId;
+            }else{
+              req.monitor.type = 'Unknown';
+            }
+            next();
+          });
+
           // Provide the security handlers
           swagApp.use(AuthMiddleware.verify(config.get('secret.auth')));
 

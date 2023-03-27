@@ -9,6 +9,7 @@ module.exports.getAllInvoices = (req, res, next) => {
   debug('getAllInvoices');
   Invoicing.getAll(req.app.locals.db, req.auth)
     .then((allInvoices) => {
+      req.monitor.output = { allInvoices: allInvoices.length};
       res.json(allInvoices);
     })
     .catch((err) => {
@@ -22,6 +23,7 @@ module.exports.createInvoice = (req, res, next) => {
   Invoicing.createNewInvoice(req.app.locals.db, req.auth, ID, body)
     .then((invoice) => {
       res.statusCode = 201;
+      req.monitor.output = invoice;
       res.json(invoice);
     })
     .catch((err) => {
@@ -33,6 +35,7 @@ module.exports.getMyInvoices = (req, res, next) => {
   const ID = req.swagger.params.userid.value;
   Invoicing.getMyOwn(req.app.locals.db, req.auth, ID)
     .then((allInvoices) => {
+      req.monitor.output = { allInvoices: allInvoices.length};
       res.json(allInvoices);
     })
     .catch((err) => {
@@ -45,6 +48,7 @@ module.exports.getInvoice = (req, res, next) => {
   const ID = req.swagger.params.id.value;
   Invoicing.getOne(req.app.locals.db, req.auth, userID, ID)
     .then((invc) => {
+      req.monitor.output = invc;
       res.json(invc);
     })
     .catch((err) => {
@@ -58,6 +62,7 @@ module.exports.changeInvoice = (req, res, next) => {
   const data = req.swagger.params.body.value;
   Invoicing.modifyCreatedInvoice(req.app.locals.db, req.auth, userID, ID, data)
     .then((invc) => {
+      req.monitor.output = invc;
       res.json(invc);
     })
     .catch((err) => {
@@ -84,6 +89,7 @@ module.exports.updateInvoiceStatus = (req, res, next) => {
   const data = req.swagger.params.body.value;
   Invoicing.setStatusDate(req.app.locals.db, req.auth, userID, ID, status, data)
     .then((invc) => {
+      req.monitor.output = invc;
       res.json(invc);
     })
     .catch((err) => {

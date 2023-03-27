@@ -1,14 +1,19 @@
 
 const fs = require('node:fs');
+const logger = require('debug');
 const publish = require('asyncapi-pub-middleware');
 
+const debug = logger('mft-back:async:publisher');
+
 module.exports = async (app) => {
+  debug('Read AsyncAPI file');
   const asyncDoc = fs.readFileSync(`${__dirname}/../../async/mft.yaml`, 'utf8');
   const options = {
     tag: 'rest-api',
     connections: {}
   }
   if(process.env.NODE_ENV === 'dev'){
+    debug('Set mock connections');
     options.connections = {
       rabbit: {
         createChannel: () => ({
@@ -33,6 +38,9 @@ module.exports = async (app) => {
       }
     }
   }
+  debug('Create publisher');
   const asyncMiddleware = await publish(asyncDoc, options);
+  debug('Mount publisher on app');
   app.use(asyncMiddleware)
+  debug('Publisher ready');
 }
