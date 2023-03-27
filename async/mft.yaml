@@ -5,11 +5,11 @@ info:
   description: This service is in charge of managing the monitoring of the MFT services
 servers:
   rabbit:
-    url: amqp:localhost
+    url: amqp://myuser:mypassword@localhost:5672
     protocol: amqp
     protocolVersion: 0.9.1
   garbage:
-    url: brokerlist
+    url: localhost:9092
     protocol: kafka
 channels:
   event.{app}.{severity}:

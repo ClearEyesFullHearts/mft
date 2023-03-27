@@ -41,7 +41,7 @@ module.exports = (req, res, next) => {
     },
   }
   debug('Monitoring object created for new request');
-  res.once('finish', () => {
+  res.once('finish', async () => {
     let result = 'OK'
     let severity = SEVERITY.INFO;
     const app = appId;
@@ -65,10 +65,10 @@ module.exports = (req, res, next) => {
       result,
       duration,
       status: numStatus
-    }
+    };
 
     debug('Publish monitoring event');
-    pub.publish(`event.${app}.${severity}`, msg)
+    await pub.publish(`event.${app}.${severity}`, msg);
   });
   next();
 }

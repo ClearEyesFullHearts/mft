@@ -8,6 +8,7 @@ const CORS = require('./cors.js');
 const Data = require('../data/index.js');
 const asyncPublishers = require('../async/mountPublisher');
 const log = require('./middleware/logging');
+const garbage = require('./middleware/garbage');
 
 const debug = logger('mft-back:server');
 
@@ -32,7 +33,7 @@ class MultiSwaggerService {
 
     await asyncPublishers(this.app);
 
-    this.app.use(log)
+    this.app.use(log);
     
     const apis = config.get('api');
     const l = apis.length;
@@ -48,6 +49,8 @@ class MultiSwaggerService {
 
       await SwaggerAsync.init(this.app, name, doc, options);// eslint-disable-line
     }
+
+    this.app.use(garbage);
 
     this.app.use(ErrorHelper.catchMiddleware());
 
