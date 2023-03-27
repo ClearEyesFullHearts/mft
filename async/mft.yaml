@@ -208,6 +208,9 @@ components:
               - OK
               - KO
             description: result of the event
+          status:
+            type: number
+            description: status code is applicable
           input:
             type: object
             description: input that triggered the event

@@ -17,12 +17,22 @@ class SwaggerAsync {
           // - must be first in swagger-tools middleware chain
           swagApp.use(middleware.swaggerMetadata());
 
-          // Set the monitoring type
+          // Set the monitoring type & body
           swagApp.use((req, res, next) => {
             if (req.swagger && req.swagger.operation && req.swagger.operation.operationId) {
               req.monitor.type = req.swagger.operation.operationId;
             }else{
               req.monitor.type = 'Unknown';
+            }
+            if (req.swagger && req.swagger.params && req.swagger.params.body) {
+              // remove personal data from logs
+              const {
+                password,
+                email,
+                ...loggableBody
+              } = req.swagger.params.body.value;
+              
+              req.monitor.input.body = loggableBody;
             }
             next();
           });

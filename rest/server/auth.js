@@ -30,11 +30,11 @@ class AuthMiddleware {
             return next(ErrorHelper.getCustomError(403, ErrorHelper.CODE.BAD_TOKEN, err.message));
           }
           debug('verify ok', payload);
+          req.auth = payload;
           const roles = req.swagger.operation[ROLE_GUARD];
           for (let i = 0; i < roles.length; i += 1) {
             if (payload.roles.indexOf(roles[i]) !== -1) {
               debug('role is accepted');
-              req.auth = payload;
               return next();
             }
           }

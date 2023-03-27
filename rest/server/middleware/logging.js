@@ -15,7 +15,6 @@ module.exports = (req, res, next) => {
   const { 
     path, 
     params, 
-    body, 
     method,
     headers: {
       'x-session-id': originalSessionId,
@@ -35,10 +34,10 @@ module.exports = (req, res, next) => {
     sessionId: originalSessionId || uuidv4(),
     eventId: uuidv4(),
     input: {
-      path,
-      params,
-      body,
       method,
+      path,
+      author: 'unknown',
+      params,
     },
   }
   debug('Monitoring object created for new request');
@@ -57,10 +56,15 @@ module.exports = (req, res, next) => {
       severity = SEVERITY.ERROR;
     }
 
+    if(req.auth) {
+      req.monitor.input.author = req.auth.user.id;
+    }
+
     const msg = {
       ...req.monitor,
       result,
       duration,
+      status: numStatus
     }
 
     debug('Publish monitoring event');
