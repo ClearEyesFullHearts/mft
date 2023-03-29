@@ -1,0 +1,15 @@
+{
+  "secret": {
+      "mongo":{
+          "url": "mongodb://127.0.0.1:27017/mft-dev"
+      },
+      "garbage":{
+          "url": "localhost:19092",
+          "clientId": "log-manager"
+      },
+      "mail":{
+          "user": "username",
+          "pass": "pass"
+      }
+  }
+}

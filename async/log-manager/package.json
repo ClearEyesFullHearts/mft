@@ -1,0 +1,19 @@
+{
+  "name": "log-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "MFT",
+  "license": "MIT",
+  "dependencies": {
+    "asyncapi-pub-middleware": "^0.0.4",
+    "asyncapi-sub-middleware": "^1.0.0",
+    "config": "^3.3.9",
+    "debug": "^4.3.4",
+    "kafkajs": "^2.2.4",
+    "rabbitmq-express": "^1.0.2"
+  }
+}
