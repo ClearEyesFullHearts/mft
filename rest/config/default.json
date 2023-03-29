@@ -5,10 +5,10 @@
             "url": "mongodb://127.0.0.1:27017/mft-dev"
         },
         "rabbit":{
-            "url": "amqp://myuser:mypassword@localhost:5672"
+            "url": "amqp://myuser:mypassword@127.0.0.1:5672"
         },
         "garbage":{
-            "url": "localhost:9092",
+            "url": "localhost:19092",
             "clientId": "rest-api"
         },
         "mail":{

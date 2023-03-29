@@ -9,11 +9,13 @@ RUN npm install
 # The instructions for second stage
 FROM node:lts-alpine as production-stage
 
+RUN apk add --no-cache bash
+RUN wget -O /bin/wait-for-it.sh https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh
+RUN chmod +x /bin/wait-for-it.sh
+
 WORKDIR /usr/src/app
 COPY --from=build-stage node_modules node_modules
 
 COPY . .
 
 EXPOSE 3000
-
-CMD [ "node", "app.js" ]

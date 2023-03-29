@@ -17,7 +17,7 @@ MongoDB v4.2.x
 - clone the project  
 - run "npm install" in the "rest", "front", "test-api" and "test-front" folders (note: you may have to use "npm install --force" in the "front" folder)  
 - Windows env: in the "test-front" folder run "npm run dev-win-cmd" and then "npm run test-ff-cmd" to test with firefox or "npm run test-gg-cmd" to test with chrome (Note: the fake-smtp-server module is broken by node v18 so some tests will be failing)  
-- Linux env: in the "docker/dev" folder run "docker-compose up" then in the "test-front" folder run "npm run dock-dev"  
+- Linux env: in the "docker/dev" folder run "docker-compose up --build" then in the "test-front" folder run "npm run dock-dev"  
 - play "npm run dev-report" or "npm run dock-report" to create the html test report in the "test-front/reports" folder  
 - If you want the code coverage report, start the rest server manually using the "cover" commmands in the "rest" folder; i.e "npm run rest-win-cmd:cover", run the "test-api" tests and the report will be created when you stop the server.
   
