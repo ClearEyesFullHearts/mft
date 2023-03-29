@@ -4,6 +4,7 @@ const asyncApiConsumer = require('asyncapi-sub-middleware');
 const { ValidationError } = require('asyncapi-sub-middleware');
 const asyncApiPublisher = require('./middleware/mountPublisher');
 const garbage = require('./middleware/garbage');
+const error = require('./middleware/error');
 
 const APP_ID = 'log-manager';
 
@@ -25,15 +26,7 @@ const doc = fs.readFileSync('../../mft.yaml', 'utf8');
   await asyncApiConsumer(server, doc, options);
 
   server.use(garbage);
-
-  server.use((err, req, res, next) => {
-    if(err instanceof ValidationError) {
-
-    }else{
-
-    }
-    res.end();
-  });
+  server.use(error);
   
   server.listen({
     rabbitURI: 'amqp://myuser:mypassword@localhost:5672',
