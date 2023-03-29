@@ -9,7 +9,7 @@ servers:
     protocol: amqp
     protocolVersion: 0.9.1
   garbage:
-    url: localhost:9092
+    url: localhost:19092
     protocol: kafka
 channels:
   event.{app}.{severity}:
