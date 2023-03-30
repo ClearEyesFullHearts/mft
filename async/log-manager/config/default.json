@@ -3,6 +3,10 @@
       "mongo":{
           "url": "mongodb://127.0.0.1:27017/mft-dev"
       },
+      "rabbit":{
+          "url": "amqp://myuser:mypassword@localhost:5672",
+          "exchange": "logs"
+      },
       "garbage":{
           "url": "localhost:19092",
           "clientId": "log-manager"

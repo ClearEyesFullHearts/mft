@@ -1,5 +1,4 @@
 
-const fs = require('fs');
 const { Kafka } = require('kafkajs');
 const config = require('config');
 const logger = require('debug');

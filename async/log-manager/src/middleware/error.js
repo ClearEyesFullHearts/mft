@@ -1,3 +1,5 @@
+const { ValidationError } = require('asyncapi-sub-middleware');
+
 module.exports = async (err, req, res, next) => {
   if(err instanceof ValidationError) {
     const { 
@@ -23,8 +25,8 @@ module.exports = async (err, req, res, next) => {
     };
   
     await publisher.publish('garbage.out', trash);
+    res.end();
   }else{
-
+    res.end(err);
   }
-  res.end();
 };
