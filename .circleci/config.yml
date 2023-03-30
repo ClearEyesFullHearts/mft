@@ -2,6 +2,7 @@ version: 2.1 # CircleCI version
 orbs:
   browser-tools: circleci/browser-tools@0.1.4
   node: circleci/node@5.1.0
+  wait-for: cobli/wait-for@1.0.0
 jobs:
   build:
     machine:
@@ -20,17 +21,11 @@ jobs:
       - node/install:
           node-version: "18.14.1"
 
-      - run:
-          name: Install dockerize
-          command: sudo wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
-          environment:
-            DOCKERIZE_VERSION: v0.6.1
-
       - run: cd ./docker/ci && KEY_AUTH_SIGN=${MFT_AUTH_KEY} docker-compose up -d
-
-      - run:
-          name: Wait for api gateway
-          command: dockerize -wait tcp://localhost:3000 -timeout 1m
+      
+      - wait-for/port
+        seconds-between-retries: 5
+        port: 3000
       
       - run: mkdir -p ~/cucumber
 
