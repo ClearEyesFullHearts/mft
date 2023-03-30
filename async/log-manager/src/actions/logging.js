@@ -1,5 +1,9 @@
+const logger = require('debug');
+const debug = logger('log-manager:async:action:logging');
+
 module.exports = (req, res, next) => {
-  const { api: { params, body } } = req;
+  const { path, api: { params } } = req;
+  debug(`logging for ${path}`);
   if(params.severity && params.severity === 'info'){
     res.end();
   }else{
