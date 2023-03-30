@@ -28,6 +28,7 @@ jobs:
           port: 3000
       
       - run: mkdir -p ~/cucumber
+      - run: docker logs -f server &> ~/cucumber/server.log &
 
       - run: cd ./test-api && npm install
       - run: cd ./test-api && KEY_AUTH_SIGN=${MFT_AUTH_KEY} npm run ci-test-api
