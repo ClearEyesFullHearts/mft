@@ -24,8 +24,8 @@ jobs:
       - run: cd ./docker/ci && KEY_AUTH_SIGN=${MFT_AUTH_KEY} docker-compose up -d
       
       - wait-for/port
-        seconds-between-retries: 5
-        port: 3000
+          seconds-between-retries: 5
+          port: 3000
       
       - run: mkdir -p ~/cucumber
 
