@@ -21,7 +21,7 @@ jobs:
       - node/install:
           node-version: "18.14.1"
 
-      - run: cd ./docker/ci && KEY_AUTH_SIGN=${MFT_AUTH_KEY} docker-compose up -d
+      - run: cd ./docker/ci && KEY_AUTH_SIGN=${MFT_AUTH_KEY} docker-compose up
       
       - wait-for/port:
           seconds-between-retries: 5
