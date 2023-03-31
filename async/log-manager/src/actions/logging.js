@@ -1,10 +1,40 @@
 const logger = require('debug');
+const { Client } = require('@elastic/elasticsearch');
+const config = require('config');
 const debug = logger('log-manager:async:action:logging');
 
-module.exports = (req, res, next) => {
-  const { path, api: { params } } = req;
+const esURL = config.get('secret.elastic.url');
+const esClient = new Client({
+  node: esURL,
+});
+
+module.exports = async (req, res, next) => {
+  const { path, api: { params, body } } = req;
   debug(`logging for ${path}`);
-  if(params.severity && params.severity === 'info'){
+
+  const { input, output } = body;
+  const { severity, app } = params;
+
+  const document = {
+    ...body,
+    input: JSON.stringify(input),
+    output: JSON.stringify(output),
+    severity,
+    app,
+  };
+
+  try{
+    await esClient.index({
+      index: 'mf-log',
+      document,
+    });
+  }catch(err){
+    debug('Error sending to elastic');
+    res.end(err);
+  }
+
+
+  if(severity && severity === 'info'){
     res.end();
   }else{
     next();

@@ -11,6 +11,9 @@
           "url": "localhost:19092",
           "clientId": "log-manager"
       },
+      "elastic":{
+          "url": "https://localhost:9200"
+      },
       "mail":{
           "user": "username",
           "pass": "pass"
