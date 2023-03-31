@@ -28,7 +28,7 @@ channels:
       tags:
         - name: rest-api
         - name: orchestrator
-        - name: worker
+        - name: inv-worker
       operationId: logEvents
       message:
         $ref: '#/components/messages/Event'
@@ -101,7 +101,7 @@ channels:
       tags:
         - name: rest-api
         - name: orchestrator
-        - name: worker
+        - name: inv-worker
         - name: log-manager
       operationId: outGarbage
       message:
@@ -146,9 +146,26 @@ channels:
       description: Process one invoice
       operationId: processInvoice
       tags:
-        - name: worker
+        - name: inv-worker
     bindings:
       $ref: '#/components/channelBindings/invoice-worker'
+  process.mail:
+    description: Sends one mail
+    servers:
+      - rabbit
+    subscribe:
+      description: Order the sending of one mail
+      operationId: sendMail
+      tags:
+        - name: rest-api
+        - name: log-manager
+    publish:
+      description: Send one mail
+      operationId: processMail
+      tags:
+        - name: mail-worker
+    bindings:
+      $ref: '#/components/channelBindings/mail-worker'
 components:
   channelBindings:
     logs:
@@ -177,6 +194,18 @@ components:
           autoDelete: false
         queue:
           name: invoice
+          durable: true
+          autoDelete: false
+    mail-worker:
+      amqp:
+        is: routingKey
+        exchange:
+          name: worker
+          type: topic
+          durable: true
+          autoDelete: false
+        queue:
+          name: mail
           durable: true
           autoDelete: false
   messages:
@@ -242,7 +271,9 @@ components:
       enum:
         - rest-api
         - orchestrator
-        - worker
+        - inv-worker
+        - mail-worker
+        - log-manager
     severity:
       type: string
       enum:
