@@ -22,10 +22,9 @@ jobs:
 
       - run: cd ./docker/ci && KEY_AUTH_SIGN=${MFT_AUTH_KEY} docker-compose up -d
 
-      - run: sleep 30
+      - run: sleep 40
       
       - run: mkdir -p ~/cucumber
-      - run: docker logs -f server &> ~/cucumber/server.log &
 
       - run: cd ./test-api && npm install
       - run: cd ./test-api && KEY_AUTH_SIGN=${MFT_AUTH_KEY} npm run ci-test-api
