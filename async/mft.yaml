@@ -103,6 +103,7 @@ channels:
         - name: rest-api
         - name: orchestrator
         - name: inv-worker
+        - name: mail-worker
         - name: log-manager
       operationId: outGarbage
       message:
@@ -160,11 +161,15 @@ channels:
       tags:
         - name: rest-api
         - name: log-manager
+      message:
+        $ref: '#/components/messages/Mailing'
     publish:
       description: Send one mail
       operationId: processMail
       tags:
         - name: mail-worker
+      message:
+        $ref: '#/components/messages/Mailing'
     bindings:
       $ref: '#/components/channelBindings/mail-worker'
 components:
@@ -266,6 +271,27 @@ components:
           body:
             type: string
             description: The stringified payload of the trash
+    Mailing:
+      payload:
+        type: object
+        required:
+          - to
+          - template
+        properties:
+          from:
+            type: string
+            format: email
+          to:
+            type: array
+            items:
+              type: string
+              format: email
+          template:
+            type: string
+            enum:
+              - RESET_PASSWORD
+          values:
+            type: object
   schemas:
     app:
       type: string

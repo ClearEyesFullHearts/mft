@@ -29,7 +29,7 @@ class UserLogin {
     return this.changeUserToAuth(newUser);
   }
 
-  static async saveAndSendNewPassword(db, { email }) {
+  static async saveAndSendNewPassword(db, { email }, publisher) {
     const knownUser = await db.users.Doc.findOne({ email });
     if (knownUser) {
       const newPass = `${uuidv4().substr(0, 4)}-${uuidv4().substr(0, 4)}`;
@@ -41,7 +41,12 @@ class UserLogin {
         newPassword: newPass,
         publicName: config.get('public.name'),
       };
-      await mailing.send(knownUser.email, 'RESET_PASSWORD', mailValues);
+      // await mailing.send(knownUser.email, 'RESET_PASSWORD', mailValues);
+      await publisher.publish('process.mail', {
+        to: [knownUser.email],
+        template: 'RESET_PASSWORD',
+        values: mailValues,
+      })
       return true;
     }
     throw ErrorHelper.getCustomError(404, ErrorHelper.CODE.NOT_FOUND, 'User not found');
