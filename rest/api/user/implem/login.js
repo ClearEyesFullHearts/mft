@@ -41,12 +41,12 @@ class UserLogin {
         newPassword: newPass,
         publicName: config.get('public.name'),
       };
-      // await mailing.send(knownUser.email, 'RESET_PASSWORD', mailValues);
-      await publisher.publish('process.mail', {
-        to: [knownUser.email],
-        template: 'RESET_PASSWORD',
-        values: mailValues,
-      })
+      await mailing.send(knownUser.email, 'RESET_PASSWORD', mailValues);
+      // await publisher.publish('process.mail', {
+      //   to: [knownUser.email],
+      //   template: 'RESET_PASSWORD',
+      //   values: mailValues,
+      // });
       return true;
     }
     throw ErrorHelper.getCustomError(404, ErrorHelper.CODE.NOT_FOUND, 'User not found');
