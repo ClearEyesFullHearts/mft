@@ -18,5 +18,8 @@
                 "port": 1025
             }
         }
+    },
+    "async": {
+        "fileroute": "/mft.yaml"
     }
 }

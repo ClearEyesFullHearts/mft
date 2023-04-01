@@ -13,7 +13,9 @@ services:
       - server
 
   server:
-    build: ../../rest
+    build:
+      context: ../../
+      dockerfile: rest.dockerfile
     container_name: server
     ports:
       - ${SERVER_PUBLIC_PORT}:3000

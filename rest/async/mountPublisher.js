@@ -30,7 +30,8 @@ async function getGarbageCon(){
 
 module.exports = async (app) => {
   debug('Read AsyncAPI file');
-  const asyncDoc = fs.readFileSync(`${__dirname}/mft.yaml`, 'utf8');
+  const fileroute = config.get('async.fileroute');
+  const asyncDoc = fs.readFileSync(`${__dirname}${fileroute}`, 'utf8');
   const options = {
     tag: app.locals.appId,
     connections: {}

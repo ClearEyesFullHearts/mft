@@ -3,7 +3,7 @@ FROM node:lts-alpine as build-stage
 
 RUN apk add --no-cache python3 make g++
 
-COPY package*.json ./
+COPY ./rest/package*.json ./
 RUN npm install
 
 # The instructions for second stage
@@ -16,6 +16,7 @@ RUN chmod +x /bin/wait-for-it.sh
 WORKDIR /usr/src/app
 COPY --from=build-stage node_modules node_modules
 
-COPY . .
+COPY ./rest/ .
+COPY ./async/mft.yaml ./async/mft.yaml
 
 EXPOSE 3000

@@ -65,6 +65,9 @@
             "controller": ""
         }
     ],
+    "async": {
+        "fileroute": "/../../async/mft.yaml"
+    },
     "templates":{
         "mail":{
             "RESET_PASSWORD":{
