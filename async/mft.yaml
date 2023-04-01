@@ -272,6 +272,8 @@ components:
             type: string
             description: The stringified payload of the trash
     Mailing:
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
       payload:
         type: object
         required:
@@ -292,6 +294,15 @@ components:
               - RESET_PASSWORD
           values:
             type: object
+  messageTraits:
+    commonHeaders:
+      headers:
+        type: object
+        required:
+          - x-session-id
+        properties:
+          x-session-id:
+            type: string
   schemas:
     app:
       type: string

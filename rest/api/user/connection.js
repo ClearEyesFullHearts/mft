@@ -27,7 +27,19 @@ module.exports.loginUser = (req, res, next) => {
 };
 module.exports.resetUserPassword = (req, res, next) => {
   debug('resetUserPassword body', req.swagger.params.body.value);
-  UserLogin.saveAndSendNewPassword(req.app.locals.db, req.swagger.params.body.value, req.api.publisher)
+  const {
+    api: {
+      publisher
+    },
+    monitor: {
+      sessionId
+    }
+  } = req;
+  const publishInfos = {
+    publisher,
+    sessionId
+  }
+  UserLogin.saveAndSendNewPassword(req.app.locals.db, req.swagger.params.body.value, publishInfos)
     .then(() => {
       res.json();
     })

@@ -29,7 +29,7 @@ class UserLogin {
     return this.changeUserToAuth(newUser);
   }
 
-  static async saveAndSendNewPassword(db, { email }, publisher) {
+  static async saveAndSendNewPassword(db, { email }, { publisher, sessionId }) {
     const knownUser = await db.users.Doc.findOne({ email });
     if (knownUser) {
       const newPass = `${uuidv4().substr(0, 4)}-${uuidv4().substr(0, 4)}`;
@@ -46,6 +46,9 @@ class UserLogin {
       //   to: [knownUser.email],
       //   template: 'RESET_PASSWORD',
       //   values: mailValues,
+      // },
+      // {
+      //   'x-session-id': sessionId
       // });
       return true;
     }
