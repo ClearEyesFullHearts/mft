@@ -26,11 +26,12 @@ module.exports = async (req, res, next) => {
   try{
     await esClient.index({
       index: 'mf-log',
-      document,
+      body: document,
     });
   }catch(err){
-    debug('Error sending to elastic');
-    res.end(err);
+    debug('Error sending to elastic', err);
+    res.end(err); // will noAck, so will try again!
+    return;
   }
 
 

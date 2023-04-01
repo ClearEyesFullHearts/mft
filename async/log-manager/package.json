@@ -9,7 +9,7 @@
   "author": "MFT",
   "license": "MIT",
   "dependencies": {
-    "@elastic/elasticsearch": "^8.6.0",
+    "@elastic/elasticsearch": "^7.17.0",
     "asyncapi-pub-middleware": "^0.0.4",
     "asyncapi-sub-middleware": "^1.0.0",
     "config": "^3.3.9",

@@ -12,7 +12,7 @@
           "clientId": "log-manager"
       },
       "elastic":{
-          "url": "https://localhost:9200"
+          "url": "http://localhost:9200"
       },
       "mail":{
           "user": "username",
