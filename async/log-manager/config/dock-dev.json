@@ -1,0 +1,18 @@
+{
+    "secret": {
+        "rabbit":{
+            "url": "amqp://myuser:mypassword@my-rabbit-mq:5672",
+            "exchange": "logs"
+        },
+        "garbage":{
+            "url": "broker:9092",
+            "clientId": "log-manager"
+        },
+        "elastic":{
+            "url": "http://es01:9200"
+        }
+    },
+    "async": {
+        "fileroute": "/mft.yaml"
+    }
+}

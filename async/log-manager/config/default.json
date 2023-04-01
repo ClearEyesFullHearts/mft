@@ -1,8 +1,5 @@
 {
   "secret": {
-      "mongo":{
-          "url": "mongodb://127.0.0.1:27017/mft-dev"
-      },
       "rabbit":{
           "url": "amqp://myuser:mypassword@localhost:5672",
           "exchange": "logs"
@@ -13,10 +10,9 @@
       },
       "elastic":{
           "url": "http://localhost:9200"
-      },
-      "mail":{
-          "user": "username",
-          "pass": "pass"
       }
+  },
+  "async": {
+      "fileroute": "/../../mft.yaml"
   }
 }

@@ -29,6 +29,7 @@ channels:
         - name: rest-api
         - name: orchestrator
         - name: inv-worker
+        - name: mail-worker
       operationId: logEvents
       message:
         $ref: '#/components/messages/Event'

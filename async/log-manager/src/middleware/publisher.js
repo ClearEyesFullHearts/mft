@@ -1,10 +1,17 @@
 
 const { Kafka } = require('kafkajs');
+const amqplib = require('amqplib');
 const config = require('config');
 const logger = require('debug');
 const publish = require('asyncapi-pub-middleware');
 
 const debug = logger('log-manager:async:publisher');
+
+async function getRabbitCon(){
+  const rabbitURI = config.get('secret.rabbit.url');
+  const conn = await amqplib.connect(rabbitURI);
+  return conn;
+}
 
 async function getGarbageCon(){
   const brokers = config.get('secret.garbage.url');
@@ -29,6 +36,7 @@ module.exports = async (app, doc) => {
 
   if(process.env.NODE_ENV !== 'dev'){
     debug('Connect to known servers');
+    options.connections.rabbit = await getRabbitCon();
     options.connections.garbage = await getGarbageCon();
   } else {
     debug('Publisher will create the connections');

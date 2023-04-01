@@ -29,6 +29,18 @@ services:
       - DEBUG=mft-back:*
       - NODE_ENV=dock-ci
       - KEY_AUTH_SIGN
+
+  log-manager:
+    build:
+      context: ../../async/
+      dockerfile: logmanager.dockerfile
+    container_name: log-manager
+    depends_on: 
+      - my-rabbit-mq
+    command: sh -c '/bin/wait-for-it.sh my-rabbit-mq:5672 --timeout=30 -- node app.js'
+    environment:
+      - DEBUG=log-manager:*
+      - NODE_ENV=dock-ci
     
   server-database:
     image: mongo:4.2.24-rc2-bionic
