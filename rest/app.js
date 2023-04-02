@@ -1,6 +1,5 @@
-
-const MultiSwaggerService = require('./server/service.js');
+const MultiSwaggerService = require('./server/service');
 
 (async () => {
-    await new MultiSwaggerService().start();
+  await new MultiSwaggerService().start();
 })();

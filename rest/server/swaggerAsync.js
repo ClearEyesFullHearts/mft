@@ -1,8 +1,7 @@
-
 const swaggerTools = require('swagger-tools');
 const config = require('config');
 const logger = require('debug');
-const AuthMiddleware = require('./auth.js');
+const AuthMiddleware = require('./auth.');
 
 class SwaggerAsync {
   static init(swagApp, apiName, swaggerDoc, routeOptions, docPath = '/api-docs') {
@@ -21,7 +20,7 @@ class SwaggerAsync {
           swagApp.use((req, res, next) => {
             if (req.swagger && req.swagger.operation && req.swagger.operation.operationId) {
               req.monitor.type = req.swagger.operation.operationId;
-            }else{
+            } else {
               req.monitor.type = 'Unknown';
             }
             if (req.swagger && req.swagger.params && req.swagger.params.body) {
@@ -31,7 +30,7 @@ class SwaggerAsync {
                 email,
                 ...loggableBody
               } = req.swagger.params.body.value;
-              
+
               req.monitor.input.body = loggableBody;
             }
             next();
@@ -60,6 +59,5 @@ class SwaggerAsync {
     }));
   }
 }
-
 
 module.exports = SwaggerAsync;

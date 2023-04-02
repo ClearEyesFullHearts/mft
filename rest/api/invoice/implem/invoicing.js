@@ -1,7 +1,6 @@
-
 const logger = require('debug');
 const moment = require('moment');
-const ErrorHelper = require('../../../server/error.js');
+const ErrorHelper = require('../../../server/error');
 
 const debug = logger('mft-back:invoice:implem');
 

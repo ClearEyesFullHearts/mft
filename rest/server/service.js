@@ -2,10 +2,10 @@ const express = require('express');
 const morgan = require('morgan');
 const config = require('config');
 const logger = require('debug');
-const SwaggerAsync = require('./swaggerAsync.js');
-const ErrorHelper = require('./error.js');
-const CORS = require('./cors.js');
-const Data = require('../data/index.js');
+const SwaggerAsync = require('./swaggerAsync');
+const ErrorHelper = require('./error');
+const CORS = require('./cors');
+const Data = require('../data/index');
 const asyncPublishers = require('../async/mountPublisher');
 const log = require('./middleware/logging');
 const garbage = require('./middleware/garbage');
@@ -34,7 +34,7 @@ class MultiSwaggerService {
     await asyncPublishers(this.app);
 
     this.app.use(log);
-    
+
     const apis = config.get('api');
     const l = apis.length;
     for (let i = 0; i < l; i += 1) {
@@ -62,6 +62,5 @@ class MultiSwaggerService {
     }));
   }
 }
-
 
 module.exports = MultiSwaggerService;

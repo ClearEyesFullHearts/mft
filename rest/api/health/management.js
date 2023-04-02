@@ -1,4 +1,3 @@
-
 const config = require('config');
 
 module.exports.health = (req, res) => {
@@ -17,7 +16,7 @@ module.exports.info = (req, res) => {
     user: req.auth,
     'config-base': config.get('base'),
     'config-api': config.get('api'),
-  }
+  };
   req.monitor.output = output;
   res.json(output);
 };

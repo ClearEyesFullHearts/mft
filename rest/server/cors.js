@@ -1,4 +1,3 @@
-
 const config = require('config');
 const logger = require('debug');
 
@@ -16,6 +15,5 @@ class CORSMiddleware {
     };
   }
 }
-
 
 module.exports = CORSMiddleware;

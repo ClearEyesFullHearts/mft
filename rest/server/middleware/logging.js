@@ -1,6 +1,6 @@
-
 const uuidv4 = require('uuid/v4');
 const logger = require('debug');
+
 const debug = logger('mft-back:server:middleware:logging');
 
 const SEVERITY = {
@@ -8,25 +8,25 @@ const SEVERITY = {
   WARNING: 'warning',
   FAILURE: 'failure',
   ERROR: 'error',
-}
+};
 
 module.exports = (req, res, next) => {
   const start = Date.now();
-  const { 
-    path, 
-    params, 
+  const {
+    path,
+    params,
     method,
     headers: {
       'x-session-id': originalSessionId,
     },
     api: {
-      publisher
+      publisher,
     },
     app: {
       locals: {
-        appId
-      }
-    }
+        appId,
+      },
+    },
   } = req;
 
   const pub = publisher;
@@ -39,24 +39,24 @@ module.exports = (req, res, next) => {
       author: 'unknown',
       params,
     },
-  }
+  };
   debug('Monitoring object created for new request');
   res.once('finish', async () => {
-    let result = 'OK'
+    let result = 'OK';
     let severity = SEVERITY.INFO;
     const app = appId;
     const duration = Date.now() - start;
 
     const numStatus = Number(res.statusCode);
-    if(numStatus >= 400){
+    if (numStatus >= 400) {
       result = 'KO';
       severity = SEVERITY.FAILURE;
     }
-    if(numStatus >= 500){
+    if (numStatus >= 500) {
       severity = SEVERITY.ERROR;
     }
 
-    if(req.auth) {
+    if (req.auth) {
       req.monitor.input.author = req.auth.user.id;
     }
 
@@ -64,11 +64,11 @@ module.exports = (req, res, next) => {
       ...req.monitor,
       result,
       duration,
-      status: numStatus
+      status: numStatus,
     };
 
     debug('Publish monitoring event');
     await pub.publish(`event.${app}.${severity}`, msg);
   });
   next();
-}
+};

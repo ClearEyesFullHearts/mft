@@ -1,6 +1,6 @@
 const logger = require('debug');
-const UserLogin = require('./implem/login.js');
-const UserMngt = require('./implem/user.js');
+const UserLogin = require('./implem/login');
+const UserMngt = require('./implem/user');
 
 const debug = logger('mft-back:user:connection');
 
@@ -29,16 +29,16 @@ module.exports.resetUserPassword = (req, res, next) => {
   debug('resetUserPassword body', req.swagger.params.body.value);
   const {
     api: {
-      publisher
+      publisher,
     },
     monitor: {
-      sessionId
-    }
+      sessionId,
+    },
   } = req;
   const publishInfos = {
     publisher,
-    sessionId
-  }
+    sessionId,
+  };
   UserLogin.saveAndSendNewPassword(req.app.locals.db, req.swagger.params.body.value, publishInfos)
     .then(() => {
       res.json();
@@ -52,7 +52,7 @@ module.exports.getAllUsers = (req, res, next) => {
   debug('getAllUsers');
   UserMngt.getAll(req.app.locals.db, req.auth)
     .then((allUsers) => {
-      req.monitor.output = { allUsers: allUsers.length};
+      req.monitor.output = { allUsers: allUsers.length };
       res.json(allUsers);
     })
     .catch((err) => {

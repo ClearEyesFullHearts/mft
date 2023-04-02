@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const config = require('config');
 const logger = require('debug');
 
-const ErrorHelper = require('../../../server/error.js');
+const ErrorHelper = require('../../../server/error');
 
 const debug = logger('mft-back:user:management');
 
@@ -63,7 +63,6 @@ class UserManagement {
 
     throw ErrorHelper.getCustomError(403, ErrorHelper.CODE.UNAUTHORIZED, 'User is not authorized for this action');
   }
-
 
   static toTransportUser({ id, username, email }) {
     return {

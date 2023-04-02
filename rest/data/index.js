@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const config = require('config');
 const logger = require('debug');
-const UserData = require('./user.js');
-const InvoiceData = require('./invoice.js');
+const UserData = require('./user');
+const InvoiceData = require('./invoice');
 
 const debug = logger('mft-back:data');
 

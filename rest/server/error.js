@@ -1,4 +1,3 @@
-
 const logger = require('debug');
 
 const debug = logger('mft-back:server:error');
@@ -58,6 +57,5 @@ class ErrorHelper {
     return err;
   }
 }
-
 
 module.exports = ErrorHelper;

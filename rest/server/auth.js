@@ -1,8 +1,7 @@
-
 const config = require('config');
 const jwt = require('jsonwebtoken');
 const logger = require('debug');
-const ErrorHelper = require('./error.js');
+const ErrorHelper = require('./error');
 
 const debug = logger('mft-back:server:auth');
 const debugSecret = logger('secret:mft-back:auth');
@@ -48,6 +47,5 @@ class AuthMiddleware {
     };
   }
 }
-
 
 module.exports = AuthMiddleware;

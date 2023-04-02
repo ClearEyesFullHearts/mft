@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 const logger = require('debug');
-const ErrorHelper = require('../../server/error.js');
-const Invoicing = require('./implem/invoicing.js');
+const ErrorHelper = require('../../server/error');
+const Invoicing = require('./implem/invoicing');
 
 const debug = logger('mft-back:invoice:connection');
 
@@ -9,7 +9,7 @@ module.exports.getAllInvoices = (req, res, next) => {
   debug('getAllInvoices');
   Invoicing.getAll(req.app.locals.db, req.auth)
     .then((allInvoices) => {
-      req.monitor.output = { allInvoices: allInvoices.length};
+      req.monitor.output = { allInvoices: allInvoices.length };
       res.json(allInvoices);
     })
     .catch((err) => {
@@ -35,7 +35,7 @@ module.exports.getMyInvoices = (req, res, next) => {
   const ID = req.swagger.params.userid.value;
   Invoicing.getMyOwn(req.app.locals.db, req.auth, ID)
     .then((allInvoices) => {
-      req.monitor.output = { allInvoices: allInvoices.length};
+      req.monitor.output = { allInvoices: allInvoices.length };
       res.json(allInvoices);
     })
     .catch((err) => {

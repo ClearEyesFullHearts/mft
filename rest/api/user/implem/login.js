@@ -4,7 +4,7 @@ const config = require('config');
 const logger = require('debug');
 const uuidv4 = require('uuid/v4');
 
-const ErrorHelper = require('../../../server/error.js');
+const ErrorHelper = require('../../../server/error');
 
 const debug = logger('mft-back:user:login');
 
@@ -40,14 +40,14 @@ class UserLogin {
         newPassword: newPass,
         publicName: config.get('public.name'),
       };
-      
+
       await publisher.publish('process.mail', {
         to: [knownUser.email],
         template: 'RESET_PASSWORD',
         values: mailValues,
       },
       {
-        'x-session-id': sessionId
+        'x-session-id': sessionId,
       });
       return true;
     }
