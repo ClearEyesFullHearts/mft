@@ -11,11 +11,11 @@
   "dependencies": {
     "@elastic/elasticsearch": "^7.17.0",
     "amqplib": "^0.10.3",
-    "asyncapi-pub-middleware": "^0.0.4",
+    "asyncapi-pub-middleware": "^0.0.5",
     "asyncapi-sub-middleware": "^1.0.1",
     "config": "^3.3.9",
     "debug": "^4.3.4",
     "kafkajs": "^2.2.4",
-    "rabbitmq-express": "^1.0.2"
+    "rabbitmq-express": "^1.0.3"
   }
 }

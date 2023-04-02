@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/ClearEyesFullHearts/mft-back#readme",
   "dependencies": {
-    "asyncapi-pub-middleware": "^0.0.4",
+    "asyncapi-pub-middleware": "^0.0.5",
     "amqplib": "^0.10.3",
     "kafkajs": "^2.2.4",
     "bcrypt": "5.1.0",

@@ -27,6 +27,8 @@ module.exports = async (err, req, res, next) => {
     await publisher.publish('garbage.out', trash);
     res.status(400).end();
   }else{
+    // console.error(err);
+    // res.status(500).end();
     res.status(500).end(err);
   }
 };

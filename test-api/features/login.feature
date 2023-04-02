@@ -42,6 +42,7 @@ Test the server connection API
     And I set body to {"email":"`newUserEmail`"}
     When I PUT /user/reset
     Then response code should be 200
+    Then I sleep for 1
     And an e-mail was sent to `newUserEmail`
 
   Scenario: Registering a new user needs a username

@@ -12,12 +12,13 @@ const SEVERITY = {
 
 module.exports = (req, res, next) => {
   const start = Date.now();
+  console.log('initiate logging')
   const { 
     body = {},
-    path, 
-    // headers: {
-    //   'x-session-id': originalSessionId,
-    // },
+    path,
+    headers: {
+      'x-session-id': sessionId
+    },
     api: {
       publisher
     },
@@ -36,7 +37,7 @@ module.exports = (req, res, next) => {
 
   const pub = publisher;
   req.monitor = {
-    sessionId: 'originalSessionId',
+    sessionId,
     eventId: uuidv4(),
     input: {
       path,

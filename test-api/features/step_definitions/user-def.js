@@ -51,10 +51,18 @@ Then(/^an e-mail was sent to (.*)$/, async function (destination) {
         response = await this.got.get(config.get('base.mail.serverURL') + '/api/emails?to=' + to, {
             json: true
         });
-        if(response.body.length !== 1){
-            new Error('There should be one and only one email to this user')
+
+        if(!response || !response.body || response.body.length !== 1){
+            throw new Error('There should be one and only one email to this user')
         }
     } catch (err) {
-        throw new Error('Server Error');
+        throw new Error(err.message);
     }
+});
+
+Then(/^I sleep for (.*)$/, async function (seconds) {
+    const time = this.apickli.replaceVariables(seconds);
+    await new Promise((resolve) => {
+        setTimeout(resolve, (time * 1000));
+      });
 });
