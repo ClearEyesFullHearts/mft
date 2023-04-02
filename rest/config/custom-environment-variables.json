@@ -3,10 +3,6 @@
         "auth": "KEY_AUTH_SIGN",
         "mongo":{
             "url": "KEY_MONGO_URL"
-        },
-        "mail":{
-            "user": "KEY_MAIL_USER",
-            "pass": "KEY_MAIL_PASS"
         }
     }
 }

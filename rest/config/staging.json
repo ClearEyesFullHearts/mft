@@ -7,17 +7,5 @@
     "public":{
         "name": "mft-invoice-staging",
         "url": "http://[ip]:8080"
-    },
-    "base": {
-        "hashSaltRound": 10,
-        "mail": {
-            "sender": "server@mathieufont.com",
-            "transport":{
-                "host": "ssl0.ovh.net",
-                "port": 465,
-                "auth":{},
-                "secure": true
-            }
-        }
     }
 }

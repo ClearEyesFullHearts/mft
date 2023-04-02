@@ -4,7 +4,6 @@ const config = require('config');
 const logger = require('debug');
 const uuidv4 = require('uuid/v4');
 
-const mailing = require('../../../misc/mailing.js');
 const ErrorHelper = require('../../../server/error.js');
 
 const debug = logger('mft-back:user:login');
@@ -41,15 +40,15 @@ class UserLogin {
         newPassword: newPass,
         publicName: config.get('public.name'),
       };
-      await mailing.send(knownUser.email, 'RESET_PASSWORD', mailValues);
-      // await publisher.publish('process.mail', {
-      //   to: [knownUser.email],
-      //   template: 'RESET_PASSWORD',
-      //   values: mailValues,
-      // },
-      // {
-      //   'x-session-id': sessionId
-      // });
+      
+      await publisher.publish('process.mail', {
+        to: [knownUser.email],
+        template: 'RESET_PASSWORD',
+        values: mailValues,
+      },
+      {
+        'x-session-id': sessionId
+      });
       return true;
     }
     throw ErrorHelper.getCustomError(404, ErrorHelper.CODE.NOT_FOUND, 'User not found');

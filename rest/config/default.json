@@ -34,20 +34,7 @@
             "ROLE_USER",
             "ROLE_ADMIN"
         ],
-        "hashSaltRound": 2,
-        "mail": {
-            "sender": "server@mathieufont.com",
-            "transport":{
-                "host": "127.0.0.1",
-                "port": 1025,
-                "auth":{},
-                "secure": false,
-                "tls":{
-                    "rejectUnauthorized": false
-                }
-            },
-            "templates": "./templates/mail"
-        }
+        "hashSaltRound": 2
     },
     "api": [{
             "name": "health",
