@@ -17,5 +17,10 @@
     "debug": "^4.3.4",
     "kafkajs": "^2.2.4",
     "rabbitmq-express": "^1.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
   }
 }

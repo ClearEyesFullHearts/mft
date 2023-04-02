@@ -1,4 +1,3 @@
-
 const { Kafka } = require('kafkajs');
 const amqplib = require('amqplib');
 const config = require('config');
@@ -7,13 +6,13 @@ const publish = require('asyncapi-pub-middleware');
 
 const debug = logger('log-manager:async:publisher');
 
-async function getRabbitCon(){
+async function getRabbitCon() {
   const rabbitURI = config.get('secret.rabbit.url');
   const conn = await amqplib.connect(rabbitURI);
   return conn;
 }
 
-async function getGarbageCon(){
+async function getGarbageCon() {
   const brokers = config.get('secret.garbage.url');
   const client = config.get('secret.garbage.clientId');
   const kafka = new Kafka({
@@ -31,10 +30,10 @@ module.exports = async (app, doc) => {
   debug('Read AsyncAPI file');
   const options = {
     tag: app.locals.appId,
-    connections: {}
-  }
+    connections: {},
+  };
 
-  if(process.env.NODE_ENV !== 'dev'){
+  if (process.env.NODE_ENV !== 'dev') {
     debug('Connect to known servers');
     options.connections.rabbit = await getRabbitCon();
     options.connections.garbage = await getGarbageCon();
@@ -45,6 +44,6 @@ module.exports = async (app, doc) => {
   debug('Create publisher');
   const asyncMiddleware = await publish(doc, options);
   debug('Mount publisher on app');
-  app.use(asyncMiddleware)
+  app.use(asyncMiddleware);
   debug('Publisher ready');
-}
+};

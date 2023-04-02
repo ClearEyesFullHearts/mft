@@ -7,5 +7,5 @@ module.exports = {
   logsReceived,
   warningLogsReceived,
   failureLogsReceived,
-  errorLogsReceived
-}
+  errorLogsReceived,
+};
