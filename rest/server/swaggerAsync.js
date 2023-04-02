@@ -1,7 +1,7 @@
 const swaggerTools = require('swagger-tools');
 const config = require('config');
 const logger = require('debug');
-const AuthMiddleware = require('./auth.');
+const AuthMiddleware = require('./auth');
 
 class SwaggerAsync {
   static init(swagApp, apiName, swaggerDoc, routeOptions, docPath = '/api-docs') {

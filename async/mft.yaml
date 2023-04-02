@@ -292,6 +292,7 @@ components:
             type: string
             enum:
               - RESET_PASSWORD
+              - ADMIN_ERROR_MAIL
           values:
             type: object
   messageTraits:

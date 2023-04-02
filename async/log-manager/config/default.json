@@ -14,5 +14,10 @@
   },
   "async": {
       "fileroute": "/../../mft.yaml"
+  },
+  "destination": {
+      "level1": "level1-list@mft.com",
+      "level2": "level2-list@mft.com",
+      "level3": "level3-list@mft.com"
   }
 }
