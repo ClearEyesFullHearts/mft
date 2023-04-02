@@ -1,18 +1,18 @@
-module.exports = async (req, res, next) => {
+module.exports = async (req, res) => {
   // If we're here the request has not been handled by any middleware
   // We send the trash to the garbage
-  const { 
-    path, 
+  const {
+    path,
     params,
     raw,
     api: {
-      publisher
+      publisher,
     },
     app: {
       locals: {
-        appId
-      }
-    }
+        appId,
+      },
+    },
   } = req;
 
   const trash = {
@@ -20,8 +20,8 @@ module.exports = async (req, res, next) => {
     routing: path,
     body: {
       params,
-      raw
-    }
+      raw,
+    },
   };
 
   await publisher.publish('garbage.out', trash);

@@ -1,32 +1,33 @@
 const { ValidationError } = require('asyncapi-sub-middleware');
 
+// eslint-disable-next-line no-unused-vars
 module.exports = async (err, req, res, next) => {
-  if(err instanceof ValidationError) {
-    const { 
-      path, 
+  if (err instanceof ValidationError) {
+    const {
+      path,
       raw,
       api: {
-        publisher
+        publisher,
       },
       app: {
         locals: {
-          appId
-        }
-      }
+          appId,
+        },
+      },
     } = req;
-  
+
     const trash = {
       receiver: appId,
       routing: path,
       body: {
         validationError: err,
-        raw
-      }
+        raw,
+      },
     };
-  
+
     await publisher.publish('garbage.out', trash);
     res.status(400).end();
-  }else{
+  } else {
     // console.error(err);
     // res.status(500).end();
     res.status(500).end(err);

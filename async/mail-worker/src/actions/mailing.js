@@ -12,10 +12,10 @@ class Mailing {
 
     const options = config.get('mail.transport');
     const auth = config.get('secret.mail');
-    
+
     this.transporter = nodemailer.createTransport({
       ...options,
-      auth
+      auth,
     });
 
     this.templatesFolder = config.get('mail.templates');

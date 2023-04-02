@@ -1,6 +1,6 @@
-
 const uuidv4 = require('uuid/v4');
 const logger = require('debug');
+
 const debug = logger('mail-worker:middleware:logging');
 
 const SEVERITY = {
@@ -8,25 +8,25 @@ const SEVERITY = {
   WARNING: 'warning',
   FAILURE: 'failure',
   ERROR: 'error',
-}
+};
 
 module.exports = (req, res, next) => {
   const start = Date.now();
-  console.log('initiate logging')
-  const { 
+
+  const {
     body = {},
     path,
     headers: {
-      'x-session-id': sessionId
+      'x-session-id': sessionId,
     },
     api: {
-      publisher
+      publisher,
     },
     app: {
       locals: {
-        appId
-      }
-    }
+        appId,
+      },
+    },
   } = req;
 
   const {
@@ -45,20 +45,20 @@ module.exports = (req, res, next) => {
       to,
       template,
     },
-  }
+  };
   debug('Monitoring object created for new request');
   res.once('finish', async () => {
-    let result = 'OK'
+    let result = 'OK';
     let severity = SEVERITY.INFO;
     const app = appId;
     const duration = Date.now() - start;
 
     const numStatus = Number(res.statusCode);
-    if(numStatus >= 400){
+    if (numStatus >= 400) {
       result = 'KO';
       severity = SEVERITY.FAILURE;
     }
-    if(numStatus >= 500){
+    if (numStatus >= 500) {
       severity = SEVERITY.ERROR;
     }
 
@@ -66,11 +66,11 @@ module.exports = (req, res, next) => {
       ...req.monitor,
       result,
       duration,
-      status: numStatus
+      status: numStatus,
     };
 
     debug('Publish monitoring event');
     await pub.publish(`event.${app}.${severity}`, msg);
   });
   next();
-}
+};
