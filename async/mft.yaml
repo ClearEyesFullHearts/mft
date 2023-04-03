@@ -293,6 +293,8 @@ components:
             enum:
               - RESET_PASSWORD
               - ADMIN_ERROR_MAIL
+              - ADMIN_FAILURE_MAIL
+              - ADMIN_WARNING_MAIL
           values:
             type: object
   messageTraits:

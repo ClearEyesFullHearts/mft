@@ -1,0 +1,6 @@
+Hello,
+A warning has been triggered in the system, from application: ${ app }.
+You can find it with the session ID: ${ sessionId }.
+
+Best regards,
+Your past self.

@@ -39,6 +39,14 @@
           "ADMIN_ERROR_MAIL":{
               "subject": "An error occured in the system",
               "txt": "error_alert.txt"
+          },
+          "ADMIN_FAILURE_MAIL":{
+              "subject": "An failure occured in the system",
+              "txt": "failure_alert.txt"
+          },
+          "ADMIN_WARNING_MAIL":{
+              "subject": "Warning from the system",
+              "txt": "warning_alert.txt"
           }
       }
   }
