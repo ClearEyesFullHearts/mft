@@ -44,6 +44,9 @@ class ErrorHelper {
       }
 
       res.statusCode = (error.status) ? error.status : 500;
+
+      req.monitor.output = error;
+      
       res.json(error);
     };
   }

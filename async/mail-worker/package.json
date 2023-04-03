@@ -10,8 +10,8 @@
   "license": "MIT",
   "dependencies": {
     "amqplib": "^0.10.3",
-    "asyncapi-pub-middleware": "^0.0.5",
-    "asyncapi-sub-middleware": "^1.0.1",
+    "asyncapi-pub-middleware": "0.0.6",
+    "asyncapi-sub-middleware": "1.0.2",
     "config": "^3.3.9",
     "debug": "^4.3.4",
     "kafkajs": "^2.2.4",
