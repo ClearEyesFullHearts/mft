@@ -6,16 +6,16 @@ Vue.JS website which is also the entry point of the REST API located in ./rest t
 ## ./rest
 API Gateway service, each base endpoint is described in its own Swagger file, used to validate and route requests to their own controller, using [swagger-tools](https://www.npmjs.com/package/swagger-tools).  
 Using [asyncapi-pub-middleware](https://www.npmjs.com/package/asyncapi-pub-middleware) it triggers asynchronous events to the other services (RabbitMQ or Kafka) described in the [AsyncAPI](https://www.asyncapi.com/docs/reference/specification/v2.6.0) spec file ./async/mft.yaml.  
-The persistent layer is done with MongoDB, accessed through [mongoose](https://www.npmjs.com/package/mongoose).
+The persistent layer is done with MongoDB, accessed through [mongoose](https://www.npmjs.com/package/mongoose).  
 Dockerized in './rest.dockerfile'  
 ## ./async/log-manager
 A [rabbitmq-express](https://www.npmjs.com/package/rabbitmq-express) server listening to log events from the other services in order to record them in an Elasticsearch server.  
 It uses [asyncapi-sub-middleware](https://www.npmjs.com/package/asyncapi-sub-middleware) to validate and route incoming messages and [asyncapi-pub-middleware](https://www.npmjs.com/package/asyncapi-pub-middleware) to trigger mail event in case of high severity log, all that being described in the [AsyncAPI](https://www.asyncapi.com/docs/reference/specification/v2.6.0) spec file ./async/mft.yaml.  
-Dockerized in './async/logmanager.dockerfile' 
+Dockerized in './async/logmanager.dockerfile'.  
 ## ./async/mail-worker
 A [rabbitmq-express](https://www.npmjs.com/package/rabbitmq-express) server listening to mail events from the other services in order to send one mail.  
 It uses [asyncapi-sub-middleware](https://www.npmjs.com/package/asyncapi-sub-middleware) to validate and route incoming messages and [asyncapi-pub-middleware](https://www.npmjs.com/package/asyncapi-pub-middleware) to trigger log event, all that being described in the [AsyncAPI](https://www.asyncapi.com/docs/reference/specification/v2.6.0) spec file ./async/mft.yaml.  
-Dockerized in './async/mailworker.dockerfile' 
+Dockerized in './async/mailworker.dockerfile'.  
 ## ./async/invoice-worker (coming)
 ## ./async/orchestrator (coming)
 ## ./async/garbage-collector (coming)
@@ -28,9 +28,9 @@ Dockerized in './async/mailworker.dockerfile'
 ## Compatibility:  
 Node.js v18.14.x  
 MongoDB v4.2.x  
-kafka v5.5.0
-rabbitmq v3.8
-elasticsearch v7.5.2
+kafka v5.5.0  
+rabbitmq v3.8  
+elasticsearch v7.5.2  
   
 ## Usage:  
 - clone the project  
