@@ -43,14 +43,14 @@ services:
 
   mail-worker:
     build:
-      context: ../../async/
+      context: ../../
       dockerfile: mailworker.dockerfile
     container_name: mail-worker
     depends_on: 
       - my-rabbit-mq
     command: sh -c '/bin/wait-for-it.sh my-rabbit-mq:5672 --timeout=30 -- node app.js'
     environment:
-      - DEBUG=mail-worker:*
+      - DEBUG=mail-worker:*,async:*
       - NODE_ENV=dock-dev
     
   server-database:

@@ -1,0 +1,26 @@
+{
+    "name": "middleware",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "test"
+    },
+    "author": "MFT",
+    "license": "MIT",
+    "dependencies": {
+      "amqplib": "^0.10.3",
+      "asyncapi-pub-middleware": "0.0.6",
+      "asyncapi-sub-middleware": "1.0.2",
+      "config": "^3.3.9",
+      "debug": "^4.3.4",
+      "kafkajs": "^2.2.4",
+      "uuid": "^3.3.3"
+    },
+    "devDependencies": {
+      "eslint": "^6.7.1",
+      "eslint-config-airbnb-base": "^14.0.0",
+      "eslint-plugin-import": "^2.18.2"
+    }
+  }
+  

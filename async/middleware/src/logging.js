@@ -1,7 +1,7 @@
 const uuidv4 = require('uuid/v4');
 const logger = require('debug');
 
-const debug = logger('mail-worker:middleware:logging');
+const debug = logger('async:middleware:logging');
 
 const SEVERITY = {
   INFO: 'info',

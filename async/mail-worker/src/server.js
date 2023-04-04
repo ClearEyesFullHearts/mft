@@ -2,11 +2,15 @@ const fs = require('fs');
 const config = require('config');
 const rabbitExpress = require('rabbitmq-express');
 const asyncApiConsumer = require('asyncapi-sub-middleware');
-const asyncApiPublisher = require('./middleware/publisher');
-const garbage = require('./middleware/garbage');
-const error = require('./middleware/error');
-const log = require('./middleware/logging');
+const logger = require('debug');
+// const asyncApiPublisher = require('./middleware/publisher');
+// const garbage = require('./middleware/garbage');
+const {
+  error, garbage, publisher: asyncApiPublisher, logging: log,
+} = require('middleware');
+// const log = require('./middleware/logging');
 
+const debug = logger('mail-worker:server');
 const APP_ID = 'mail-worker';
 
 class MailWorker {
@@ -21,7 +25,12 @@ class MailWorker {
   }
 
   async start() {
-    await asyncApiPublisher(this.server, this.doc);
+    debug('Initializing server');
+
+    const asyncMiddleware = await asyncApiPublisher(APP_ID, this.doc);
+    this.server.use(asyncMiddleware);
+
+    debug('Publisher mounted on app');
 
     this.server.use(log);
 
@@ -42,6 +51,7 @@ class MailWorker {
       exchange,
       queue,
     });
+    debug('Server listen');
   }
 }
 

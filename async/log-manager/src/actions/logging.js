@@ -26,7 +26,7 @@ module.exports = async (req, res, next) => {
 
   try {
     await esClient.index({
-      index: 'mf-log',
+      index: 'mft-log',
       body: document,
     });
   } catch (err) {
