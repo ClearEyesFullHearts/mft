@@ -1,5 +1,5 @@
 # The instructions for the first stage
-FROM node:lts-alpine as build-stage
+FROM node:18-alpine as build-stage
 
 RUN apk add --no-cache python3 make g++
 
@@ -7,7 +7,7 @@ COPY ./log-manager/package*.json ./
 RUN npm install
 
 # The instructions for second stage
-FROM node:lts-alpine as production-stage
+FROM node:18-alpine as production-stage
 
 RUN apk add --no-cache bash
 RUN wget -O /bin/wait-for-it.sh https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh
