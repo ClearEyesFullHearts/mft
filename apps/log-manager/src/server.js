@@ -5,7 +5,7 @@ const asyncApiConsumer = require('asyncapi-sub-middleware');
 const logger = require('debug');
 const {
   error, garbage, publisher: asyncApiPublisher,
-} = require('middleware');
+} = require('@shared/middleware');
 
 const debug = logger('log-manager:server');
 

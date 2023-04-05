@@ -41,7 +41,7 @@
     "morgan": "^1.9.1",
     "swagger-tools": "^0.10.4",
     "uuid": "^8.3.2",
-    "middleware": "*"
+    "@shared/middleware": "*"
   },
   "devDependencies": {
     "eslint": "^6.7.1",

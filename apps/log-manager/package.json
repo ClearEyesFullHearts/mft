@@ -14,7 +14,7 @@
     "config": "^3.3.9",
     "debug": "^4.3.4",
     "rabbitmq-express": "^1.0.3",
-    "middleware": "*"
+    "@shared/middleware": "*"
   },
   "devDependencies": {
     "eslint": "^6.7.1",

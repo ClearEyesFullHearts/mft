@@ -5,7 +5,7 @@ const asyncApiConsumer = require('asyncapi-sub-middleware');
 const logger = require('debug');
 const {
   error, garbage, publisher: asyncApiPublisher, logging: log,
-} = require('middleware');
+} = require('@shared/middleware');
 
 const debug = logger('mail-worker:server');
 const APP_ID = 'mail-worker';

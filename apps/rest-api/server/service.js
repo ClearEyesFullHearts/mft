@@ -7,12 +7,10 @@ const SwaggerAsync = require('./swaggerAsync');
 const ErrorHelper = require('./error');
 const CORS = require('./cors');
 const Data = require('../data/index');
-// const asyncPublishers = require('../async/mountPublisher');
-// const log = require('./middleware/logging');
-// const garbage = require('./middleware/garbage');
+
 const {
   garbage, publisher: asyncApiPublisher, logging: log,
-} = require('middleware');
+} = require('@shared/middleware');
 
 const debug = logger('mft-back:server');
 
