@@ -2,7 +2,7 @@ const logger = require('debug');
 const { Client } = require('@elastic/elasticsearch');
 const config = require('config');
 
-const debug = logger('log-manager:async:action:logging');
+const debug = logger('log-manager:action:logging');
 
 const esURL = config.get('secret.elastic.url');
 const esClient = new Client({

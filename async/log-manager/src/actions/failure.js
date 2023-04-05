@@ -1,29 +1,30 @@
+const config = require('config');
 const logger = require('debug');
 
-const debug = logger('log-manager:async:action:failure');
+const debug = logger('log-manager:action:failure');
 
 module.exports = async (req, res) => {
-  const { 
-    path, 
-    api: { 
-      params, 
-      body: { sessionId }, 
-      publisher 
-    }, 
-    monitor: { 
-      sessionId: monitoringId
-    } 
+  const {
+    path,
+    api: {
+      params,
+      body: { sessionId },
+      publisher,
+    },
+    monitor: {
+      sessionId: monitoringId,
+    },
   } = req;
   debug(`logging for ${path}`);
 
-  const level1MailingList = config.get('destination.level1')
-  
+  const level1MailingList = config.get('destination.level1');
+
   await publisher.publish('process.mail', {
     to: [level1MailingList],
     template: 'ADMIN_FAILURE_MAIL',
     values: {
       app: params.app,
-      sessionId
+      sessionId,
     },
   },
   {

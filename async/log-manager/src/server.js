@@ -2,9 +2,12 @@ const fs = require('fs');
 const config = require('config');
 const rabbitExpress = require('rabbitmq-express');
 const asyncApiConsumer = require('asyncapi-sub-middleware');
-const asyncApiPublisher = require('./middleware/publisher');
-const garbage = require('./middleware/garbage');
-const error = require('./middleware/error');
+const logger = require('debug');
+const {
+  error, garbage, publisher: asyncApiPublisher,
+} = require('middleware');
+
+const debug = logger('log-manager:server');
 
 const APP_ID = 'log-manager';
 
@@ -20,7 +23,12 @@ class LogManager {
   }
 
   async start() {
-    await asyncApiPublisher(this.server, this.doc);
+    debug('Initializing server');
+
+    const asyncMiddleware = await asyncApiPublisher(APP_ID, this.doc);
+    this.server.use(asyncMiddleware);
+
+    debug('Publisher mounted on app');
 
     const options = {
       tag: APP_ID,
@@ -37,6 +45,7 @@ class LogManager {
       rabbitURI,
       exchange,
     });
+    debug('Server listen');
   }
 }
 
