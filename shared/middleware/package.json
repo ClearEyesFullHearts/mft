@@ -15,7 +15,7 @@
       "config": "^3.3.9",
       "debug": "^4.3.4",
       "kafkajs": "^2.2.4",
-      "uuid": "^3.3.3"
+      "uuid": "9.0.0"
     },
     "devDependencies": {
       "eslint": "^6.7.1",

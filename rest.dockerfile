@@ -17,6 +17,6 @@ WORKDIR /usr/src/app
 COPY --from=build-stage node_modules node_modules
 
 COPY ./rest/ .
-COPY ./async/mft.yaml ./async/mft.yaml
+COPY ./apps/mft.yaml ./async/mft.yaml
 
 EXPOSE 3000

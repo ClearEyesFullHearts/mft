@@ -43,7 +43,7 @@
     "mongoose-plugin-autoinc": "1.1.9",
     "morgan": "^1.9.1",
     "swagger-tools": "^0.10.4",
-    "uuid": "^3.3.3"
+    "uuid": "9.0.0"
   },
   "devDependencies": {
     "eslint": "^6.7.1",

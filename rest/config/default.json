@@ -53,7 +53,7 @@
         }
     ],
     "async": {
-        "fileroute": "/../../async/mft.yaml"
+        "fileroute": "/../../apps/mft.yaml"
     },
     "templates":{
         "mail":{
