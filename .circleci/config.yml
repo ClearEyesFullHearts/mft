@@ -1,6 +1,6 @@
 version: 2.1 # CircleCI version
 orbs:
-  browser-tools: circleci/browser-tools@0.1.4
+  browser-tools: circleci/browser-tools@1.4.1
   node: circleci/node@5.1.0
 jobs:
   build:
@@ -13,10 +13,12 @@ jobs:
     steps:
       - checkout
 
-      - browser-tools/install-firefox
+      - browser-tools/install-browser-tools
 
-      - browser-tools/install-chrome:
-          replace-existing: true
+      # - browser-tools/install-firefox
+
+      # - browser-tools/install-chrome:
+      #     replace-existing: true
 
       - node/install:
           node-version: "18.14.1"
