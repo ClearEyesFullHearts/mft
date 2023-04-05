@@ -30,9 +30,6 @@
   },
   "homepage": "https://github.com/ClearEyesFullHearts/mft-back#readme",
   "dependencies": {
-    "asyncapi-pub-middleware": "0.0.6",
-    "amqplib": "^0.10.3",
-    "kafkajs": "^2.2.4",
     "bcrypt": "5.1.0",
     "config": "^3.3.9",
     "debug": "^4.1.1",
@@ -43,7 +40,8 @@
     "mongoose-plugin-autoinc": "1.1.9",
     "morgan": "^1.9.1",
     "swagger-tools": "^0.10.4",
-    "uuid": "9.0.0"
+    "uuid": "^8.3.2",
+    "middleware": "*"
   },
   "devDependencies": {
     "eslint": "^6.7.1",

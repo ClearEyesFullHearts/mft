@@ -1,3 +1,4 @@
+const fs = require('fs');
 const express = require('express');
 const morgan = require('morgan');
 const config = require('config');
@@ -6,9 +7,12 @@ const SwaggerAsync = require('./swaggerAsync');
 const ErrorHelper = require('./error');
 const CORS = require('./cors');
 const Data = require('../data/index');
-const asyncPublishers = require('../async/mountPublisher');
-const log = require('./middleware/logging');
-const garbage = require('./middleware/garbage');
+// const asyncPublishers = require('../async/mountPublisher');
+// const log = require('./middleware/logging');
+// const garbage = require('./middleware/garbage');
+const {
+  garbage, publisher: asyncApiPublisher, logging: log,
+} = require('middleware');
 
 const debug = logger('mft-back:server');
 
@@ -20,6 +24,11 @@ class MultiSwaggerService {
     this.app.use(morgan('dev')); // log every request to the console
     this.app.use(CORS.options());
     this.app.options('/*', (req, res) => res.sendStatus(200));
+
+    this.app.locals.appId = APP_ID;
+
+    const fileroute = config.get('async.fileroute');
+    this.doc = fs.readFileSync(`${__dirname}${fileroute}`, 'utf8');
   }
 
   async start() {
@@ -29,9 +38,9 @@ class MultiSwaggerService {
     const data = new Data();
     await data.init();
     this.app.locals.db = data;
-    this.app.locals.appId = APP_ID;
 
-    await asyncPublishers(this.app);
+    const asyncMiddleware = await asyncApiPublisher(APP_ID, this.doc);
+    this.app.use(asyncMiddleware);
 
     this.app.use(log);
 

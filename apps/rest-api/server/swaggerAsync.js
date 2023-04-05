@@ -23,6 +23,9 @@ class SwaggerAsync {
             } else {
               req.monitor.type = 'Unknown';
             }
+            if (req.auth) {
+              req.monitor.input.author = req.auth.user.id;
+            }
             if (req.swagger && req.swagger.params && req.swagger.params.body) {
               // remove personal data from logs
               const {
@@ -33,6 +36,8 @@ class SwaggerAsync {
 
               req.monitor.input.body = loggableBody;
             }
+            req.monitor.input.method = req.method;
+            req.monitor.input.params = req.params;
             next();
           });
 
