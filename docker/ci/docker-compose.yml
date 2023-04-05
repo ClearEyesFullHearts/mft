@@ -15,43 +15,39 @@ services:
   server:
     build:
       context: ../../
-      dockerfile: rest.dockerfile
+      dockerfile: docker/files/restapi.dockerfile
     container_name: server
     ports:
       - ${SERVER_PUBLIC_PORT}:3000
     depends_on: 
       - server-database
       - server-fake-smtp
-      - broker
       - my-rabbit-mq
     command: sh -c '/bin/wait-for-it.sh my-rabbit-mq:5672 --timeout=120 -- node app.js'
     environment:
-      - DEBUG=mft-back:*
       - NODE_ENV=dock-ci
       - KEY_AUTH_SIGN
 
   log-manager:
     build:
-      context: ../../async/
-      dockerfile: logmanager.dockerfile
+      context: ../../
+      dockerfile: docker/files/logmanager.dockerfile
     container_name: log-manager
     depends_on: 
       - my-rabbit-mq
     command: sh -c '/bin/wait-for-it.sh my-rabbit-mq:5672 --timeout=30 -- node app.js'
     environment:
-      - DEBUG=log-manager:*
       - NODE_ENV=dock-ci
 
   mail-worker:
     build:
-      context: ../../async/
-      dockerfile: mailworker.dockerfile
+      context: ../../
+      dockerfile: docker/files/mailworker.dockerfile
     container_name: mail-worker
     depends_on: 
       - my-rabbit-mq
     command: sh -c '/bin/wait-for-it.sh my-rabbit-mq:5672 --timeout=30 -- node app.js'
     environment:
-      - DEBUG=mail-worker:*
       - NODE_ENV=dock-ci
     
   server-database:

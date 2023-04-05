@@ -15,7 +15,7 @@ services:
   server:
     build:
       context: ../../
-      dockerfile: rest.dockerfile
+      dockerfile: docker/files/restapi.dockerfile
     container_name: server
     ports:
       - ${SERVER_PUBLIC_PORT}:3000
@@ -26,31 +26,31 @@ services:
       - my-rabbit-mq
     command: sh -c '/bin/wait-for-it.sh my-rabbit-mq:5672 --timeout=30 -- node app.js'
     environment:
-      - DEBUG=mft-back:*
+      - DEBUG=mft-back:*,async:*
       - NODE_ENV=dock-dev
 
   log-manager:
     build:
-      context: ../../async/
-      dockerfile: logmanager.dockerfile
+      context: ../../
+      dockerfile: docker/files/logmanager.dockerfile
     container_name: log-manager
     depends_on: 
       - my-rabbit-mq
     command: sh -c '/bin/wait-for-it.sh my-rabbit-mq:5672 --timeout=30 -- node app.js'
     environment:
-      - DEBUG=log-manager:*
+      - DEBUG=log-manager:*,async:*
       - NODE_ENV=dock-dev
 
   mail-worker:
     build:
-      context: ../../async/
-      dockerfile: mailworker.dockerfile
+      context: ../../
+      dockerfile: docker/files/mailworker.dockerfile
     container_name: mail-worker
     depends_on: 
       - my-rabbit-mq
     command: sh -c '/bin/wait-for-it.sh my-rabbit-mq:5672 --timeout=30 -- node app.js'
     environment:
-      - DEBUG=mail-worker:*
+      - DEBUG=mail-worker:*,async:*
       - NODE_ENV=dock-dev
     
   server-database:

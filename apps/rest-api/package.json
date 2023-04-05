@@ -1,0 +1,53 @@
+{
+  "name": "mft",
+  "version": "0.0.0",
+  "description": "mft public site back-end",
+  "main": "app.js",
+  "scripts": {
+    "mail-win-cmd": "node .\\node_modules\\fake-smtp-server\\index.js",
+    "rest-win-cmd": "set DEBUG=mft-back:*&& set NODE_ENV=dev&& node app.js",
+    "rest-win-cmd:cover": ".\\node_modules\\.bin\\nyc --reporter=html npm run rest-win-cmd",
+    "dev-win-cmd": "start npm run mail-win-cmd && start npm run rest-win-cmd",
+    "dev-win-cmd:cover": "start npm run mail-win-cmd && npm run rest-win-cmd:cover",
+    "mail-lnx": "node ./node_modules/fake-smtp-server/index.js",
+    "rest-lnx": "DEBUG=mft-back:* NODE_ENV=dev node app.js",
+    "dev-lnx": "npm run rest-lnx & npm run mail-lnx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClearEyesFullHearts/mft-back.git"
+  },
+  "keywords": [
+    "mft",
+    "swagger",
+    "invoice",
+    "blog"
+  ],
+  "author": "Mathieu Font",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ClearEyesFullHearts/mft-back/issues"
+  },
+  "homepage": "https://github.com/ClearEyesFullHearts/mft-back#readme",
+  "dependencies": {
+    "bcrypt": "5.1.0",
+    "config": "^3.3.9",
+    "debug": "^4.1.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.4",
+    "mongoose": "6.9.2",
+    "mongoose-plugin-autoinc": "1.1.9",
+    "morgan": "^1.9.1",
+    "swagger-tools": "^0.10.4",
+    "uuid": "^8.3.2",
+    "@shared/middleware": "*"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "fake-smtp-server": "^0.8.0",
+    "nyc": "^15.0.0"
+  }
+}
