@@ -7,8 +7,6 @@ const mailing = require('./mailing');
 module.exports = async (req, res) => {
   const { api: { body } } = req;
 
-  req.monitor.type = 'processMail';
-
   const {
     from,
     to,

@@ -3,12 +3,9 @@ const config = require('config');
 const rabbitExpress = require('rabbitmq-express');
 const asyncApiConsumer = require('asyncapi-sub-middleware');
 const logger = require('debug');
-// const asyncApiPublisher = require('./middleware/publisher');
-// const garbage = require('./middleware/garbage');
 const {
   error, garbage, publisher: asyncApiPublisher, logging: log,
 } = require('middleware');
-// const log = require('./middleware/logging');
 
 const debug = logger('mail-worker:server');
 const APP_ID = 'mail-worker';

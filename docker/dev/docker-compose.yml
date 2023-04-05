@@ -44,7 +44,7 @@ services:
   mail-worker:
     build:
       context: ../../
-      dockerfile: mailworker.dockerfile
+      dockerfile: async/mailworker.dockerfile
     container_name: mail-worker
     depends_on: 
       - my-rabbit-mq

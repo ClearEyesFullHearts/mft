@@ -1,8 +1,9 @@
-const { ValidationError } = require('asyncapi-sub-middleware');
+const { ValidationError: ConsumingError } = require('asyncapi-sub-middleware');
+const { ValidationError: PublishingError } = require('asyncapi-pub-middleware');
 
 // eslint-disable-next-line no-unused-vars
 module.exports = async (err, req, res, next) => {
-  if (err instanceof ValidationError) {
+  if (err instanceof ConsumingError || err instanceof PublishingError) {
     const {
       path,
       raw,

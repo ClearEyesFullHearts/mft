@@ -14,10 +14,9 @@ module.exports = (req, res, next) => {
   const start = Date.now();
 
   const {
-    body = {},
     path,
     headers: {
-      'x-session-id': sessionId,
+      'x-session-id': originalSessionId,
     },
     api: {
       publisher,
@@ -29,21 +28,12 @@ module.exports = (req, res, next) => {
     },
   } = req;
 
-  const {
-    from,
-    to,
-    template,
-  } = body;
-
   const pub = publisher;
   req.monitor = {
-    sessionId,
+    sessionId: originalSessionId || uuidv4(),
     eventId: uuidv4(),
     input: {
       path,
-      from,
-      to,
-      template,
     },
   };
   debug('Monitoring object created for new request');
