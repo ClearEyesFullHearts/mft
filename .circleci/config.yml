@@ -13,7 +13,8 @@ jobs:
     steps:
       - checkout
 
-      - browser-tools/install-browser-tools
+      - browser-tools/install-browser-tools:
+          chrome-version: 110.0.5481.77
 
       # - browser-tools/install-firefox
 
