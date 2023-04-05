@@ -31,14 +31,14 @@ services:
 
   log-manager:
     build:
-      context: ../../async/
-      dockerfile: logmanager.dockerfile
+      context: ../../
+      dockerfile: async/logmanager.dockerfile
     container_name: log-manager
     depends_on: 
       - my-rabbit-mq
     command: sh -c '/bin/wait-for-it.sh my-rabbit-mq:5672 --timeout=30 -- node app.js'
     environment:
-      - DEBUG=log-manager:*
+      - DEBUG=log-manager:*,async:*
       - NODE_ENV=dock-dev
 
   mail-worker:

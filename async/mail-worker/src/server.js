@@ -47,6 +47,7 @@ class MailWorker {
       rabbitURI,
       exchange,
       queue,
+      consumerTag: APP_ID,
     });
     debug('Server listen');
   }

@@ -11,9 +11,6 @@ module.exports = async (req, res) => {
       body: { sessionId },
       publisher,
     },
-    monitor: {
-      sessionId: monitoringId,
-    },
   } = req;
   debug(`logging for ${path}`);
 
@@ -28,7 +25,7 @@ module.exports = async (req, res) => {
     },
   },
   {
-    'x-session-id': monitoringId,
+    'x-session-id': sessionId,
   });
   res.end();
 };

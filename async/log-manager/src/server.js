@@ -44,6 +44,7 @@ class LogManager {
     this.server.listen({
       rabbitURI,
       exchange,
+      consumerTag: APP_ID,
     });
     debug('Server listen');
   }

@@ -5,7 +5,7 @@ const debug = logger('mail-worker:action:process');
 const mailing = require('./mailing');
 
 module.exports = async (req, res) => {
-  const { api: { body } } = req;
+  const { api: { body }, monitor: { sessionId } } = req;
 
   const {
     from,
@@ -15,7 +15,7 @@ module.exports = async (req, res) => {
   } = body;
 
   try {
-    debug('Try sending mail');
+    debug(`Try sending mail for session ${sessionId}`);
     await mailing.send(from, to, template, values);
   } catch (err) {
     debug('Send mail fail');
