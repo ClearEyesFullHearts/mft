@@ -6,7 +6,8 @@ const logger = require('debug');
 const SwaggerAsync = require('./swaggerAsync');
 const ErrorHelper = require('./error');
 const CORS = require('./cors');
-const Data = require('../data/index');
+
+const Data = require('@shared/datalayer');
 
 const {
   garbage, publisher: asyncApiPublisher, logging: log,
