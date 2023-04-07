@@ -1,6 +1,7 @@
 /* eslint-disable no-await-in-loop */
 const { Given, When, Then } = require('cucumber');
 const uuidv4 = require('uuid/v4');
+const Util = require('../support/util');
 
 Given(/^I can publish to (.*) exchange$/, async function (exchangeName) {
   this.channel = await this.rabbit.createChannel();
@@ -35,43 +36,33 @@ When(/^I publish to (.*)$/, async function (topic) {
 Then(/^elastic should find (.*) document for (.*)$/, async function (nbDocs, session) {
   const mySessionId = this.apickli.replaceVariables(session);
   const nb = Number(nbDocs);
-  const maxRetries = 60;
-  let currentTry = 0;
 
-  while (true) {
+  await Util.retry(async () => {
     const result = await this.elastic.search({
-      index: 'mft-log',
-      body: {
-        query: {
-          match: {
-            sessionId: mySessionId,
+        index: 'mft-log',
+        body: {
+          query: {
+            match: {
+              sessionId: mySessionId,
+            },
           },
         },
-      },
-    });
-
-    const {
-      body: {
-        hits: {
-          hits,
-        },
-      },
-    } = result;
-
-    if (hits.length > 0) {
-      if (nb !== hits.length) {
-        throw new Error(`We should find ${nbDocs} documents and found ${hits.length}`);
-      }
-      return;
-    }
-
-    if (currentTry < maxRetries) {
-      await new Promise((resolve) => {
-        setTimeout(resolve, 100);
       });
-      currentTry += 1;
-    } else {
-      throw new Error(`We should find ${nbDocs} documents and found 0`);
-    }
-  }
+  
+      const {
+        body: {
+          hits: {
+            hits,
+          },
+        },
+      } = result;
+  
+      if (hits.length > 0) {
+        if (nb !== hits.length) {
+          throw new Error(`We should find ${nbDocs} documents and found ${hits.length}`);
+        }
+        return true;
+      }
+      return false;
+  });
 });

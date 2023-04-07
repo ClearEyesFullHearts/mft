@@ -3,15 +3,15 @@ const express = require('express');
 const morgan = require('morgan');
 const config = require('config');
 const logger = require('debug');
-const SwaggerAsync = require('./swaggerAsync');
-const ErrorHelper = require('./error');
-const CORS = require('./cors');
 
 const Data = require('@shared/datalayer');
-
 const {
   garbage, publisher: asyncApiPublisher, logging: log,
 } = require('@shared/middleware');
+
+const SwaggerAsync = require('./swaggerAsync');
+const ErrorHelper = require('./error');
+const CORS = require('./cors');
 
 const debug = logger('mft-back:server');
 

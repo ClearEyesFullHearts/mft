@@ -47,18 +47,25 @@ Given(/^I log with (.*)$/, async function (bodyValue) {
 
 Then(/^an e-mail was sent to (.*)$/, async function (destination) {
   const to = this.apickli.replaceVariables(destination);
-  try {
-    response = await this.got.get(`${config.get('base.mail.serverURL')}/api/emails?to=${to}`, {
-      json: true,
-    });
 
-    if (!response || !response.body || response.body.length !== 1) {
-      if (response.body.length > 1) throw new Error('More than one email to this user');
-      if (response.body.length < 1) throw new Error('Less than one and only one email to this user');
+  await Util.retry(async () => {
+    try {
+      response = await this.got.get(`${config.get('base.mail.serverURL')}/api/emails?to=${to}`, {
+        json: true,
+      });
+
+      if (!response || !response.body || response.body.length < 1){
+        return false;
+      }
+  
+      if (!response || !response.body || response.body.length > 1) {
+        throw new Error('More than one email to this user');
+      }
+      return true;
+    } catch (err) {
+      throw new Error(err.message);
     }
-  } catch (err) {
-    throw new Error(err.message);
-  }
+  })
 });
 
 Then(/^I sleep for (.*)$/, async function (seconds) {
