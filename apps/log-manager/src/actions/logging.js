@@ -28,6 +28,7 @@ module.exports = async (req, res, next) => {
     await esClient.index({
       index: 'mft-log',
       body: document,
+      refresh: true,
     });
   } catch (err) {
     debug('Error sending to elastic', err);

@@ -1,8 +1,14 @@
 {
     "secret": {
         "auth": "supersecret",
+        "rabbit":{
+            "url": "amqp://myuser:mypassword@localhost:5672"
+        },
         "mongo":{
             "url": "mongodb://127.0.0.1:27017/mft-dev"
+        },
+        "elastic":{
+            "url": "http://localhost:9200"
         }
     },
     "base": {
