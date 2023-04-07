@@ -15,13 +15,15 @@ module.exports = async (req, res) => {
     },
   } = req;
 
+  const content = JSON.stringify({
+    params,
+    raw,
+  });
+
   const trash = {
     receiver: appId,
     routing: path,
-    body: {
-      params,
-      raw,
-    },
+    body: content,
   };
 
   await publisher.publish('garbage.out', trash);

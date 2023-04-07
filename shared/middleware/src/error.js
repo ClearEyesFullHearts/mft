@@ -17,13 +17,15 @@ module.exports = async (err, req, res, next) => {
       },
     } = req;
 
+    const content = JSON.stringify({
+      validationError: err,
+      raw,
+    });
+
     const trash = {
       receiver: appId,
       routing: path,
-      body: {
-        validationError: err,
-        raw,
-      },
+      body: content,
     };
 
     await publisher.publish('garbage.out', trash);
