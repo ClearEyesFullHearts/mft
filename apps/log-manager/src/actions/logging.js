@@ -9,10 +9,6 @@ const esClient = new Client({
   node: esURL,
 });
 
-esClient.indices.create({
-  index: 'mft-log'
-});
-
 module.exports = async (req, res, next) => {
   const { path, api: { params, body } } = req;
   debug(`logging for ${path}`);
