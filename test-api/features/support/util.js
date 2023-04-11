@@ -41,24 +41,23 @@ class Util {
     return product;
   }
 
-  static async retry(process, max = 10, timeout = 100) {
+  static async retry(process, max = 20, timeout = 100) {
     const maxRetries = max;
     let currentTry = 0;
-  
-    while (true) {
 
+    while (true) {
       const result = await process();
-      if(result){
+      if (result) {
         return;
       }
-  
+
       if (currentTry < maxRetries) {
         await new Promise((resolve) => {
           setTimeout(resolve, timeout);
         });
         currentTry += 1;
       } else {
-        throw new Error(`Retries limit reached`);
+        throw new Error('Retries limit reached');
       }
     }
   }
