@@ -42,10 +42,14 @@ Then(/^elastic should find (.*) document for (.*)$/, async function (nbDocs, ses
         index: 'mft-log',
         body: {
           query: {
-            match: {
-              sessionId: mySessionId,
-            },
-          },
+            bool: {
+              must: {
+                match: {
+                  sessionId: mySessionId
+                }
+              },
+            }
+          }
         },
       });
   
@@ -56,6 +60,8 @@ Then(/^elastic should find (.*) document for (.*)$/, async function (nbDocs, ses
           },
         },
       } = result;
+
+      // console.log(JSON.stringify(hits, null, 2));
   
       if (hits.length > 0) {
         if (nb !== hits.length) {

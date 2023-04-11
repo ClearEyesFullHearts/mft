@@ -58,8 +58,41 @@ Then(/^an e-mail was sent to (.*)$/, async function (destination) {
         return false;
       }
   
-      if (!response || !response.body || response.body.length > 1) {
+      if (response.body.length > 1) {
         throw new Error('More than one email to this user');
+      }
+      return true;
+    } catch (err) {
+      throw new Error(err.message);
+    }
+  })
+});
+
+Then(/^an e-mail containing (.*) was sent to (.*)$/, async function (content, destination) {
+  const to = this.apickli.replaceVariables(destination);
+  const word = this.apickli.replaceVariables(content);
+
+  await Util.retry(async () => {
+    try {
+      response = await this.got.get(`${config.get('base.mail.serverURL')}/api/emails?to=${to}`, {
+        json: true,
+      });
+
+      if (!response || !response.body || response.body.length < 1){
+        return false;
+      }
+  
+      if (response.body.length > 0) {
+        const mail = response.body.filter((m) => {
+          return m.text.search(word) >= 0;
+        });
+        
+        if(mail.length < 1){
+          return false;
+        }
+        if(mail.length > 1){
+          throw new Error('More than one email to this user');
+        }
       }
       return true;
     } catch (err) {
