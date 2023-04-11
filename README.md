@@ -1,21 +1,21 @@
-# Proof of concept for a fully tested microservice architecture integrated with circleci and (used to be) deployed on Google Cloud.  
+# Proof of concept for a fully tested monorepo microservice architecture integrated with circleci and (used to be) deployed on Google Cloud.  
   
 # Services:  
 ## ./front
 Vue.JS website which is also the entry point of the REST API located in ./rest through the /api endpoint.  
 ## ./apps/rest
 API Gateway service, each base endpoint is described in its own Swagger file, used to validate and route requests to their own controller, using [swagger-tools](https://www.npmjs.com/package/swagger-tools).  
-Using [asyncapi-pub-middleware](https://www.npmjs.com/package/asyncapi-pub-middleware) it triggers asynchronous events to the other services (RabbitMQ or Kafka) described in the [AsyncAPI](https://www.asyncapi.com/docs/reference/specification/v2.6.0) spec file ./async/mft.yaml.  
+Using [asyncapi-pub-middleware](https://www.npmjs.com/package/asyncapi-pub-middleware) it triggers asynchronous events to the other services (RabbitMQ or Kafka) described in the [AsyncAPI](https://www.asyncapi.com/docs/reference/specification/v2.6.0) spec file ./apps/mft.yaml.  
 The persistent layer is done with MongoDB, accessed through [mongoose](https://www.npmjs.com/package/mongoose).  
-Dockerized in './rest.dockerfile'  
+Dockerized in './docker/files/restapi.dockerfile'  
 ## ./apps/log-manager
 A [rabbitmq-express](https://www.npmjs.com/package/rabbitmq-express) server listening to log events from the other services in order to record them in an Elasticsearch server.  
-It uses [asyncapi-sub-middleware](https://www.npmjs.com/package/asyncapi-sub-middleware) to validate and route incoming messages and [asyncapi-pub-middleware](https://www.npmjs.com/package/asyncapi-pub-middleware) to trigger mail event in case of high severity log, all that being described in the [AsyncAPI](https://www.asyncapi.com/docs/reference/specification/v2.6.0) spec file ./async/mft.yaml.  
-Dockerized in './async/logmanager.dockerfile'.  
+It uses [asyncapi-sub-middleware](https://www.npmjs.com/package/asyncapi-sub-middleware) to validate and route incoming messages and [asyncapi-pub-middleware](https://www.npmjs.com/package/asyncapi-pub-middleware) to trigger mail event in case of high severity log, all that being described in the [AsyncAPI](https://www.asyncapi.com/docs/reference/specification/v2.6.0) spec file ./apps/mft.yaml.  
+Dockerized in './docker/files/logmanager.dockerfile'.  
 ## ./apps/mail-worker
 A [rabbitmq-express](https://www.npmjs.com/package/rabbitmq-express) server listening to mail events from the other services in order to send one mail.  
-It uses [asyncapi-sub-middleware](https://www.npmjs.com/package/asyncapi-sub-middleware) to validate and route incoming messages and [asyncapi-pub-middleware](https://www.npmjs.com/package/asyncapi-pub-middleware) to trigger log event, all that being described in the [AsyncAPI](https://www.asyncapi.com/docs/reference/specification/v2.6.0) spec file ./async/mft.yaml.  
-Dockerized in './async/mailworker.dockerfile'.  
+It uses [asyncapi-sub-middleware](https://www.npmjs.com/package/asyncapi-sub-middleware) to validate and route incoming messages and [asyncapi-pub-middleware](https://www.npmjs.com/package/asyncapi-pub-middleware) to trigger log event, all that being described in the [AsyncAPI](https://www.asyncapi.com/docs/reference/specification/v2.6.0) spec file ./apps/mft.yaml.  
+Dockerized in './docker/files/mailworker.dockerfile'.  
 ## ./apps/invoice-worker (coming)
 ## ./apps/orchestrator (coming)
 ## ./apps/garbage-collector (coming)
