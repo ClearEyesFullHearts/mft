@@ -41,7 +41,7 @@ class Util {
     return product;
   }
 
-  static async retry(process, max = 20, timeout = 100) {
+  static async retry(process, max = 10, timeout = 100) {
     const maxRetries = max;
     let currentTry = 0;
 

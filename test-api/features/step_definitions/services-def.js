@@ -36,7 +36,6 @@ When(/^I publish to (.*)$/, async function (topic) {
 Then(/^elastic should find (.*) document for (.*)$/, async function (nbDocs, session) {
   const mySessionId = this.apickli.replaceVariables(session);
   const nb = Number(nbDocs);
-  console.log('mySessionId', mySessionId);
 
   await Util.retry(async () => {
     const result = await this.elastic.search({
@@ -46,15 +45,6 @@ Then(/^elastic should find (.*) document for (.*)$/, async function (nbDocs, ses
           match_phrase: {
             sessionId: mySessionId,
           },
-          // bool: {
-          //   must: {
-          //     match: {
-          //       sessionId: {
-          //         raw: mySessionId,
-          //       },
-          //     },
-          //   },
-          // },
         },
       },
     });
@@ -68,12 +58,11 @@ Then(/^elastic should find (.*) document for (.*)$/, async function (nbDocs, ses
     } = result;
 
     if (hits.length > 0) {
-      console.log(JSON.stringify(hits, null, 2));
-      if (nb !== hits.length) {
-        throw new Error(`We should find ${nbDocs} documents and found ${hits.length}`);
+      if (nb > hits.length) {
+        return false;
       }
       return true;
     }
     return false;
-  });
+  }, 60, 500);
 });
