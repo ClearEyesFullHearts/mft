@@ -36,39 +36,44 @@ When(/^I publish to (.*)$/, async function (topic) {
 Then(/^elastic should find (.*) document for (.*)$/, async function (nbDocs, session) {
   const mySessionId = this.apickli.replaceVariables(session);
   const nb = Number(nbDocs);
+  console.log('mySessionId', mySessionId);
 
   await Util.retry(async () => {
     const result = await this.elastic.search({
-        index: 'mft-log',
-        body: {
-          query: {
-            bool: {
-              must: {
-                match: {
-                  sessionId: mySessionId
-                }
-              },
-            }
-          }
-        },
-      });
-  
-      const {
-        body: {
-          hits: {
-            hits,
+      index: 'mft-log',
+      body: {
+        query: {
+          match_phrase: {
+            sessionId: mySessionId,
           },
+          // bool: {
+          //   must: {
+          //     match: {
+          //       sessionId: {
+          //         raw: mySessionId,
+          //       },
+          //     },
+          //   },
+          // },
         },
-      } = result;
+      },
+    });
 
-      // console.log(JSON.stringify(hits, null, 2));
-  
-      if (hits.length > 0) {
-        if (nb !== hits.length) {
-          throw new Error(`We should find ${nbDocs} documents and found ${hits.length}`);
-        }
-        return true;
+    const {
+      body: {
+        hits: {
+          hits,
+        },
+      },
+    } = result;
+
+    if (hits.length > 0) {
+      console.log(JSON.stringify(hits, null, 2));
+      if (nb !== hits.length) {
+        throw new Error(`We should find ${nbDocs} documents and found ${hits.length}`);
       }
-      return false;
+      return true;
+    }
+    return false;
   });
 });
