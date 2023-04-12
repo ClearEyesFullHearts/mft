@@ -1,6 +1,6 @@
 /* eslint-disable no-await-in-loop */
 const { Given, When, Then } = require('cucumber');
-const { Kafka } = require('kafkajs');
+const { Kafka, logLevel } = require('kafkajs');
 const config = require('config');
 const uuidv4 = require('uuid/v4');
 const Util = require('../support/util');
@@ -11,6 +11,7 @@ Given(/^I am listening to Kafka on topic (.*)$/, async function (topic) {
   const kafka = new Kafka({
     clientId: client,
     brokers: [brokers],
+    logLevel: logLevel.NOTHING,
   });
   this.kafkaConsumer = kafka.consumer({ groupId: uuidv4() });
   await this.kafkaConsumer.connect();
