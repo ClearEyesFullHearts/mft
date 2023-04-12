@@ -41,6 +41,18 @@ class Util {
     return product;
   }
 
+  static createRandomEvent() {
+    const event = {
+      sessionId: uuidv4(),
+      eventId: uuidv4(),
+      type: 'testOperationId',
+      duration: fakerator.random.number(5, 15),
+      result: 'OK',
+      status: 200,
+    };
+    return event;
+  }
+
   static async retry(process, max = 10, timeout = 100) {
     const maxRetries = max;
     let currentTry = 0;

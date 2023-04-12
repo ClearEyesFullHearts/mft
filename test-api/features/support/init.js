@@ -71,11 +71,16 @@ Before(function () {
   this.rabbit = rabbit;
   this.elastic = esClient;
   this.channel = null;
+  this.kafkaConsumer = null;
+  this.kafkaResult = [];
 });
 
 After(async function () {
   if (this.channel) {
     await this.channel.close();
+  }
+  if (this.kafkaConsumer) {
+    await this.kafkaConsumer.disconnect();
   }
 });
 

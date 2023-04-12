@@ -9,6 +9,10 @@
         },
         "elastic":{
             "url": "http://127.0.0.1:9200"
+        },
+        "garbage":{
+            "url": "localhost:19092",
+            "clientId": "test-api"
         }
     },
     "base": {

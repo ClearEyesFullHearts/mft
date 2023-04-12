@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "@elastic/elasticsearch": "^7.17.0",
-    "asyncapi-sub-middleware": "1.0.2",
+    "asyncapi-sub-middleware": "1.0.3",
     "config": "^3.3.9",
     "debug": "^4.3.4",
     "rabbitmq-express": "^1.0.3",

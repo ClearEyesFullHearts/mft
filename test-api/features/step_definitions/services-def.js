@@ -1,7 +1,29 @@
 /* eslint-disable no-await-in-loop */
 const { Given, When, Then } = require('cucumber');
+const { Kafka } = require('kafkajs');
+const config = require('config');
 const uuidv4 = require('uuid/v4');
 const Util = require('../support/util');
+
+Given(/^I am listening to Kafka on topic (.*)$/, async function (topic) {
+  const brokers = config.get('secret.garbage.url');
+  const client = config.get('secret.garbage.clientId');
+  const kafka = new Kafka({
+    clientId: client,
+    brokers: [brokers],
+  });
+  this.kafkaConsumer = kafka.consumer({ groupId: uuidv4() });
+  await this.kafkaConsumer.connect();
+  await this.kafkaConsumer.subscribe({ topics: [topic], fromBeginning: false });
+
+  await this.kafkaConsumer.run({
+    eachMessage: async (kafkaMessage) => {
+      const { message } = kafkaMessage;
+      this.kafkaResult.push(message.value.toString());
+      return Promise.resolve();
+    },
+  });
+});
 
 Given(/^I can publish to (.*) exchange$/, async function (exchangeName) {
   this.channel = await this.rabbit.createChannel();
@@ -10,18 +32,9 @@ Given(/^I can publish to (.*) exchange$/, async function (exchangeName) {
 
 Given(/^I have a correct (.*) message$/, async function (target) {
   if (target === 'log') {
-    const sessionId = uuidv4();
-    this.apickli.storeValueInScenarioScope('mySessionId', sessionId);
-    this.message = {
-      sessionId,
-      eventId: 'string',
-      type: 'string',
-      duration: 0,
-      result: 'OK',
-      status: 0,
-      input: {},
-      output: {},
-    };
+    const event = Util.createRandomEvent();
+    this.apickli.storeValueInScenarioScope('mySessionId', event.sessionId);
+    this.message = event;
   }
 });
 
@@ -65,4 +78,20 @@ Then(/^elastic should find (.*) document for (.*)$/, async function (nbDocs, ses
     }
     return false;
   }, 60, 500);
+});
+
+Then(/^I should receive (.*) trash from (.*)$/, async function (nb, receiver) {
+  await Util.retry(async () => {
+    if (this.kafkaResult.length < nb) {
+      return Promise.resolve(false);
+    }
+    const [strTrash] = this.kafkaResult;
+    const trash = JSON.parse(strTrash);
+
+    if (trash.receiver !== receiver) {
+      throw new Error('Wrong receiver in the trash');
+    }
+
+    return Promise.resolve(true);
+  });
 });
