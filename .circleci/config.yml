@@ -28,7 +28,8 @@ jobs:
       - run: sleep 40
       
       - run: mkdir -p ~/cucumber
-      - run: docker logs -f server &> ~/cucumber/server.log &
+      - run: docker logs -f log-manager &> ~/cucumber/log-manager.log &
+      - run: docker logs -f mail-worker &> ~/cucumber/mail-worker.log &
 
       - run: cd ./test-api && npm install
       - run: cd ./test-api && KEY_AUTH_SIGN=${MFT_AUTH_KEY} npm run ci-test-api
