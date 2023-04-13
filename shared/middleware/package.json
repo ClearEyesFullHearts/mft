@@ -13,7 +13,7 @@
       "asyncapi-pub-middleware": "0.0.8",
       "asyncapi-sub-middleware": "1.0.3",
       "config": "^3.3.9",
-      "debug": "^4.3.4",
+      "debug": "4.3.4",
       "kafkajs": "^2.2.4",
       "uuid": "^8.3.2"
     },
