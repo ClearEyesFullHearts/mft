@@ -2,8 +2,8 @@
   
 # Services:  
 ## ./front
-Vue.JS website which is also the entry point of the REST API located in ./rest through the /api endpoint.  
-## ./apps/rest
+Vue.JS website which is also the entry point of the REST API located in ./apps/rest-api through the /api endpoint.  
+## ./apps/rest-api
 API Gateway service, each base endpoint is described in its own Swagger file, used to validate and route requests to their own controller, using [swagger-tools](https://www.npmjs.com/package/swagger-tools).  
 Using [asyncapi-pub-middleware](https://www.npmjs.com/package/asyncapi-pub-middleware) it triggers asynchronous events to the other services (RabbitMQ or Kafka) described in the [AsyncAPI](https://www.asyncapi.com/docs/reference/specification/v2.6.0) spec file ./apps/mft.yaml.  
 The persistent layer is done with MongoDB, accessed through [mongoose](https://www.npmjs.com/package/mongoose).  

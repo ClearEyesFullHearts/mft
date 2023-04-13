@@ -45,6 +45,23 @@ Given(/^I have a correct (.*) message$/, async function (target) {
   }
 });
 
+Given(/^I have a wrong (.*) message$/, async function (target) {
+  if (target === 'log') {
+    const event = Util.createRandomEvent();
+    event.type = undefined;
+    delete event.type;
+    this.apickli.storeValueInScenarioScope('mySessionId', event.sessionId);
+    this.message = event;
+  }
+  if (target === 'mail') {
+    const mail = Util.createRandomMail();
+    this.apickli.storeValueInScenarioScope('mailTarget', mail.to[0]);
+    this.apickli.storeValueInScenarioScope('mySessionId', mail.values.sessionId);
+    mail.template = 'WRONG_WRONG_WRONG';
+    this.message = mail;
+  }
+});
+
 When(/^I publish to (.*)$/, async function (topic) {
   const mySessionId = this.apickli.replaceVariables('`mySessionId`');
 
