@@ -40,9 +40,9 @@ Test the async services running
     And I can publish to worker exchange
     And I have a wrong mail message
     When I publish to process.mail
-    And I should receive 1 trash from mail-worker
+    Then I should receive 1 trash from mail-worker
+    And elastic should find 2 document for `mySessionId`
     And an e-mail containing `mySessionId` was sent to level1-list@mft.com
-    Then elastic should find 2 document for `mySessionId`
 
   Scenario: Mail is sent
     Given I can publish to worker exchange
