@@ -32,10 +32,10 @@ module.exports = (req, res, next) => {
   req.monitor = {
     sessionId: originalSessionId || uuidv4(),
     eventId: uuidv4(),
+    type: `${appId}-error`, // default in case an error occurs before 'type' being set
     input: {
       path,
     },
-    type: `${appId}-error`, // default in case an error occurs before 'type' being set
   };
   debug('Monitoring object created for new request');
   res.once('finish', async () => {
