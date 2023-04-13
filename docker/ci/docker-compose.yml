@@ -37,6 +37,7 @@ services:
       - my-rabbit-mq
     command: sh -c '/bin/wait-for-it.sh my-rabbit-mq:5672 --timeout=30 -- node app.js'
     environment:
+      - DEBUG=log-manager:*,async:*
       - NODE_ENV=dock-ci
 
   mail-worker:
@@ -48,6 +49,7 @@ services:
       - my-rabbit-mq
     command: sh -c '/bin/wait-for-it.sh my-rabbit-mq:5672 --timeout=30 -- node app.js'
     environment:
+      - DEBUG=mail-worker:*,async:*
       - NODE_ENV=dock-ci
     
   server-database:
