@@ -28,6 +28,13 @@ Test the async services running
     Then elastic should find 2 document for `mySessionId`
     And an e-mail containing `mySessionId` was sent to level3-list@mft.com
 
+  Scenario: Mail is sent
+    Given I can publish to worker exchange
+    And I have a correct mail message
+    When I publish to process.mail
+    Then an e-mail was sent to `mailTarget`
+    Then elastic should find 1 document for `mySessionId`
+
   Scenario: log-manager keeps garbage out
     Given I am listening to Kafka on topic garbage.out
     And I can publish to logs exchange

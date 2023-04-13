@@ -37,13 +37,26 @@ Given(/^I have a correct (.*) message$/, async function (target) {
     this.apickli.storeValueInScenarioScope('mySessionId', event.sessionId);
     this.message = event;
   }
+  if (target === 'mail') {
+    const mail = Util.createRandomMail();
+    this.apickli.storeValueInScenarioScope('mailTarget', mail.to[0]);
+    this.apickli.storeValueInScenarioScope('mySessionId', mail.values.sessionId);
+    this.message = mail;
+  }
 });
 
 When(/^I publish to (.*)$/, async function (topic) {
+  const mySessionId = this.apickli.replaceVariables('`mySessionId`');
+
   this.channel.publish(
     this.exchange,
     topic,
     Buffer.from(JSON.stringify(this.message)),
+    {
+      headers: {
+        'x-session-id': mySessionId,
+      },
+    },
   );
 });
 

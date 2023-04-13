@@ -35,6 +35,7 @@ module.exports = (req, res, next) => {
     input: {
       path,
     },
+    type: `${appId}-error`, // default in case an error occurs before 'type' being set
   };
   debug('Monitoring object created for new request');
   res.once('finish', async () => {

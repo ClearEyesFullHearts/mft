@@ -1,4 +1,9 @@
+const logger = require('debug');
+
+const debug = logger('async:middleware:garbage');
+
 module.exports = async (req, res) => {
+  debug('No path found, we send out the trash');
   // If we're here the request has not been handled by any middleware
   // We send the trash to the garbage
   const {

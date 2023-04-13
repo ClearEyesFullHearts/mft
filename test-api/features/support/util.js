@@ -53,6 +53,18 @@ class Util {
     return event;
   }
 
+  static createRandomMail() {
+    const mail = {
+      to: [`${uuidv4()}@mathieufont.com`],
+      template: 'ADMIN_ERROR_MAIL',
+      values: {
+        sessionId: uuidv4(),
+        app: 'test-api',
+      },
+    };
+    return mail;
+  }
+
   static async retry(process, max = 10, timeout = 100) {
     const maxRetries = max;
     let currentTry = 0;
