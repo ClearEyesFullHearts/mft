@@ -1,0 +1,10 @@
+{
+  "users": {
+    "rest-api": "rest-api-password",
+    "log-manager": "log-manager-password",
+    "mail-worker": "mail-worker-password"
+  },
+  "instance": {
+    "port": 3001
+  }
+}
