@@ -1,7 +1,11 @@
+const configServer = require('config');
 const config = require('@shared/config');
 const MultiSwaggerService = require('./server/service');
 
 (async () => {
-  await config.load('http://localhost:3001', 'rest-api', 'rest-api-password');
+  const url = configServer.get('url');
+  const user = configServer.get('username');
+  const pass = configServer.get('password');
+  await config.load(url, user, pass);
   await new MultiSwaggerService().start();
 })();

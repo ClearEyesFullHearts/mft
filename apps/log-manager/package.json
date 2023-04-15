@@ -13,6 +13,7 @@
     "asyncapi-sub-middleware": "1.0.3",
     "debug": "4.3.4",
     "rabbitmq-express": "^1.0.3",
+    "config": "3.3.9",
     "@shared/config": "*",
     "@shared/middleware": "*"
   },
