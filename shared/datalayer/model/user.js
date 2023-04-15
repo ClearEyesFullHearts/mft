@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { autoIncrement } = require('mongoose-plugin-autoinc');
-const config = require('config');
+const config = require('@shared/config');
 
 class UserData {
   constructor() {

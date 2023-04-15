@@ -1,5 +1,5 @@
 const swaggerTools = require('swagger-tools');
-const config = require('config');
+const config = require('@shared/config');
 const logger = require('debug');
 const AuthMiddleware = require('./auth');
 

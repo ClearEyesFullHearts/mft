@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const config = require('config');
+const config = require('@shared/config');
 const logger = require('debug');
 const UserData = require('./model/user');
 const InvoiceData = require('./model/invoice');

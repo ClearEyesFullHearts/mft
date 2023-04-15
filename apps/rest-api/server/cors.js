@@ -1,4 +1,4 @@
-const config = require('config');
+const config = require('@shared/config');
 const logger = require('debug');
 
 const debug = logger('mft-back:server:cors');

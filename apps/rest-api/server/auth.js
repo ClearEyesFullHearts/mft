@@ -1,4 +1,4 @@
-const config = require('config');
+const config = require('@shared/config');
 const jwt = require('jsonwebtoken');
 const logger = require('debug');
 const ErrorHelper = require('./error');
