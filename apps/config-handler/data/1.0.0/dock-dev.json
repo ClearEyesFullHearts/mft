@@ -4,13 +4,10 @@
           "url": "mongodb://server-database:27017/mft-dev"
       },
       "rabbit":{
-          "url": "amqp://myuser:mypassword@my-rabbit-mq:5672",
-          "exchange": "worker",
-          "queue": "mail"
+          "url": "amqp://myuser:mypassword@my-rabbit-mq:5672"
       },
       "garbage":{
-          "url": "broker:9092",
-          "clientId": "mail-worker"
+          "url": "broker:9092"
       },
       "elastic":{
           "url": "http://es01:9200"
@@ -28,6 +25,11 @@
     }
   },
   "log-manager": {
+    "async": {
+        "fileroute": "/mft.yaml"
+    }
+  },
+  "rest-api": {
     "async": {
         "fileroute": "/mft.yaml"
     }

@@ -5,12 +5,10 @@
         "url": "mongodb://127.0.0.1:27017/mft-dev"
     },
     "rabbit":{
-        "url": "amqp://myuser:mypassword@localhost:5672",
-        "exchange": "logs"
+        "url": "amqp://myuser:mypassword@localhost:5672"
     },
     "garbage":{
-        "url": "localhost:19092",
-        "clientId": "log-manager"
+        "url": "localhost:19092"
     },
     "elastic":{
         "url": "http://localhost:9200"

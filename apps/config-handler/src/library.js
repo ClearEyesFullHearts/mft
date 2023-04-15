@@ -93,7 +93,7 @@ class Library {
       promises.push(this.loadVersion(v));
     }
     const config = await Promise.all(promises);
-    
+
     this.data = versions.reduce((prev, vName, index) => ({
       ...prev,
       [vName]: config[index],
