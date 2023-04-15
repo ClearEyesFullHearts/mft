@@ -1,5 +1,5 @@
 const fs = require('fs');
-const config = require('config');
+const config = require('@shared/config');
 const rabbitExpress = require('rabbitmq-express');
 const asyncApiConsumer = require('asyncapi-sub-middleware');
 const logger = require('debug');
@@ -31,6 +31,8 @@ class MailWorker {
 
     this.server.use(log);
 
+    const ctrl = require('./controller');
+
     const options = {
       tag: APP_ID,
       controllers: 'src/controller',
@@ -41,8 +43,8 @@ class MailWorker {
     this.server.use(error);
 
     const rabbitURI = config.get('secret.rabbit.url');
-    const exchange = config.get('secret.rabbit.exchange');
-    const queue = config.get('secret.rabbit.queue');
+    const exchange = 'worker'; // config.get('secret.rabbit.exchange');
+    const queue = 'mail'; // config.get('secret.rabbit.queue');
     this.server.listen({
       rabbitURI,
       exchange,

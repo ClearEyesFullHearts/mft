@@ -70,6 +70,10 @@
         "fileroute": "/../../mft.yaml"
     },
     "mail": {
+      "secret":{
+          "user": "username",
+          "pass": "pass"
+      },
       "sender": "server@mathieufont.com",
       "transport":{
           "host": "127.0.0.1",
