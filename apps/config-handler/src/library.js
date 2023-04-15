@@ -31,6 +31,7 @@ class Library {
       const promises = fileNames.map((filePath) => fs.readFile(path.join(__dirname, '..', 'data', version, filePath), 'utf8'));
       const txtFiles = await Promise.all(promises);
       const files = txtFiles.map((txtF) => JSON.parse(txtF));
+
       const defaultFile = files[0];
       const customFile = hasCustomFile ? this.completeCustomFile(files[files.length - 1]) : {};
 
@@ -54,7 +55,9 @@ class Library {
         Object.keys(source).forEach((key) => {
           const sVal = source[key];
           const tVal = target[key];
-          target[key] = tVal && sVal && typeof tVal === 'object' && typeof sVal === 'object'
+          target[key] = tVal && sVal
+          && Object.prototype.toString.call(tVal) === '[object Object]'
+          && Object.prototype.toString.call(sVal) === '[object Object]'
             ? this.aggregateEnvFiles(tVal, sVal)
             : sVal;
         });
@@ -90,13 +93,33 @@ class Library {
       promises.push(this.loadVersion(v));
     }
     const config = await Promise.all(promises);
-    // console.log(JSON.stringify(config[1]['dock-dev'], null, 2));
+    
     this.data = versions.reduce((prev, vName, index) => ({
       ...prev,
       [vName]: config[index],
     }), { latest: config[0] });
+  }
 
-    console.log(this.data);
+  getConfig(version, env, app) {
+    let myVersion = version;
+    if (!this.data[myVersion]) {
+      myVersion = 'latest';
+    }
+    let myEnv = env;
+    if (!this.data[myVersion][myEnv]) {
+      myEnv = 'default';
+    }
+    const envVersion = this.data[myVersion][myEnv];
+
+    const {
+      secret,
+      [app]: rest = {},
+    } = envVersion;
+
+    return {
+      secret,
+      ...rest,
+    };
   }
 }
 

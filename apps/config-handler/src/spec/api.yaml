@@ -52,7 +52,7 @@ components:
         base:
           type: object
         api:
-          type: object
+          type: array
         async:
           type: object
         destination:

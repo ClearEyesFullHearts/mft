@@ -1,8 +1,11 @@
+const library = require('../library');
+
 module.exports = {
-  getConfig: (req, res, next) => {
-    console.log('YEAH!');
+  getConfig: (req, res) => {
     const { params, query, auth } = req;
-    console.log(params, query, auth);
-    res.json({ secret: {} });
+
+    const config = library.getConfig(query.version, params.env, auth);
+
+    res.json(config);
   },
 };
