@@ -24,6 +24,7 @@ services:
     command: sh -c '/bin/wait-for-it.sh config:3001 --timeout=40 -- node app.js'
     environment:
       - NODE_ENV=dock-ci
+      - MFT_CONF_RA_KEY
 
   log-manager:
     build:
@@ -36,6 +37,7 @@ services:
     environment:
       - DEBUG=log-manager:*,async:*
       - NODE_ENV=dock-ci
+      - MFT_CONF_LM_KEY
 
   mail-worker:
     build:
@@ -48,6 +50,7 @@ services:
     environment:
       - DEBUG=mail-worker:*,async:*
       - NODE_ENV=dock-ci
+      - MFT_CONF_MW_KEY
 
   config:
     build:
@@ -64,6 +67,9 @@ services:
       - DEBUG=config-handler:*
       - NODE_ENV=dock-ci
       - KEY_AUTH_SIGN
+      - MFT_CONF_LM_KEY
+      - MFT_CONF_MW_KEY
+      - MFT_CONF_RA_KEY
     
   server-database:
     image: mongo:4.2.24-rc2-bionic
