@@ -10,7 +10,7 @@
     "license": "MIT",
     "dependencies": {
       "amqplib": "^0.10.3",
-      "asyncapi-pub-middleware": "0.0.8",
+      "asyncapi-pub-middleware": "0.0.10",
       "asyncapi-sub-middleware": "1.0.3",
       "@shared/config": "*",
       "debug": "4.3.4",
