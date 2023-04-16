@@ -1,6 +1,8 @@
 const fs = require('fs/promises');
 const path = require('path');
+const logger = require('debug');
 
+const debug = logger('config-handler:library');
 const DEFAULT = 'default.json';
 const CUSTOM = 'custom-environment-variables.json';
 
@@ -34,6 +36,7 @@ class Library {
 
       const defaultFile = files[0];
       const customFile = hasCustomFile ? this.completeCustomFile(files[files.length - 1]) : {};
+      debug('customFile', customFile);
 
       return fileNames.reduce((obj, fileName, index) => {
         if (fileName === CUSTOM) {
@@ -84,6 +87,7 @@ class Library {
   }
 
   async load() {
+    debug('load config files');
     const versions = this.sortVersion(await fs.readdir(path.join(__dirname, '..', 'data')));
 
     const l = versions.length;
@@ -98,9 +102,12 @@ class Library {
       ...prev,
       [vName]: config[index],
     }), { latest: config[0] });
+
+    debug('config ready');
   }
 
   getConfig(version, env, app) {
+    debug(`get config for ${app}/${env} version ${version}`);
     let myVersion = version;
     if (!this.data[myVersion]) {
       myVersion = 'latest';
