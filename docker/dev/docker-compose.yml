@@ -23,7 +23,7 @@ services:
       - config
     command: sh -c '/bin/wait-for-it.sh config:3001 --timeout=30 -- node app.js'
     environment:
-      - DEBUG=mft-back:*,async:*,secret:mft-back:auth
+      - DEBUG=mft-back:*,async:*
       - NODE_ENV=dock-dev
 
   log-manager:

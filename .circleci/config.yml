@@ -29,7 +29,6 @@ jobs:
       
       - run: mkdir -p ~/cucumber
       - run: docker logs -f config &> ~/cucumber/config.log &
-      - run: docker logs -f server &> ~/cucumber/server.log &
       - run: docker logs -f log-manager &> ~/cucumber/log-manager.log &
       - run: docker logs -f mail-worker &> ~/cucumber/mail-worker.log &
 

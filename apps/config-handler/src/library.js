@@ -36,7 +36,6 @@ class Library {
 
       const defaultFile = files[0];
       const customFile = hasCustomFile ? this.completeCustomFile(files[files.length - 1]) : {};
-      debug('customFile', customFile);
 
       return fileNames.reduce((obj, fileName, index) => {
         if (fileName === CUSTOM) {
