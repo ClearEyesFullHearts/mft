@@ -1,6 +1,6 @@
 const { Kafka } = require('kafkajs');
 const amqplib = require('amqplib');
-const config = require('config');
+const config = require('@shared/config');
 const logger = require('debug');
 const publish = require('asyncapi-pub-middleware');
 
@@ -12,9 +12,8 @@ async function getRabbitCon() {
   return conn;
 }
 
-async function getGarbageCon() {
+async function getGarbageCon(client) {
   const brokers = config.get('secret.garbage.url');
-  const client = config.get('secret.garbage.clientId');
   const kafka = new Kafka({
     clientId: client,
     brokers: [brokers],
@@ -41,7 +40,7 @@ module.exports = async (appId, doc, usedConnection = { rabbit: true, garbage: tr
   if (process.env.NODE_ENV !== 'dev') {
     debug('Connect to known servers');
     if (createRabbitConnection) options.connections.rabbit = await getRabbitCon();
-    if (createGarbageConnection) options.connections.garbage = await getGarbageCon();
+    if (createGarbageConnection) options.connections.garbage = await getGarbageCon(appId);
   } else {
     debug('Publisher will create the connections');
   }

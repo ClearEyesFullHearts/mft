@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const config = require('config');
+const config = require('@shared/config');
 const logger = require('debug');
 const { v4: uuidv4 } = require('uuid');
 

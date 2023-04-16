@@ -1,6 +1,6 @@
 const fs = require('fs');
 const nodemailer = require('nodemailer');
-const config = require('config');
+const config = require('@shared/config');
 const logger = require('debug');
 const loTemplate = require('lodash.template');
 
@@ -11,7 +11,7 @@ class Mailing {
     this.senderAddress = config.get('mail.sender');
 
     const options = config.get('mail.transport');
-    const auth = config.get('secret.mail');
+    const auth = config.get('mail.secret');
 
     this.transporter = nodemailer.createTransport({
       ...options,

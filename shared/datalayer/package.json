@@ -9,8 +9,8 @@
   "author": "MFT",
   "license": "MIT",
   "dependencies": {
-    "config": "^3.3.9",
-    "debug": "^4.3.4",
+    "@shared/config": "*",
+    "debug": "4.3.4",
     "mongoose": "^7.0.3",
     "mongoose-plugin-autoinc": "^1.1.9"
   }

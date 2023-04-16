@@ -1,0 +1,74 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Swagger Petstore
+  license:
+    name: MIT
+servers:
+  - url: http://localhost:3001
+paths:
+  /config/{env}:
+    get:
+      summary: Get the raw config for an environment
+      operationId: getConfig
+      x-eov-operation-handler: api
+      parameters:
+        - name: env
+          in: path
+          required: true
+          description: The current environment
+          schema:
+            type: string
+        - name: version
+          in: query
+          description: The specific version of the config
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A config object
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Config"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    Config:
+      type: object
+      required:
+        - secret
+      properties:
+        secret:
+          type: object
+        public:
+          type: object
+        base:
+          type: object
+        api:
+          type: array
+        async:
+          type: object
+        destination:
+          type: object
+        mail:
+          type: object
+        templates:
+          type: object
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

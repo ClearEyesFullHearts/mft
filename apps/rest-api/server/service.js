@@ -1,7 +1,7 @@
 const fs = require('fs');
 const express = require('express');
 const morgan = require('morgan');
-const config = require('config');
+const config = require('@shared/config');
 const logger = require('debug');
 
 const Data = require('@shared/datalayer');

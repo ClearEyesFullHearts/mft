@@ -20,13 +20,11 @@ services:
     ports:
       - ${SERVER_PUBLIC_PORT}:3000
     depends_on: 
-      - server-database
-      - server-fake-smtp
-      - my-rabbit-mq
-    command: sh -c '/bin/wait-for-it.sh my-rabbit-mq:5672 --timeout=120 -- node app.js'
+      - config
+    command: sh -c '/bin/wait-for-it.sh config:3001 --timeout=40 -- node app.js'
     environment:
       - NODE_ENV=dock-ci
-      - KEY_AUTH_SIGN
+      - MFT_CONF_RA_KEY
 
   log-manager:
     build:
@@ -34,11 +32,12 @@ services:
       dockerfile: docker/files/logmanager.dockerfile
     container_name: log-manager
     depends_on: 
-      - my-rabbit-mq
-    command: sh -c '/bin/wait-for-it.sh my-rabbit-mq:5672 --timeout=30 -- node app.js'
+      - config
+    command: sh -c '/bin/wait-for-it.sh config:3001 --timeout=40 -- node app.js'
     environment:
       - DEBUG=log-manager:*,async:*
       - NODE_ENV=dock-ci
+      - MFT_CONF_LM_KEY
 
   mail-worker:
     build:
@@ -46,11 +45,31 @@ services:
       dockerfile: docker/files/mailworker.dockerfile
     container_name: mail-worker
     depends_on: 
-      - my-rabbit-mq
-    command: sh -c '/bin/wait-for-it.sh my-rabbit-mq:5672 --timeout=30 -- node app.js'
+      - config
+    command: sh -c '/bin/wait-for-it.sh config:3001 --timeout=40 -- node app.js'
     environment:
       - DEBUG=mail-worker:*,async:*
       - NODE_ENV=dock-ci
+      - MFT_CONF_MW_KEY
+
+  config:
+    build:
+      context: ../../
+      dockerfile: docker/files/config.dockerfile
+    container_name: config
+    depends_on: 
+      - server-database
+      - server-fake-smtp
+      - broker
+      - my-rabbit-mq
+    command: sh -c '/bin/wait-for-it.sh my-rabbit-mq:5672 --timeout=40 -- node app.js'
+    environment:
+      - DEBUG=config-handler:*
+      - NODE_ENV=dock-ci
+      - KEY_AUTH_SIGN
+      - MFT_CONF_LM_KEY
+      - MFT_CONF_MW_KEY
+      - MFT_CONF_RA_KEY
     
   server-database:
     image: mongo:4.2.24-rc2-bionic

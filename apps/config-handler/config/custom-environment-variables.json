@@ -1,0 +1,7 @@
+{
+  "users": {
+    "rest-api": "CONFIG_RA_PASS",
+    "log-manager": "CONFIG_LM_PASS",
+    "mail-worker": "CONFIG_MW_PASS"
+  }
+}

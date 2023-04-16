@@ -1,5 +1,5 @@
 const fs = require('fs');
-const config = require('config');
+const config = require('@shared/config');
 const rabbitExpress = require('rabbitmq-express');
 const asyncApiConsumer = require('asyncapi-sub-middleware');
 const logger = require('debug');
@@ -40,7 +40,7 @@ class LogManager {
     this.server.use(error);
 
     const rabbitURI = config.get('secret.rabbit.url');
-    const exchange = config.get('secret.rabbit.exchange');
+    const exchange = 'logs'; // config.get('secret.rabbit.exchange');
     this.server.listen({
       rabbitURI,
       exchange,

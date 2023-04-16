@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const config = require('config');
+const config = require('@shared/config');
 const logger = require('debug');
 
 const ErrorHelper = require('../../../server/error');

@@ -1,0 +1,17 @@
+{
+  "secret":{
+      "auth": "KEY_AUTH_SIGN",
+      "mongo":{
+          "url": "KEY_MONGO_URL"
+      },
+      "rabbit":{
+          "url": "KEY_RABBIT_URL"
+      },
+      "garbage":{
+          "url": "KEY_GARBAGE_URL"
+      },
+      "elastic":{
+          "url": "KEY_ELK_URL"
+      }
+  }
+}

@@ -1,4 +1,4 @@
-const config = require('config');
+const config = require('@shared/config');
 
 module.exports.health = (req, res) => {
   req.monitor.output = {

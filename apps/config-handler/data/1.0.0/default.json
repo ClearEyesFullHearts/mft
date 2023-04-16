@@ -1,0 +1,110 @@
+{
+  "secret": {
+    "auth": "supersecret",
+    "mongo":{
+        "url": "mongodb://127.0.0.1:27017/mft-dev"
+    },
+    "rabbit":{
+        "url": "amqp://myuser:mypassword@localhost:5672"
+    },
+    "garbage":{
+        "url": "localhost:19092"
+    },
+    "elastic":{
+        "url": "http://localhost:9200"
+    }
+  },
+  "rest-api": {
+    "public":{
+        "name": "mft",
+        "url": "http://localhost:8080",
+        "cors":{
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type, Authorization, Content-Length"
+        }
+    },
+    "base": {
+        "instance": {
+            "port": 3000
+        },
+        "security": "x-mft-roles",
+        "roles": [
+            "ROLE_USER",
+            "ROLE_ADMIN"
+        ],
+        "hashSaltRound": 2
+    },
+    "api": [{
+            "name": "health",
+            "swagger": "swagger-health-1.0.0.json",
+            "controller": ""
+        },
+        {
+            "name": "user",
+            "swagger": "swagger-user-1.0.0.json",
+            "controller": ""
+        },
+        {
+            "name": "invoice",
+            "swagger": "swagger-invoice-1.0.0.json",
+            "controller": ""
+        }
+    ],
+    "async": {
+        "fileroute": "/../../mft.yaml"
+    }
+  },
+  "log-manager": {
+    "async": {
+        "fileroute": "/../../mft.yaml"
+    },
+    "destination": {
+        "level1": "level1-list@mft.com",
+        "level2": "level2-list@mft.com",
+        "level3": "level3-list@mft.com"
+    }
+  },
+  "mail-worker": {
+    "async": {
+        "fileroute": "/../../mft.yaml"
+    },
+    "mail": {
+      "secret":{
+          "user": "username",
+          "pass": "pass"
+      },
+      "sender": "server@mathieufont.com",
+      "transport":{
+          "host": "127.0.0.1",
+          "port": 1025,
+          "auth":{},
+          "secure": false,
+          "tls":{
+              "rejectUnauthorized": false
+          }
+      },
+      "templates": "./templates"
+    },
+    "templates":{
+        "mail":{
+            "RESET_PASSWORD":{
+                "subject": "Your new password is here",
+                "txt": "simple_reset_password.txt"
+            },
+            "ADMIN_ERROR_MAIL":{
+                "subject": "An error occured in the system",
+                "txt": "error_alert.txt"
+            },
+            "ADMIN_FAILURE_MAIL":{
+                "subject": "An failure occured in the system",
+                "txt": "failure_alert.txt"
+            },
+            "ADMIN_WARNING_MAIL":{
+                "subject": "Warning from the system",
+                "txt": "warning_alert.txt"
+            }
+        }
+    }
+  }
+}
