@@ -20,5 +20,3 @@ COPY --from=build-stage node_modules node_modules
 COPY ./apps/config-handler/ ./apps/config-handler/
 
 WORKDIR /usr/src/app/apps/config-handler
-
-EXPOSE 3000
