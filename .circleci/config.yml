@@ -23,15 +23,7 @@ jobs:
       - node/install:
           node-version: "18.14.1"
 
-      # - run: cd ./docker/ci && KEY_AUTH_SIGN=${MFT_AUTH_KEY} docker-compose up -d --build
-      - run:
-          command: |
-            cd ./docker/ci && 
-            KEY_AUTH_SIGN=${MFT_AUTH_KEY}
-            CONFIG_RA_PASS=${MFT_AUTH_KEY}
-            CONFIG_LM_PASS=${MFT_AUTH_KEY}
-            CONFIG_MW_PASS=${MFT_AUTH_KEY}
-            docker-compose up -d --build
+      - run: cd ./docker/ci && KEY_AUTH_SIGN=${MFT_AUTH_KEY} CONFIG_RA_PASS=${MFT_AUTH_KEY} CONFIG_LM_PASS=${MFT_AUTH_KEY} CONFIG_MW_PASS=${MFT_AUTH_KEY} docker-compose up -d --build
 
       - run: sleep 40
       
