@@ -3,6 +3,8 @@
 # Services:  
 ## ./front
 Vue.JS website which is also the entry point of the REST API located in ./apps/rest-api through the /api endpoint.  
+## ./apps/config-handler
+Simple API Gateway service that serves the config for all services.  
 ## ./apps/rest-api
 API Gateway service, each base endpoint is described in its own Swagger file, used to validate and route requests to their own controller, using [swagger-tools](https://www.npmjs.com/package/swagger-tools).  
 Using [asyncapi-pub-middleware](https://www.npmjs.com/package/asyncapi-pub-middleware) it triggers asynchronous events to the other services (RabbitMQ or Kafka) described in the [AsyncAPI](https://www.asyncapi.com/docs/reference/specification/v2.6.0) spec file ./apps/mft.yaml.  
@@ -22,7 +24,8 @@ Dockerized in './docker/files/mailworker.dockerfile'.
 ## Others:  
 "shared" folder contains all the libraries shared across the apps:  
 - "middleware" contains all the middlewares used by the apps.  
-- "datalayer" contains the access to the mongo database and the mongoose schemas.
+- "datalayer" contains the access to the mongo database and the mongoose schemas.  
+- "config" contains an object that loads a config file from the config-handler apps to use in every other app.
   
 "test-api" folder contains the integration tests of the back-end solution written in Gherkin and played with cucumber.js  
 "test-front" folder contains the integration tests of the whole application written in Gherkin and played with cucumber.js and selenium  

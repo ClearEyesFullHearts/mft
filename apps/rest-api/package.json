@@ -1,6 +1,6 @@
 {
-  "name": "mft",
-  "version": "0.0.0",
+  "name": "@mft/rest-api",
+  "version": "1.0.0",
   "description": "mft public site back-end",
   "main": "app.js",
   "scripts": {

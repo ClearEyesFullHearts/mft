@@ -1,5 +1,5 @@
 {
-  "name": "config-handler",
+  "name": "@mft/config-handler",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",

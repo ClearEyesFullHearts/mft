@@ -1,5 +1,5 @@
 {
-  "name": "log-manager",
+  "name": "@mft/log-manager",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
