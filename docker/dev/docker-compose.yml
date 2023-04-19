@@ -60,6 +60,8 @@ services:
       - server-fake-smtp
       - broker
       - my-rabbit-mq
+    ports:
+      - 3001:3001
     command: sh -c '/bin/wait-for-it.sh my-rabbit-mq:5672 --timeout=30 -- node app.js'
     environment:
       - DEBUG=config-handler:*
