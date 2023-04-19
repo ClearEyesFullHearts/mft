@@ -1,6 +1,5 @@
 {
   "secret":{
-      "auth": "KEY_AUTH_SIGN",
       "mongo":{
           "url": "KEY_MONGO_URL"
       },
@@ -13,5 +12,8 @@
       "elastic":{
           "url": "KEY_ELK_URL"
       }
+  },
+  "rest-api": {
+    "auth": "KEY_AUTH_SIGN"
   }
 }

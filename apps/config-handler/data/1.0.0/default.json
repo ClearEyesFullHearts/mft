@@ -1,6 +1,5 @@
 {
   "secret": {
-    "auth": "supersecret",
     "mongo":{
         "url": "mongodb://127.0.0.1:27017/mft-dev"
     },
@@ -15,6 +14,7 @@
     }
   },
   "rest-api": {
+    "auth": "supersecret",
     "public":{
         "name": "mft",
         "url": "http://localhost:8080",
