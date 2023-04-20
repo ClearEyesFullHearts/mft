@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 info:
   version: 1.0.0
-  title: Swagger Petstore
+  title: MFT Config Handler
   license:
     name: MIT
 servers:
@@ -38,8 +38,40 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
+  /load:
+    put:
+      summary: Force the reloading of all config files
+      operationId: reload
+      x-eov-operation-handler: api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Load'
+      responses:
+        '200':
+          description: Reloading worked
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
 components:
   schemas:
+    Load:
+      type: object
+      required:
+        - apps
+      properties:
+        apps:
+          type: array
+          items:
+            type: string
+            enum:
+              - "*"
+              - "mail-worker"
+              - "log-manager"
     Config:
       type: object
       required:
@@ -53,6 +85,8 @@ components:
           type: object
         api:
           type: array
+          items:
+            type: object
         async:
           type: object
         destination:

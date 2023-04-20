@@ -2,7 +2,8 @@
   "users": {
     "rest-api": "rest-api-password",
     "log-manager": "log-manager-password",
-    "mail-worker": "mail-worker-password"
+    "mail-worker": "mail-worker-password",
+    "admin": "admin-password"
   },
   "instance": {
     "port": 3001

@@ -8,4 +8,14 @@ module.exports = {
 
     res.json(config);
   },
+  reload: async (req, res) => {
+    const { body, auth } = req;
+    console.log('body', body);
+    if (auth !== 'admin') {
+      return res.status(503).send('Admin Authorization required.');
+    }
+    await library.load();
+
+    return res.json();
+  },
 };

@@ -12,7 +12,7 @@
         "ci-report-api": "REPORT_NAME=~/cucumber/test-api node reporting.js",
         "test": "./node_modules/.bin/cucumber-js --exit",
         "mail": "./node_modules/.bin/cucumber-js --name \"User can reset its password\" --exit",
-        "logs": "./node_modules/.bin/cucumber-js features/services.feature --exit"
+        "config": "./node_modules/.bin/cucumber-js features/config.feature --exit"
     },
     "author": "",
     "license": "ISC",
