@@ -6,41 +6,45 @@ const publish = require('asyncapi-pub-middleware');
 
 const debug = logger('async:middleware:publisher');
 
-async function getRabbitCon() {
-  const rabbitURI = config.get('secret.rabbit.url');
-  const conn = await amqplib.connect(rabbitURI);
-  return conn;
-}
+const connections = {
+  rabbit: async () => {
+    const rabbitURI = config.get('secret.rabbit.url');
+    const conn = await amqplib.connect(rabbitURI);
+    return conn;
+  },
+  garbage: async (client) => {
+    const brokers = config.get('secret.garbage.url');
+    const kafka = new Kafka({
+      clientId: client,
+      brokers: [brokers],
+    });
 
-async function getGarbageCon(client) {
-  const brokers = config.get('secret.garbage.url');
-  const kafka = new Kafka({
-    clientId: client,
-    brokers: [brokers],
-  });
+    const producer = kafka.producer();
 
-  const producer = kafka.producer();
+    await producer.connect();
+    return producer;
+  },
+};
 
-  await producer.connect();
-  return producer;
-}
-
-module.exports = async (appId, doc, usedConnection = { rabbit: true, garbage: true }) => {
+module.exports = async (appId, doc, usedConnection = { rabbit: false, garbage: false }) => {
   debug('Read AsyncAPI file');
   const options = {
     tag: appId,
     connections: {},
   };
 
-  const {
-    rabbit: createRabbitConnection,
-    garbage: createGarbageConnection,
-  } = usedConnection;
-
   if (process.env.NODE_ENV !== 'dev') {
+    const {
+      rabbit: myRabbitConnection,
+      garbage: myGarbageConnection,
+    } = usedConnection;
+
+    options.connections.rabbit = myRabbitConnection;
+    options.connections.garbage = myGarbageConnection;
+
     debug('Connect to known servers');
-    if (createRabbitConnection) options.connections.rabbit = await getRabbitCon();
-    if (createGarbageConnection) options.connections.garbage = await getGarbageCon(appId);
+    if (!myRabbitConnection) options.connections.rabbit = await connections.rabbit();
+    if (!myGarbageConnection) options.connections.garbage = await connections.garbage(appId);
   } else {
     debug('Publisher will create the connections');
   }
@@ -51,3 +55,5 @@ module.exports = async (appId, doc, usedConnection = { rabbit: true, garbage: tr
 
   return asyncMiddleware;
 };
+
+module.exports.connections = connections;

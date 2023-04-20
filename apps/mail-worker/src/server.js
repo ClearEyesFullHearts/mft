@@ -19,19 +19,20 @@ class MailWorker {
 
     const fileroute = config.get('async.fileroute');
     this.doc = fs.readFileSync(`${__dirname}${fileroute}`, 'utf8');
+    this.rabbitConnection = null;
   }
 
   async start() {
     debug('Initializing server');
 
-    const asyncMiddleware = await asyncApiPublisher(APP_ID, this.doc);
+    this.rabbitConnection = await asyncApiPublisher.connections.rabbit();
+
+    const asyncMiddleware = await asyncApiPublisher(APP_ID, this.doc, { rabbit: this.rabbitConnection, garbage: false });
     this.server.use(asyncMiddleware);
 
     debug('Publisher mounted on app');
 
     this.server.use(log);
-
-    const ctrl = require('./controller');
 
     const options = {
       tag: APP_ID,
@@ -42,11 +43,10 @@ class MailWorker {
     this.server.use(garbage);
     this.server.use(error);
 
-    const rabbitURI = config.get('secret.rabbit.url');
     const exchange = 'worker'; // config.get('secret.rabbit.exchange');
     const queue = 'mail'; // config.get('secret.rabbit.queue');
     this.server.listen({
-      rabbitURI,
+      rabbitURI: this.rabbitConnection,
       exchange,
       queue,
       consumerTag: APP_ID,
