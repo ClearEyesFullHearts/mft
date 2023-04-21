@@ -11,6 +11,34 @@
     "application/json"
   ],
   "paths": {
+    "/config/load": {
+      "put": {
+        "operationId": "reloadConfig",
+        "x-mft-roles": ["ROLE_ADMIN"],
+        "x-swagger-router-controller": "management",
+        "summary": "Force the reloading of all config files",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+          "in": "body",
+          "name": "body",
+          "description": "Narrow the apps that need reloading",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/LoadInfo"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "config and platform infos"
+          },
+          "401": {
+            "description": "Unauthorized: Not an admin"
+          }
+        }
+      }
+    },
     "/info": {
       "get": {
         "operationId": "info",
@@ -41,6 +69,27 @@
         "responses": {
           "200": {
             "description": "200 response"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "LoadInfo": {
+      "type": "object",
+      "required": [
+        "apps"
+      ],
+      "properties": {
+        "apps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "*",
+              "mail-worker",
+              "log-manager"
+            ]
           }
         }
       }

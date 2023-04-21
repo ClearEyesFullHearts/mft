@@ -20,3 +20,7 @@ module.exports.info = (req, res) => {
   req.monitor.output = output;
   res.json(output);
 };
+
+module.exports.reloadConfig = (req, res) => {
+  res.status(200).send();
+};
