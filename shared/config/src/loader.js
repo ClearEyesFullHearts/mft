@@ -3,6 +3,7 @@ const axios = require('axios');
 class ConfigLoader {
   constructor(erroring = false) {
     this.isErroring = erroring;
+    this.internalConn = null;
 
     this.getValueFromPath = (obj, path) => {
       const [prop, ...rest] = path;
@@ -42,8 +43,17 @@ class ConfigLoader {
       headers: { authorization: `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}` },
     });
 
+    this.internalConn = {
+      url,
+      authorization: `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`,
+    };
+
     if (status !== 200) throw new Error('Impossible to load the configuration file');
     this.config = this.deepFreeze(data);
+  }
+
+  get connection() {
+    return this.internalConn;
   }
 
   get(path) {

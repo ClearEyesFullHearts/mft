@@ -11,8 +11,8 @@ module.exports = {
   reload: async (req, res) => {
     const { body, auth } = req;
     console.log('body', body);
-    if (auth !== 'admin') {
-      return res.status(503).send('Admin Authorization required.');
+    if (auth !== 'rest-api') {
+      return res.status(503).send('Unauthorized application access.');
     }
     await library.load();
 

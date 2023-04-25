@@ -36,3 +36,9 @@ Test the server health API
     When I GET /info
     Then response code should be 401
     And response body path $.code should be NO_AUTH_HEADER
+
+  Scenario: Admin can trigger a config reload
+    Given I set an admin bearer token
+    And I set body to { "apps": ["*"] }
+    When I PUT /config/load
+    Then response code should be 200
