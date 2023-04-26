@@ -3,7 +3,7 @@ const amqplib = require('amqplib');
 const axios = require('axios');
 const config = require('@shared/config');
 const logger = require('debug');
-const publish = require('asyncapi-pub-middleware');
+const { Publisher } = require('asyncapi-pub-middleware');
 
 const debug = logger('async:middleware:publisher');
 
@@ -61,10 +61,25 @@ module.exports = async (appId, doc, usedConnection = { }) => {
   }
 
   debug('Create publisher');
-  const asyncMiddleware = await publish(doc, options);
+  const publisher = new Publisher();
+  await publisher.loadAPI(doc, options);
+
+  const asyncMiddleware = (req, res, next) => {
+    if (!req.api) req.api = {};
+    req.api.publisher = {
+      publish: async (topic, msg, headers, opts) => {
+        const resultArray = await publisher.publish(topic, msg, headers, opts);
+        return resultArray;
+      },
+      stop: async (closeConnection = true) => {
+        await publisher.stop(closeConnection);
+      },
+    };
+    next();
+  };
   debug('Publisher ready');
 
-  return asyncMiddleware;
+  return { asyncMiddleware, publisher };
 };
 
 module.exports.connections = connections;

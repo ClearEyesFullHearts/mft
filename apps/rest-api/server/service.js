@@ -38,7 +38,7 @@ class MultiSwaggerService {
     await data.init();
     this.app.locals.db = data;
 
-    const asyncMiddleware = await asyncApiPublisher(APP_ID, this.doc);
+    const { asyncMiddleware } = await asyncApiPublisher(APP_ID, this.doc);
     this.app.use(asyncMiddleware);
 
     this.app.use(log);
