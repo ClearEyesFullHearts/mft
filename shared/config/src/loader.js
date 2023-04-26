@@ -1,9 +1,18 @@
+const fs = require('fs');
 const axios = require('axios');
+const rabbitExpress = require('rabbitmq-express');
+const asyncApiConsumer = require('asyncapi-sub-middleware');
+const EventEmitter = require('events');
 
-class ConfigLoader {
+const APP_ID = 'config-loader';
+
+class ConfigLoader extends EventEmitter {
   constructor(erroring = false) {
+    super();
     this.isErroring = erroring;
     this.internalConn = null;
+    this.server = null;
+    this.isListening = false;
 
     this.getValueFromPath = (obj, path) => {
       const [prop, ...rest] = path;
@@ -33,6 +42,32 @@ class ConfigLoader {
 
       return Object.freeze(object);
     };
+
+    this.startListening = async (user) => {
+      this.server = rabbitExpress();
+      this.server.locals = {
+        appId: user,
+        instance: this,
+      };
+
+      const fileroute = '/../../../apps/mft.yaml'; // this.get('async.fileroute');
+      const doc = fs.readFileSync(`${__dirname}${fileroute}`, 'utf8');
+
+      const options = {
+        tag: APP_ID,
+        controllers: `${__dirname}/controller`,
+      };
+      await asyncApiConsumer(this.server, doc, options);
+
+      const url = this.get('secret.rabbit.url');
+      const exchange = 'config-state'; // config.get('secret.rabbit.exchange');
+      this.server.listen({
+        rabbitURI: url,
+        exchange,
+      });
+
+      this.isListening = true;
+    };
   }
 
   async load(url, username, password, version = 'latest') {
@@ -50,6 +85,10 @@ class ConfigLoader {
 
     if (status !== 200) throw new Error('Impossible to load the configuration file');
     this.config = this.deepFreeze(data);
+
+    if (!this.isListening) {
+      await this.startListening(username);
+    }
   }
 
   get connection() {
@@ -60,6 +99,10 @@ class ConfigLoader {
     const paths = path.split('.');
 
     return this.getValueFromPath(this.config, paths);
+  }
+
+  reload() {
+    this.emit('reload');
   }
 }
 

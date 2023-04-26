@@ -49,7 +49,7 @@ class MailWorker {
       rabbitURI: this.rabbitConnection,
       exchange,
       queue,
-      consumerTag: APP_ID,
+      consumerOptions: { consumerTag: APP_ID },
     });
     debug('Server listen');
   }
