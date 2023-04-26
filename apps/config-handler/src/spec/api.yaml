@@ -43,6 +43,12 @@ paths:
       summary: Force the reloading of all config files
       operationId: reload
       x-eov-operation-handler: api
+      parameters:
+        - in: header
+          required: true
+          name: x-session-id
+          schema:
+            type: string
       requestBody:
         content:
           application/json:

@@ -18,5 +18,6 @@ WORKDIR /usr/src/app
 COPY --from=build-stage node_modules node_modules
 
 COPY ./apps/config-handler/ ./apps/config-handler/
+COPY ./apps/mft.yaml ./apps/config-handler/src/mft.yaml
 
 WORKDIR /usr/src/app/apps/config-handler

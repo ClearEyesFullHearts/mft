@@ -6,6 +6,10 @@ const logger = require('debug');
 const config = require('config');
 const OpenApiValidator = require('express-openapi-validator');
 
+const {
+  publisher: asyncApiPublisher,
+} = require('@shared/middleware');
+
 const debug = logger('config-handler:server');
 
 const auth = require('./middleware/auth');
@@ -24,6 +28,9 @@ class ConfigHandler {
     this.app.locals.appId = APP_ID;
 
     this.doc = path.join(__dirname, 'spec/api.yaml');
+
+    const fileroute = config.get('async.fileroute');
+    this.async = fs.readFileSync(`${__dirname}${fileroute}`, 'utf8');
   }
 
   async start() {
@@ -34,6 +41,9 @@ class ConfigHandler {
     await library.load();
 
     this.app.use(auth);
+
+    const asyncMiddleware = await asyncApiPublisher(APP_ID, this.async);
+    this.app.use(asyncMiddleware);
 
     // this.app.use('/spec', express.static(this.doc));
 

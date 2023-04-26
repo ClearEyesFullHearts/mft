@@ -6,5 +6,8 @@
   },
   "instance": {
     "port": 3001
+  },
+  "async": {
+      "fileroute": "/../../mft.yaml"
   }
 }

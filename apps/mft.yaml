@@ -188,6 +188,26 @@ channels:
         $ref: '#/components/messages/LoadConfig'
       bindings:
         $ref: '#/components/operationBindings/load'
+  reload:
+    description: Reload applications on config change
+    servers:
+      - rabbit
+    subscribe:
+      description: Indicates a change in config
+      operationId: configChanged
+      tags:
+        - name: config-handler
+      message:
+        $ref: '#/components/messages/LoadConfig'
+    publish:
+      description: Triggers applications reload on config change
+      operationId: reload
+      tags:
+        - name: config-loader
+      message:
+        $ref: '#/components/messages/LoadConfig'
+    bindings:
+      $ref: '#/components/channelBindings/config-state'
 components:
   operationBindings:
     load:
@@ -235,6 +255,12 @@ components:
           name: mail
           durable: true
           autoDelete: false
+    config-state:
+      amqp:
+        is: routingKey
+        exchange:
+          name: config-state
+          type: topic
   messages:
     Event:
       payload:
@@ -352,6 +378,8 @@ components:
         - inv-worker
         - mail-worker
         - log-manager
+        - config-handler
+        - config-loader
     severity:
       type: string
       enum:
