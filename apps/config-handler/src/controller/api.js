@@ -9,8 +9,10 @@ module.exports = {
     res.json(config);
   },
   reload: async (req, res) => {
-    const { body, auth, api: { publisher }, headers } = req;
-    console.log('body', body);
+    const {
+      body, auth, api: { publisher }, headers,
+    } = req;
+
     if (auth !== 'rest-api') {
       return res.status(503).send('Unauthorized application access.');
     }

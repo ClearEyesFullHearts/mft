@@ -1,4 +1,9 @@
 {
+  "secret": {
+    "rabbit":{
+        "url": "amqp://myuser:mypassword@localhost:5672"
+    }
+  },
   "users": {
     "rest-api": "rest-api-password",
     "log-manager": "log-manager-password",

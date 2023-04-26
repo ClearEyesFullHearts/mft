@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -5,10 +6,8 @@ const morgan = require('morgan');
 const logger = require('debug');
 const config = require('config');
 const OpenApiValidator = require('express-openapi-validator');
-
-const {
-  publisher: asyncApiPublisher,
-} = require('@shared/middleware');
+const publish = require('asyncapi-pub-middleware');
+const amqplib = require('amqplib');
 
 const debug = logger('config-handler:server');
 
@@ -42,7 +41,15 @@ class ConfigHandler {
 
     this.app.use(auth);
 
-    const asyncMiddleware = await asyncApiPublisher(APP_ID, this.async);
+    const rabbitURI = config.get('secret.rabbit.url');
+    const conn = await amqplib.connect(rabbitURI);
+    const options = {
+      tag: APP_ID,
+      connections: {
+        rabbit: conn,
+      },
+    };
+    const asyncMiddleware = await publish(this.async, options);
     this.app.use(asyncMiddleware);
 
     // this.app.use('/spec', express.static(this.doc));
