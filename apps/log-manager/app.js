@@ -6,6 +6,18 @@ const LogManager = require('./src/server');
   const url = configServer.get('url');
   const user = configServer.get('username');
   const pass = configServer.get('password');
+
   await config.load(url, user, pass);
-  await new LogManager().start();
+
+  let server = new LogManager();
+  await server.start();
+
+  config.addListener('reload', async () => {
+    await server.close();
+
+    await config.load(url, user, pass);
+
+    server = new LogManager();
+    await server.start();
+  });
 })();

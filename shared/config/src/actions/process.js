@@ -6,7 +6,6 @@ module.exports = async (req, res) => {
   } = body;
 
   if (apps.some((elt) => elt === '*' || elt === appId)) {
-    console.log('RELOAD', apps)
     instance.reload();
   }
   res.end();
