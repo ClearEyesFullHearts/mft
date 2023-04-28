@@ -17,9 +17,8 @@ class MailWorker {
       appId: APP_ID,
     };
 
-    const fileroute = config.get('async.fileroute');
-    this.doc = fs.readFileSync(`${__dirname}${fileroute}`, 'utf8');
     this.rabbitConnection = null;
+    this.publisher = null;
   }
 
   async start() {
@@ -27,7 +26,13 @@ class MailWorker {
 
     this.rabbitConnection = await asyncApiPublisher.connections.rabbit();
 
-    const asyncMiddleware = await asyncApiPublisher(APP_ID, this.doc, { rabbit: this.rabbitConnection, garbage: false });
+    const {
+      asyncMiddleware,
+      publisher,
+    } = await asyncApiPublisher(APP_ID, config.get('asyncApi'), { rabbit: this.rabbitConnection, garbage: false });
+
+    this.publisher = publisher;
+
     this.server.use(asyncMiddleware);
 
     debug('Publisher mounted on app');
@@ -38,7 +43,7 @@ class MailWorker {
       tag: APP_ID,
       controllers: 'src/controller',
     };
-    await asyncApiConsumer(this.server, this.doc, options);
+    await asyncApiConsumer(this.server, config.get('asyncApi'), options);
 
     this.server.use(garbage);
     this.server.use(error);
@@ -49,9 +54,14 @@ class MailWorker {
       rabbitURI: this.rabbitConnection,
       exchange,
       queue,
-      consumerTag: APP_ID,
+      consumerOptions: { consumerTag: APP_ID },
     });
     debug('Server listen');
+  }
+
+  async close() {
+    await this.server.stop(false);
+    await this.publisher.stop(true);
   }
 }
 

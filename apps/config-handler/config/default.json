@@ -1,11 +1,18 @@
 {
+  "secret": {
+    "rabbit":{
+        "url": "amqp://myuser:mypassword@localhost:5672"
+    }
+  },
   "users": {
     "rest-api": "rest-api-password",
     "log-manager": "log-manager-password",
-    "mail-worker": "mail-worker-password",
-    "admin": "admin-password"
+    "mail-worker": "mail-worker-password"
   },
   "instance": {
     "port": 3001
+  },
+  "async": {
+      "fileroute": "/../../mft.yaml"
   }
 }

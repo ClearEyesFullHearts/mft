@@ -9,6 +9,7 @@ const CUSTOM = 'custom-environment-variables.json';
 class Library {
   constructor() {
     this.data = {};
+    this.api = {};
 
     this.sortVersion = (arr) => arr
       .map((a) => a.split('.').map((n) => +n + 100000).join('.'))
@@ -87,10 +88,10 @@ class Library {
 
   async load() {
     debug('load config files');
-    const versions = this.sortVersion(await fs.readdir(path.join(__dirname, '..', 'data')));
+    let versions = this.sortVersion(await fs.readdir(path.join(__dirname, '..', 'data')));
 
     const l = versions.length;
-    const promises = [];
+    let promises = [];
     for (let i = 0; i < l; i += 1) {
       const v = versions[i];
       promises.push(this.loadVersion(v));
@@ -103,11 +104,28 @@ class Library {
     }), { latest: config[0] });
 
     debug('config ready');
+
+    debug('load api files');
+    versions = this.sortVersion(await fs.readdir(path.join(__dirname, '..', 'asyncapi')));
+
+    promises = [];
+    versions.forEach((v) => {
+      promises.push(fs.readFile(path.join(__dirname, '..', 'asyncapi', v, 'mft.yaml'), 'utf8'));
+    });
+    const apis = await Promise.all(promises);
+
+    this.api = versions.reduce((prev, vName, index) => ({
+      ...prev,
+      [vName]: apis[index],
+    }), { latest: apis[0] });
+
+    debug('api ready');
   }
 
-  getConfig(version, env, app) {
-    debug(`get config for ${app}/${env} version ${version}`);
-    let myVersion = version;
+  getConfig(configVersion, apiVersion, env, app) {
+    debug(`get config for ${app}/${env} version ${configVersion} & API version ${apiVersion}`);
+    let myVersion = configVersion;
+    let api = apiVersion;
     if (!this.data[myVersion]) {
       myVersion = 'latest';
     }
@@ -122,9 +140,14 @@ class Library {
       [app]: rest = {},
     } = envVersion;
 
+    if (!this.api[api]) {
+      api = 'latest';
+    }
+
     return {
       secret,
       ...rest,
+      asyncApi: this.api[api],
     };
   }
 }

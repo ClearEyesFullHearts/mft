@@ -25,9 +25,6 @@ class MultiSwaggerService {
     this.app.options('/*', (req, res) => res.sendStatus(200));
 
     this.app.locals.appId = APP_ID;
-
-    const fileroute = config.get('async.fileroute');
-    this.doc = fs.readFileSync(`${__dirname}${fileroute}`, 'utf8');
   }
 
   async start() {
@@ -38,7 +35,7 @@ class MultiSwaggerService {
     await data.init();
     this.app.locals.db = data;
 
-    const asyncMiddleware = await asyncApiPublisher(APP_ID, this.doc);
+    const { asyncMiddleware } = await asyncApiPublisher(APP_ID, config.get('asyncApi'));
     this.app.use(asyncMiddleware);
 
     this.app.use(log);

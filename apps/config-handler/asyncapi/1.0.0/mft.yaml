@@ -1,8 +1,8 @@
 asyncapi: 2.6.0
 info:
-  title: MFT Monitoring Service
+  title: MFT Async Services
   version: 1.0.0
-  description: This service is in charge of managing the monitoring of the MFT services
+  description: These services are in charge of managing the monitoring of the MFT services and long running processes
 servers:
   rabbit:
     url: amqp://myuser:mypassword@localhost:5672
@@ -11,6 +11,9 @@ servers:
   garbage:
     url: localhost:19092
     protocol: kafka
+  config:
+    url: localhost:3001
+    protocol: http
 channels:
   event.{app}.{severity}:
     description: Channel for logs management
@@ -172,7 +175,45 @@ channels:
         $ref: '#/components/messages/Mailing'
     bindings:
       $ref: '#/components/channelBindings/mail-worker'
+  /load:
+    description: Triggers the reloading of the config files
+    servers:
+      - config
+    subscribe:
+      description: Order the reloading of the config files
+      operationId: loadConfig
+      tags:
+        - name: rest-api
+      message:
+        $ref: '#/components/messages/LoadConfig'
+      bindings:
+        $ref: '#/components/operationBindings/load'
+  reload:
+    description: Reload applications on config change
+    servers:
+      - rabbit
+    subscribe:
+      description: Indicates a change in config
+      operationId: configChanged
+      tags:
+        - name: config-handler
+      message:
+        $ref: '#/components/messages/LoadConfig'
+    publish:
+      description: Triggers applications reload on config change
+      operationId: reload
+      tags:
+        - name: config-loader
+      message:
+        $ref: '#/components/messages/LoadConfig'
+    bindings:
+      $ref: '#/components/channelBindings/config-state'
 components:
+  operationBindings:
+    load:
+      http:
+        type: request
+        method: PUT
   channelBindings:
     logs:
       amqp:
@@ -214,6 +255,12 @@ components:
           name: mail
           durable: true
           autoDelete: false
+    config-state:
+      amqp:
+        is: routingKey
+        exchange:
+          name: config-state
+          type: topic
   messages:
     Event:
       payload:
@@ -297,6 +344,22 @@ components:
               - ADMIN_WARNING_MAIL
           values:
             type: object
+    LoadConfig:
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+      payload:
+        type: object
+        required:
+          - apps
+        properties:
+          apps:
+            type: array
+            items:
+              type: string
+              enum:
+                - "*"
+                - mail-worker
+                - log-manager
   messageTraits:
     commonHeaders:
       headers:
@@ -315,6 +378,8 @@ components:
         - inv-worker
         - mail-worker
         - log-manager
+        - config-handler
+        - config-loader
     severity:
       type: string
       enum:

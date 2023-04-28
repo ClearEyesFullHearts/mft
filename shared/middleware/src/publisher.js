@@ -1,8 +1,9 @@
 const { Kafka } = require('kafkajs');
 const amqplib = require('amqplib');
+const axios = require('axios');
 const config = require('@shared/config');
 const logger = require('debug');
-const publish = require('asyncapi-pub-middleware');
+const { Publisher } = require('asyncapi-pub-middleware');
 
 const debug = logger('async:middleware:publisher');
 
@@ -24,9 +25,16 @@ const connections = {
     await producer.connect();
     return producer;
   },
+  config: () => {
+    const { url, authorization } = config.connection;
+    return axios.create({
+      baseURL: url,
+      headers: { Authorization: authorization },
+    });
+  },
 };
 
-module.exports = async (appId, doc, usedConnection = { rabbit: false, garbage: false }) => {
+module.exports = async (appId, doc, usedConnection = { }) => {
   debug('Read AsyncAPI file');
   const options = {
     tag: appId,
@@ -35,25 +43,43 @@ module.exports = async (appId, doc, usedConnection = { rabbit: false, garbage: f
 
   if (process.env.NODE_ENV !== 'dev') {
     const {
-      rabbit: myRabbitConnection,
-      garbage: myGarbageConnection,
+      rabbit: myRabbitConnection = false,
+      garbage: myGarbageConnection = false,
+      config: myConfigConnection = false,
     } = usedConnection;
 
     options.connections.rabbit = myRabbitConnection;
     options.connections.garbage = myGarbageConnection;
+    options.connections.config = myConfigConnection;
 
     debug('Connect to known servers');
     if (!myRabbitConnection) options.connections.rabbit = await connections.rabbit();
     if (!myGarbageConnection) options.connections.garbage = await connections.garbage(appId);
+    if (!myConfigConnection) options.connections.config = connections.config();
   } else {
     debug('Publisher will create the connections');
   }
 
   debug('Create publisher');
-  const asyncMiddleware = await publish(doc, options);
+  const publisher = new Publisher();
+  await publisher.loadAPI(doc, options);
+
+  const asyncMiddleware = (req, res, next) => {
+    if (!req.api) req.api = {};
+    req.api.publisher = {
+      publish: async (topic, msg, headers, opts) => {
+        const resultArray = await publisher.publish(topic, msg, headers, opts);
+        return resultArray;
+      },
+      stop: async (closeConnection = true) => {
+        await publisher.stop(closeConnection);
+      },
+    };
+    next();
+  };
   debug('Publisher ready');
 
-  return asyncMiddleware;
+  return { asyncMiddleware, publisher };
 };
 
 module.exports.connections = connections;

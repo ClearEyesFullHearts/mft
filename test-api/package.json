@@ -11,8 +11,8 @@
         "ci-test-api": "NODE_ENV=dock-ci ./node_modules/.bin/cucumber-js --format json > ~/cucumber/test-api.json --exit",
         "ci-report-api": "REPORT_NAME=~/cucumber/test-api node reporting.js",
         "test": "./node_modules/.bin/cucumber-js --exit",
-        "mail": "./node_modules/.bin/cucumber-js --name \"User can reset its password\" --exit",
-        "config": "./node_modules/.bin/cucumber-js features/config.feature --exit"
+        "one": "./node_modules/.bin/cucumber-js --name \"Admin can trigger a config reload\" --exit",
+        "feature": "./node_modules/.bin/cucumber-js features/health.feature --exit"
     },
     "author": "",
     "license": "ISC",

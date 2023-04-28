@@ -24,6 +24,5 @@ COPY --from=build-stage node_modules node_modules
 COPY ./shared/middleware/ ./shared/middleware/
 COPY ./shared/config/ ./shared/config/
 COPY ./apps/mail-worker/ ./apps/mail-worker/
-COPY ./apps/mft.yaml ./apps/mail-worker/src/mft.yaml
 
 WORKDIR /usr/src/app/apps/mail-worker

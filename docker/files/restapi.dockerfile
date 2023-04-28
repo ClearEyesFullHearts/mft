@@ -26,7 +26,6 @@ COPY ./shared/middleware/ ./shared/middleware/
 COPY ./shared/config/ ./shared/config/
 COPY ./shared/datalayer/ ./shared/datalayer/
 COPY ./apps/rest-api/ ./apps/rest-api/
-COPY ./apps/mft.yaml ./apps/rest-api/server/mft.yaml
 
 WORKDIR /usr/src/app/apps/rest-api
 
