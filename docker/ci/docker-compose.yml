@@ -35,7 +35,7 @@ services:
       - config
     command: sh -c '/bin/wait-for-it.sh config:3001 --timeout=40 -- node app.js'
     environment:
-      - DEBUG=log-manager:*,async:*
+      - DEBUG=log-manager:*,async:*,rabbitmq-express:*
       - NODE_ENV=dock-ci
       - MFT_CONF_LM_KEY
 
