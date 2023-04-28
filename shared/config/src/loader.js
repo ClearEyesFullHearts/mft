@@ -57,7 +57,7 @@ class ConfigLoader extends EventEmitter {
 
       const url = this.get('secret.rabbit.url');
       const exchange = 'config-state'; // config.get('secret.rabbit.exchange');
-      this.server.listen({
+      await this.server.listen({
         rabbitURI: url,
         exchange,
       });

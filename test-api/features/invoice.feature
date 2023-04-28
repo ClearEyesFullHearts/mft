@@ -60,6 +60,12 @@ Test the invoice creation API
     Then response code should be 403
     And response body path $.code should be UNAUTHORIZED
 
+  Scenario: Admin can trigger a config reload
+    Given I set an admin bearer token
+    And I set body to { "apps": ["*"] }
+    When I PUT /config/load
+    Then response code should be 200
+
   Scenario: User can update an invoice
     Given I am a new user with 1 invoices
     And I pipe contents of file updateInvoice.json to body

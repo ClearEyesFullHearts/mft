@@ -47,7 +47,7 @@ class LogManager {
     this.server.use(error);
 
     const exchange = 'logs'; // config.get('secret.rabbit.exchange');
-    this.server.listen({
+    await this.server.listen({
       rabbitURI: this.rabbitConnection,
       exchange,
       consumerOptions: { consumerTag: APP_ID },

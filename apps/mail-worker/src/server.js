@@ -49,7 +49,7 @@ class MailWorker {
 
     const exchange = 'worker'; // config.get('secret.rabbit.exchange');
     const queue = 'mail'; // config.get('secret.rabbit.queue');
-    this.server.listen({
+    await this.server.listen({
       rabbitURI: this.rabbitConnection,
       exchange,
       queue,
