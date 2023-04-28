@@ -1,4 +1,3 @@
-const fs = require('fs');
 const config = require('@shared/config');
 const rabbitExpress = require('rabbitmq-express');
 const asyncApiConsumer = require('asyncapi-sub-middleware');

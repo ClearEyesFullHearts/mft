@@ -1,6 +1,12 @@
 Feature: User creation and login
 Test the server connection API
 
+  Scenario: Admin can trigger a config reload
+    Given I set an admin bearer token
+    And I set body to { "apps": ["*"] }
+    When I PUT /config/load
+    Then response code should be 200
+
   @Nominal
   Scenario: Register a new user
     Given I set body to {"username":"mft-test", "email":"mft-test@mathieufont.com", "password":"testtest"}

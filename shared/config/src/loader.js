@@ -1,4 +1,3 @@
-const fs = require('fs');
 const axios = require('axios');
 const rabbitExpress = require('rabbitmq-express');
 const asyncApiConsumer = require('asyncapi-sub-middleware');
