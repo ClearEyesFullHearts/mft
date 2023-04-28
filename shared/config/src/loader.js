@@ -50,14 +50,11 @@ class ConfigLoader extends EventEmitter {
         instance: this,
       };
 
-      const fileroute = '/../../../apps/mft.yaml'; // this.get('async.fileroute');
-      const doc = fs.readFileSync(`${__dirname}${fileroute}`, 'utf8');
-
       const options = {
         tag: APP_ID,
         controllers: `${__dirname}/controller`,
       };
-      await asyncApiConsumer(this.server, doc, options);
+      await asyncApiConsumer(this.server, this.get('asyncApi'), options);
 
       const url = this.get('secret.rabbit.url');
       const exchange = 'config-state'; // config.get('secret.rabbit.exchange');
@@ -70,10 +67,10 @@ class ConfigLoader extends EventEmitter {
     };
   }
 
-  async load(url, username, password, version = 'latest') {
+  async load(url, username, password, configVersion = 'latest', apiVersion = 'latest') {
     const { status, data } = await axios.request({
       baseURL: url,
-      url: `/config/${process.env.NODE_ENV}?version=${version}`,
+      url: `/config/${process.env.NODE_ENV}?vConf=${configVersion}&vApi=${apiVersion}`,
       method: 'GET',
       headers: { authorization: `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}` },
     });

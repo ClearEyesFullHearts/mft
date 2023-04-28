@@ -19,9 +19,15 @@ paths:
           description: The current environment
           schema:
             type: string
-        - name: version
+        - name: vConf
           in: query
           description: The specific version of the config
+          required: false
+          schema:
+            type: string
+        - name: vApi
+          in: query
+          description: The specific version of the asyncapi file
           required: false
           schema:
             type: string

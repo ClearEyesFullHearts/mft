@@ -27,9 +27,6 @@ class ConfigHandler {
     this.app.locals.appId = APP_ID;
 
     this.doc = path.join(__dirname, 'spec/api.yaml');
-
-    const fileroute = config.get('async.fileroute');
-    this.async = fs.readFileSync(`${__dirname}${fileroute}`, 'utf8');
   }
 
   async start() {
@@ -38,6 +35,7 @@ class ConfigHandler {
     const port = config.get('instance.port');
 
     await library.load();
+    const { asyncApi } = library.getConfig();
 
     this.app.use(auth);
 
@@ -49,7 +47,7 @@ class ConfigHandler {
         rabbit: conn,
       },
     };
-    const asyncMiddleware = await publish(this.async, options);
+    const asyncMiddleware = await publish(asyncApi, options);
     this.app.use(asyncMiddleware);
 
     // this.app.use('/spec', express.static(this.doc));

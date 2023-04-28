@@ -24,6 +24,5 @@ COPY --from=build-stage node_modules node_modules
 COPY ./shared/middleware/ ./shared/middleware/
 COPY ./shared/config/ ./shared/config/
 COPY ./apps/log-manager/ ./apps/log-manager/
-COPY ./apps/mft.yaml ./apps/log-manager/src/mft.yaml
 
 WORKDIR /usr/src/app/apps/log-manager
