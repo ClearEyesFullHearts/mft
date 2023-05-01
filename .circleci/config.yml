@@ -2,6 +2,7 @@ version: 2.1 # CircleCI version
 orbs:
   browser-tools: circleci/browser-tools@1.4.1
   node: circleci/node@5.1.0
+  aws-cli: circleci/aws-cli@3.1.5
 jobs:
   build:
     machine:
@@ -52,10 +53,15 @@ jobs:
 
   push:
     docker:
-      - image: google/cloud-sdk
+      - image: ubuntu-2004:current
     steps:
       - checkout
       - setup_remote_docker
+      - aws-cli/install
+      - aws-cli/setup:
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          aws-region: AWS_DEFAULT_REGION
       - run:
           name: Install utils
           command: |
@@ -67,80 +73,57 @@ jobs:
             set -x
             FRONT_VERSION=$(cat front/package.json | jq -r '.version')
             FRONT_IMAGE_TAG=${FRONT_VERSION}.${CIRCLE_BUILD_NUM}
-            SERVER_VERSION=$(cat rest/package.json | jq -r '.version')
-            SERVER_IMAGE_TAG=${SERVER_VERSION}.${CIRCLE_BUILD_NUM}
-            echo "gcr.io/$GOOGLE_PROJECT_ID/mft-invc-staging-front:$FRONT_IMAGE_TAG" > front_image_name
-            echo "gcr.io/$GOOGLE_PROJECT_ID/mft-invc-staging-server:$SERVER_IMAGE_TAG" > server_image_name
+            REST_API_VERSION=$(cat apps/rest-api/package.json | jq -r '.version')
+            REST_API_IMAGE_TAG=${REST_API_VERSION}.${CIRCLE_BUILD_NUM}
+            CONFIG_HANDLER_VERSION=$(cat apps/rest-api/package.json | jq -r '.version')
+            CONFIG_HANDLER_IMAGE_TAG=${CONFIG_HANDLER_VERSION}.${CIRCLE_BUILD_NUM}
+            LOG_MANAGER_VERSION=$(cat apps/rest-api/package.json | jq -r '.version')
+            LOG_MANAGER_IMAGE_TAG=${LOG_MANAGER_VERSION}.${CIRCLE_BUILD_NUM}
+            MAIL_WORKER_VERSION=$(cat apps/rest-api/package.json | jq -r '.version')
+            MAIL_WORKER_IMAGE_TAG=${MAIL_WORKER_VERSION}.${CIRCLE_BUILD_NUM}
+            echo "$AWS_REGISTRY_URL:mft-front-$FRONT_IMAGE_TAG" > front_image_name
+            echo "$AWS_REGISTRY_URL:mft-rest-api-$SERVER_IMAGE_TAG" > rest_api_image_name
+            echo "$AWS_REGISTRY_URL:mft-config-handler-$CONFIG_HANDLER_IMAGE_TAG" > config_image_name
+            echo "$AWS_REGISTRY_URL:mft-log-manager-$LOG_MANAGER_IMAGE_TAG" > log_image_name
+            echo "$AWS_REGISTRY_URL:mft-mail-worker-$MAIL_WORKER_IMAGE_TAG" > mail_image_name
+      - run:
+          name: Authenticate with aws public ECR
+          command: |
+            aws ecr-public get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_REGISTRY_URL_SHORT}
       - run:
           name: Build image
           command: |
             FRONT_DOCKER_IMAGE_NAME=$(cat front_image_name)
-            SERVER_DOCKER_IMAGE_NAME=$(cat server_image_name)
-            docker build -t $FRONT_DOCKER_IMAGE_NAME --build-arg DOCKER_ENV=staging -f front/Dockerfile front/
-            docker build -t $SERVER_DOCKER_IMAGE_NAME -f rest/Dockerfile rest/
+            REST_API_DOCKER_IMAGE_NAME=$(cat rest_api_image_name)
+            CONFIG_HANDLER_DOCKER_IMAGE_NAME=$(cat config_image_name)
+            LOG_MANAGER_DOCKER_IMAGE_NAME=$(cat log_image_name)
+            MAIL_WORKER_DOCKER_IMAGE_NAME=$(cat mail_image_name)
+            docker build -t $FRONT_DOCKER_IMAGE_NAME --build-arg DOCKER_ENV=staging -f front/Dockerfile .
+            docker build -t $REST_API_DOCKER_IMAGE_NAME -f docker/files/restapi.dockerfile .
+            docker build -t $CONFIG_HANDLER_DOCKER_IMAGE_NAME -f docker/files/config.dockerfile .
+            docker build -t $LOG_MANAGER_DOCKER_IMAGE_NAME -f docker/files/logmanager.dockerfile .
+            docker build -t $MAIL_WORKER_DOCKER_IMAGE_NAME -f docker/files/mailworker.dockerfile .
       - run:
           name: Push image
           command: |
-            if [ "${CIRCLE_BRANCH}" == "when-cloud-hosting-is-free" ]
-            then
-              FRONT_DOCKER_IMAGE_NAME=$(cat front_image_name)
-              SERVER_DOCKER_IMAGE_NAME=$(cat server_image_name)
-              echo $GCLOUD_SERVICE_KEY > gcloud-service-key.json
-              gcloud auth activate-service-account --key-file gcloud-service-key.json
-              gcloud --quiet auth configure-docker
-              docker push $FRONT_DOCKER_IMAGE_NAME
-              docker push $SERVER_DOCKER_IMAGE_NAME
-            else
-              echo "Not when-cloud-hosting-is-free branch; skipping image push.."
-            fi
+            FRONT_DOCKER_IMAGE_NAME=$(cat front_image_name)
+            REST_API_DOCKER_IMAGE_NAME=$(cat rest_api_image_name)
+            CONFIG_HANDLER_DOCKER_IMAGE_NAME=$(cat config_image_name)
+            LOG_MANAGER_DOCKER_IMAGE_NAME=$(cat log_image_name)
+            MAIL_WORKER_DOCKER_IMAGE_NAME=$(cat mail_image_name)
+            docker push $FRONT_DOCKER_IMAGE_NAME
+            docker push $REST_API_DOCKER_IMAGE_NAME
+            docker push $CONFIG_HANDLER_DOCKER_IMAGE_NAME
+            docker push $LOG_MANAGER_DOCKER_IMAGE_NAME
+            docker push $MAIL_WORKER_DOCKER_IMAGE_NAME
       - persist_to_workspace:
           root: .
           paths:
             - front_image_name
-            - server_image_name
-
-  staging:
-    docker:
-      - image: google/cloud-sdk
-    steps:
-      - checkout
-      - setup_remote_docker
-      - attach_workspace:
-          at: workspace
-      - run:
-          name: Deploy
-          command: |
-            echo $GCLOUD_SERVICE_KEY > gcloud-service-key.json
-            set -x
-            gcloud auth activate-service-account --key-file gcloud-service-key.json
-            gcloud --quiet config set project $GOOGLE_PROJECT_ID
-            gcloud --quiet config set compute/zone $GOOGLE_COMPUTE_ZONE
-            gcloud --quiet container clusters get-credentials $GOOGLE_CLUSTER_STAGING
-            FRONT_DOCKER_IMAGE_NAME=$(cat workspace/front_image_name)
-            SERVER_DOCKER_IMAGE_NAME=$(cat workspace/server_image_name)
-            # Replace DOCKER_IMAGE_NAME placeholder in manifest with actual image name
-            FRONT_KUBE_CONFIG=$(cat docker/staging/mft-invc-staging-client-deployment.yaml.template | sed "s|DOCKER_IMAGE_NAME|$FRONT_DOCKER_IMAGE_NAME|g")
-            SERVER_KUBE_CONFIG=$(cat docker/staging/mft-invc-staging-server-deployment.yaml.template | sed "s|DOCKER_IMAGE_NAME|$SERVER_DOCKER_IMAGE_NAME|g")
-            kubectl apply -f docker/staging/mft-invc-staging-database-deployment.yaml
-            echo "$SERVER_KUBE_CONFIG" | kubectl apply -f -
-            echo "$FRONT_KUBE_CONFIG" | kubectl apply -f -
-            # Wait for deployment to finish
-            kubectl rollout status deployment/mft-invc-staging-client
-            kubectl get pods
-
-  confirm:
-    docker:
-      - image: circleci/node:12.14.1-stretch-browsers
-    steps:
-      - attach_workspace:
-          at: workspace
-      - run: mkdir -p ~/cucumber
-      - run: cd workspace/test-front && npm run staging-test-chrome
-      - run: cd workspace/test-front && npm run staging-report-chrome
-      - store_test_results:
-          path: ~/cucumber
-      - store_artifacts:
-          path: ~/cucumber
+            - rest_api_image_name
+            - config_image_name
+            - log_image_name
+            - mail_image_name
 
 workflows:
   version: 2
@@ -152,16 +135,4 @@ workflows:
             - build
           filters:
             branches:
-              only: when-cloud-hosting-is-free
-      - staging:
-          requires:
-            - push
-          filters:
-            branches:
-              only: when-cloud-hosting-is-free
-      - confirm:
-          requires:
-            - staging
-          filters:
-            branches:
-              only: when-cloud-hosting-is-free
+              only: set-aws-pipeline
