@@ -56,7 +56,6 @@ jobs:
       image: ubuntu-2004:current
     steps:
       - checkout
-      - setup_remote_docker
       - aws-cli/install
       - aws-cli/setup:
           aws-access-key-id: AWS_ACCESS_KEY_ID
