@@ -52,8 +52,8 @@ jobs:
             - test-front
 
   push:
-    docker:
-      - image: ubuntu-2004:current
+    machine:
+      image: ubuntu-2004:current
     steps:
       - checkout
       - setup_remote_docker
