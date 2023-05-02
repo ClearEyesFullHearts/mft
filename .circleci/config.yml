@@ -124,11 +124,10 @@ workflows:
   version: 2
   build-push-deploy:
     jobs:
-      - build
+      - push
+      - build:
+          requires:
+            - push
           filters:
             branches:
               only: master
-      - push:
-          filters:
-            branches:
-              only: set-aws-pipeline
