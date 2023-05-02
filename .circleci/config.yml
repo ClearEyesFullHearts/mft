@@ -16,11 +16,6 @@ jobs:
 
       - browser-tools/install-browser-tools
 
-      # - browser-tools/install-firefox
-
-      # - browser-tools/install-chrome:
-      #     replace-existing: true
-
       - node/install:
           node-version: "18.14.1"
 
@@ -29,9 +24,9 @@ jobs:
       - run: sleep 40
       
       - run: mkdir -p ~/cucumber
-      - run: docker logs -f config &> ~/cucumber/config.log &
-      - run: docker logs -f log-manager &> ~/cucumber/log-manager.log &
-      - run: docker logs -f mail-worker &> ~/cucumber/mail-worker.log &
+      # - run: docker logs -f config &> ~/cucumber/config.log &
+      # - run: docker logs -f log-manager &> ~/cucumber/log-manager.log &
+      # - run: docker logs -f mail-worker &> ~/cucumber/mail-worker.log &
 
       - run: cd ./test-api && npm install
       - run: cd ./test-api && KEY_AUTH_SIGN=${MFT_AUTH_KEY} npm run ci-test-api
