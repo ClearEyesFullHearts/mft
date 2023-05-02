@@ -77,7 +77,7 @@ jobs:
             MAIL_WORKER_VERSION=$(cat apps/rest-api/package.json | jq -r '.version')
             MAIL_WORKER_IMAGE_TAG=${MAIL_WORKER_VERSION}.${CIRCLE_BUILD_NUM}
             echo "$AWS_REGISTRY_URL:mft-front-$FRONT_IMAGE_TAG" > front_image_name
-            echo "$AWS_REGISTRY_URL:mft-rest-api-$SERVER_IMAGE_TAG" > rest_api_image_name
+            echo "$AWS_REGISTRY_URL:mft-rest-api-$REST_API_IMAGE_TAG" > rest_api_image_name
             echo "$AWS_REGISTRY_URL:mft-config-handler-$CONFIG_HANDLER_IMAGE_TAG" > config_image_name
             echo "$AWS_REGISTRY_URL:mft-log-manager-$LOG_MANAGER_IMAGE_TAG" > log_image_name
             echo "$AWS_REGISTRY_URL:mft-mail-worker-$MAIL_WORKER_IMAGE_TAG" > mail_image_name
@@ -122,10 +122,10 @@ workflows:
   version: 2
   build-push-deploy:
     jobs:
-      - push
-      - build:
+      - build
+      - push:
           requires:
-            - push
+            - build
           filters:
             branches:
-              only: master
+              only: set-aws-pipeline
