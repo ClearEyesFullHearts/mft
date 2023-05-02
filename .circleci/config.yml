@@ -93,7 +93,6 @@ jobs:
             CONFIG_HANDLER_DOCKER_IMAGE_NAME=$(cat config_image_name)
             LOG_MANAGER_DOCKER_IMAGE_NAME=$(cat log_image_name)
             MAIL_WORKER_DOCKER_IMAGE_NAME=$(cat mail_image_name)
-            docker build -t $FRONT_DOCKER_IMAGE_NAME --build-arg DOCKER_ENV=staging -f front/Dockerfile .
             docker build -t $REST_API_DOCKER_IMAGE_NAME -f docker/files/restapi.dockerfile .
             docker build -t $CONFIG_HANDLER_DOCKER_IMAGE_NAME -f docker/files/config.dockerfile .
             docker build -t $LOG_MANAGER_DOCKER_IMAGE_NAME -f docker/files/logmanager.dockerfile .
@@ -106,7 +105,6 @@ jobs:
             CONFIG_HANDLER_DOCKER_IMAGE_NAME=$(cat config_image_name)
             LOG_MANAGER_DOCKER_IMAGE_NAME=$(cat log_image_name)
             MAIL_WORKER_DOCKER_IMAGE_NAME=$(cat mail_image_name)
-            docker push $FRONT_DOCKER_IMAGE_NAME
             docker push $REST_API_DOCKER_IMAGE_NAME
             docker push $CONFIG_HANDLER_DOCKER_IMAGE_NAME
             docker push $LOG_MANAGER_DOCKER_IMAGE_NAME
