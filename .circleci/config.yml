@@ -52,15 +52,11 @@ jobs:
             - test-front
 
   push:
-    machine:
-      image: ubuntu-2004:current
+    docker:
+      - image: cimg/aws:2023.04
     steps:
       - checkout
-      - aws-cli/install
-      - aws-cli/setup:
-          aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          aws-region: AWS_DEFAULT_REGION
+      - setup_remote_docker
       - run:
           name: Install utils
           command: |
