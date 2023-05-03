@@ -14,24 +14,11 @@
         }
     },
     "mail-worker": {
-      "async": {
-          "fileroute": "/mft.yaml"
-      },
       "mail": {
           "transport":{
               "host": "server-fake-smtp",
               "port": 1025
           }
-      }
-    },
-    "log-manager": {
-      "async": {
-          "fileroute": "/mft.yaml"
-      }
-    },
-    "rest-api": {
-      "async": {
-          "fileroute": "/mft.yaml"
       }
     }
   }

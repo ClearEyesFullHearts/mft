@@ -50,15 +50,9 @@
             "swagger": "swagger-invoice-1.0.0.json",
             "controller": ""
         }
-    ],
-    "async": {
-        "fileroute": "/../../mft.yaml"
-    }
+    ]
   },
   "log-manager": {
-    "async": {
-        "fileroute": "/../../mft.yaml"
-    },
     "destination": {
         "level1": "level1-list@mft.com",
         "level2": "level2-list@mft.com",
@@ -66,9 +60,6 @@
     }
   },
   "mail-worker": {
-    "async": {
-        "fileroute": "/../../mft.yaml"
-    },
     "mail": {
       "secret":{
           "user": "username",

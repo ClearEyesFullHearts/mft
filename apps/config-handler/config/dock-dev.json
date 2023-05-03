@@ -3,8 +3,5 @@
     "rabbit":{
       "url": "amqp://myuser:mypassword@my-rabbit-mq:5672"
     }
-  },
-  "async": {
-      "fileroute": "/mft.yaml"
   }
 }
