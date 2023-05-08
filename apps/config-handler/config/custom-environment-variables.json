@@ -1,4 +1,9 @@
 {
+  "secret": {
+    "rabbit":{
+        "url": "KEY_RABBIT_URL"
+    }
+  },
   "users": {
     "rest-api": "CONFIG_RA_PASS",
     "log-manager": "CONFIG_LM_PASS",
