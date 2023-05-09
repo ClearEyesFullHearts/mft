@@ -34,6 +34,7 @@
     "config": "3.3.9",
     "@shared/config": "*",
     "@shared/middleware": "*",
+    "@shared/secret_env": "*",
     "@shared/datalayer": "*"
   },
   "devDependencies": {

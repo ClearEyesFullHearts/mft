@@ -16,6 +16,7 @@
     "asyncapi-sub-middleware": "1.0.3",
     "config": "3.3.9",
     "@shared/config": "*",
+    "@shared/secret_env": "*",
     "@shared/middleware": "*"
   },
   "devDependencies": {

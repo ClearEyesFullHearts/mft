@@ -1,3 +1,4 @@
+require('@shared/secret_env');
 const configServer = require('config');
 const config = require('@shared/config');
 const MultiSwaggerService = require('./server/service');

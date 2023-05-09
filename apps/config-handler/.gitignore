@@ -4,7 +4,6 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-*.secret
 
 # Runtime data
 pids
@@ -39,6 +38,10 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+
+# folder and secret files
+secrets/
+*.secret
 
 # TypeScript v1 declaration files
 typings/
