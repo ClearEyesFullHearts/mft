@@ -5,6 +5,7 @@ RUN apk add --no-cache python3 make g++
 
 COPY ./package*.json ./
 COPY ./apps/config-handler/package*.json ./apps/config-handler/
+COPY ./shared/secret_env/package*.json ./shared/secret_env/
 RUN npm install
 
 # The instructions for second stage
@@ -18,5 +19,6 @@ WORKDIR /usr/src/app
 COPY --from=build-stage node_modules node_modules
 
 COPY ./apps/config-handler/ ./apps/config-handler/
+COPY ./shared/secret_env/ ./shared/secret_env/
 
 WORKDIR /usr/src/app/apps/config-handler

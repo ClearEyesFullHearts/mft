@@ -8,6 +8,7 @@ COPY ./apps/rest-api/package*.json ./apps/rest-api/
 COPY ./shared/config/package*.json ./shared/config/
 COPY ./shared/middleware/package*.json ./shared/middleware/
 COPY ./shared/datalayer/package*.json ./shared/datalayer/
+COPY ./shared/secret_env/package*.json ./shared/secret_env/
 RUN npm install
 
 # The instructions for second stage
@@ -24,6 +25,7 @@ COPY --from=build-stage node_modules node_modules
 
 COPY ./shared/middleware/ ./shared/middleware/
 COPY ./shared/config/ ./shared/config/
+COPY ./shared/secret_env/ ./shared/secret_env/
 COPY ./shared/datalayer/ ./shared/datalayer/
 COPY ./apps/rest-api/ ./apps/rest-api/
 

@@ -7,6 +7,7 @@ COPY ./package*.json ./
 COPY ./shared/config/package*.json ./shared/config/
 COPY ./apps/log-manager/package*.json ./apps/log-manager/
 COPY ./shared/middleware/package*.json ./shared/middleware/
+COPY ./shared/secret_env/package*.json ./shared/secret_env/
 RUN npm install
 
 # The instructions for second stage
@@ -22,6 +23,7 @@ COPY --from=build-stage node_modules node_modules
 # COPY --from=build-stage ./shared/middleware/node_modules ./shared/middleware/node_modules
 
 COPY ./shared/middleware/ ./shared/middleware/
+COPY ./shared/secret_env/ ./shared/secret_env/
 COPY ./shared/config/ ./shared/config/
 COPY ./apps/log-manager/ ./apps/log-manager/
 
