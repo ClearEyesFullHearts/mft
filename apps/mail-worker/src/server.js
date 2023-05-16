@@ -23,7 +23,7 @@ class MailWorker {
   async start() {
     debug('Initializing server');
 
-    this.rabbitConnection = await asyncApiPublisher.connections.rabbit();
+    this.rabbitConnection = await config.connections.rabbit();
 
     const {
       asyncMiddleware,

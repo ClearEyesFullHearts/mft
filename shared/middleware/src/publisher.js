@@ -1,38 +1,8 @@
-const { Kafka } = require('kafkajs');
-const amqplib = require('amqplib');
-const axios = require('axios');
 const config = require('@shared/config');
 const logger = require('debug');
 const { Publisher } = require('asyncapi-pub-middleware');
 
 const debug = logger('async:middleware:publisher');
-
-const connections = {
-  rabbit: async () => {
-    const rabbitURI = config.get('secret.rabbit.url');
-    const conn = await amqplib.connect(rabbitURI);
-    return conn;
-  },
-  garbage: async (client) => {
-    const brokers = config.get('secret.garbage.url');
-    const kafka = new Kafka({
-      clientId: client,
-      brokers: [brokers],
-    });
-
-    const producer = kafka.producer();
-
-    await producer.connect();
-    return producer;
-  },
-  config: () => {
-    const { url, authorization } = config.connection;
-    return axios.create({
-      baseURL: url,
-      headers: { Authorization: authorization },
-    });
-  },
-};
 
 module.exports = async (appId, doc, usedConnection = { }) => {
   debug('Read AsyncAPI file');
@@ -53,9 +23,9 @@ module.exports = async (appId, doc, usedConnection = { }) => {
     options.connections.config = myConfigConnection;
 
     debug('Connect to known servers');
-    if (!myRabbitConnection) options.connections.rabbit = await connections.rabbit();
-    if (!myGarbageConnection) options.connections.garbage = await connections.garbage(appId);
-    if (!myConfigConnection) options.connections.config = connections.config();
+    if (!myRabbitConnection) options.connections.rabbit = await config.connections.rabbit();
+    if (!myGarbageConnection) options.connections.garbage = await config.connections.garbage();
+    if (!myConfigConnection) options.connections.config = await config.connections.config();
   } else {
     debug('Publisher will create the connections');
   }
@@ -81,5 +51,3 @@ module.exports = async (appId, doc, usedConnection = { }) => {
 
   return { asyncMiddleware, publisher };
 };
-
-module.exports.connections = connections;

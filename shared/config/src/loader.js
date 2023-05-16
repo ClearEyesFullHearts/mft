@@ -1,3 +1,5 @@
+const { Kafka } = require('kafkajs');
+const amqplib = require('amqplib');
 const axios = require('axios');
 const rabbitExpress = require('rabbitmq-express');
 const asyncApiConsumer = require('asyncapi-sub-middleware');
@@ -12,6 +14,9 @@ class ConfigLoader extends EventEmitter {
     this.internalConn = null;
     this.server = null;
     this.isListening = false;
+    this.internalRabbitConn = false;
+    this.internalGarbageConn = false;
+    this.internalConfigConn = false;
 
     this.getValueFromPath = (obj, path) => {
       const [prop, ...rest] = path;
@@ -55,10 +60,10 @@ class ConfigLoader extends EventEmitter {
       };
       await asyncApiConsumer(this.server, this.get('asyncApi'), options);
 
-      const url = this.get('secret.rabbit.url');
+      const rabbitURI = await this.internalConn.rabbit();
       const exchange = 'config-state'; // config.get('secret.rabbit.exchange');
       await this.server.listen({
-        rabbitURI: url,
+        rabbitURI,
         exchange,
       });
 
@@ -67,16 +72,46 @@ class ConfigLoader extends EventEmitter {
   }
 
   async load(url, username, password, configVersion = 'latest', apiVersion = 'latest') {
+    const authorization = `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`;
+
     const { status, data } = await axios.request({
       baseURL: url,
       url: `/config/${process.env.NODE_ENV}?vConf=${configVersion}&vApi=${apiVersion}`,
       method: 'GET',
-      headers: { authorization: `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}` },
+      headers: { authorization },
     });
 
+    this.internalRabbitConn = false;
+    this.internalGarbageConn = false;
+    this.internalConfigConn = false;
     this.internalConn = {
-      url,
-      authorization: `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`,
+      rabbit: async () => {
+        if (this.internalRabbitConn) return Promise.resolve(this.internalRabbitConn);
+        const rabbitURI = this.get('secret.rabbit.url');
+        this.internalRabbitConn = await amqplib.connect(rabbitURI);
+        return this.internalRabbitConn;
+      },
+      garbage: async () => {
+        if (this.internalGarbageConn) return Promise.resolve(this.internalGarbageConn);
+        const brokers = this.get('secret.garbage.url');
+        const kafka = new Kafka({
+          clientId: username,
+          brokers: [brokers],
+        });
+
+        this.internalGarbageConn = kafka.producer();
+
+        await this.internalGarbageConn.connect();
+        return this.internalGarbageConn;
+      },
+      config: async () => {
+        if (this.internalConfigConn) return Promise.resolve(this.internalConfigConn);
+        this.internalConfigConn = axios.create({
+          baseURL: url,
+          headers: { Authorization: authorization },
+        });
+        return Promise.resolve(this.internalConfigConn);
+      },
     };
 
     if (status !== 200) throw new Error('Impossible to load the configuration file');
@@ -87,7 +122,7 @@ class ConfigLoader extends EventEmitter {
     }
   }
 
-  get connection() {
+  get connections() {
     return this.internalConn;
   }
 
