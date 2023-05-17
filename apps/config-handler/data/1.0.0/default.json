@@ -4,7 +4,12 @@
         "url": "mongodb://127.0.0.1:27017/mft-dev"
     },
     "rabbit":{
-        "url": "amqp://myuser:mypassword@localhost:5672"
+        "protocol": "amqp",
+        "hostname": "localhost",
+        "port": 5672,
+        "username": "myuser",
+        "password": "mypassword",
+        "vhost": "/"
     },
     "garbage":{
         "url": "localhost:19092"

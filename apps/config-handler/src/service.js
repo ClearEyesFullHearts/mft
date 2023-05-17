@@ -38,8 +38,8 @@ class ConfigHandler {
 
     this.app.use(auth);
 
-    const rabbitURI = config.get('secret.rabbit.url');
-    const conn = await amqplib.connect(rabbitURI);
+    const rabbitConnInfo = config.get('secret.rabbit');
+    const conn = await amqplib.connect(rabbitConnInfo);
     const options = {
       tag: APP_ID,
       connections: {

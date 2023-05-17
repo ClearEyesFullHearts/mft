@@ -4,7 +4,11 @@
           "url": "KEY_MONGO_URL"
       },
       "rabbit":{
-          "url": "KEY_RABBIT_URL"
+        "protocol": "KEY_RBT_PROTOCOL",
+        "hostname": "KEY_RBT_HOST",
+        "port": "KEY_RBT_PORT",
+        "username": "KEY_RBT_USER",
+        "password": "KEY_RBT_PASS"
       },
       "garbage":{
           "url": "KEY_GARBAGE_URL"

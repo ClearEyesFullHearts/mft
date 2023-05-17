@@ -87,8 +87,8 @@ class ConfigLoader extends EventEmitter {
     this.internalConn = {
       rabbit: async () => {
         if (this.internalRabbitConn) return Promise.resolve(this.internalRabbitConn);
-        const rabbitURI = this.get('secret.rabbit.url');
-        this.internalRabbitConn = await amqplib.connect(rabbitURI);
+        const rabbitConnInfo = this.get('secret.rabbit');
+        this.internalRabbitConn = await amqplib.connect(rabbitConnInfo);
         return this.internalRabbitConn;
       },
       garbage: async () => {

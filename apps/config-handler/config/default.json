@@ -1,7 +1,12 @@
 {
   "secret": {
     "rabbit":{
-        "url": "amqp://myuser:mypassword@localhost:5672"
+      "protocol": "amqp",
+      "hostname": "localhost",
+      "port": 5672,
+      "username": "myuser",
+      "password": "mypassword",
+      "vhost": "/"
     }
   },
   "users": {

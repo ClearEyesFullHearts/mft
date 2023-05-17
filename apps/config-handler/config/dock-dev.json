@@ -1,7 +1,7 @@
 {
   "secret": {
     "rabbit":{
-      "url": "amqp://myuser:mypassword@my-rabbit-mq:5672"
+      "hostname": "my-rabbit-mq"
     }
   }
 }

@@ -5,7 +5,7 @@ services:
   config:
     image: public.ecr.aws/q0f4v2r9/cantlose:${CONFIG_HANDLER_DOCKER_IMAGE_NAME}
     container_name: config
-    command: sh -c '/bin/wait-for-it.sh ${RABBIT_SHORT_URL} --timeout=40 -- node app.js'
+    command: sh -c '/bin/wait-for-it.sh ${KEY_RBT_HOST}:${KEY_RBT_PORT} --timeout=40 -- node app.js'
     ports:
       - 3001:3001
     environment:
