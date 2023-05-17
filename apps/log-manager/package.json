@@ -9,7 +9,7 @@
   "author": "MFT",
   "license": "MIT",
   "dependencies": {
-    "@elastic/elasticsearch": "^7.17.0",
+    "@opensearch-project/opensearch": "2.2.1",
     "asyncapi-sub-middleware": "1.0.3",
     "debug": "4.3.4",
     "rabbitmq-express": "^1.0.4",

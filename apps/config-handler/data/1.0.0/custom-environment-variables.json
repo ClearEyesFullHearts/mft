@@ -1,7 +1,7 @@
 {
   "secret":{
       "mongo":{
-          "url": "KEY_MONGO_URL"
+        "url": "KEY_MONGO_URL"
       },
       "rabbit":{
         "protocol": "KEY_RBT_PROTOCOL",
@@ -11,10 +11,14 @@
         "password": "KEY_RBT_PASS"
       },
       "garbage":{
-          "url": "KEY_GARBAGE_URL"
+        "url": "KEY_GARBAGE_URL"
       },
       "elastic":{
-          "url": "KEY_ELK_URL"
+        "protocol": "KEY_OPS_PROTOCOL",
+        "hostname": "KEY_OPS_HOST",
+        "port": "KEY_OPS_PORT",
+        "username": "KEY_OPS_USER",
+        "password": "KEY_OPS_PASS"
       }
   },
   "rest-api": {

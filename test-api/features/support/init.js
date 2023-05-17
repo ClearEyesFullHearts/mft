@@ -7,7 +7,7 @@ const backup = require('mongodb-backup-4x');
 const restore = require('mongodb-restore');
 const mongoose = require('mongoose');
 const moment = require('moment');
-const { Client } = require('@elastic/elasticsearch');
+const { Client } = require('@opensearch-project/opensearch');
 
 let rabbit;
 let esClient;
@@ -22,6 +22,9 @@ BeforeAll((cb) => {
   const esURL = config.get('secret.elastic.url');
   esClient = new Client({
     node: esURL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   });
 
   const rabbitURI = config.get('secret.rabbit.url');

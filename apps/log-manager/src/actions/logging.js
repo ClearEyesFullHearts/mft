@@ -1,12 +1,24 @@
 const logger = require('debug');
-const { Client } = require('@elastic/elasticsearch');
+const { Client } = require('@opensearch-project/opensearch');
 const config = require('@shared/config');
 
 const debug = logger('log-manager:action:logging');
 
-const esURL = config.get('secret.elastic.url');
+const {
+  protocol,
+  hostname,
+  port,
+  username,
+  password,
+  options,
+} = config.get('secret.elastic');
+const auth = username && password ? `${username};${password}@` : '';
+const esURL = `${protocol}://${auth}${hostname}:${port}`;
 const esClient = new Client({
   node: esURL,
+  ssl: {
+    ...options,
+  },
 });
 
 module.exports = async (req, res, next) => {

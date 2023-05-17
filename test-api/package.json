@@ -11,7 +11,7 @@
         "ci-test-api": "NODE_ENV=dock-ci ./node_modules/.bin/cucumber-js --format json > ~/cucumber/test-api.json --exit",
         "ci-report-api": "REPORT_NAME=~/cucumber/test-api node reporting.js",
         "test": "./node_modules/.bin/cucumber-js --exit",
-        "one": "./node_modules/.bin/cucumber-js --name \"Admin can trigger a config reload\" --exit",
+        "one": "./node_modules/.bin/cucumber-js --name \"logs are recorded\" --exit",
         "feature": "./node_modules/.bin/cucumber-js features/health.feature --exit"
     },
     "author": "",
@@ -31,7 +31,7 @@
         "mongodb-restore": "1.6.2",
         "mongoose": "6.9.2",
         "uuid": "^3.3.3",
-        "@elastic/elasticsearch": "^7.17.0",
+        "@opensearch-project/opensearch": "2.2.1",
         "amqplib": "^0.10.3",
         "kafkajs": "^2.2.4"
     }

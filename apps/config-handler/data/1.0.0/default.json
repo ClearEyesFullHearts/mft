@@ -1,7 +1,8 @@
 {
   "secret": {
     "mongo":{
-        "url": "mongodb://127.0.0.1:27017/mft-dev"
+        "url": "mongodb://127.0.0.1:27017/mft-dev",
+        "options": {}
     },
     "rabbit":{
         "protocol": "amqp",
@@ -15,7 +16,14 @@
         "url": "localhost:19092"
     },
     "elastic":{
-        "url": "http://localhost:9200"
+        "protocol": "https",
+        "hostname": "localhost",
+        "port": 9200,
+        "username": "admin",
+        "password": "admin",
+        "options": {
+            "rejectUnauthorized": false
+        }
     }
   },
   "rest-api": {
